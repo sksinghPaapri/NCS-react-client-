@@ -374,9 +374,9 @@ const Body = () => {
       </div>
       {/* 2) */}
       {/* Whats new */}
-      <div className="mt-[100px] lg:mx-[60px]">
+      <div className="mt-[100px] lg:mx-[60px] xl:w-[1160px] xl:h-[555px] xl:mx-auto xl:mb-[250vh] 2xl:mb-[200vh]">
         <div
-          className="mb-[40px] xl:ms-16 2xl:ms-[25vw] text-3xl sm:text-5xl flex justify-center lg:justify-start"
+          className="mb-[40px] text-3xl sm:text-5xl flex justify-center lg:justify-start"
           style={{ fontFamily: "DM Serif Display" }}
         >
           What's New
@@ -460,9 +460,9 @@ const Body = () => {
       </div>
       {/* 3) */}
       {/* Northcott Fabrics */}
-      <div className="my-12">
+      <div className="xl:w-full sm:w-[768px] md:w-full my-12">
         <div className="h-[664px] sm:h-[390px] lg:h-[369px] flex flex-col items-center justify-center text-center w-full text-white bg-black bg-[url('https://media.istockphoto.com/id/184601291/photo/xxxl-dark-concrete.webp?b=1&s=170667a&w=0&k=20&c=KRRXq0P41imqerPjYF4EgX7QOdbybyprM8ofKYoIzT4=')] bg-no-repeat bg-center bg-cover">
-          <div className="p-[60px] sm:w-[624px] md:w-[800px]">
+          <div className="p-[60px] sm:w-[624px]">
             <div
               className="flex justify-center text-3xl"
               style={{ fontFamily: "DM Serif Display" }}
@@ -492,36 +492,35 @@ const Body = () => {
       </div>
       {/* 4) */}
       {/* Featured Categories */}
-      <div className="mx-[20px] lg:mx-20">
+      <div className="xl:max-w-[1320px] mx-[20px] md:mx-[50px] xl:mx-auto xl:flex xl:flex-col xl:items-center xl:justify-center">
         <div
           className="sm:pt-10 text-center text-2xl sm:text-5xl tracking-wide"
           style={{ fontFamily: "DM Serif Display" }}
         >
           Featured Categories
         </div>
-        <div className="sm:mt-20 grid grid-cols-1 lg:grid-cols-3 grid-flow-row lg:mx-[40px] lg:me-[50px] my-10 gap-10 lg:gap-10 2xl:mx-[30vw]">
-          {/* <div className="lg:h-[503px] w-full flex items-center justify-center bg-white lg:items-start lg:justify-start"> */}
-          <div className="w-full flex items-center justify-center bg-white ">
+        <div className="xl:w-[1200px] sm:mt-20 grid grid-cols-1 lg:grid-cols-3 grid-flow-row xl:mx-20 my-10 gap-10">
+          <div className="w-full flex items-center justify-center bg-white">
             <a href="#" className="border border-gray-200 shadow">
               <img className="w-[345px]" src={No1} alt="Image" />
             </a>
           </div>
-          <div className="w-full flex items-center justify-center bg-white ">
+          <div className="w-full flex items-center justify-center bg-white">
             <a href="#" className="border border-gray-200 shadow">
               <img className="w-[345px]" src={No2} alt="Image" />
             </a>
           </div>
-          <div className="w-full flex items-center justify-center bg-white ">
+          <div className="w-full flex items-center justify-center bg-white">
             <a href="#" className="border border-gray-200 shadow">
               <img className="w-[345px]" src={No3} alt="Image" />
             </a>
           </div>
-          <div className="w-full flex items-center justify-center bg-white ">
+          <div className="w-full flex items-center justify-center bg-white">
             <a href="#" className="border border-gray-200 shadow">
               <img className="w-[345px]" src={No4} alt="Image" />
             </a>
           </div>
-          <div className="w-full flex items-center justify-center bg-white ">
+          <div className="w-full flex items-center justify-center bg-white">
             <a href="#" className="border border-gray-200 shadow">
               <img className="w-[345px]" src={No5} alt="Image" />
             </a>
@@ -535,7 +534,7 @@ const Body = () => {
       </div>
       {/* 5) */}
       {/* featured designer */}
-      <div className="mt-[120px] lg:mt-[200px] h-[892px] lg:h-[570px] flex flex-col lg:flex-row xl:gap-20 2xl:gap-36 lg:items-center justify-center lg:justify-between text-white bg-[#CECECC]">
+      <div className="mt-[120px] lg:mt-[100px] h-[892px] lg:h-[570px] flex flex-col lg:flex-row lg:gap-14 xl:gap-20 2xl:gap-20 lg:items-center justify-center lg:justify-between text-white bg-[#CECECC]">
         <div className=" w-full lg:w-1/2 flex justify-center xl:justify-end">
           <img
             src={Designer}
@@ -544,7 +543,7 @@ const Body = () => {
           />
         </div>
         <div className="w-full lg:w-1/2 mt-16">
-          <div className="lg:w-[550px] lg:h-[307px] flex flex-col gap-5 justify-center text-center lg:text-left text-black">
+          <div className="lg:h-[307px] flex flex-col gap-5 justify-center text-center lg:text-left text-black">
             <h1
               className="italic text-xl mt-10 lg:mt-0"
               style={{ fontFamily: "DM Serif Display" }}
@@ -554,7 +553,7 @@ const Body = () => {
             <h1 className="text-3xl" style={{ fontFamily: "DM Serif Display" }}>
               Designer Name
             </h1>
-            <p className="text-sm lg:pe-20 px-10 lg:px-0 lg:w-[550px] lg:h-[105px]">
+            <p className="text-sm lg:text-xs lg:pe-20 px-10 lg:px-0 xl:pe-52 lg:h-[105px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -565,7 +564,7 @@ const Body = () => {
             <div className="mt-3 sm:mt-10 lg:mt-7 flex items-center justify-center lg:justify-start">
               <button
                 type="button"
-                className="uppercase font-semibold text-black bg-[#E2A856] hover:text-[#E2A856] hover:bg-[#CECECC] hover:border-2 hover:border-[#E2A856] rounded-sm text-base py-2.5 px-2 text-center mb-10 w-[280px] h-[68px] md:w-96"
+                className="uppercase font-semibold text-black bg-[#E2A856] hover:text-[#E2A856] hover:bg-[#CECECC] hover:border-2 hover:border-[#E2A856] rounded-sm text-base py-2.5 px-2 text-center mb-10 w-[280px] h-[68px] sm:h-[49px] md:w-96"
               >
                 Shop designer name’s collection
               </button>
@@ -575,8 +574,8 @@ const Body = () => {
       </div>
       {/* 6) */}
       {/* Resources */}
-      <div className="mx-[20px] lg:mx-[60px] py-5 sm:mb-[60vh] lg:mb-[20vh] 2xl:w-[1160px] 2xl:h-[667px] 2xl:mb-1">
-        <div className="2xl:ms-[25vw]">
+      <div className="mx-[20px] lg:mx-[60px] py-5 sm:mb-[60vh] lg:mb-[20vh] 2xl:w-[1160px] 2xl:h-[667px] 2xl:mb-[80vh] 2xl:mx-auto">
+        <div>
           <div className="mx-auto mt-16">
             <div className="flex flex-col lg:flex-row justify-between gap-10 lg:ms-10 xl:gap-0">
               <div
@@ -595,7 +594,7 @@ const Body = () => {
               </div>
             </div>
           </div>
-          <div className="xl:w-[1160px] xl:h-[667px] lg:w-auto lg:h-[667px] lg:mt-14 flex flex-col lg:flex-row items-center              justify-center lg:justify-between lg:gap-24 xl:gap-40 lg:mx-10">
+          <div className="xl:w-[1160px] xl:h-[667px] lg:w-auto lg:h-[667px] lg:mt-14 flex flex-col lg:flex-row items-center xl:items-start justify-center lg:justify-between lg:gap-24 xl:gap-20 lg:mx-10">
             <div className=" lg:w-1/2 md:w-fit bg-white flex justify-center mx-5 lg:mx-0 border">
               <a
                 href="#"
@@ -604,7 +603,7 @@ const Body = () => {
                 <img
                   src={Property1}
                   alt="Image"
-                  className="w-[217px] h-[280px] sm:w-[624px] sm:h-[624px] object-cover lg:w-auto lg:h-[515px]"
+                  className="w-[217px] h-[280px] sm:w-[624px] sm:h-[624px] lg:w-auto lg:h-[515px]"
                 />
                 <div className="w-[217px] h-[182px] sm:w-[320px] sm:h-[129px] flex flex-col gap-3 sm:gap-1 sm:mt-5 items-start justify-center sm:justify-start px-7 sm:px-5">
                   <h4 className="text-gray-400">Editorial Features</h4>
@@ -615,8 +614,8 @@ const Body = () => {
                 </div>
               </a>
             </div>
-            <div className="w-[260px] sm:w-[624px] sm:h-[665px] lg:w-1/2 flex flex-col items-center gap-10 lg:gap-4 mt-10 lg:mt-0 me-0 md:me-6 lg:me-0">
-              <a href="#" className="sm:w-[550px] sm:h-[140px]">
+            <div className="w-[260px] sm:w-[624px] sm:h-[665px] lg:w-1/2 flex flex-col items-center gap-10 lg:gap-4 mt-10 lg:mt-0 me-0 md:me-28 lg:me-0">
+              <a href="#" className="sm:max-w-[550px] sm:h-[140px]">
                 <div className="flex flex-col md:flex-row gap-5 sm:gap-10">
                   <img
                     className="w-[260px] sm:w-[140px] sm:h-[140px] lg:h-32"
@@ -625,7 +624,7 @@ const Body = () => {
                   />
                   <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
                     <h4 className="text-gray-400">Free Patterns</h4>
-                    <h2 className="font-bold w-60 text-lg text-center sm:text-start">
+                    <h2 className="font-bold w-60 lg:w-52 lg:text-sm text-lg text-center sm:text-start">
                       Patrick Lose Cake Block - FREE DOWNLOAD
                     </h2>
                     <img className="w-24" src={frame} alt="Image" />
@@ -633,7 +632,7 @@ const Body = () => {
                 </div>
               </a>
               <hr className=" text-black w-4/5 lg:w-full sm:me-12" />
-              <a href="#" className="sm:w-[550px] sm:h-[140px]">
+              <a href="#" className="sm:max-w-[550px] sm:h-[140px]">
                 <div className="flex flex-col md:flex-row gap-5 sm:gap-10">
                   <img
                     className="w-[260px] sm:w-[140px] sm:h-[140px] lg:h-32"
@@ -642,7 +641,7 @@ const Body = () => {
                   />
                   <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
                     <h4 className="text-gray-400">Editorial Features</h4>
-                    <h2 className="font-bold w-60 text-lg text-center sm:text-start">
+                    <h2 className="font-bold w-60 lg:w-52 lg:text-sm text-lg text-center sm:text-start">
                       Lemon Sorbet by TeriAnn Harms{" "}
                     </h2>
                     <img className="w-24" src={frame} alt="Image" />
@@ -650,8 +649,7 @@ const Body = () => {
                 </div>
               </a>
               <hr className=" text-black w-4/5 lg:w-full sm:me-12" />
-
-              <a href="#" className="sm:w-[550px] sm:h-[140px]">
+              <a href="#" className="sm:max-w-[550px] sm:h-[140px]">
                 <div className="flex flex-col md:flex-row gap-5 sm:gap-10">
                   <img
                     className="w-[260px] sm:w-[140px] sm:h-[140px] lg:h-32"
@@ -660,7 +658,7 @@ const Body = () => {
                   />
                   <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
                     <h4 className="text-gray-400">Free Patterns</h4>
-                    <h2 className="font-bold w-60 text-lg text-center sm:text-start">
+                    <h2 className="font-bold w-60 lg:w-52 lg:text-sm text-lg text-center sm:text-start">
                       Beach Blanket - FREE DOWNLOAD{" "}
                     </h2>
                     <img className="w-24" src={frame} alt="Image" />
@@ -668,8 +666,7 @@ const Body = () => {
                 </div>
               </a>
               <hr className=" text-black w-4/5 lg:w-full sm:me-12" />
-
-              <a href="#" className="sm:w-[550px] sm:h-[140px]">
+              <a href="#" className="sm:max-w-[550px] sm:h-[140px]">
                 <div className="flex flex-col md:flex-row gap-5 sm:gap-10">
                   <img
                     className="w-[260px] sm:w-[140px] sm:h-[140px] lg:h-32"
@@ -678,7 +675,7 @@ const Body = () => {
                   />
                   <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
                     <h4 className="text-gray-400">Editorial Features</h4>
-                    <h2 className="font-bold w-60 text-lg text-center sm:text-start">
+                    <h2 className="font-bold w-60 lg:w-52 lg:text-sm text-lg text-center sm:text-start">
                       Lemon Sorbet by TeriAnn Harms{" "}
                     </h2>
                     <img className="w-24" src={frame} alt="Image" />
