@@ -575,7 +575,7 @@ const Body = () => {
       </div>
       {/* 6) */}
       {/* Resources */}
-      <div className="mx-[20px] lg:mx-[60px] py-5 sm:mb-[30vh] 2xl:w-[1160px] 2xl:h-[667px]">
+      <div className="mx-[20px] lg:mx-[60px] py-5 sm:mb-[60vh] lg:mb-[20vh] 2xl:w-[1160px] 2xl:h-[667px] 2xl:mb-1">
         <div className="2xl:ms-[25vw]">
           <div className="mx-auto mt-16">
             <div className="flex flex-col lg:flex-row justify-between gap-10 lg:ms-10 xl:gap-0">
@@ -690,9 +690,9 @@ const Body = () => {
         </div>
       </div>
       {/* 7) */}
-      <div className="mx-[20px] sm:mx-[60px] w-[260px] sm:w-full h-[108px] flex items-center justify-center my-10 ms-7 sm:ms-0 mt-[100px] xl:mt-[400px]">
-        <div className="font-bold text-[28px] lg:min-w-96 max-w-2xl md:p-10 text-center">
-          <p className="text-center">
+      <div className="mx-[20px] sm:mx-[60px] w-[260px] sm:w-full h-[108px] flex items-center justify-center my-10 ms-7 sm:ms-0 mt-[100px]">
+        <div className="font-bold text-[28px] lg:min-w-96 max-w-2xl text-center">
+          <p className="text-center sm:w-[624px] sm:h-[66px] lg:w-[800px] lg:h-[84px]">
             Follow us on social media as we always have something exciting to
             share <span className="text-[#E2A856]">#NorthcottFabrics</span>
           </p>

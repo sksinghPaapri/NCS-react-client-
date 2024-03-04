@@ -383,7 +383,7 @@ const FooterNavigation = () => {
                 <div className="uppercase font-bold	text-[22px] text-white text-center lg:text-right">
                   GET THE INSIDE SCOOP!
                 </div>
-                <div className="text-gray-300 italic text-center lg:text-right sm:text-nowrap text-sm">
+                <div className="text-gray-300 italic text-center lg:text-right sm:text-nowrap text-sm lg:text-xs">
                   New collections,free patterns,quilting tips and more.
                 </div>
               </li>
