@@ -494,12 +494,12 @@ const Body = () => {
       {/* Featured Categories */}
       <div className="mx-[20px] lg:mx-20">
         <div
-          className="pt-10 text-center text-2xl sm:text-5xl tracking-wide"
+          className="sm:pt-10 text-center text-2xl sm:text-5xl tracking-wide"
           style={{ fontFamily: "DM Serif Display" }}
         >
           Featured Categories
         </div>
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-3 grid-flow-row lg:mx-[40px] lg:me-[50px] my-10 sm:gap-10 lg:gap-10 2xl:mx-[30vw]">
+        <div className="sm:mt-20 grid grid-cols-1 lg:grid-cols-3 grid-flow-row lg:mx-[40px] lg:me-[50px] my-10 gap-10 lg:gap-10 2xl:mx-[30vw]">
           {/* <div className="lg:h-[503px] w-full flex items-center justify-center bg-white lg:items-start lg:justify-start"> */}
           <div className="w-full flex items-center justify-center bg-white ">
             <a href="#" className="border border-gray-200 shadow">
@@ -585,7 +585,7 @@ const Body = () => {
               >
                 Resources
               </div>
-              <div className="flex justify-center mx-5 lg:mx-0 lg:justify-start lg:me-20 2xl:ms-[25vw]">
+              <div className="flex justify-center mx-5 lg:mx-0 lg:justify-start xl:me-20 2xl:ms-[25vw]">
                 <button
                   type="button"
                   className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded px-5 py-2.5 text-center me-2 mb-10 w-[132px] h-[49px] text-base"
@@ -595,8 +595,8 @@ const Body = () => {
               </div>
             </div>
           </div>
-          <div className="xl:w-[1160px] xl:h-[667px] lg:w-auto lg:h-[667px] lg:mt-14 flex flex-col lg:flex-row items-centerjustify-center lg:justify-between lg:gap-24 xl:gap-40 lg:mx-10">
-            <div className=" lg:w-1/2 md:w-fit bg-white flex justify-center mx-5 lg:mx-0">
+          <div className="xl:w-[1160px] xl:h-[667px] lg:w-auto lg:h-[667px] lg:mt-14 flex flex-col lg:flex-row items-center              justify-center lg:justify-between lg:gap-24 xl:gap-40 lg:mx-10">
+            <div className=" lg:w-1/2 md:w-fit bg-white flex justify-center mx-5 lg:mx-0 border">
               <a
                 href="#"
                 className="sm:w-[624px] sm:h-[779px] lg:w-[515px] lg:h-[667px]"
@@ -604,11 +604,18 @@ const Body = () => {
                 <img
                   src={Property1}
                   alt="Image"
-                  className="sm:w-[624px] sm:h-[779px] lg:w-auto lg:h-[667px]"
+                  className="w-[217px] h-[280px] sm:w-[624px] sm:h-[624px] object-cover lg:w-auto lg:h-[515px]"
                 />
+                <div className="w-[217px] h-[182px] sm:w-[320px] sm:h-[129px] flex flex-col gap-3 sm:gap-1 sm:mt-5 items-start justify-center sm:justify-start px-7 sm:px-5">
+                  <h4 className="text-gray-400">Editorial Features</h4>
+                  <h2 className="font-bold w-56 sm:w-full sm:text-nowrap text-lg text-start">
+                    Follow The Star by TeriAnn Harms{" "}
+                  </h2>
+                  <img className="w-24" src={frame} alt="Image" />
+                </div>
               </a>
             </div>
-            <div className="w-[260px] sm:w-[624px] sm:h-[680px] lg:w-1/2 flex flex-col items-center gap-10 lg:gap-6 mt-10 lg:mt-0 me-0 md:me-6 lg:me-0">
+            <div className="w-[260px] sm:w-[624px] sm:h-[665px] lg:w-1/2 flex flex-col items-center gap-10 lg:gap-4 mt-10 lg:mt-0 me-0 md:me-6 lg:me-0">
               <a href="#" className="sm:w-[550px] sm:h-[140px]">
                 <div className="flex flex-col md:flex-row gap-5 sm:gap-10">
                   <img
@@ -678,7 +685,6 @@ const Body = () => {
                   </div>
                 </div>
               </a>
-              <hr className=" text-black w-4/5 lg:w-full ms-0 sm:me-12 lg:ms-36 flex lg:hidden xl:flex" />
             </div>
           </div>
         </div>
