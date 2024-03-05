@@ -1,5 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useState } from "react";
+import ProductCard from "../../assets/ProductPage/ProductCard.svg";
 
 export default function Modal({ showModal, cancelOption, index }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,7 @@ export default function Modal({ showModal, cancelOption, index }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-3xl max-h-3xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <div
                     className="flex items-center justify-end cursor-pointer"
                     onClick={closeModal}
@@ -64,24 +65,64 @@ export default function Modal({ showModal, cancelOption, index }) {
                       />
                     </svg>
                   </div>
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
-                  >
-                    Product {index}
-                  </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500">Product</p>
-                  </div>
-
-                  <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
+                  {/* modal body */}
+                  <div className="flex items-center justify-center">
+                    <div
+                      className="grid grid-cols-1 sm:grid-cols-2 items-center justify-center w-[160px] h-[388px] sm:w-[486px] sm:h-[281px] lg:w-[615px] lg:h-[381px] gap-5 sm:gap-44 lg:gap-56"
+                      style={{ fontFamily: "Open Sans" }}
                     >
-                      Got it, thanks!
-                    </button>
+                      {/* section 1 Image */}
+                      <div className="w-[160px] h-[160px] sm:w-[280px] sm:h-[280px] lg:w-[380px] lg:h-[380px]">
+                        <img
+                          src={ProductCard}
+                          alt="Product"
+                          className="sm:object-cover w-[160px] h-[160px] sm:w-[280px] sm:h-[280px] lg:w-[380px] lg:h-[380px]"
+                        />
+                      </div>
+                      {/* section 2 text */}
+                      <div className="flex flex-col gap-3 sm:gap-5 lg:gap-10">
+                        {/* design name */}
+                        <div className="w-[160px] h-[47px] sm:w-[156px] sm:h-[59px] lg:w-[175px] lg:h-[64px]">
+                          <div className="flex justify-between">
+                            <div>
+                              <p className="text-xs text-gray-400">
+                                Design Name
+                              </p>
+                            </div>
+                            <div className="">
+                              <p className="text-xs text-gray-400">Color</p>
+                            </div>
+                          </div>
+                          <p className="mt-1 text-lg font-semibold">27024-44</p>
+                        </div>
+                        {/* price */}
+                        <div className="w-[77px] h-[27px] sm:w-[96px] sm:h-[33px]">
+                          <p className="text-lg">
+                            $8.95 <span className="text-gray-400">/m</span>
+                          </p>
+                        </div>
+                        {/* details */}
+                        <div className="text-xs sm:text-sm w-[137px] h-[110px] sm:w-[156px] sm:h-[149px] lg:w-[175px] lg:h-[204px]">
+                          <p className="font-bold">Details</p>
+                          <div className="flex items-center justify-between">
+                            <p>Details :</p>
+                            <p>Lorem ipsum</p>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <p>Details :</p>
+                            <p>Lorem ipsum</p>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <p>Details :</p>
+                            <p>Lorem ipsum</p>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <p>Details :</p>
+                            <p>Lorem ipsum</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

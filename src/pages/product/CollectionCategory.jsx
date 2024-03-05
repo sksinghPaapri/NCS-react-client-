@@ -22,11 +22,11 @@ import CollectionCard12 from "../../assets/CollectionPage/CollectionCard12.svg";
 import { Link } from "react-router-dom";
 
 const sortOptions = [
-  { name: "Most Popular", href: "#", current: true },
-  { name: "Best Rating", href: "#", current: false },
-  { name: "Newest", href: "#", current: false },
-  { name: "Price: Low to High", href: "#", current: false },
-  { name: "Price: High to Low", href: "#", current: false },
+  { name: "Newest First", href: "#", current: false },
+  { name: "Oldest First", href: "#", current: false },
+  { name: "Delivery Date (Earliest)", href: "#", current: false },
+  { name: "Alphabetical (A-Z)", href: "#", current: false },
+  { name: "Alphabetical (Z-A)", href: "#", current: false },
 ];
 const subCategories = [
   { name: "Totes", href: "#" },
@@ -40,35 +40,36 @@ const filters = [
     id: "delivery",
     name: "Delivery",
     options: [
-      { value: "white", label: "White", checked: false },
-      { value: "beige", label: "Beige", checked: false },
-      { value: "blue", label: "Blue", checked: true },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
+      { value: "Option1", label: "Option1", checked: false },
+      { value: "Option2", label: "Option2", checked: false },
+      { value: "Option3", label: "Option3", checked: true },
+      { value: "Option4", label: "Option4", checked: false },
+      { value: "Option5", label: "Option5", checked: false },
+      { value: "Option6", label: "Option6", checked: false },
     ],
   },
   {
     id: "designer",
     name: "Designer",
     options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
-      { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: true },
-      { value: "organization", label: "Organization", checked: false },
-      { value: "accessories", label: "Accessories", checked: false },
+      { value: "Option7", label: "Option7", checked: false },
+      { value: "Option8", label: "Option8", checked: false },
+      { value: "Option9", label: "Option9", checked: true },
+      { value: "Option10", label: "Option10", checked: false },
+      { value: "Option11", label: "Option11", checked: false },
+      { value: "Option12", label: "Option12", checked: false },
     ],
   },
   {
     id: "productType",
     name: "Product Type",
     options: [
-      { value: "2l", label: "2L", checked: false },
-      { value: "6l", label: "6L", checked: false },
-      { value: "12l", label: "12L", checked: false },
-      { value: "18l", label: "18L", checked: false },
-      { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: true },
+      { value: "Option13", label: "Option13", checked: false },
+      { value: "Option14", label: "Option14", checked: false },
+      { value: "Option15", label: "Option15", checked: true },
+      { value: "Option16", label: "Option16", checked: false },
+      { value: "Option17", label: "Option17", checked: false },
+      { value: "Option18", label: "Option18", checked: false },
     ],
   },
 ];
@@ -218,8 +219,23 @@ export default function CollectionCategory() {
     }
   };
 
+  const clearAllFilters = () => {
+    setSelectedFilters([]);
+    // Uncheck all checkboxes
+    filters.forEach((section) => {
+      section.options.forEach((option) => {
+        const checkbox = document.getElementById(
+          `filter-${section.id}-${option.value}`
+        );
+        if (checkbox) {
+          checkbox.checked = false;
+        }
+      });
+    });
+  };
+
   return (
-    <div className="bg-white">
+    <div className="bg-white" style={{ fontFamily: "Open Sans" }}>
       <div>
         {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
@@ -251,8 +267,9 @@ export default function CollectionCategory() {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
+                  {/* mobile filter top header */}
                   <div className="flex items-center justify-between px-4">
-                    <h2 className="text-lg font-medium text-gray-900">
+                    <h2 className="text-2xl font-bold text-gray-900">
                       Filters
                     </h2>
                     <button
@@ -265,10 +282,23 @@ export default function CollectionCategory() {
                     </button>
                   </div>
 
-                  {/* Filters */}
+                  {/* mobile Filters */}
                   <form className="mt-4 border-t border-gray-200">
                     <h3 className="sr-only">Categories</h3>
+                    {/* Clear All button desktop */}
+                    {selectedFilters.length > 0 && (
+                      <div className="px-4 py-2">
+                        <button
+                          type="button"
+                          onClick={() => clearAllFilters()}
+                          className="text-sm text-gray-500 hover:text-gray-700"
+                        >
+                          Clear All
+                        </button>
+                      </div>
+                    )}
                     <ul className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
+                      {/* select field occur in input by Mithun */}
                       {selectedFilters.map((filter) => (
                         <li key={filter.sectionId} className="flex flex-wrap">
                           {filter.optionValues.map((optionValue) => (
@@ -300,6 +330,7 @@ export default function CollectionCategory() {
                       ))}
                     </ul>
 
+                    {/* dropdown menu */}
                     {filters.map((section) => (
                       <Disclosure
                         as="div"
@@ -310,7 +341,7 @@ export default function CollectionCategory() {
                           <>
                             <h3 className="-mx-2 -my-3 flow-root">
                               <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                                <span className="font-medium text-gray-900">
+                                <span className=" text-black font-bold">
                                   {section.name}
                                 </span>
                                 <span className="ml-6 flex items-center">
@@ -330,6 +361,7 @@ export default function CollectionCategory() {
                             </h3>
                             <Disclosure.Panel className="pt-6">
                               <div className="space-y-6">
+                                {/* mobile view dropdown */}
                                 {section.options.map((option, optionIdx) => (
                                   <div
                                     key={option.value}
@@ -369,6 +401,7 @@ export default function CollectionCategory() {
           </Dialog>
         </Transition.Root>
 
+        {/* desktop top section */}
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-x-9 gap-y-10 md:grid-cols-4">
             <div className="hidden md:block col-span-1 text-2xl font-bold">
@@ -465,6 +498,20 @@ export default function CollectionCategory() {
               {/* Filters */}
               <form className="hidden md:block col-span-1">
                 <h3 className="sr-only text-sm">Categories</h3>
+                {/* Clear All button mobile*/}
+                {selectedFilters.length > 0 && (
+                  <div className="px-4 py-2 flex ">
+                    <h3 className="text-sm font-bold">Selected Filters</h3>
+
+                    <button
+                      type="button"
+                      onClick={() => clearAllFilters()}
+                      className="text-sm text-gray-500 hover:text-gray-700"
+                    >
+                      Clear All
+                    </button>
+                  </div>
+                )}
                 <ul className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
                   {selectedFilters.map((filter) => (
                     <li key={filter.sectionId} className="flex flex-wrap">
