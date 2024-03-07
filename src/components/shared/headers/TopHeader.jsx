@@ -655,7 +655,8 @@ export default function TopHeader() {
                                         <div>
                                           <div className="col-span-2">
                                             <Link
-                                              to={`/testui/collections/${finallink?._id?.$oid}`}
+                                              // to={`/testui/collections/${finallink?._id?.$oid}`}
+                                              to={`/product-collection/${finallink?._id?.$oid}`}
                                               className="block text-xs text-gray-900"
                                             >
                                               {finallink?.name}
@@ -842,7 +843,8 @@ export default function TopHeader() {
                                             className="bg-white py-3 text-xs text-black hover:bg-[#F5F4F1]"
                                           >
                                             <Link
-                                              to={`/testui/collections/${finallink?._id?.$oid}`}
+                                              // to={`/testui/collections/${finallink?._id?.$oid}`}
+                                              to={`/product-collection/${finallink?._id?.$oid}`}
                                             >
                                               {finallink.name}
                                             </Link>

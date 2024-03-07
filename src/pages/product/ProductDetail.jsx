@@ -451,7 +451,7 @@ const ProductDetail = () => {
             </p>
           </div>
         </div>
-        <div className="sm:w-[280px] mx-[20px] sm:mx-10 md:mx-7 grid grid-cols-1 items-center justify-center sm:grid-cols-2 lg:grid-cols-4 gap-7 sm:gap-0 grid-flow-row my-10 xl:mx-32">
+        {/* <div className="sm:w-[280px] mx-[20px] sm:mx-10 md:mx-7 grid grid-cols-1 items-center justify-center sm:grid-cols-2 lg:grid-cols-4 gap-7 sm:gap-0 grid-flow-row my-10 xl:mx-32">
           {patternColorWay?.map((item, index) => (
             <div
               key={index}
@@ -468,7 +468,7 @@ const ProductDetail = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </>
   );

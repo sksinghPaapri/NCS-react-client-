@@ -612,7 +612,8 @@ export default function CollectionCategory() {
                     key={index}
                     className="cursor-pointer w-[130px] h-[251px] lg:w-[180px] lg:h-[329px]"
                   >
-                    <Link to={`/products/${item?.href}`}>
+                    {/* <Link to={`/products/${item?.href}`}> */}
+                    <Link to={`/product-detail/${item?.href}`}>
                       <img
                         src={item.name}
                         alt="Image"
