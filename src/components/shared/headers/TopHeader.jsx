@@ -467,7 +467,9 @@ export default function TopHeader() {
             <div className="mx-6 h-[30px] text-white">{` | `}</div>
 
             <div className="relative">
-              <img className=" h-8 w-auto" src={shopping} alt="shopping" />
+              <Link to={"/cart-detail"}>
+                <img className=" h-8 w-auto" src={shopping} alt="shopping" />
+              </Link>
               {/* <img className=" h-8 w-auto" src={shoppingHover} alt="shopping" /> */}
             </div>
             {/* <ThemeButton /> */}
@@ -536,18 +538,20 @@ export default function TopHeader() {
             </form>
             {/* mobile view shopping icon menu */}
             <div className="flex lg:hidden justify-end mt-4 me-[13px] sm:me-[35px]">
-              <div className="relative">
-                <img
-                  className="absolute top-0 left-0 hover:hidden h-[24px] w-[16px] hover:text-[#E2A856]"
-                  src={shoppingMoblie}
-                  alt="Cart"
-                />
-                <img
-                  className="block h-[24px] w-[16px] hover:text-[#E2A856]"
-                  src={mobileCartHover}
-                  alt="Cart"
-                />
-              </div>
+              <Link to={"/cart-detail"}>
+                <div className="relative">
+                  <img
+                    className="absolute top-0 left-0 hover:hidden h-[24px] w-[16px] hover:text-[#E2A856]"
+                    src={shoppingMoblie}
+                    alt="Cart"
+                  />
+                  <img
+                    className="block h-[24px] w-[16px] hover:text-[#E2A856]"
+                    src={mobileCartHover}
+                    alt="Cart"
+                  />
+                </div>
+              </Link>
             </div>
           </div>
         </div>

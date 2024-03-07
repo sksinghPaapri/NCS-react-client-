@@ -297,10 +297,10 @@ export default function AppRoutes() {
       <AppHeader />
       <Routes>
         {/* <Route path="/*" element={<Home />} /> */}
-        {/* <Route path="/*" element={<Body />} /> */}
+        <Route path="/*" element={<Body />} />
         {/* <Route path="/*" element={<ProductCollection />} /> */}
         {/* <Route path="/*" element={<ProductDetail />} /> */}
-        <Route path="/*" element={<CartDetail />} />
+        {/* <Route path="/*" element={<CartDetail />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/help" element={<Help />} />
@@ -342,7 +342,8 @@ export default function AppRoutes() {
         />
         <Route
           path="/cart-detail"
-          element={user || customer ? <CartDetail /> : <Body />}
+          // element={user || customer ? <CartDetail /> : <Body />}
+          element={<CartDetail />}
         />
         <Route path="/search-detail/:searchItem" element={<SearchDetail />} />
         <Route
