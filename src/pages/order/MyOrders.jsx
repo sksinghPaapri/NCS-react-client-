@@ -22,6 +22,7 @@ const MyOrders = () => {
 
       {/* orderdetail and summary for desktop */}
       {/* <div className="flex flex-col lg:flex-row lg:gap-10"> */}
+
       <div className="flex flex-col lg:flex-row lg:gap-10 xl:gap-20">
         {/* orders details */}
         <div className="mx-auto w-[320px] sm:w-[685px] lg:w-[640px] mt-20 lg:mt-0 sm:rounded-lg">

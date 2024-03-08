@@ -297,10 +297,11 @@ export default function AppRoutes() {
       <AppHeader />
       <Routes>
         {/* <Route path="/*" element={<Home />} /> */}
-        <Route path="/*" element={<Body />} />
+        {/* <Route path="/*" element={<Body />} /> */}
         {/* <Route path="/*" element={<ProductCollection />} /> */}
         {/* <Route path="/*" element={<ProductDetail />} /> */}
         {/* <Route path="/*" element={<CartDetail />} /> */}
+        <Route path="/*" element={<Productfinder />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/help" element={<Help />} />
