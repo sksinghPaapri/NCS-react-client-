@@ -170,7 +170,7 @@ export const links = [
             href: "#",
           },
           {
-            name: "Calender",
+            name: "Calendar",
             href: "#",
           },
           {
