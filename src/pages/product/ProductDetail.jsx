@@ -19,6 +19,7 @@ import ProductCard13 from "../../assets/ProductPage/ProductCard13.svg";
 import ProductCard14 from "../../assets/ProductPage/ProductCard14.svg";
 import Breadcrum from "./Breadcrum";
 import Modal from "./Modal";
+import { Link } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -108,8 +109,8 @@ const ProductDetail = () => {
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            to="/product-finder"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
@@ -117,14 +118,14 @@ const ProductDetail = () => {
                               "block px-4 py-2 text-sm"
                             )}
                           >
-                            Account settings
-                          </a>
+                            Online Retailers
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            to="/product-finder"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
@@ -132,14 +133,14 @@ const ProductDetail = () => {
                               "block px-4 py-2 text-sm"
                             )}
                           >
-                            Support
-                          </a>
+                            In-Store Shopping
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            to="/product-finder"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
@@ -148,7 +149,7 @@ const ProductDetail = () => {
                             )}
                           >
                             License
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <form method="POST" action="#">
@@ -163,7 +164,7 @@ const ProductDetail = () => {
                                 "block w-full px-4 py-2 text-left text-sm"
                               )}
                             >
-                              Sign out
+                              International
                             </button>
                           )}
                         </Menu.Item>

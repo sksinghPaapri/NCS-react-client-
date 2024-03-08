@@ -1,241 +1,111 @@
-// import { React, useContext, useState } from 'react'
-// import { useNavigate, Link, useSearchParams } from 'react-router-dom'
-// import { useForm } from 'react-hook-form'
-// import { Button, Container, Form } from 'react-bootstrap'
-// import { UserContext } from '../../states/contexts/UserContext'
-// import ApiService from '../../helpers/ApiServices'
-// import { TokenService } from '../../helpers/StorageServices';
-// import TextField from '../../components/elements/fields/TextField'
-// import { showMessage } from '../../helpers/Utils'
-// import { CustomerContext } from '../../states/contexts/CustomerContext'
-// import CheckboxField from '../../components/elements/fields/CheckboxField'
-// import { BrandIconContext } from '../../states/contexts/BrandIconContext'
-
-// export default function Login() {
-//     const [show, setShow] = useState(false);
-//     const [errorShow, seterrorShow] = useState("Your email or password is incorrect! Please try again.");
-
-//     const { dispatch, user } = useContext(UserContext)
-//     const { dispatch: customerDispatch, customer } = useContext(CustomerContext)
-//     const { backgroundColor, color, darkBackgroundColor } = useContext(BrandIconContext)
-
-//     const navigate = useNavigate();
-//     const [searchParams, setSearchParams] = useSearchParams()
-
-//     let division = searchParams.get('division')?.toUpperCase() ? searchParams.get('division')?.toUpperCase() : "NORTHCOTT"
-
-//     const { register, control, reset, handleSubmit, getValues, setValue, watch, formState: { errors } } = useForm({});
-
-//     const onSubmit = async (e) => {
-//         let model, route
-
-//         e.preventDefault();
-//         const dataArr = [...new FormData(e.currentTarget)];
-//         const data = Object.fromEntries(dataArr);
-
-//         // console.log(data)
-//         try {
-//             setShow(false)
-//             dispatch({ type: "LOGIN_START" });
-
-//             const response = await ApiService.post('/shop/user/login', data);
-//             // console.log(response.data);
-
-//             if (response.data.isSuccess) {
-//                 const assignedWebsiteAccess = response?.data.document?.assignedWebsiteAccess.filter(e => e.text == "NORTHCOTT")[0]
-//                 // console.log(assignedWebsiteAccess);
-//                 // if (response?.data.document?.giveWebsiteAccess && assignedWebsiteAccess != undefined) { // Check if the brand type is NORTHCOTT or not
-//                 if (assignedWebsiteAccess != undefined) { // Check if the brand type is NORTHCOTT or not
-
-//                     // Save the logged in user's token into lokalstorage
-//                     TokenService.saveToken(response.data.token)
-
-//                     const user = response.data.document;
-//                     console.log(user);
-
-//                     // Find model and route
-//                     if (user?.userTypes?.includes("CUSTOMER")) {
-//                         model = "Customer"
-//                         route = "customer"
-//                     } else {
-//                         model = "User"
-//                         route = "user"
-//                     }
-
-//                     ApiService.setHeader()
-//                     // const res = await ApiService.patch(`/shop/user/${user?._id}?updatedFrom=website`, data.savePassword == "on" ? { savePassword: true } : { savePassword: false });
-//                     const res = await ApiService.patch(`/shop/${route}/${user?._id}?protectModel=${model}&updatedFrom=website`, data.savePassword == "on" ? { savePassword: true } : { savePassword: false });
-//                     console.log(res.data.document);
-//                     if (res.data.isSuccess) {
-
-//                         if (!user?.userTypes?.includes("CUSTOMER")) getTestAccount(user)
-
-//                         if (res?.data.document.active) {
-
-//                             dispatch({ type: "LOGIN_SUCCESS", payload: res.data.document });
-//                             // customerDispatch({ type: "SELECT_CUSTOMER", payload: res.data.document });
-
-//                             if (user.userTypes.includes("CUSTOMER")) {
-//                                 let array = []
-//                                 array.push(user)
-
-//                                 // Push empty array into local storage
-//                                 localStorage.setItem("PCTeRP.CUSTOMER_IDS", JSON.stringify(array))
-
-//                                 // Load the selected customer into reducer
-//                                 customerDispatch({ type: "SELECT_CUSTOMER", payload: user });
-
-//                                 showMessage("You have successfully logged in!", "success")
-//                                 navigate(`/?division=${searchParams.get('division')?.toUpperCase() ? searchParams.get('division')?.toUpperCase() : 'NORTHCOTT'}`)
-//                             } else {
-//                                 showMessage("You have successfully logged in!. Please select region and customer.", "success")
-//                                 navigate(`/region-customer?division=${searchParams.get('division')?.toUpperCase() ? searchParams.get('division')?.toUpperCase() : 'NORTHCOTT'}`)
-
-//                             }
-
-//                         } else {
-//                             // console.log("Else")
-//                             setShow(true)
-//                             showMessage("This user does not have the access to login. Please contact with administrator.", "warning")
-//                             // alert("this user does not have the access to login. Please contact with administrator.")
-//                         }
-//                     }
-//                 } else {
-//                     showMessage("You do not have the access to login!", "worning")
-//                 }
-//             }
-
-//         } catch (error) {
-//             console.log(error.response?.data)
-//             // console.log("Else Catch")
-//             showMessage(error.response?.data.message, "error")
-//             setShow(true)
-//             dispatch({ type: "LOGIN_FAILURE" });
-
-//         }
-//     }
-
-//     const getTestAccount = async (user) => {
-//         let array = []
-//         // const customer = user?.testCustomerId
-//         const cadTestCustomer = user?.cadTestCustomerId
-//         const usdTestCustomer = user?.usdTestCustomerId
-//         // console.log(customer);
-//         if (cadTestCustomer)
-//             array.push(cadTestCustomer)
-//         if (usdTestCustomer)
-//             array.push(usdTestCustomer)
-//         console.log(array);
-
-//         // Push test customer into local storage
-//         localStorage.setItem("PCTeRP.CUSTOMER_IDS", JSON.stringify(array))
-
-//         // if (user?.testCustomerId) customerDispatch({ type: "SELECT_CUSTOMER", payload: customer });
-//         if (user?.cadTestCustomerId) customerDispatch({ type: "SELECT_CUSTOMER", payload: cadTestCustomer });
-//         if (user?.usdTestCustomerId) customerDispatch({ type: "SELECT_CUSTOMER", payload: usdTestCustomer });
-//     }
-
-//     return (
-//         <Container>
-
-//             <Form onSubmit={onSubmit}>
-//                 <TextField
-//                     register={register}
-//                     errors={errors}
-//                     field={{
-//                         description: "Please provide us your registered email address.",
-//                         label: "REGISTERED EMAIL",
-//                         fieldId: "email",
-//                         type: "email",
-//                         placeholder: "",
-//                         required: true,
-//                         validationMessage: "Please enter the email of the registered user!"
-//                     }}
-//                     changeHandler={null}
-//                     blurHandler={null}
-//                 />
-
-//                 <TextField
-//                     register={register}
-//                     errors={errors}
-//                     field={{
-//                         description: "Please provide us your registered email address.",
-//                         label: "PASSWORD",
-//                         fieldId: "password",
-//                         type: "password",
-//                         placeholder: "",
-//                         required: false,
-//                         validationMessage: "Please enter the email of the registered user!"
-//                     }}
-//                     changeHandler={null}
-//                     blurHandler={null}
-//                 />
-
-//                 <div style={{ display: "flex", justifyContent: "space-between", width: "450px", }}>
-//                     <CheckboxField
-//                         register={register}
-//                         errors={errors}
-//                         field={{
-//                             description: "Save password in browser",
-//                             label: "SAVE PASSWORD",
-//                             fieldId: "savePassword",
-//                             placeholder: "",
-//                             required: false,
-//                             validationMessage: "Please enter the Account Number!"
-//                         }}
-//                         changeHandler={null}
-//                         blurHandler={null}
-//                     />
-//                 </div>
-
-//                 <Button className='animet_btton' size="sm" variant="primary" type="submit" style={{ background: `linear-gradient(to bottom, ${backgroundColor} 0%,${darkBackgroundColor} 100%)`, border: 'none', transition: "all 0.2s ease" }}>
-//                     Submit
-//                 </Button> {" "}
-//                 <Button className='animet_btton' size="sm" variant="primary" type="button" as={Link} to="/forgot-password" style={{ background: `linear-gradient(to bottom, ${backgroundColor} 0%,${darkBackgroundColor} 100%)`, border: 'none' }}>
-//                     Forgot Password
-//                 </Button>
-
-//             </Form>
-
-//         </Container>
-//     )
-// }
-
-// // import React from 'react'
-// // import { useState } from 'react';
-// // import { Link } from 'react-router-dom'
-
-// // export default function Login() {
-
-// //     return (
-
-// //         <div class="login-container">
-// //             <div class="login-wrapper">
-// //                 <div class="login-title"><span>LOGIN</span></div>
-// //                 <form action="#">
-// //                     <div class="row">
-// //                         <i class="fas fa-user"></i>
-// //                         <input type="text" placeholder="Email or Phone" required />
-// //                     </div>
-// //                     <div class="row">
-// //                         <i class="fas fa-lock"></i>
-// //                         <input type="password" placeholder="Password" required />
-// //                     </div>
-// //                     <div class="pass"><a href="#">Forgot password?</a></div>
-// //                     <div class="row button">
-// //                         <input type="submit" value="LOGIN" />
-// //                     </div>
-// //                     <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
-// //                 </form>
-// //             </div>
-// //         </div>
-// //     )
-// // }
-
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  return <div>Login</div>;
+  return (
+    <div style={{ fontFamily: "Open Sans" }}>
+      <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Sign In
+          </h2>
+          <p className="mt-2 text-center text-sm text-gray-600 max-w">
+            <a href="#" className="font-medium hover:text-blue-500">
+              Welcome back! Please enter your details
+            </a>
+          </p>
+        </div>
+
+        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className=" py-8 px-4  sm:rounded-lg sm:px-10">
+            <form className="space-y-6" action="#" method="POST">
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-bold text-gray-700 "
+                >
+                  Email*
+                </label>
+                <div className="mt-1">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-bold text-gray-700"
+                >
+                  Password*
+                </label>
+                <div className="mt-1">
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autoComplete="current-password"
+                    required
+                    className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    placeholder="Enter your password"
+                  />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <input
+                    id="remember_me"
+                    name="remember_me"
+                    type="checkbox"
+                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                  />
+                  <label
+                    htmlFor="remember_me"
+                    className="ml-2 block text-sm text-gray-900"
+                  >
+                    Remember me
+                  </label>
+                </div>
+
+                <div className="text-sm">
+                  <Link to={"/forgot-password"} className="font-medium ">
+                    Forgot password?
+                  </Link>
+                </div>
+              </div>
+
+              <div>
+                <Link to={"/retailerRegistration"}>
+                  <button
+                    type="submit"
+                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-300 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  >
+                    Sign in
+                  </button>
+                </Link>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="flex justify-center text-[#6B6B66] ">
+                  Not signed up?
+                </span>
+                <span className="flex justify-center text-[#6B6B66]">
+                  Contact our support
+                </span>
+              </div>
+            </form>
+            <div className="mt-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Login;

@@ -1,78 +1,63 @@
-// import React, { useContext, useEffect, useState } from 'react'
-// import { Form, Button, Container, Alert } from 'react-bootstrap'
-// import CustomSelectField from '../../components/elements/fields/CustomSelectField';
-// import ApiService from '../../helpers/ApiServices';
-// import { useForm } from 'react-hook-form'
-// import TextField from '../../components/elements/fields/TextField';
-// import { useNavigate } from 'react-router-dom';
-// import { getModelRoute, showMessage } from '../../helpers/Utils';
-// import { BrandIconContext } from '../../states/contexts/BrandIconContext';
-// import { UserContext } from '../../states/contexts/UserContext';
+import { Link } from "react-router-dom";
 
-// export default function ForgotPassword() {
-//     const { backgroundColor, color, darkBackgroundColor } = useContext(BrandIconContext)
-//     const { user } = useContext(UserContext)
+export default function ForgotPassword() {
+  return (
+    <div style={{ fontFamily: "Open Sans" }}>
+      <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Reset Password
+          </h2>
+          <p className="mt-2 text-center text-sm text-gray-600 max-w">
+            <a href="#" className="font-medium hover:text-blue-500">
+              Enter your email address below to reset your password.
+            </a>
+          </p>
+        </div>
 
-//     const { register, control, reset, handleSubmit, getValues, setValue, watch, formState: { errors } } = useForm();
-//     const navigate = useNavigate();
+        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className=" py-8 px-4  sm:rounded-lg sm:px-10">
+            <form className="space-y-6" action="#" method="POST">
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-bold text-gray-700 "
+                >
+                  Email*
+                </label>
+                <div className="mt-1">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    className="appearance-none  relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 sm:text-sm"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </div>
 
-//     const onSubmit = (formData) => {
-//         return forgotPasswordHander(formData);
-//     }
-
-//     const forgotPasswordHander = (email) => {
-//         console.log(email)
-//         ApiService.patch(`shop/user/forgotPassword?model=${getModelRoute(user).model}`, email).then(response => {
-//             console.log(response);
-
-//             if (response.data.isSuccess) {
-//                 // showMessage("A reset link is sent to given email. Please check your mail and click on reset link button.", "info")
-//                 showMessage(response.data.message, "info")
-//                 navigate('/')
-//             } else {
-//                 // console.log(response?.data.message)
-//                 // showMessage(response?.data.message, "error")
-//             }
-
-//         }).catch(err => {
-//             showMessage(err.response.data.message, "error")
-//         })
-//     }
-
-//     return (
-//         <Container>
-//             <Alert show={true} variant="info">
-//                 <h4> If you need assistance recovering or creating an account, please call or email the below contacts:</h4>
-
-//                 <h6> Northcott Canada: info@northcott.com 905-760-0072 </h6>
-//                 <h6> Northcott USA: info2@northcott.com 201-672-9600 </h6>
-//             </Alert>
-
-//             <Form onSubmit={handleSubmit(onSubmit)}>
-//                 <TextField
-//                     register={register}
-//                     errors={errors}
-//                     field={{
-//                         description: "Please provide us your registered email address.",
-//                         label: "REGISTERED EMAIL",
-//                         fieldId: "email",
-//                         placeholder: "",
-//                         required: true,
-//                         validationMessage: "Please enter the email of the registered user!"
-//                     }}
-//                     changeHandler={null}
-//                     blurHandler={null}
-//                 />
-//                 <Button className='mt-2 animet_btton' type="submit" style={{ background: `linear-gradient(to bottom, ${backgroundColor} 0%,${darkBackgroundColor} 100%)`, border: "none" }}>Submit</Button>
-//             </Form>
-//         </Container>
-//     )
-// }
-
-import React from "react";
-
-const ForgotPassword = () => {
-  return <div>ForgotPassword</div>;
-};
-
-export default ForgotPassword;
+              <div>
+                <Link to={"/passwordEmailSent"}>
+                  <button
+                    type="submit"
+                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-300 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  >
+                    SUBMIT
+                  </button>
+                </Link>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="flex justify-center text-[#6B6B66] cursor-pointer">
+                  <Link to={"/login"}>Return to sign in</Link>
+                </span>
+              </div>
+            </form>
+            <div className="mt-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

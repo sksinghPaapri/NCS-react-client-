@@ -44,6 +44,10 @@ import InvoiceDetails from "../pages/invoice/InvoiceDetais";
 import SearchDetail from "../pages/search/SearchDetail";
 import PrintProductFinder from "../pages/print/PrintProductFinder";
 import Body from "../components/shared/headers/HomePageContent/Body";
+import RegionCustomers from "../pages/login/RegionCustomers";
+import PasswordEmailSent from "../pages/auth/PasswordEmailSent";
+import EmailNotFound from "../pages/auth/EmailNotFound";
+import RetailerRegistration from "../pages/login/RetailerRegistration";
 
 export default function AppRoutes() {
   const [userId, setUserId] = useState();
@@ -297,12 +301,18 @@ export default function AppRoutes() {
       <AppHeader />
       <Routes>
         {/* <Route path="/*" element={<Home />} /> */}
-        {/* <Route path="/*" element={<Body />} /> */}
+        <Route path="/*" element={<Body />} />
         {/* <Route path="/*" element={<ProductCollection />} /> */}
         {/* <Route path="/*" element={<ProductDetail />} /> */}
         {/* <Route path="/*" element={<CartDetail />} /> */}
-        <Route path="/*" element={<Productfinder />} />
+        {/* <Route path="/*" element={<Productfinder />} /> */}
         <Route path="/login" element={<Login />} />
+        <Route
+          path="/retailerRegistration"
+          element={<RetailerRegistration />}
+        />
+        <Route path="/regionCustomers" element={<RegionCustomers />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/help" element={<Help />} />
         <Route
@@ -310,6 +320,8 @@ export default function AppRoutes() {
           element={user || customer ? <RegionAndCustomer /> : <Body />}
         />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/passwordEmailSent" element={<PasswordEmailSent />} />
+        <Route path="/emailNotFound" element={<EmailNotFound />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
         {/* <Route path="/profile" element={<UserProfile />} /> */}
         <Route
@@ -335,7 +347,8 @@ export default function AppRoutes() {
         <Route path="/product-category" element={<ProductCategory />} />
         <Route path="/product-collection/:id" element={<ProductCollection />} />
         <Route path="/product-detail/:id" element={<ProductDetail />} />
-        <Route path="/product-finder/:id" element={<Productfinder />} />
+        {/* <Route path="/product-finder/:id" element={<Productfinder />} /> */}
+        <Route path="/product-finder" element={<Productfinder />} />
         <Route path="/print/:id" element={<PrintProductFinder />} />
         <Route
           path="/rapid-order"

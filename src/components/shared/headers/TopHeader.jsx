@@ -436,12 +436,12 @@ export default function TopHeader() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center">
             {!isLoggedIn ? (
               <div>
-                <a
-                  href="#"
+                <Link
+                  to="/login"
                   className="text-sm text-white font-semibold hover:text-[#A4A3A0]"
                 >
                   Log In
-                </a>{" "}
+                </Link>{" "}
               </div>
             ) : (
               <div className="text-sm text-white font-semibold hover:text-[#A4A3A0]">
@@ -699,12 +699,12 @@ export default function TopHeader() {
         <li className="flex m-2 items-center justify-between text-2xl h-16">
           {!isLoggedIn ? (
             <div>
-              <a
-                href="#"
+              <Link
+                to="/login"
                 className="text-sm text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
               >
                 Log In
-              </a>{" "}
+              </Link>{" "}
             </div>
           ) : (
             <div className="flex items-center justify-center gap-2 sm:mx-2">
@@ -777,12 +777,12 @@ export default function TopHeader() {
                                   <li className="bg-[#686661] flex justify-between text-2xl p-2">
                                     {!isLoggedIn ? (
                                       <div>
-                                        <a
-                                          href="#"
+                                        <Link
+                                          to="/login"
                                           className="text-sm text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
                                         >
                                           Log In
-                                        </a>{" "}
+                                        </Link>{" "}
                                       </div>
                                     ) : (
                                       <div className="flex items-center justify-center gap-2 sm:mx-2">
