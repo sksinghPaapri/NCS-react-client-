@@ -9,12 +9,15 @@ import ProductImglarge from "../../assets/ProductFinder/ProductImglarge.svg";
 import CNDflag from "../../assets/ProductFinder/CNDflag.svg";
 import InStore from "../../assets/ProductFinder/InStore.svg";
 import Online from "../../assets/ProductFinder/Online.svg";
+import ProductFinderModalDetail from "./ProductFinderModalDetail";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const Productfinder = () => {
+  // modalBox
+  const [openModal, setOpenModal] = useState(null);
   const [rowData, setRowData] = useState([
     { make: "Tesla", model: "Model Y", price: 64950, electric: true },
     { make: "Ford", model: "F-Series", price: 33850, electric: false },
@@ -560,7 +563,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={USflag}
+                      alt="US"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -746,7 +761,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={CNDflag}
+                      alt="CND"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -932,7 +959,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={USflag}
+                      alt="US"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -1118,7 +1157,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={CNDflag}
+                      alt="CND"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -1304,7 +1355,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={USflag}
+                      alt="US"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -1490,7 +1553,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={CNDflag}
+                      alt="CND"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -1676,7 +1751,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={USflag}
+                      alt="US"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -1862,7 +1949,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={CNDflag}
+                      alt="CND"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -2048,7 +2147,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={USflag}
+                      alt="US"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -2234,7 +2345,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={CNDflag}
+                      alt="CND"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -2420,7 +2543,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={USflag}
+                      alt="US"
+                      onClick={() => setOpenModal(true)}
+                    />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>
@@ -2606,1495 +2741,19 @@ const Productfinder = () => {
                   className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
                 >
                   <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
-                    <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
-                      STORE NAME (CI)
-                    </p>
-                    <img src={InStore} alt="Instore" className="h-5 w-5" />
-                    <img src={Online} alt="Online" className="h-5 w-5" />
-                  </div>
-                </th>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
+                    {/* modal */}
+                    <div>
+                      <ProductFinderModalDetail
+                        showModal={openModal === true}
+                        cancelOption={() => setOpenModal(null)}
+                      />
+                    </div>
+                    <img
+                      className="cursor-pointer"
+                      src={CNDflag}
+                      alt="CND"
+                      onClick={() => setOpenModal(true)}
                     />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-              </tr>
-              <tr className="bg-[#F5F4F1] border-b flex">
-                <th
-                  scope="col"
-                  className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
-                >
-                  <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
-                    <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
-                      STORE NAME (CI)
-                    </p>
-                    <img src={InStore} alt="Instore" className="h-5 w-5" />
-                    <img src={Online} alt="Online" className="h-5 w-5" />
-                  </div>
-                </th>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-              </tr>
-              <tr className="bg-white border-b flex">
-                <th
-                  scope="col"
-                  className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
-                >
-                  <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
-                    <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
-                      STORE NAME (CI)
-                    </p>
-                    <img src={InStore} alt="Instore" className="h-5 w-5" />
-                    <img src={Online} alt="Online" className="h-5 w-5" />
-                  </div>
-                </th>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-              </tr>
-              <tr className="bg-[#F5F4F1] border-b flex">
-                <th
-                  scope="col"
-                  className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
-                >
-                  <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
-                    <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
-                      STORE NAME (CI)
-                    </p>
-                    <img src={InStore} alt="Instore" className="h-5 w-5" />
-                    <img src={Online} alt="Online" className="h-5 w-5" />
-                  </div>
-                </th>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-              </tr>
-              <tr className="bg-white border-b flex">
-                <th
-                  scope="col"
-                  className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
-                >
-                  <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
-                    <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
-                      STORE NAME (CI)
-                    </p>
-                    <img src={InStore} alt="Instore" className="h-5 w-5" />
-                    <img src={Online} alt="Online" className="h-5 w-5" />
-                  </div>
-                </th>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-              </tr>
-              <tr className="bg-[#F5F4F1] border-b flex">
-                <th
-                  scope="col"
-                  className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
-                >
-                  <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
-                    <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
-                      STORE NAME (CI)
-                    </p>
-                    <img src={InStore} alt="Instore" className="h-5 w-5" />
-                    <img src={Online} alt="Online" className="h-5 w-5" />
-                  </div>
-                </th>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-              </tr>
-              <tr className="bg-white border-b flex">
-                <th
-                  scope="col"
-                  className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
-                >
-                  <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
-                    <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
-                      STORE NAME (CI)
-                    </p>
-                    <img src={InStore} alt="Instore" className="h-5 w-5" />
-                    <img src={Online} alt="Online" className="h-5 w-5" />
-                  </div>
-                </th>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-              </tr>
-              <tr className="bg-[#F5F4F1] border-b flex">
-                <th
-                  scope="col"
-                  className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
-                >
-                  <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={USflag} alt="US" />
-                    <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
-                      STORE NAME (CI)
-                    </p>
-                    <img src={InStore} alt="Instore" className="h-5 w-5" />
-                    <img src={Online} alt="Online" className="h-5 w-5" />
-                  </div>
-                </th>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                </td>
-                <td
-                  scope="col"
-                  className="border flex items-center justify-center w-[60px] h-[35px] sm:w-[80px] sm:h-[40px] xl:w-[120px] xl:h-[45px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-                </td>
-              </tr>
-              <tr className="bg-white border-b flex">
-                <th
-                  scope="col"
-                  className="border w-[180px] h-[35px] sm:w-[280px] sm:h-[40px] xl:w-[360px] xl:h-[45px] flex items-center justify-center"
-                >
-                  <div className="w-[154px] h-[15px] sm:w-[225px] sm:h-[20px] xl:w-[244px] xl:h-[21px] flex gap-1 sm:gap-2 items-center justify-center">
-                    <img src={CNDflag} alt="CND" />
                     <p className="text-[11px] text-nowrap xl:text-[14px] font-bold">
                       STORE NAME (CI)
                     </p>

@@ -1,8 +1,8 @@
 const Breadcrum = () => {
   return (
-    <div className="mt-5">
+    <div className="">
       <nav
-        className="flex mb-14 max-w-7xl mx-5 sm:mx-10 lg:mx-[80px] 3xl:mx-[200px]"
+        className="flex mt-5 mb-14 max-w-7xl mx-5 sm:mx-10 lg:mx-[80px] 3xl:mx-[200px]"
         aria-label="Breadcrumb"
       >
         <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">

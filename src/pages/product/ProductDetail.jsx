@@ -17,7 +17,9 @@ import ProductCard11 from "../../assets/ProductPage/ProductCard11.svg";
 import ProductCard12 from "../../assets/ProductPage/ProductCard12.svg";
 import ProductCard13 from "../../assets/ProductPage/ProductCard13.svg";
 import ProductCard14 from "../../assets/ProductPage/ProductCard14.svg";
-import Breadcrum from "./Breadcrum";
+import BigProduct1 from "../../assets/ProductPage/BigCard/BigProduct1.svg";
+import BigProduct2 from "../../assets/ProductPage/BigCard/BigProduct2.svg";
+import BigProduct3 from "../../assets/ProductPage/BigCard/BigProduct3.svg";
 import Modal from "./Modal";
 import { Link } from "react-router-dom";
 
@@ -40,6 +42,12 @@ const singleColorWay = [
   { name: ProductCard11, "price per m": 8.95 },
   { name: ProductCard12, "price per m": 8.95 },
 ];
+const bigCardImage = [
+  { name: BigProduct1, "price per m": 8.95 },
+  { name: BigProduct2, "price per m": 8.95 },
+  { name: BigProduct3, "price per m": 8.95 },
+];
+
 const patternColorWay = [ProductCard13, ProductCard14];
 
 const ProductDetail = () => {
@@ -49,184 +57,193 @@ const ProductDetail = () => {
   // modalBox
   const [openModal, setOpenModal] = useState(null);
 
+  const [normalCardSizeOnly, setNormalCardSizeOnly] = useState(false);
+  const [bigAndNormalCardSize, setBigAndNormalCardSIze] = useState(true);
+  const [multiPanel, setMultiPanel] = useState(false);
+
   return (
     <>
-      <div className="bg-white">
+      <div
+        className="bg-white flex flex-col items-center justify-center gap-[60px] sm:gap-20 xl:gap-[60px]"
+        style={{ fontFamily: "Open Sans" }}
+      >
         {/* section 1 */}
         {/* top banner  */}
-        <div className=" bg-white w-full">
+        <div className="w-[320px] sm:w-[768px] h-[235px] sm:h-[257px] lg:w-[1024px] xl:w-[1440px] xl:h-[296px] 2xl:w-[2560px]">
           <img
             src={PageBanner}
             alt="Image"
-            className="object-cover w-full h-[45vh] md:h-[80vh]"
+            className="object-cover w-[320px] sm:w-[768px] h-[235px] sm:h-[257px] lg:w-[1024px] xl:w-[1440px] xl:h-[296px] 2xl:w-[2560px]"
           />
         </div>
 
         {/* section 2 */}
-        <div className="mx-4 lg:mx-0 mt-10 h-auto grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center">
-          <div className="col-span-1 flex flex-col gap-5 text-center lg:text-left">
-            <div className="text-sm">
+        <div className="w-[320px] sm:w-[744px] h-[376px] sm:h-[222px] xl:w-[1160px] xl:h-[96px] 2xl:w-[1320px] grid grid-cols-1 xl:grid-cols-2 items-center justify-items-center xl:items-end xl:justify-items-start gap-10 xl:gap-0 ">
+          <div className="w-[280px] h-[132px] sm:w-[539px] sm:h-[100px] xl:h-[96px] col-span-1 flex flex-col gap-[10px] lg:gap-2 text-center lg:text-left">
+            <div className="text-xs">
               <p>by Simon Treadwell</p>
             </div>
-            <div className="text-3xl lg:text-2xl font-bold -mt-2">
+            <div className="text-[28px] lg:text-[32px] font-bold">
               <p>'Twas The Night Before Christmas</p>
             </div>
-            <div className="-mt-2 mb-3 text-s">
+            <div className="text-xs">
               <p>Coming to stores in June, 2024</p>
             </div>
           </div>
 
-          <div className="my-10 flex flex-col sm:flex-row items-center justify-between lg:justify-end mx-auto gap-5 sm:gap-10 lg:gap-5  text-center">
+          <div className="xl:ms-[150px] 2xl:ms-52 w-[204px] h-[204px] sm:w-[448px] sm:h-[82px] xl:w-[428px] xl:h-[82px] flex flex-col sm:flex-row items-center justify-between lg:justify-end mx-auto gap-10 sm:gap-5 text-center">
             {/* product finder  */}
-            <div className="text-center text-xl sm:mb-5 font-bold">
-              <p className="text-left mb-5 sm:mb-0">Product Finder</p>
+            <div className="text-center text-base font-bold flex flex-col gap-[15px]">
+              <p className="text-left">Product Finder</p>
 
               {/*product finder dropdown input box */}
-              <Menu
-                as="div"
-                className=" relative flex justify-start text-left sm:mt-5"
-              >
-                <div>
-                  <Menu.Button className="inline-flex w-60 lg:w-48 h-12 lg:h-10 items-center justify-between gap-x-1.5 bg-white px-3 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 font-sm">
-                    <div className="text-sm font-normal">Find Retailers</div>
-                    <ChevronDownIcon
-                      className="-mr-1 h-5 w-5 text-gray-400"
-                      aria-hidden="true"
-                    />
-                  </Menu.Button>
-                </div>
-
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
+              <div className="w-[204px] h-[40px]">
+                <Menu
+                  as="div"
+                  className=" relative flex justify-start text-left"
                 >
-                  <Menu.Items className="absolute z-10 mt-2 w-40 sm:w-56 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/product-finder"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Online Retailers
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/product-finder"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            In-Store Shopping
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/product-finder"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            License
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <form method="POST" action="#">
+                  <div>
+                    <Menu.Button className="inline-flex w-[204px] h-[40px] items-center justify-between gap-x-1.5 bg-white px-3 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 font-sm">
+                      <div className="text-sm font-normal">Find Retailers</div>
+                      <ChevronDownIcon
+                        className="-mr-1 h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                    </Menu.Button>
+                  </div>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute z-10 mt-2 w-[204px] h-[40px] rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div className="py-1">
                         <Menu.Item>
                           {({ active }) => (
-                            <button
-                              type="submit"
+                            <Link
+                              to="/product-finder"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
                                   : "text-gray-700",
-                                "block w-full px-4 py-2 text-left text-sm"
+                                "block px-4 py-2 text-sm"
                               )}
                             >
-                              International
-                            </button>
+                              Online Retailers
+                            </Link>
                           )}
                         </Menu.Item>
-                      </form>
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              to="/product-finder"
+                              className={classNames(
+                                active
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700",
+                                "block px-4 py-2 text-sm"
+                              )}
+                            >
+                              In-Store Shopping
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              to="/product-finder"
+                              className={classNames(
+                                active
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700",
+                                "block px-4 py-2 text-sm"
+                              )}
+                            >
+                              License
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <form method="POST" action="#">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <button
+                                type="submit"
+                                className={classNames(
+                                  active
+                                    ? "bg-gray-100 text-gray-900"
+                                    : "text-gray-700",
+                                  "block w-full px-4 py-2 text-left text-sm"
+                                )}
+                              >
+                                International
+                              </button>
+                            )}
+                          </Menu.Item>
+                        </form>
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
 
-              {/*product finder Dropdown menu  */}
-              <div
-                id="dropdown"
-                className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-              >
-                <ul
-                  className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                  aria-labelledby="dropdownDefaultButton"
+                {/*product finder Dropdown menu  */}
+                {/* <div
+                  id="dropdown"
+                  className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
                 >
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Earnings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Sign out
-                    </a>
-                  </li>
-                </ul>
+                  <ul
+                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownDefaultButton"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Earnings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Sign out
+                      </a>
+                    </li>
+                  </ul>
+                </div> */}
               </div>
             </div>
             {/* fabric files */}
-            <div>
-              <div className="mt-5 text-xl font-bold">
+            <div className="flex flex-col gap-[15px]">
+              <div className="text-base font-bold">
                 <p className="text-left">Fabric Files</p>
               </div>
-              <div className="flex justify-start mt-5">
+              <div className="flex justify-start w-[204px] h-[40px]">
                 <button
                   type="button"
-                  className=" text-white bg-[#E2A856] h-12 lg:h-10 rounded-sm uppercase px-1 py-2.5 text-center mb-10 w-60 lg:w-52 lg:tracking-tighter"
+                  className=" text-white bg-[#E2A856] rounded-sm uppercase text-xs px-1 py-2.5 text-center mb-10 w-[204px] h-[40px] lg:tracking-tighter"
                 >
                   Download fabric files
                 </button>
@@ -239,8 +256,8 @@ const ProductDetail = () => {
         <div
           className={`${
             login
-              ? "mx-4 sm:mx-auto bg-[#D9D2CB] sm:w-[90vw] h-[65vh] sm:h-[40vh] lg:w-[90vw] xl:w-[79vw] flex items-center justify-items-center text-center py-2 px-8 font-bold"
-              : "mx-4 sm:mx-auto bg-white sm:w-[90vw] h-[65vh] sm:h-[40vh] lg:w-[90vw] xl:w-[79vw] flex items-center justify-items-center text-center py-2 px-8 font-bold"
+              ? "mx-auto bg-[#D9D2CB] w-[280px] h-[276px] sm:w-[664px] sm:h-[132px] xl:w-[1160px] xl:h-[114px] 2xl:w-[1320px] flex items-center justify-items-center text-center font-bold px-[30px] py-[40px] text-base"
+              : "mx-auto bg-white w-[280px] h-[276px] sm:w-[664px] sm:h-[132px] xl:w-[1160px] xl:h-[114px] 2xl:w-[1320px] flex items-center justify-items-center text-center font-bold px-[30px] py-[40px] text-base"
           }`}
         >
           <p>
@@ -252,33 +269,57 @@ const ProductDetail = () => {
 
         {/* section 4 */}
         {/* breadcrum */}
-        <div className="h-auto mt-16 sm:mx-5 xl:mx-[7.5rem]">
-          <Breadcrum />
+        <div className="w-[280px] h-[18px] sm:w-[664px] sm:h-[18px] xl:w-[1160px] 2xl:w-[1320px] flex justify-start">
+          <nav className="" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+              <li className="inline-flex items-center">
+                <p className="inline-flex items-center text-sm font-medium text-[#6B6B66] hover:text-[#090800] hover:underline">
+                  Home
+                </p>
+              </li>
+              <li>
+                <div className="flex items-center">
+                  {" / "}
+                  <p className="ms-1 text-sm font-medium text-[#6B6B66] hover:text-[#090800] hover:underline md:ms-2">
+                    Category
+                  </p>
+                </div>
+              </li>
+              <li aria-current="page">
+                <div className="flex items-center">
+                  {" / "}
+                  <span className="ms-1 text-sm font-medium text-[#6B6B66] md:ms-2">
+                    Holiday 2023 Release Collections
+                  </span>
+                </div>
+              </li>
+            </ol>
+          </nav>
         </div>
+
         {/* products count and buttons */}
-        <div className="grid grid-cols-1 items-center justify-center md:grid-cols-4 mx-6 sm:mx-9 lg:mx-12 xl:mx-36 2xl:mx-64 sm:gap-28">
-          <div className="col-span-1 my-2 text-center sm:text-start">
+        <div className="flex flex-col sm:flex-row justify-center sm:justify-between w-[280px] h-[159px] sm:w-[664px] sm:h-[39px] xl:w-[1160px] 2xl:w-[1320px] gap-10 sm:gap-0 ">
+          <div className="text-sm text-nowrap text-center sm:text-start w-[280px] sm:w-[78px] h-[39px] flex items-center justify-center sm:items-end">
             {singleColorWay.length} Products
           </div>
           {login && (
-            <div className="col-span-3">
-              <div className="grid grid-cols-1 sm:grid-cols-2 my-8 gap-5 sm:gap-0 lg:justify-items-end">
-                <div className="flex flex-row sm:flex-col items-center justify-center">
-                  <button
-                    type="button"
-                    className=" text-white bg-[#E2A856] tracking-wider h-12 rounded-md px-1 py-2.5 text-center w-52"
-                  >
-                    Add Full Collection
-                  </button>
-                </div>
-                <div className="flex justify-center">
-                  <button
-                    type="button"
-                    className=" text-white bg-[#E2A856] h-12 rounded-md py-2.5 px-1 text-center w-72 sm:w-64"
-                  >
-                    Add Full Collection - Half Piece
-                  </button>
-                </div>
+            <div className="w-[280px] h-[98px] sm:w-[478px] sm:h-[39px] flex flex-col sm:flex-row items-center justify-between">
+              {/* buttons */}
+              <div className="w-[184px] h-[39px] flex items-center justify-center">
+                <button
+                  type="button"
+                  className=" text-white bg-[#E2A856] text-base font-semibold rounded w-[184px] h-[39px] text-center"
+                >
+                  Add Full Collection
+                </button>
+              </div>
+              <div className="w-[274px] h-[39px] flex justify-center">
+                <button
+                  type="button"
+                  className=" text-white bg-[#E2A856] text-base font-semibold rounded w-[274px] h-[39px] text-center"
+                >
+                  Add Full Collection - Half Piece
+                </button>
               </div>
             </div>
           )}
@@ -287,147 +328,612 @@ const ProductDetail = () => {
         {/* section 5 */}
         {/* product section */}
         {/* horizontal line  */}
-        <div className="mx-5 sm:mx-7 lg:mx-12 min-w-72 bg-gray-300 h-[0.1rem] sm:w-[93vw] lg:w-[91vw] xl:w-[81vw] xl:mx-auto my-3"></div>
+        <div className="mx-5 sm:mx-7 lg:mx-12 min-w-72 bg-gray-300 h-[0.1rem] sm:w-[93vw] lg:w-[91vw] xl:w-[81vw] 2xl:w-[86vw] xl:mx-auto"></div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-10 xl:gap-2 items-center justify-center">
-          <div className="col-span-1"></div>
-          <div className="col-span-1">
+        <div className="w-[280px] h-[96px] sm:w-[664px] sm:h-[96px] xl:w-[1160px] 2xl:w-[1320px] xl:h-[39px] grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-3 gap-[30px] xl:gap-0 items-center justify-center xl:justify-between">
+          <div className="col-span-1 hidden xl:flex h-[39px]"></div>
+          <div className="col-span-1 h-[39px] flex items-center justify-center">
             <p className="font-bold text-center">Single Colorway</p>
           </div>
           {login && (
-            <div className="flex justify-center col-span-1 mt-0 lg:mt-5">
-              <button
-                type="button"
-                className=" text-black bg-white border-2 border-black h-12 rounded-lg font-semibold px-1 py-2.5 text-center mb-5 w-52"
-              >
-                Add This Colorway Only
-              </button>
+            <div className="flex justify-center xl:justify-end col-span-1 h-[39px]">
+              <div className="w-[280px] sm:w-[664px] xl:w-[223px] flex items-center justify-center">
+                <button
+                  type="button"
+                  className=" text-black bg-white border-2 border-black h-[39px] rounded font-semibold text-center w-[223px]"
+                >
+                  Add This Colorway Only
+                </button>
+              </div>
             </div>
           )}
         </div>
-        {/* single colorway */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 justify-items-center gap-4 sm:gap-10 md:gap-12 grid-flow-row my-10 mx-4 md:mx-12 xl:mx-32">
-          {singleColorWay?.map((item, index) => (
-            <div
-              key={index}
-              className="w-[130px] h-[266px] sm:h-[326px] sm:w-[180px] cursor-pointer"
-            >
-              {/* modal */}
-              <div>
-                <Modal
-                  showModal={openModal === index}
-                  cancelOption={() => setOpenModal(null)}
-                  index={index + 1}
-                />
-              </div>
-
+        {/* single colorway for normal card size only*/}
+        {normalCardSizeOnly && (
+          <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-10">
+            {singleColorWay?.map((item, index) => (
               <div
-                onClick={() => {
-                  setOpenModal(index);
-                }}
+                key={index}
+                className="w-[130px] h-[266px] sm:h-[326px] sm:w-[180px] cursor-pointer"
               >
-                <div className="flex flex-col gap-[15px] sm:gap-[20px] border">
-                  <img
-                    src={item.name}
-                    alt="Product"
-                    className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                {/* modal */}
+                <div>
+                  <Modal
+                    showModal={openModal === index}
+                    cancelOption={() => setOpenModal(null)}
+                    index={index + 1}
                   />
-                  <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
-                    <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
-                      <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
-                        'Twas The Night Before Ch...
-                      </p>
-                      <p className="mt-1 font-semibold w-[120px] h-[26px] sm:h-[20px] sm:w-[120px]">
-                        27025-10
-                      </p>
-                      {/* for log in user */}
-                      <div className="w-[120px] h-[50px] sm:w-[160px]">
-                        {login && (
-                          <div className="flex gap-3 md:gap-9 items-center justify-center">
-                            <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
-                              ${item["price per m"]}
-                              <span className="text-xs text-gray-600 font-normal">
-                                / m{" "}
-                              </span>
-                            </div>
-                            <div className="flex flex-col gap-2 items-center justify-center">
-                              {/* quantity button */}
-                              <div className="w-[60px]">
-                                <form className="max-w-xs mx-auto">
-                                  <label
-                                    htmlFor="quantity-input"
-                                    className="block mb-2 text-sm font-medium text-gray-900"
-                                  ></label>
-                                  <div className="relative flex items-center max-w-[8rem]">
-                                    <button
-                                      type="button"
-                                      id="decrement-button"
-                                      data-input-counter-decrement="quantity-input"
-                                      className="bg-white border border-gray-300 rounded-s p-1 h-5"
-                                    >
-                                      <svg
-                                        className="w-2 h-2 text-gray-900"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 18 2"
-                                      >
-                                        <path
-                                          stroke="currentColor"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth="2"
-                                          d="M1 1h16"
-                                        />
-                                      </svg>
-                                    </button>
-                                    <input
-                                      type="text"
-                                      id="quantity-input"
-                                      data-input-counter
-                                      aria-describedby="helper-text-explanation"
-                                      className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
-                                      placeholder="10"
-                                    />
-                                    <button
-                                      type="button"
-                                      id="increment-button"
-                                      data-input-counter-increment="quantity-input"
-                                      className="bg-white border border-gray-300 rounded-e p-1 h-5"
-                                    >
-                                      <svg
-                                        className="w-2 h-2 text-gray-900"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 18 18"
-                                      >
-                                        <path
-                                          stroke="currentColor"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth="2"
-                                          d="M9 1v16M1 9h16"
-                                        />
-                                      </svg>
-                                    </button>
-                                  </div>
-                                </form>
-                              </div>
+                </div>
 
-                              {/* add button */}
-                              <div>
-                                <button
-                                  type="button"
-                                  className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
-                                >
-                                  Add
-                                </button>
+                <div
+                  onClick={() => {
+                    setOpenModal(index);
+                  }}
+                >
+                  <div className="flex flex-col gap-[15px] sm:gap-[20px] border">
+                    <img
+                      src={item.name}
+                      alt="Product"
+                      className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                    />
+                    <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
+                      <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                        <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
+                          'Twas The Night Before Ch...
+                        </p>
+                        <p className="mt-1 font-semibold w-[120px] h-[26px] sm:h-[20px] sm:w-[120px]">
+                          27025-10
+                        </p>
+                        {/* for log in user */}
+                        <div className="w-[120px] h-[50px] sm:w-[160px]">
+                          {login && (
+                            <div className="flex gap-3 md:gap-9 items-center justify-center">
+                              <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                ${item["price per m"]}
+                                <span className="text-xs text-gray-600 font-normal">
+                                  / m{" "}
+                                </span>
+                              </div>
+                              <div className="flex flex-col gap-2 items-center justify-center">
+                                {/* quantity button */}
+                                <div className="w-[60px]">
+                                  <form className="max-w-xs mx-auto">
+                                    <label
+                                      htmlFor="quantity-input"
+                                      className="block mb-2 text-sm font-medium text-gray-900"
+                                    ></label>
+                                    <div className="relative flex items-center max-w-[8rem]">
+                                      <button
+                                        type="button"
+                                        id="decrement-button"
+                                        data-input-counter-decrement="quantity-input"
+                                        className="bg-white border border-gray-300 rounded-s p-1 h-5"
+                                      >
+                                        <svg
+                                          className="w-2 h-2 text-gray-900"
+                                          aria-hidden="true"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 18 2"
+                                        >
+                                          <path
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M1 1h16"
+                                          />
+                                        </svg>
+                                      </button>
+                                      <input
+                                        type="text"
+                                        id="quantity-input"
+                                        data-input-counter
+                                        aria-describedby="helper-text-explanation"
+                                        className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                        placeholder="10"
+                                      />
+                                      <button
+                                        type="button"
+                                        id="increment-button"
+                                        data-input-counter-increment="quantity-input"
+                                        className="bg-white border border-gray-300 rounded-e p-1 h-5"
+                                      >
+                                        <svg
+                                          className="w-2 h-2 text-gray-900"
+                                          aria-hidden="true"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 18 18"
+                                        >
+                                          <path
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M9 1v16M1 9h16"
+                                          />
+                                        </svg>
+                                      </button>
+                                    </div>
+                                  </form>
+                                </div>
+
+                                {/* add button */}
+                                <div>
+                                  <button
+                                    type="button"
+                                    className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
+                                  >
+                                    Add
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* single colorway for Big and normal card size*/}
+        {bigAndNormalCardSize && (
+          <div className="grid grid-cols-1">
+            <div className="w-[280px] h-fit sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-rows-1 sm:grid-rows-2 xl:grid-cols-4 gap-0 xl:gap-20">
+              {/* Big card  */}
+              <div className="sm:row-span-1 xl:col-span-1">
+                <div className="h-auto w-[280px] sm:w-[664px] xl:w-[250px] grid sm:grid-cols-2 xl:grid-cols-1 mx-auto justify-items-center grid-flow-row gap-10">
+                  {bigCardImage?.map((item, index) => (
+                    <div
+                      key={index}
+                      className="w-[250px] h-[408px] cursor-pointer"
+                    >
+                      {/* modal */}
+                      <div>
+                        <Modal
+                          showModal={openModal === index}
+                          cancelOption={() => setOpenModal(null)}
+                          index={index + 1}
+                        />
+                      </div>
+
+                      <div
+                        onClick={() => {
+                          setOpenModal(index);
+                        }}
+                      >
+                        <div className="flex flex-col sm:gap-[20px] border">
+                          <div className="w-[250px] h-[250px] flex items-center justify-center border">
+                            <img
+                              src={item.name}
+                              alt="Product"
+                              className="h-[230px] w-[230px] object-cover"
+                            />
+                          </div>
+                          <div className="w-[250px] h-[138px] cursor-pointer flex items-start justify-center border border-t-0">
+                            <div className="text-xs flex flex-col h-[118px] w-[230px] gap-[5px]">
+                              <div className="w-[230px] h-[21px] flex justify-between">
+                                <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-gray-500">
+                                  Design Name
+                                </p>
+                                <p className="w-[112.5px] h-[21px] overflow-hidden text-end text-nowrap text-gray-500">
+                                  Color
+                                </p>
+                              </div>
+                              <p className="mt-1 font-semibold w-[230px] h-[42px]">
+                                DP27023-44
+                              </p>
+                              {/* for log in user */}
+                              <div className="w-[230px] h-[45px]">
+                                {login && (
+                                  <div className="flex gap-3 md:gap-9 items-center justify-between">
+                                    <div className="w-[70px] h-[27px] text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                      ${item["price per m"]}
+                                      <span className="text-xs text-gray-600 font-normal">
+                                        / m{" "}
+                                      </span>
+                                    </div>
+                                    <div className="w-[60px] h-[45px] flex flex-col gap-[5px] items-center justify-center">
+                                      {/* quantity button */}
+                                      <div className="w-[60px] h-[20px]">
+                                        <form className="max-w-xs mx-auto">
+                                          <label
+                                            htmlFor="quantity-input"
+                                            className="block text-sm font-medium text-gray-900"
+                                          ></label>
+                                          <div className="relative flex items-center max-w-[8rem]">
+                                            <button
+                                              type="button"
+                                              id="decrement-button"
+                                              data-input-counter-decrement="quantity-input"
+                                              className="bg-white border border-gray-300 rounded-s p-1 h-5"
+                                            >
+                                              <svg
+                                                className="w-2 h-2 text-gray-900"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 2"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M1 1h16"
+                                                />
+                                              </svg>
+                                            </button>
+                                            <input
+                                              type="text"
+                                              id="quantity-input"
+                                              data-input-counter
+                                              aria-describedby="helper-text-explanation"
+                                              className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-xs"
+                                              placeholder="10"
+                                            />
+                                            <button
+                                              type="button"
+                                              id="increment-button"
+                                              data-input-counter-increment="quantity-input"
+                                              className="bg-white border border-gray-300 rounded-e p-1 h-5"
+                                            >
+                                              <svg
+                                                className="w-2 h-2 text-gray-900"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 18"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M9 1v16M1 9h16"
+                                                />
+                                              </svg>
+                                            </button>
+                                          </div>
+                                        </form>
+                                      </div>
+
+                                      {/* add button */}
+                                      <div className="w-[60px] h-[20px]">
+                                        <button
+                                          type="button"
+                                          className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
+                                        >
+                                          Add
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>
-                        )}
+                        </div>
                       </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* normal card  */}
+              <div className="sm:row-span-1 xl:col-span-3">
+                <div className="h-auto w-[280px] sm:w-[664px] xl:w-[870px] 2xl:w-[990px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-4 justify-items-center grid-flow-row gap-y-10 gap-x-2">
+                  {singleColorWay?.map((item, index) => (
+                    <div
+                      key={index}
+                      className="w-[130px] h-[266px] sm:h-[326px] sm:w-[180px] cursor-pointer"
+                    >
+                      {/* modal */}
+                      <div>
+                        <Modal
+                          showModal={openModal === index}
+                          cancelOption={() => setOpenModal(null)}
+                          index={index + 1}
+                        />
+                      </div>
+
+                      <div
+                        onClick={() => {
+                          setOpenModal(index);
+                        }}
+                      >
+                        <div className="flex flex-col gap-[15px] sm:gap-[20px] border">
+                          <img
+                            src={item.name}
+                            alt="Product"
+                            className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                          />
+                          <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
+                            <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                              <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
+                                'Twas The Night Before Ch...
+                              </p>
+                              <p className="mt-1 font-semibold w-[120px] h-[26px] sm:h-[20px] sm:w-[120px]">
+                                27025-10
+                              </p>
+                              {/* for log in user */}
+                              <div className="w-[120px] h-[50px] sm:w-[160px]">
+                                {login && (
+                                  <div className="flex gap-3 md:gap-9 items-center justify-center">
+                                    <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                      ${item["price per m"]}
+                                      <span className="text-xs text-gray-600 font-normal">
+                                        / m{" "}
+                                      </span>
+                                    </div>
+                                    <div className="flex flex-col gap-2 items-center justify-center">
+                                      {/* quantity button */}
+                                      <div className="w-[60px]">
+                                        <form className="max-w-xs mx-auto">
+                                          <label
+                                            htmlFor="quantity-input"
+                                            className="block mb-2 text-sm font-medium text-gray-900"
+                                          ></label>
+                                          <div className="relative flex items-center max-w-[8rem]">
+                                            <button
+                                              type="button"
+                                              id="decrement-button"
+                                              data-input-counter-decrement="quantity-input"
+                                              className="bg-white border border-gray-300 rounded-s p-1 h-5"
+                                            >
+                                              <svg
+                                                className="w-2 h-2 text-gray-900"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 2"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M1 1h16"
+                                                />
+                                              </svg>
+                                            </button>
+                                            <input
+                                              type="text"
+                                              id="quantity-input"
+                                              data-input-counter
+                                              aria-describedby="helper-text-explanation"
+                                              className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                              placeholder="10"
+                                            />
+                                            <button
+                                              type="button"
+                                              id="increment-button"
+                                              data-input-counter-increment="quantity-input"
+                                              className="bg-white border border-gray-300 rounded-e p-1 h-5"
+                                            >
+                                              <svg
+                                                className="w-2 h-2 text-gray-900"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 18"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M9 1v16M1 9h16"
+                                                />
+                                              </svg>
+                                            </button>
+                                          </div>
+                                        </form>
+                                      </div>
+
+                                      {/* add button */}
+                                      <div>
+                                        <button
+                                          type="button"
+                                          className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
+                                        >
+                                          Add
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* single colorway Multi Panel card size*/}
+        {multiPanel && (
+          <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-10">
+            {singleColorWay?.map((item, index) => (
+              <div
+                key={index}
+                className="w-[130px] h-[266px] sm:h-[326px] sm:w-[180px] cursor-pointer"
+              >
+                {/* modal */}
+                <div>
+                  <Modal
+                    showModal={openModal === index}
+                    cancelOption={() => setOpenModal(null)}
+                    index={index + 1}
+                  />
+                </div>
+
+                <div
+                  onClick={() => {
+                    setOpenModal(index);
+                  }}
+                >
+                  <div className="flex flex-col gap-[15px] sm:gap-[20px] border">
+                    <img
+                      src={item.name}
+                      alt="Product"
+                      className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                    />
+                    <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
+                      <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                        <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
+                          'Twas The Night Before Ch...
+                        </p>
+                        <p className="mt-1 font-semibold w-[120px] h-[26px] sm:h-[20px] sm:w-[120px]">
+                          27025-10
+                        </p>
+                        {/* for log in user */}
+                        <div className="w-[120px] h-[50px] sm:w-[160px]">
+                          {login && (
+                            <div className="flex gap-3 md:gap-9 items-center justify-center">
+                              <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                ${item["price per m"]}
+                                <span className="text-xs text-gray-600 font-normal">
+                                  / m{" "}
+                                </span>
+                              </div>
+                              <div className="flex flex-col gap-2 items-center justify-center">
+                                {/* quantity button */}
+                                <div className="w-[60px]">
+                                  <form className="max-w-xs mx-auto">
+                                    <label
+                                      htmlFor="quantity-input"
+                                      className="block mb-2 text-sm font-medium text-gray-900"
+                                    ></label>
+                                    <div className="relative flex items-center max-w-[8rem]">
+                                      <button
+                                        type="button"
+                                        id="decrement-button"
+                                        data-input-counter-decrement="quantity-input"
+                                        className="bg-white border border-gray-300 rounded-s p-1 h-5"
+                                      >
+                                        <svg
+                                          className="w-2 h-2 text-gray-900"
+                                          aria-hidden="true"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 18 2"
+                                        >
+                                          <path
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M1 1h16"
+                                          />
+                                        </svg>
+                                      </button>
+                                      <input
+                                        type="text"
+                                        id="quantity-input"
+                                        data-input-counter
+                                        aria-describedby="helper-text-explanation"
+                                        className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                        placeholder="10"
+                                      />
+                                      <button
+                                        type="button"
+                                        id="increment-button"
+                                        data-input-counter-increment="quantity-input"
+                                        className="bg-white border border-gray-300 rounded-e p-1 h-5"
+                                      >
+                                        <svg
+                                          className="w-2 h-2 text-gray-900"
+                                          aria-hidden="true"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 18 18"
+                                        >
+                                          <path
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M9 1v16M1 9h16"
+                                          />
+                                        </svg>
+                                      </button>
+                                    </div>
+                                  </form>
+                                </div>
+
+                                {/* add button */}
+                                <div>
+                                  <button
+                                    type="button"
+                                    className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
+                                  >
+                                    Add
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* pattern colorway */}
+        {/* horizontal line */}
+        <div className="mx-5 sm:mx-7 lg:mx-12 min-w-72 bg-gray-300 h-[0.1rem] sm:w-[93vw] lg:w-[91vw] xl:w-[81vw] 2xl:w-[86vw] xl:mx-auto"></div>
+        <div className="text-center w-[280px] h-[166px] sm:w-[664px] sm:h-[75px] xl:w-[1160px] 2xl:w-[1320px] gap-[10px]">
+          <div className="mb-3 w-[280px] h-[114px] sm:w-[664px] sm:h-[44px] xl:w-[1160px] 2xl:w-[1320px]">
+            <p className="font-bold text-[28px] sm:text-[32px]">
+              Coordinating Patterns for this Collection
+            </p>
+          </div>
+          <div className="w-[280px] h-[42px] sm:w-[664px] sm:h-[21px] xl:w-[1160px] 2xl:w-[1320px]">
+            <p className="text-gray-500 text-sm ">
+              Patterns can be purchased through your local quilt shop.
+            </p>
+          </div>
+        </div>
+        <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 mx-auto  justify-items-center grid-flow-row gap-10">
+          {patternColorWay?.map((item, index) => (
+            <div
+              key={index}
+              className="w-[250px] h-[396px] mx-4 flex justify-center border"
+            >
+              <div className="w-[250px] h-[250px]">
+                <div className="flex flex-col items-center gap-5 w-[250px] h-[230px] border-b">
+                  <img
+                    src={item}
+                    alt="Product"
+                    className="w-[230px] h-[230px] object-cover"
+                  />
+                  <div className="h-[126px] w-[250px] flex items-center justify-center">
+                    <div className="cursor-pointer flex flex-col items-start justify-center gap-5">
+                      <div className="w-[230px] h-[68px] text-gray-400">
+                        <p className="w-[230px] h-[21px] text-xs">
+                          Collection Name
+                        </p>
+                        <p className="w-[230px] h-[42px] text-gray-900 font-semibold text-sm">
+                          Window Fun - PTN3255
+                        </p>
+                      </div>
+                      <p className="text-xs text-gray-400 font-semibold w-[206px] h-[18px] text-nowrap">
+                        Click here to view fabric requirement
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -435,41 +941,6 @@ const ProductDetail = () => {
             </div>
           ))}
         </div>
-
-        {/* pattern colorway */}
-        {/* horizontal line */}
-        <div className="mx-5 sm:mx-12 lg:mx-12 min-w-72 bg-gray-300 h-[0.1rem] sm:w-[87vw] lg:w-[91vw] xl:w-[81vw] xl:mx-auto my-3"></div>
-
-        <div className="text-center my-10">
-          <div className="mb-3">
-            <p className="font-bold text-3xl">
-              Coordinating Patterns for this Collection
-            </p>
-          </div>
-          <div className="my-7 mx-5">
-            <p className="text-gray-500">
-              Patterns can be purchased through your local quilt shop.
-            </p>
-          </div>
-        </div>
-        {/* <div className="sm:w-[280px] mx-[20px] sm:mx-10 md:mx-7 grid grid-cols-1 items-center justify-center sm:grid-cols-2 lg:grid-cols-4 gap-7 sm:gap-0 grid-flow-row my-10 xl:mx-32">
-          {patternColorWay?.map((item, index) => (
-            <div
-              key={index}
-              className="w-[250px] h-[396px] mx-4 flex items-center justify-center border"
-            >
-              <div className="w-[250px] h-[250px]">
-                <div className="flex items-center justify-center">
-                  <img
-                    src={item}
-                    alt="Product"
-                    className="w-[230px] h-[230px] object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div> */}
       </div>
     </>
   );
