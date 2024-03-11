@@ -2,146 +2,156 @@ import { Link } from "react-router-dom";
 
 const RetailerRegistration = () => {
   return (
-    <div style={{ fontFamily: "Open Sans" }}>
-      <div className="min-h-screen flex flex-col justify-center py-2 sm:px-6 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Retailer Registration
-          </h2>
-          <p className="mt-4 text-center text-sm text-gray-600 max-w">
-            <a href="#" className="font-medium">
-              Please Note: Registration is available only for existing Northcott
-              customers in the USA and Canada. You will need your Northcott
-              Customer # located on any Northcott invoice.
-            </a>
-          </p>
-
-          {/* <p className="mt-4 text-center text-sm text-gray-600 max-w">
-
-                        <a href="#" className="font-medium ">
-                            If you are not a customer yet or need support, please contact one of the following:
-                        </a>
-                    </p> */}
-
-          <p className="mt-4 text-center text-sm text-gray-600 max-w whitespace-normal sm:whitespace-nowrap">
-            <a href="#" className="font-medium ">
-              If you are not a customer yet or need support, please contact one
-              of the following:
-            </a>
-          </p>
-
-          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4 mt-4 text-center text-sm text-gray-600 max-w-lg">
-            <div className="mt-2 md:mt-0 text-center md:text-left">
-              <p className="font-semibold">USA:</p>
-            </div>
-            <div className="flex items-center space-x-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                ></path>
-              </svg>
-              <a href="tel:11111111111">1-800-223-6337</a>
-            </div>
-            <div className="flex items-center space-x-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                ></path>
-              </svg>
-              <a href="mailto:hello@company.com">info@northcott.com</a>
-            </div>
+    <div
+      style={{ fontFamily: "Open Sans" }}
+      className="mt-[80px] sm:mt-[100px] flex flex-col items-center justify-center"
+    >
+      <div className="w-[280px] h-[1575px] sm:w-[624px] sm:h-[943px] xl:w-[1160x] 2xl:w-[1608px] 2xl:h-[983px] flex flex-col items-center justify-between">
+        {/* top heading */}
+        <div className="w-[280px] h-[388px] sm:w-[624px] sm:h-[198px] xl:w-[1160x] 2xl:w-[1608px] flex flex-col items-center justify-between">
+          <div className="h-[76px] sm:h-[44px]">
+            <h2 className="text-center text-[28px] sm:text-[32px] font-bold text-gray-900">
+              Retailer Registration
+            </h2>
           </div>
+          <div className="h-[282px] sm:h-[124px] flex flex-col items-center justify-between">
+            <div className="h-[90px] sm:h-[36px] flex flex-col items-end justify-center">
+              <p className="text-center text-xs text-gray-600">
+                Please Note: Registration is available only for existing
+                Northcott customers in the USA and Canada.
+              </p>
+              <p className="text-center text-xs text-gray-600">
+                You will need your Northcott Customer # located on any Northcott
+                invoice.
+              </p>
+            </div>
+            <div className="h-[172px] sm:h-[68px] flex-col items-center justify-center gap-[10px]">
+              <div className="h-[36px] sm:h-[18px]">
+                <p className="text-center text-xs text-gray-600 whitespace-normal sm:whitespace-nowrap">
+                  If you are not a customer yet or need support, please contact
+                  one of the following:
+                </p>
+              </div>
+              <div className="h-[126px] sm:h-[40px] flex flex-col items-center justify-normal mt-2">
+                <div className=" h-[58px] sm:h-[20px] flex flex-col sm:flex-row items-center justify-center text-center text-xs text-gray-600 sm:gap-3">
+                  <div className="h-[18px] text-center md:text-left text-xs sm:me-3">
+                    <p className="">USA:</p>
+                  </div>
+                  <div className="h-[20px] sm:h-[18px] flex items-center text-xs space-x-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      className="w-4 h-3"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                      ></path>
+                    </svg>
+                    <a href="tel:11111111111">1-800-223-6337</a>
+                  </div>
+                  <div className="h-[20px] sm:h-[18px] flex items-center space-x-1 text-xs">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      className="w-4 h-3"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                      ></path>
+                    </svg>
+                    <a href="mailto:hello@company.com">info@northcott.com</a>
+                  </div>
+                </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4 mt-4 text-center text-sm text-gray-600 max-w-lg">
-            <div className="mt-2 md:mt-0 text-center md:text-left">
-              <p className="font-semibold">Canada:</p>
-            </div>
-            <div className="flex items-center space-x-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                ></path>
-              </svg>
-              <a href="tel:11111111111">1-800-268-1466</a>
-            </div>
-            <div className="flex items-center space-x-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                ></path>
-              </svg>
-              <a href="mailto:hello@company.com">info@northcott.com</a>
+                <div className="h-[58px] sm:h-[20px] flex flex-col sm:flex-row items-center justify-center text-center text-xs text-gray-600 sm:gap-3">
+                  <div className="mt-2 md:mt-0 text-center md:text-left text-xs">
+                    <p className="">Canada:</p>
+                  </div>
+                  <div className="flex items-center space-x-1 text-xs">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      className="w-4 h-3"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                      ></path>
+                    </svg>
+                    <a href="tel:11111111111">1-800-268-1466</a>
+                  </div>
+                  <div className="flex items-center space-x-1 text-xs">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      className="w-4 h-3"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                      ></path>
+                    </svg>
+                    <a href="mailto:hello@company.com">info@northcott.com</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="py-8  sm:rounded-lg sm:px-10 max-w-xl mx-auto">
-          <form className="space-y-6" action="#" method="POST">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <div className="sm:w-2/3">
+        {/* form section */}
+        <div className=" w-[280px] h-[1137px] sm:w-[624px] sm:h-[695px] xl:w-[660px]">
+          {/* input fields */}
+          <div className="w-[280px] h-[844px] sm:w-[624px] sm:h-[460px] xl:w-[660px]">
+            {/* Input field and submit button */}
+            {/* customer number and country*/}
+            <div className="w-[280px] h-[172px] sm:w-[624px] sm:h-[76px] flex flex-col sm:flex-row sm:items-center gap-5">
+              {/* customer name */}
+              <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-bold text-gray-700"
+                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
                   Northcott Customer Number*
                 </label>
-                <div className="mt-1">
+                <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
                     id="email"
                     name="email"
                     type="email"
                     autoComplete="email"
-                    required
-                    className="appearance-none  relative block w-full sm:w-5/6 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="Enter your customer number"
                   />
                 </div>
               </div>
-              <div className="sm:w-1/3">
-                <label className="block text-sm font-bold text-gray-700">
+              {/* country */}
+              <div className="w-[280px] h-[76px] flex flex-col justify-between">
+                <label className="w-[65px] h-[21px] block text-sm font-bold text-gray-700">
                   Country*
                 </label>
-                <div className="flex items-center space-x-4">
+                <div className="w-[149px] h-[45px] flex items-center space-x-4">
                   <label className="inline-flex items-center">
                     <input
                       type="radio"
@@ -163,155 +173,141 @@ const RetailerRegistration = () => {
                 </div>
               </div>
             </div>
-
+            {/* zip postal code */}
+            <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
+              <label
+                htmlFor="zipCode"
+                className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+              >
+                ZIP/Postal Code*
+              </label>
+              <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
+                <input
+                  id="zipCode"
+                  name="zipCode"
+                  type="number"
+                  className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                  placeholder="ZIP/Postal Code (no space or dashes)"
+                />
+              </div>
+            </div>
+            {/* first and last name */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <div className="sm:w-2/3">
+              {/* first name */}
+              <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="email"
-                  className="block text-sm font-bold text-gray-700"
+                  htmlFor="zipCode"
+                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
                   ZIP/Postal Code*
                 </label>
-                <div className="mt-1">
+                <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="appearance-none  relative block w-full sm:w-5/6 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    id="zipCode"
+                    name="zipCode"
+                    type="number"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    placeholder="ZIP/Postal Code (no space or dashes)"
+                  />
+                </div>
+              </div>
+              {/* last name */}
+              <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
+                <label
+                  htmlFor="zipCode"
+                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+                >
+                  ZIP/Postal Code*
+                </label>
+                <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
+                  <input
+                    id="zipCode"
+                    name="zipCode"
+                    type="number"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="ZIP/Postal Code (no space or dashes)"
                   />
                 </div>
               </div>
             </div>
-
+            {/* email */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <div className="sm:w-2/3">
+              <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="email"
-                  className="block text-sm font-bold text-gray-700"
+                  htmlFor="zipCode"
+                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  First Name*
+                  ZIP/Postal Code*
                 </label>
-                <div className="mt-1">
+                <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="appearance-none  relative block w-full sm:w-5/6 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Enter your first name"
+                    id="zipCode"
+                    name="zipCode"
+                    type="number"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    placeholder="ZIP/Postal Code (no space or dashes)"
                   />
                 </div>
               </div>
-
-              <div className="sm:w-1/3">
+              <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="email"
-                  className="block text-sm font-bold text-gray-700"
+                  htmlFor="zipCode"
+                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  Last Name*
+                  ZIP/Postal Code*
                 </label>
-                <div className="mt-1">
+                <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="appearance-none  relative block w-full sm:w-5/6 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Enter your last name"
+                    id="zipCode"
+                    name="zipCode"
+                    type="number"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    placeholder="ZIP/Postal Code (no space or dashes)"
                   />
                 </div>
               </div>
             </div>
-
+            {/* password */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <div className="sm:w-2/3">
+              <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="email"
-                  className="block text-sm font-bold text-gray-700"
+                  htmlFor="zipCode"
+                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  Email*
+                  ZIP/Postal Code*
                 </label>
-                <div className="mt-1">
+                <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="appearance-none  relative block w-full sm:w-5/6 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="This email will be used for you log in"
+                    id="zipCode"
+                    name="zipCode"
+                    type="number"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    placeholder="ZIP/Postal Code (no space or dashes)"
                   />
                 </div>
               </div>
 
-              <div className="sm:w-1/3">
+              <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="email"
-                  className="block text-sm font-bold text-gray-700"
+                  htmlFor="zipCode"
+                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  Re-enter Your Email*
+                  ZIP/Postal Code*
                 </label>
-                <div className="mt-1">
+                <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="appearance-none  relative block w-full sm:w-5/6 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Re-enter your email"
+                    id="zipCode"
+                    name="zipCode"
+                    type="number"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    placeholder="ZIP/Postal Code (no space or dashes)"
                   />
                 </div>
               </div>
             </div>
-
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-              <div className="sm:w-2/3">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-bold text-gray-700"
-                >
-                  Password*
-                </label>
-                <div className="mt-1">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="appearance-none  relative block w-full sm:w-5/6 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Enter your password"
-                  />
-                </div>
-              </div>
-
-              <div className="sm:w-1/3">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-bold text-gray-700"
-                >
-                  Re-enter Password*
-                </label>
-                <div className="mt-1">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="appearance-none  relative block w-full sm:w-5/6 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Re-enter your password"
-                  />
-                </div>
-              </div>
-            </div>
-
+          </div>
+          {/* checkbox input */}
+          <div className="w-[280px] h-[118px] sm:w-[624px] sm:h-[60px] xl:w-[660px]">
             <div className="flex flex-col">
               <div className="flex items-center mb-2">
                 <input
@@ -359,26 +355,27 @@ const RetailerRegistration = () => {
                 </label>
               </div>
             </div>
-
-            <div>
-              <Link to={"/regionCustomers"}>
-                <button
-                  type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-300 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  SUBMIT
-                </button>
-              </Link>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="flex justify-center text-[#6B6B66] cursor-pointer">
-                <Link to={"/login"}>Return to sign in</Link>
-              </span>
-              <span className="flex justify-center text-[#6B6B66]">
-                Contact our support
-              </span>
-            </div>
-          </form>
+          </div>
+          {/* submit button */}
+          <div className="w-[280px] h-[49px] sm:w-[320px]">
+            <Link to={"/regionCustomers"}>
+              <button
+                type="submit"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-300 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                SUBMIT
+              </button>
+            </Link>
+          </div>
+          {/* footer */}
+          <div className="w-[280px] h-[36px] sm:w-[624px] xl:w-[660px] flex flex-col items-center">
+            <span className="flex justify-center text-[#6B6B66] cursor-pointer">
+              <Link to={"/login"}>Return to sign in</Link>
+            </span>
+            <span className="flex justify-center text-[#6B6B66]">
+              Contact our support
+            </span>
+          </div>
         </div>
       </div>
     </div>

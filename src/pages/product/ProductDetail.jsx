@@ -73,40 +73,40 @@ const singleColorWay = [
 
 // for normal card and bigCard only
 const bigCardImage = [
-  // { name: BigProduct1, "price per m": 8.95 },
-  // { name: BigProduct2, "price per m": 8.95 },
-  // { name: BigProduct3, "price per m": 8.95 },
+  { name: BigProduct1, "price per m": 8.95 },
+  { name: BigProduct2, "price per m": 8.95 },
+  { name: BigProduct3, "price per m": 8.95 },
 ];
 
 // for multi panel only
 const multiBIgImages = [
-  // { name: multiBigImg, "price per m": 8.95 },
-  // { name: multiBigImg1, "price per m": 8.95 },
-  // { name: multiBigImg2, "price per m": 8.95 },
-  // { name: multiBigImg3, "price per m": 8.95 },
-  // { name: multiBigImg4, "price per m": 8.95 },
-  // { name: multiBigImg5, "price per m": 8.95 },
-  // { name: multiBigImg6, "price per m": 8.95 },
-  // { name: multiBigImg7, "price per m": 8.95 },
-  // { name: multiBigImg8, "price per m": 8.95 },
-  // { name: multiBigImg9, "price per m": 8.95 },
-  // { name: multiBigImg10, "price per m": 8.95 },
-  // { name: multiBigImg11, "price per m": 8.95 },
-  // { name: multiBigImg12, "price per m": 8.95 },
+  { name: multiBigImg, "price per m": 8.95 },
+  { name: multiBigImg1, "price per m": 8.95 },
+  { name: multiBigImg2, "price per m": 8.95 },
+  { name: multiBigImg3, "price per m": 8.95 },
+  { name: multiBigImg4, "price per m": 8.95 },
+  { name: multiBigImg5, "price per m": 8.95 },
+  { name: multiBigImg6, "price per m": 8.95 },
+  { name: multiBigImg7, "price per m": 8.95 },
+  { name: multiBigImg8, "price per m": 8.95 },
+  { name: multiBigImg9, "price per m": 8.95 },
+  { name: multiBigImg10, "price per m": 8.95 },
+  { name: multiBigImg11, "price per m": 8.95 },
+  { name: multiBigImg12, "price per m": 8.95 },
 ];
 
 // for multi panel only
 const multiNOrmalImages = [
-  // { name: multiNormalImg, "price per m": 8.95 },
-  // { name: multiNormalImg1, "price per m": 8.95 },
-  // { name: multiNormalImg2, "price per m": 8.95 },
-  // { name: multiNormalImg3, "price per m": 8.95 },
-  // { name: multiNormalImg4, "price per m": 8.95 },
-  // { name: multiNormalImg5, "price per m": 8.95 },
-  // { name: multiNormalImg6, "price per m": 8.95 },
-  // { name: multiNormalImg7, "price per m": 8.95 },
-  // { name: multiNormalImg8, "price per m": 8.95 },
-  // { name: multiNormalImg9, "price per m": 8.95 },
+  { name: multiNormalImg, "price per m": 8.95 },
+  { name: multiNormalImg1, "price per m": 8.95 },
+  { name: multiNormalImg2, "price per m": 8.95 },
+  { name: multiNormalImg3, "price per m": 8.95 },
+  { name: multiNormalImg4, "price per m": 8.95 },
+  { name: multiNormalImg5, "price per m": 8.95 },
+  { name: multiNormalImg6, "price per m": 8.95 },
+  { name: multiNormalImg7, "price per m": 8.95 },
+  { name: multiNormalImg8, "price per m": 8.95 },
+  { name: multiNormalImg9, "price per m": 8.95 },
 ];
 
 // for pattern card
@@ -227,11 +227,12 @@ const ProductDetail = () => {
       >
         {/* section 1 */}
         {/* top banner  */}
-        <div className="w-[320px] sm:w-[768px] h-[235px] sm:h-[257px] lg:w-[1024px] xl:w-[1440px] xl:h-[296px] 2xl:w-[2560px]">
+
+        <div className="w-[320px] sm:w-[768px] h-[235px] sm:h-[257px] lg:w-[1024px] xl:w-[1440px] xl:h-[296px] 2xl:w-[1521px]">
           <img
             src={PageBanner}
             alt="Image"
-            className="object-cover w-[320px] sm:w-[768px] h-[235px] sm:h-[257px] lg:w-[1024px] xl:w-[1440px] xl:h-[296px] 2xl:w-[2560px]"
+            className="object-cover w-[320px] sm:w-[768px] h-[235px] sm:h-[257px] lg:w-[1024px] xl:w-[1440px] xl:h-[296px] 2xl:w-[1521px]"
           />
         </div>
 
@@ -458,7 +459,7 @@ const ProductDetail = () => {
         {/* products count and buttons */}
         <div className="flex flex-col sm:flex-row justify-center sm:justify-between w-[280px] h-[159px] sm:w-[664px] sm:h-[39px] xl:w-[1160px] 2xl:w-[1320px] gap-10 sm:gap-0 ">
           <div className="text-sm text-nowrap text-center sm:text-start w-[280px] sm:w-[78px] h-[39px] flex items-center justify-center sm:items-end">
-            {singleColorWay.length} Products
+            13 Products
           </div>
           {login && (
             <div className="w-[280px] h-[98px] sm:w-[478px] sm:h-[39px] flex flex-col sm:flex-row items-center justify-between">
