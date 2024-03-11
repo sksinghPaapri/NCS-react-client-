@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useState } from "react";
 import ProductCard from "../../assets/ProductPage/ProductCard.svg";
 
-export default function Modal({ showModal, cancelOption, index }) {
+export default function Modal({ showModal, cancelOption, index, item }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -31,7 +31,7 @@ export default function Modal({ showModal, cancelOption, index }) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black/75" />
+            <div className="fixed inset-0 bg-black/50" />
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
@@ -75,6 +75,7 @@ export default function Modal({ showModal, cancelOption, index }) {
                       <div className="w-[160px] h-[160px] sm:w-[280px] sm:h-[280px] lg:w-[380px] lg:h-[380px]">
                         <img
                           src={ProductCard}
+                          // src={item?.name}
                           alt="Product"
                           className="sm:object-cover w-[160px] h-[160px] sm:w-[280px] sm:h-[280px] lg:w-[380px] lg:h-[380px]"
                         />

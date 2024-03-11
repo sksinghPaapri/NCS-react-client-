@@ -645,10 +645,7 @@ const ProductDetail = () => {
 
         {/* single colorway for Big and normal card size*/}
         {singleColorWayOption?.map((item) => (
-          <div
-            key={item.id}
-            className="-mt-28 sm:-mt-36 xl:-mt-28 -mb-16 sm:-mb-24"
-          >
+          <div key={item.id} className="">
             {item.showBigAndNormalCard && (
               <div className="grid grid-cols-1">
                 <div className="w-[280px] h-fit sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-rows-1 sm:grid-rows-2 xl:grid-cols-4 gap-0 xl:gap-20">
@@ -666,6 +663,7 @@ const ProductDetail = () => {
                               showModal={openModal === index}
                               cancelOption={() => setOpenModal(null)}
                               index={index + 1}
+                              item={item}
                             />
                           </div>
 
