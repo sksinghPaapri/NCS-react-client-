@@ -4,9 +4,9 @@ const RetailerRegistration = () => {
   return (
     <div
       style={{ fontFamily: "Open Sans" }}
-      className="mt-[80px] sm:mt-[100px] flex flex-col items-center justify-center"
+      className="my-[80px] sm:my-[100px] flex flex-col items-center justify-center"
     >
-      <div className="w-[280px] h-[1575px] sm:w-[624px] sm:h-[943px] xl:w-[1160x] 2xl:w-[1608px] 2xl:h-[983px] flex flex-col items-center justify-between">
+      <div className="w-[280px] h-[1575px] sm:w-[624px] sm:h-[943px] xl:w-[1160x] 2xl:w-[1608px] 2xl:h-[983px] flex flex-col items-center justify-between ">
         {/* top heading */}
         <div className="w-[280px] h-[388px] sm:w-[624px] sm:h-[198px] xl:w-[1160x] 2xl:w-[1608px] flex flex-col items-center justify-between">
           <div className="h-[76px] sm:h-[44px]">
@@ -121,12 +121,12 @@ const RetailerRegistration = () => {
           </div>
         </div>
         {/* form section */}
-        <div className=" w-[280px] h-[1137px] sm:w-[624px] sm:h-[695px] xl:w-[660px]">
+        <div className=" w-[280px] h-[1137px] sm:w-[624px] sm:h-[695px] xl:w-[660px] flex flex-col gap-[30px]">
           {/* input fields */}
-          <div className="w-[280px] h-[844px] sm:w-[624px] sm:h-[460px] xl:w-[660px]">
+          <div className="w-[280px] h-[844px] sm:w-[624px] sm:h-[460px] xl:w-[660px] flex flex-col gap-5">
             {/* Input field and submit button */}
             {/* customer number and country*/}
-            <div className="w-[280px] h-[172px] sm:w-[624px] sm:h-[76px] flex flex-col sm:flex-row sm:items-center gap-5">
+            <div className="w-[280px] h-[172px] sm:w-[624px] sm:h-[76px] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
               {/* customer name */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
@@ -192,14 +192,14 @@ const RetailerRegistration = () => {
               </div>
             </div>
             {/* first and last name */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+            <div className="w-[280px] h-[172px] sm:w-[624px] sm:h-[76px] xl:w-[660px] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
               {/* first name */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="zipCode"
+                  htmlFor="firstName"
                   className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  ZIP/Postal Code*
+                  First Name*{" "}
                 </label>
                 <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
@@ -207,161 +207,160 @@ const RetailerRegistration = () => {
                     name="zipCode"
                     type="number"
                     className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
-                    placeholder="ZIP/Postal Code (no space or dashes)"
+                    placeholder="Enter your first name"
                   />
                 </div>
               </div>
               {/* last name */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="zipCode"
+                  htmlFor="lastName"
                   className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  ZIP/Postal Code*
+                  Last Name*{" "}
                 </label>
                 <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="zipCode"
-                    name="zipCode"
-                    type="number"
+                    id="lastName"
+                    name="lastName"
+                    type="text"
                     className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
-                    placeholder="ZIP/Postal Code (no space or dashes)"
+                    placeholder="Enter your last name"
                   />
                 </div>
               </div>
             </div>
-            {/* email */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+            {/* email and re enter email*/}
+            <div className="w-[280px] h-[172px] sm:w-[624px] sm:h-[76px] xl:w-[660px] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+              {/* email */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="zipCode"
+                  htmlFor="email"
                   className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  ZIP/Postal Code*
+                  Email*
                 </label>
                 <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="zipCode"
-                    name="zipCode"
-                    type="number"
+                    id="email"
+                    name="email"
+                    type="email"
                     className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
-                    placeholder="ZIP/Postal Code (no space or dashes)"
+                    placeholder="This email will be used for you log in"
                   />
                 </div>
               </div>
+              {/* re enter email */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="zipCode"
+                  htmlFor="lastName"
                   className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  ZIP/Postal Code*
+                  Re-enter Your Email*
                 </label>
                 <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="zipCode"
-                    name="zipCode"
-                    type="number"
+                    id="confirmEmail"
+                    name="confirmEmail"
+                    type="email"
                     className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
-                    placeholder="ZIP/Postal Code (no space or dashes)"
+                    placeholder="Re-enter your email"
                   />
                 </div>
               </div>
             </div>
             {/* password */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+            <div className="w-[280px] h-[172px] sm:w-[624px] sm:h-[76px] xl:w-[660px] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+              {/* password */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="zipCode"
+                  htmlFor="email"
                   className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  ZIP/Postal Code*
+                  Password*
                 </label>
                 <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="zipCode"
-                    name="zipCode"
-                    type="number"
+                    id="password"
+                    name="password"
+                    type="password"
                     className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
-                    placeholder="ZIP/Postal Code (no space or dashes)"
+                    placeholder="Enter your password"
                   />
                 </div>
               </div>
-
+              {/* re-enter password */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="zipCode"
+                  htmlFor="confirPassword"
                   className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
-                  ZIP/Postal Code*
+                  Re-enter Your Password*
                 </label>
                 <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="zipCode"
-                    name="zipCode"
-                    type="number"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    type="password"
                     className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
-                    placeholder="ZIP/Postal Code (no space or dashes)"
+                    placeholder="Re-enter your password"
                   />
                 </div>
               </div>
             </div>
           </div>
           {/* checkbox input */}
-          <div className="w-[280px] h-[118px] sm:w-[624px] sm:h-[60px] xl:w-[660px]">
-            <div className="flex flex-col">
-              <div className="flex items-center mb-2">
-                <input
-                  id="remember_newsletters"
-                  name="remember_newsletters"
-                  type="checkbox"
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                />
-                <label
-                  htmlFor="remember_newsletters"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  Sign up to receive Northcott’s Retail Newsletters
-                </label>
-              </div>
-
-              <div className="flex items-center mb-2">
-                <input
-                  id="remember_promotions"
-                  name="remember_promotions"
-                  type="checkbox"
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                />
-                <label
-                  htmlFor="remember_promotions"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  Sign up to receive notification of Northcott Promotions &
-                  Specials
-                </label>
-              </div>
-
-              <div className="flex items-center">
-                <input
-                  id="remember_monthly"
-                  name="remember_monthly"
-                  type="checkbox"
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                />
-                <label
-                  htmlFor="remember_monthly"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  Sign up to receive Northcott’s Monthly Consumer Newsletter
-                </label>
-              </div>
+          <div className="w-[280px] h-[118px] sm:w-[624px] sm:h-[60px] xl:w-[660px] flex flex-col gap-[5px] sm:gap-[3px]">
+            <div className="w-[280px] h-[36px] sm:h-[18px] flex items-center">
+              <input
+                id="remember_newsletters"
+                name="remember_newsletters"
+                type="checkbox"
+                className="h-[15px] w-[15px] text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+              />
+              <label
+                htmlFor="remember_newsletters"
+                className="ml-2 block text-xs text-gray-900 sm:text-nowrap"
+              >
+                Sign up to receive Northcott’s Retail Newsletters
+              </label>
+            </div>
+            <div className="w-[280px] h-[36px] sm:h-[18px] flex items-center">
+              <input
+                id="remember_newsletters"
+                name="remember_newsletters"
+                type="checkbox"
+                className="h-[15px] w-[15px] text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+              />
+              <label
+                htmlFor="remember_newsletters"
+                className="ml-2 block text-xs text-gray-900 sm:text-nowrap"
+              >
+                Sign up to receive notification of Northcott Promotions &
+                Specials
+              </label>
+            </div>
+            <div className="w-[280px] h-[36px] sm:h-[18px] flex items-center">
+              <input
+                id="remember_newsletters"
+                name="remember_newsletters"
+                type="checkbox"
+                className="h-[15px] w-[15px] text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+              />
+              <label
+                htmlFor="remember_newsletters"
+                className="ml-2 block text-xs text-gray-900 sm:text-nowrap"
+              >
+                Sign up to receive Northcott’s Monthly Consumer Newsletter
+              </label>
             </div>
           </div>
           {/* submit button */}
-          <div className="w-[280px] h-[49px] sm:w-[320px]">
+          <div className="w-[280px] h-[49px] sm:w-[624px] xl:w-[660px] flex items-center justify-center">
             <Link to={"/regionCustomers"}>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-300 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="w-[280px] h-[49px] sm:w-[320px] flex justify-center items-center font-semibold px-2 border border-transparent text-base rounded-md text-white bg-[#E2A856] focus:outline-none focus:ring-2 focus:ring-offset-2 text-center"
               >
                 SUBMIT
               </button>
@@ -369,10 +368,10 @@ const RetailerRegistration = () => {
           </div>
           {/* footer */}
           <div className="w-[280px] h-[36px] sm:w-[624px] xl:w-[660px] flex flex-col items-center">
-            <span className="flex justify-center text-[#6B6B66] cursor-pointer">
+            <span className="flex justify-center text-[#6B6B66] cursor-pointer text-xs h-[18px] items-center">
               <Link to={"/login"}>Return to sign in</Link>
             </span>
-            <span className="flex justify-center text-[#6B6B66]">
+            <span className="flex justify-center text-[#6B6B66] text-xs h-[18px] items-center">
               Contact our support
             </span>
           </div>
