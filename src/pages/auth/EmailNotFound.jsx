@@ -1,33 +1,63 @@
+import { Link } from "react-router-dom";
+
 export default function EmailNotFound() {
   return (
-    <div style={{ fontFamily: "Open Sans" }}>
-      <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+    <div
+      style={{ fontFamily: "Open Sans" }}
+      className="flex items-center justify-center"
+    >
+      <div className="w-[280px] h-[312px] sm:w-[624px] sm:h-[300px] xl:w-[1160px] 2xl:h-[340px] my-[80px] sm:my-[100px] flex flex-col items-center justify-center gap-10">
+        {/* top heading */}
+        <div className="w-[280px] h-[84px] sm:w-[624px] sm:h-[72px] xl:w-[1160px] flex flex-col gap-[10px] items-center justify-center">
+          <h2 className="w-[280px] h-[38px] sm:w-[624px] sm:h-[44px] xl:w-[1160px] text-center text-[28px] sm:text-[32px] font-bold text-gray-900">
             Email Address Not Found
           </h2>
-
-          <div className="mt-3 text-center">
-            <p className="text-xs  text-gray-600 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl font-semibold py-2 ">
-              Sorry, the entered email address doesn't exist in our records.
-              Double-check or use a different one.
-            </p>
-          </div>
+          <p className="w-[280px] h-[36px] sm:w-[624px] sm:h-[18px] xl:w-[1160px] text-gray-600 text-center text-xs">
+            Sorry, the entered email address doesn't exist in our records.
+            Double-check or use a different one.
+          </p>
         </div>
 
-        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className=" py-8 px-4  sm:rounded-lg sm:px-10">
-            <form className="space-y-6" action="#" method="POST">
-              <div className="flex flex-col items-center">
-                <p className="flex justify-center  ">
-                  Need help?{" "}
-                  <span className="text-[#6B6B66]">Contact our support</span>{" "}
+        {/* input and submit button */}
+        <div className="w-[280px] h-[188px] sm:w-[320px] flex flex-col justify-between items-center">
+          {/* input */}
+          <div className="w-[280px] h-[76px] sm:w-[320px]">
+            <label
+              htmlFor="email"
+              className="block text-sm font-bold text-gray-700 "
+            >
+              Email*
+            </label>
+            <div className="mt-1">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                className="appearance-none  relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 sm:text-sm"
+                placeholder="Enter your email"
+              />
+            </div>
+          </div>
+          {/* submit button and footer */}
+          <div className="w-[280px] h-[82px] sm:w-[320px] flex flex-col justify-between items-center">
+            {/* button */}
+
+            <div className="flex justify-center items-center h-[18px]">
+              <span className="text-xs text-[#6B6B66] cursor-pointer">
+                <p className="font-semibold text-xs">
+                  Need help? <span> Contact our support </span>
                 </p>
-                <span className="flex justify-center text-[#6B6B66]">
-                  Return to sign in
-                </span>
-              </div>
-            </form>
+              </span>
+            </div>
+
+            {/* return to sign in */}
+            <div className="flex justify-center items-center h-[18px]">
+              <span className="text-xs text-[#6B6B66] cursor-pointer">
+                <Link to={"/login"}>Return to sign in</Link>
+              </span>
+            </div>
           </div>
         </div>
       </div>

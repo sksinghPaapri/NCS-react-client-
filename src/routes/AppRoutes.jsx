@@ -48,6 +48,8 @@ import RegionCustomers from "../pages/login/RegionCustomers";
 import PasswordEmailSent from "../pages/auth/PasswordEmailSent";
 import EmailNotFound from "../pages/auth/EmailNotFound";
 import RetailerRegistration from "../pages/login/RetailerRegistration";
+import RetailerRegistrationComplete from "../pages/login/RetailerRegistrationComplete";
+import BodyCopy from "../components/shared/headers/HomePageContent/BodyCopy";
 
 export default function AppRoutes() {
   const [userId, setUserId] = useState();
@@ -294,14 +296,15 @@ export default function AppRoutes() {
   }, []);
 
   return (
-    <BrowserRouter basename="/testui">
+    <BrowserRouter basename="/">
       {/* // <BrowserRouter> */}
       {/* <TopHeader />
             <InnerHeader /> */}
       <AppHeader />
       <Routes>
         {/* <Route path="/*" element={<Home />} /> */}
-        <Route path="/*" element={<Body />} />
+        {/* <Route path="/*" element={<Body />} /> */}
+        <Route path="/*" element={<BodyCopy />} />
         {/* <Route path="/*" element={<ProductCollection />} /> */}
         {/* <Route path="/*" element={<ProductDetail />} /> */}
         {/* <Route path="/*" element={<CartDetail />} /> */}
@@ -310,6 +313,10 @@ export default function AppRoutes() {
         <Route
           path="/retailerRegistration"
           element={<RetailerRegistration />}
+        />
+        <Route
+          path="/retailerRegistrationComplete"
+          element={<RetailerRegistrationComplete />}
         />
         <Route path="/regionCustomers" element={<RegionCustomers />} />
 

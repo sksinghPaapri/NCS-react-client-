@@ -130,17 +130,16 @@ const RetailerRegistration = () => {
               {/* customer name */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="email"
+                  htmlFor="customerNumber"
                   className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
                   Northcott Customer Number*
                 </label>
                 <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
+                    id="customerNumber"
+                    name="customerNumber"
+                    type="number"
                     className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="Enter your customer number"
                   />
@@ -203,9 +202,9 @@ const RetailerRegistration = () => {
                 </label>
                 <div className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px]">
                   <input
-                    id="zipCode"
-                    name="zipCode"
-                    type="number"
+                    id="firstName"
+                    name="firstName"
+                    type="text"
                     className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="Enter your first name"
                   />
@@ -253,7 +252,7 @@ const RetailerRegistration = () => {
               {/* re enter email */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="lastName"
+                  htmlFor="confirmEmail"
                   className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
                   Re-enter Your Email*
@@ -274,7 +273,7 @@ const RetailerRegistration = () => {
               {/* password */}
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
-                  htmlFor="email"
+                  htmlFor="password"
                   className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
                 >
                   Password*
@@ -313,13 +312,13 @@ const RetailerRegistration = () => {
           <div className="w-[280px] h-[118px] sm:w-[624px] sm:h-[60px] xl:w-[660px] flex flex-col gap-[5px] sm:gap-[3px]">
             <div className="w-[280px] h-[36px] sm:h-[18px] flex items-center">
               <input
-                id="remember_newsletters"
-                name="remember_newsletters"
+                id="remember_newsletters1"
+                name="remember_newsletters1"
                 type="checkbox"
                 className="h-[15px] w-[15px] text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
               />
               <label
-                htmlFor="remember_newsletters"
+                htmlFor="remember_newsletters1"
                 className="ml-2 block text-xs text-gray-900 sm:text-nowrap"
               >
                 Sign up to receive Northcott’s Retail Newsletters
@@ -327,13 +326,13 @@ const RetailerRegistration = () => {
             </div>
             <div className="w-[280px] h-[36px] sm:h-[18px] flex items-center">
               <input
-                id="remember_newsletters"
-                name="remember_newsletters"
+                id="remember_newsletters2"
+                name="remember_newsletters2"
                 type="checkbox"
                 className="h-[15px] w-[15px] text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
               />
               <label
-                htmlFor="remember_newsletters"
+                htmlFor="remember_newsletters2"
                 className="ml-2 block text-xs text-gray-900 sm:text-nowrap"
               >
                 Sign up to receive notification of Northcott Promotions &
@@ -342,13 +341,13 @@ const RetailerRegistration = () => {
             </div>
             <div className="w-[280px] h-[36px] sm:h-[18px] flex items-center">
               <input
-                id="remember_newsletters"
-                name="remember_newsletters"
+                id="remember_newsletters3"
+                name="remember_newsletters3"
                 type="checkbox"
                 className="h-[15px] w-[15px] text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
               />
               <label
-                htmlFor="remember_newsletters"
+                htmlFor="remember_newsletters3"
                 className="ml-2 block text-xs text-gray-900 sm:text-nowrap"
               >
                 Sign up to receive Northcott’s Monthly Consumer Newsletter

@@ -92,7 +92,7 @@ export default function RegionCustomers() {
           <div className="mt-[30px] w-[290px] sm:w-[320px] h-[82px] flex flex-col items-center justify-between">
             {/* button */}
             <div className="w-[280px] h-[49px] sm:w-[320px] flex items-center justify-center">
-              <Link to={"/"}>
+              <Link to={"/retailerRegistrationComplete"}>
                 <button
                   type="submit"
                   className="w-[280px] h-[49px] sm:w-[320px] uppercase text-base font-semibold cursor-pointer rounded text-white bg-[#E2A856]"
