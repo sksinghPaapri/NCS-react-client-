@@ -195,7 +195,6 @@ const ProductDetail = () => {
 
   // colorwaya data with-loop
   useEffect(() => {
-    console.log(filteredProductsByColorway);
     filteredProductsByColorway.forEach((colorway) => {
       const filteredNormalCardFromColorwayData = colorway.filteredNormalCards;
       const filteredBigCardFromColorwayData = colorway.filteredBigCards;
@@ -288,62 +287,42 @@ const ProductDetail = () => {
     useState(false);
   const [nonColorwayMultiPanel, setnonColorwayMultiPanel] = useState(false);
 
-  const filteredProductsByNonColorway = nonColorwayData.map((colorway) => {
-    const filteredNormalCardsNonColorway = nonColorwayData.filter(
-      (item) => !item.isOverSized
-    );
-    const filteredBigCardsNonColorway = nonColorwayData.filter(
-      (item) => item.isOverSized
-    );
-
-    return {
-      filteredNormalCards: filteredNormalCardsNonColorway,
-      filteredBigCards: filteredBigCardsNonColorway,
-    };
-  });
-
-  const filteredNormalCards1 = nonColorwayData.filter(
+  const filteredNormalCardsNonColorway = nonColorwayData.filter(
     (item) => !item.isOverSized
   );
-  const filteredBigCards1 = nonColorwayData.filter((item) => item.isOverSized);
+  const filteredBigCardsNonColorway = nonColorwayData.filter(
+    (item) => item.isOverSized
+  );
 
-  // Noncolorway data with-loop
+  // Noncolorway data
   useEffect(() => {
-    filteredProductsByNonColorway.forEach((colorway) => {
-      const filteredNormalCardFromNonColorwayData =
-        colorway.filteredNormalCards;
-      const filteredBigCardFromNonColorwayData = colorway.filteredBigCards;
-
-      if (
-        filteredNormalCardFromNonColorwayData.length > 0 &&
-        filteredBigCardFromNonColorwayData.length === 0
-      ) {
-        setNonColorwayNormalCardSizeOnly(true);
-        setNonColorwayBigAndNormalCardSIze(false);
-        setnonColorwayMultiPanel(false);
-      }
-      if (
-        filteredNormalCardFromNonColorwayData.length > 0 &&
-        filteredBigCardFromNonColorwayData.length > 0 &&
-        filteredNormalCardFromNonColorwayData.length >
-          filteredBigCardFromNonColorwayData.length
-      ) {
-        setNonColorwayNormalCardSizeOnly(false);
-        setNonColorwayBigAndNormalCardSIze(true);
-        setnonColorwayMultiPanel(false);
-      }
-      if (
-        filteredNormalCardFromNonColorwayData.length > 0 &&
-        filteredBigCardFromNonColorwayData.length > 0 &&
-        filteredNormalCardFromNonColorwayData.length <
-          filteredBigCardFromNonColorwayData.length
-      ) {
-        setNonColorwayNormalCardSizeOnly(false);
-        setNonColorwayBigAndNormalCardSIze(false);
-        setnonColorwayMultiPanel(true);
-      }
-    });
-  }, []);
+    if (
+      filteredNormalCardsNonColorway.length > 0 &&
+      filteredBigCardsNonColorway.length === 0
+    ) {
+      setNonColorwayNormalCardSizeOnly(true);
+      setNonColorwayBigAndNormalCardSIze(false);
+      setnonColorwayMultiPanel(false);
+    }
+    if (
+      filteredNormalCardsNonColorway.length > 0 &&
+      filteredBigCardsNonColorway.length > 0 &&
+      filteredNormalCardsNonColorway.length > filteredBigCardsNonColorway.length
+    ) {
+      setNonColorwayNormalCardSizeOnly(false);
+      setNonColorwayBigAndNormalCardSIze(true);
+      setnonColorwayMultiPanel(false);
+    }
+    if (
+      filteredNormalCardsNonColorway.length > 0 &&
+      filteredBigCardsNonColorway.length > 0 &&
+      filteredNormalCardsNonColorway.length < filteredBigCardsNonColorway.length
+    ) {
+      setNonColorwayNormalCardSizeOnly(false);
+      setNonColorwayBigAndNormalCardSIze(false);
+      setnonColorwayMultiPanel(true);
+    }
+  }, [filteredNormalCardsNonColorway, filteredBigCardsNonColorway]);
   // NON-COLORWAY DATA ENDS HERE
   return (
     <>
@@ -380,7 +359,7 @@ const ProductDetail = () => {
               <p className="text-left">Product Finder</p>
 
               {/*product finder dropdown input box */}
-              <div className="w-[204px] h-[40px]">
+              <div className="w-[204px] h-[40px] bg-white">
                 <Menu
                   as="div"
                   className=" relative flex justify-start text-left"
@@ -405,7 +384,7 @@ const ProductDetail = () => {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute z-10 mt-2 w-[204px] h-[40px] rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <div className="py-1">
+                      <div className="py-1 bg-white">
                         <Menu.Item>
                           {({ active }) => (
                             <Link
@@ -474,48 +453,48 @@ const ProductDetail = () => {
                 </Menu>
 
                 {/*product finder Dropdown menu  */}
-                {/* <div
-            id="dropdown"
-            className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-          >
-            <ul
-              className="py-2 text-sm text-gray-700 dark:text-gray-200"
-              aria-labelledby="dropdownDefaultButton"
-            >
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                <div
+                  id="dropdown"
+                  className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
                 >
-                  Dashboard
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Settings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Earnings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Sign out
-                </a>
-              </li>
-            </ul>
-          </div> */}
+                  <ul
+                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownDefaultButton"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Earnings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Sign out
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             {/* fabric files */}
@@ -613,7 +592,7 @@ const ProductDetail = () => {
         {filteredProductsByColorway.map((item, index) => {
           return (
             <div key={index}>
-              <div className="w-[280px] h-[96px] sm:w-[664px] sm:h-[96px] xl:w-[1160px] 2xl:w-[1320px] xl:h-[39px] grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-3 gap-[30px] xl:gap-0 items-center justify-center xl:justify-between">
+              <div className="mb-[40px] w-[280px] h-[96px] sm:w-[664px] sm:h-[96px] xl:w-[1160px] 2xl:w-[1320px] xl:h-[39px] grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-3 gap-[30px] xl:gap-0 items-center justify-center xl:justify-between">
                 <div className="col-span-1 hidden xl:flex h-[39px]"></div>
                 <div className="col-span-1 h-[39px] flex items-center justify-center">
                   <p className="font-bold text-center">{item?.colorwayName}</p>
@@ -1314,32 +1293,293 @@ const ProductDetail = () => {
         })}
 
         {/* NON-COLORWAY PRODUCT FOR NORMAL , BIGANDNORMAL , MULTI CARD */}
-        {filteredProductsByNonColorway.map((item, index) => {
-          console.log(item);
-          return (
-            <div key={index}>
-              <div className="w-[280px] h-[96px] sm:w-[664px] sm:h-[96px] xl:w-[1160px] 2xl:w-[1320px] xl:h-[39px] grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-3 gap-[30px] xl:gap-0 items-center justify-center xl:justify-between">
-                <div className="col-span-1 hidden xl:flex h-[39px]"></div>
-                <div className="col-span-1 h-[39px] flex items-center justify-center">
-                  <p className="font-bold text-center text-white"></p>
+
+        <div className="mb-[40px] w-[280px] h-[96px] sm:w-[664px] sm:h-[96px] xl:w-[1160px] 2xl:w-[1320px] xl:h-[39px] grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-3 gap-[30px] xl:gap-0 items-center justify-center xl:justify-between">
+          <div className="col-span-1 hidden xl:flex h-[39px]"></div>
+          <div className="col-span-1 h-[39px] flex items-center justify-center">
+            <p className="font-bold text-center text-white"></p>
+          </div>
+        </div>
+
+        {nonColorwayNormalCardSizeOnly && (
+          <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-10">
+            {filteredNormalCardsNonColorway?.map((item, index) => (
+              <div
+                key={index}
+                className="w-[130px] h-[266px] sm:h-[326px] sm:w-[180px] cursor-pointer"
+              >
+                {/* modal */}
+                <div>
+                  <Modal
+                    showModal={openModal === index}
+                    cancelOption={() => setOpenModal(null)}
+                    index={index + 1}
+                  />
                 </div>
-                {/* {login && (
-                  <div className="flex justify-center xl:justify-end col-span-1 h-[39px]">
-                    <div className="w-[280px] sm:w-[664px] xl:w-[223px] flex items-center justify-center">
-                      <button
-                        type="button"
-                        className=" text-black bg-white border-2 border-black h-[39px] rounded font-semibold text-center w-[223px]"
-                      >
-                        Add This Colorway Only
-                      </button>
+
+                <div
+                  onClick={() => {
+                    setOpenModal(index);
+                  }}
+                >
+                  <div className="flex flex-col gap-[15px] sm:gap-[20px] border">
+                    <img
+                      src={item.name}
+                      alt="Product"
+                      className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                    />
+                    <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
+                      <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                        <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
+                          'Twas The Night Before Ch...
+                        </p>
+                        <p className="mt-1 font-semibold w-[120px] h-[26px] sm:h-[20px] sm:w-[120px]">
+                          27025-10
+                        </p>
+                        {/* for log in user */}
+                        <div className="w-[120px] h-[50px] sm:w-[160px]">
+                          {login && (
+                            <div className="flex gap-3 md:gap-9 items-center justify-center">
+                              <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                ${item["price per m"]}
+                                <span className="text-xs text-gray-600 font-normal">
+                                  / m{" "}
+                                </span>
+                              </div>
+                              <div className="flex flex-col gap-2 items-center justify-center">
+                                {/* quantity button */}
+                                <div className="w-[60px]">
+                                  <form className="max-w-xs mx-auto">
+                                    <label
+                                      htmlFor="quantity-input"
+                                      className="block mb-2 text-sm font-medium text-gray-900"
+                                    ></label>
+                                    <div className="relative flex items-center max-w-[8rem]">
+                                      <button
+                                        type="button"
+                                        id="decrement-button"
+                                        data-input-counter-decrement="quantity-input"
+                                        className="bg-white border border-gray-300 rounded-s p-1 h-5"
+                                      >
+                                        <svg
+                                          className="w-2 h-2 text-gray-900"
+                                          aria-hidden="true"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 18 2"
+                                        >
+                                          <path
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M1 1h16"
+                                          />
+                                        </svg>
+                                      </button>
+                                      <input
+                                        type="text"
+                                        id="quantity-input"
+                                        data-input-counter
+                                        aria-describedby="helper-text-explanation"
+                                        className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                        placeholder="10"
+                                      />
+                                      <button
+                                        type="button"
+                                        id="increment-button"
+                                        data-input-counter-increment="quantity-input"
+                                        className="bg-white border border-gray-300 rounded-e p-1 h-5"
+                                      >
+                                        <svg
+                                          className="w-2 h-2 text-gray-900"
+                                          aria-hidden="true"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 18 18"
+                                        >
+                                          <path
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M9 1v16M1 9h16"
+                                          />
+                                        </svg>
+                                      </button>
+                                    </div>
+                                  </form>
+                                </div>
+
+                                {/* add button */}
+                                <div>
+                                  <button
+                                    type="button"
+                                    className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
+                                  >
+                                    Add
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                )} */}
+                </div>
               </div>
+            ))}
+          </div>
+        )}
 
-              {nonColorwayNormalCardSizeOnly && (
-                <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-10">
-                  {item.filteredBigCards?.map((item, index) => (
+        {nonColorwayBigAndNormalCardSize && (
+          <div className="grid grid-cols-1">
+            <div className="w-[280px] h-fit sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-rows-1 sm:grid-rows-2 xl:grid-cols-4 gap-0 xl:gap-20">
+              {/* Big card */}
+              <div className="sm:row-span-1 xl:col-span-1">
+                <div className="h-auto w-[280px] sm:w-[664px] xl:w-[250px] grid sm:grid-cols-2 xl:grid-cols-1 mx-auto justify-items-center grid-flow-row gap-10">
+                  {filteredBigCardsNonColorway?.map((item, index) => (
+                    <div
+                      key={index}
+                      className="w-[250px] h-[408px] cursor-pointer"
+                    >
+                      {/* modal */}
+                      <div>
+                        <Modal
+                          showModal={openModal === index}
+                          cancelOption={() => setOpenModal(null)}
+                          index={index + 1}
+                          item={item}
+                        />
+                      </div>
+
+                      <div
+                        onClick={() => {
+                          setOpenModal(index);
+                        }}
+                      >
+                        <div className="flex flex-col sm:gap-[20px] border">
+                          <div className="w-[250px] h-[250px] flex items-center justify-center border">
+                            <img
+                              src={item.name}
+                              alt="Product"
+                              className="h-[230px] w-[230px] object-cover"
+                            />
+                          </div>
+                          <div className="w-[250px] h-[138px] cursor-pointer flex items-start justify-center border border-t-0">
+                            <div className="text-xs flex flex-col h-[118px] w-[230px] gap-[5px]">
+                              <div className="w-[230px] h-[21px] flex justify-between">
+                                <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-gray-500">
+                                  Design Name
+                                </p>
+                                <p className="w-[112.5px] h-[21px] overflow-hidden text-end text-nowrap text-gray-500">
+                                  Color
+                                </p>
+                              </div>
+                              <p className="mt-1 font-semibold w-[230px] h-[42px]">
+                                DP27023-44
+                              </p>
+                              {/* for log in user */}
+                              <div className="w-[230px] h-[45px]">
+                                {login && (
+                                  <div className="flex gap-3 md:gap-9 items-center justify-between">
+                                    <div className="w-[70px] h-[27px] text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                      ${item["price per m"]}
+                                      <span className="text-xs text-gray-600 font-normal">
+                                        / m{" "}
+                                      </span>
+                                    </div>
+                                    <div className="w-[60px] h-[45px] flex flex-col gap-[5px] items-center justify-center">
+                                      {/* quantity button */}
+                                      <div className="w-[60px] h-[20px]">
+                                        <form className="max-w-xs mx-auto">
+                                          <label
+                                            htmlFor="quantity-input"
+                                            className="block text-sm font-medium text-gray-900"
+                                          ></label>
+                                          <div className="relative flex items-center max-w-[8rem]">
+                                            <button
+                                              type="button"
+                                              id="decrement-button"
+                                              data-input-counter-decrement="quantity-input"
+                                              className="bg-white border border-gray-300 rounded-s p-1 h-5"
+                                            >
+                                              <svg
+                                                className="w-2 h-2 text-gray-900"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 2"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M1 1h16"
+                                                />
+                                              </svg>
+                                            </button>
+                                            <input
+                                              type="text"
+                                              id="quantity-input"
+                                              data-input-counter
+                                              aria-describedby="helper-text-explanation"
+                                              className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-xs"
+                                              placeholder="10"
+                                            />
+                                            <button
+                                              type="button"
+                                              id="increment-button"
+                                              data-input-counter-increment="quantity-input"
+                                              className="bg-white border border-gray-300 rounded-e p-1 h-5"
+                                            >
+                                              <svg
+                                                className="w-2 h-2 text-gray-900"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 18"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M9 1v16M1 9h16"
+                                                />
+                                              </svg>
+                                            </button>
+                                          </div>
+                                        </form>
+                                      </div>
+
+                                      {/* add button */}
+                                      <div className="w-[60px] h-[20px]">
+                                        <button
+                                          type="button"
+                                          className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
+                                        >
+                                          Add
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* normal card */}
+              <div className="sm:row-span-1 xl:col-span-3">
+                <div className="h-auto w-[280px] sm:w-[664px] xl:w-[870px] 2xl:w-[990px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-4 justify-items-center grid-flow-row gap-y-10 gap-x-2">
+                  {filteredNormalCardsNonColorway?.map((item, index) => (
                     <div
                       key={index}
                       className="w-[130px] h-[266px] sm:h-[326px] sm:w-[180px] cursor-pointer"
@@ -1446,7 +1686,6 @@ const ProductDetail = () => {
                                           </div>
                                         </form>
                                       </div>
-
                                       {/* add button */}
                                       <div>
                                         <button
@@ -1467,556 +1706,278 @@ const ProductDetail = () => {
                     </div>
                   ))}
                 </div>
-              )}
-
-              {nonColorwayBigAndNormalCardSize && (
-                <div className="grid grid-cols-1">
-                  <div className="w-[280px] h-fit sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-rows-1 sm:grid-rows-2 xl:grid-cols-4 gap-0 xl:gap-20">
-                    {/* Big card */}
-                    <div className="sm:row-span-1 xl:col-span-1">
-                      <div className="h-auto w-[280px] sm:w-[664px] xl:w-[250px] grid sm:grid-cols-2 xl:grid-cols-1 mx-auto justify-items-center grid-flow-row gap-10">
-                        {item.filteredBigCards?.map((item, index) => (
-                          <div
-                            key={index}
-                            className="w-[250px] h-[408px] cursor-pointer"
-                          >
-                            {/* modal */}
-                            <div>
-                              <Modal
-                                showModal={openModal === index}
-                                cancelOption={() => setOpenModal(null)}
-                                index={index + 1}
-                                item={item}
-                              />
-                            </div>
-
-                            <div
-                              onClick={() => {
-                                setOpenModal(index);
-                              }}
-                            >
-                              <div className="flex flex-col sm:gap-[20px] border">
-                                <div className="w-[250px] h-[250px] flex items-center justify-center border">
-                                  <img
-                                    src={item.name}
-                                    alt="Product"
-                                    className="h-[230px] w-[230px] object-cover"
-                                  />
-                                </div>
-                                <div className="w-[250px] h-[138px] cursor-pointer flex items-start justify-center border border-t-0">
-                                  <div className="text-xs flex flex-col h-[118px] w-[230px] gap-[5px]">
-                                    <div className="w-[230px] h-[21px] flex justify-between">
-                                      <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-gray-500">
-                                        Design Name
-                                      </p>
-                                      <p className="w-[112.5px] h-[21px] overflow-hidden text-end text-nowrap text-gray-500">
-                                        Color
-                                      </p>
-                                    </div>
-                                    <p className="mt-1 font-semibold w-[230px] h-[42px]">
-                                      DP27023-44
-                                    </p>
-                                    {/* for log in user */}
-                                    <div className="w-[230px] h-[45px]">
-                                      {login && (
-                                        <div className="flex gap-3 md:gap-9 items-center justify-between">
-                                          <div className="w-[70px] h-[27px] text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
-                                            ${item["price per m"]}
-                                            <span className="text-xs text-gray-600 font-normal">
-                                              / m{" "}
-                                            </span>
-                                          </div>
-                                          <div className="w-[60px] h-[45px] flex flex-col gap-[5px] items-center justify-center">
-                                            {/* quantity button */}
-                                            <div className="w-[60px] h-[20px]">
-                                              <form className="max-w-xs mx-auto">
-                                                <label
-                                                  htmlFor="quantity-input"
-                                                  className="block text-sm font-medium text-gray-900"
-                                                ></label>
-                                                <div className="relative flex items-center max-w-[8rem]">
-                                                  <button
-                                                    type="button"
-                                                    id="decrement-button"
-                                                    data-input-counter-decrement="quantity-input"
-                                                    className="bg-white border border-gray-300 rounded-s p-1 h-5"
-                                                  >
-                                                    <svg
-                                                      className="w-2 h-2 text-gray-900"
-                                                      aria-hidden="true"
-                                                      xmlns="http://www.w3.org/2000/svg"
-                                                      fill="none"
-                                                      viewBox="0 0 18 2"
-                                                    >
-                                                      <path
-                                                        stroke="currentColor"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth="2"
-                                                        d="M1 1h16"
-                                                      />
-                                                    </svg>
-                                                  </button>
-                                                  <input
-                                                    type="text"
-                                                    id="quantity-input"
-                                                    data-input-counter
-                                                    aria-describedby="helper-text-explanation"
-                                                    className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-xs"
-                                                    placeholder="10"
-                                                  />
-                                                  <button
-                                                    type="button"
-                                                    id="increment-button"
-                                                    data-input-counter-increment="quantity-input"
-                                                    className="bg-white border border-gray-300 rounded-e p-1 h-5"
-                                                  >
-                                                    <svg
-                                                      className="w-2 h-2 text-gray-900"
-                                                      aria-hidden="true"
-                                                      xmlns="http://www.w3.org/2000/svg"
-                                                      fill="none"
-                                                      viewBox="0 0 18 18"
-                                                    >
-                                                      <path
-                                                        stroke="currentColor"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth="2"
-                                                        d="M9 1v16M1 9h16"
-                                                      />
-                                                    </svg>
-                                                  </button>
-                                                </div>
-                                              </form>
-                                            </div>
-
-                                            {/* add button */}
-                                            <div className="w-[60px] h-[20px]">
-                                              <button
-                                                type="button"
-                                                className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
-                                              >
-                                                Add
-                                              </button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      )}
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    {/* normal card */}
-                    <div className="sm:row-span-1 xl:col-span-3">
-                      <div className="h-auto w-[280px] sm:w-[664px] xl:w-[870px] 2xl:w-[990px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-4 justify-items-center grid-flow-row gap-y-10 gap-x-2">
-                        {item.filteredNormalCards?.map((item, index) => (
-                          <div
-                            key={index}
-                            className="w-[130px] h-[266px] sm:h-[326px] sm:w-[180px] cursor-pointer"
-                          >
-                            {/* modal */}
-                            <div>
-                              <Modal
-                                showModal={openModal === index}
-                                cancelOption={() => setOpenModal(null)}
-                                index={index + 1}
-                              />
-                            </div>
-
-                            <div
-                              onClick={() => {
-                                setOpenModal(index);
-                              }}
-                            >
-                              <div className="flex flex-col gap-[15px] sm:gap-[20px] border">
-                                <img
-                                  src={item.name}
-                                  alt="Product"
-                                  className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
-                                />
-                                <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
-                                  <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
-                                    <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
-                                      'Twas The Night Before Ch...
-                                    </p>
-                                    <p className="mt-1 font-semibold w-[120px] h-[26px] sm:h-[20px] sm:w-[120px]">
-                                      27025-10
-                                    </p>
-                                    {/* for log in user */}
-                                    <div className="w-[120px] h-[50px] sm:w-[160px]">
-                                      {login && (
-                                        <div className="flex gap-3 md:gap-9 items-center justify-center">
-                                          <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
-                                            ${item["price per m"]}
-                                            <span className="text-xs text-gray-600 font-normal">
-                                              / m{" "}
-                                            </span>
-                                          </div>
-                                          <div className="flex flex-col gap-2 items-center justify-center">
-                                            {/* quantity button */}
-                                            <div className="w-[60px]">
-                                              <form className="max-w-xs mx-auto">
-                                                <label
-                                                  htmlFor="quantity-input"
-                                                  className="block mb-2 text-sm font-medium text-gray-900"
-                                                ></label>
-                                                <div className="relative flex items-center max-w-[8rem]">
-                                                  <button
-                                                    type="button"
-                                                    id="decrement-button"
-                                                    data-input-counter-decrement="quantity-input"
-                                                    className="bg-white border border-gray-300 rounded-s p-1 h-5"
-                                                  >
-                                                    <svg
-                                                      className="w-2 h-2 text-gray-900"
-                                                      aria-hidden="true"
-                                                      xmlns="http://www.w3.org/2000/svg"
-                                                      fill="none"
-                                                      viewBox="0 0 18 2"
-                                                    >
-                                                      <path
-                                                        stroke="currentColor"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth="2"
-                                                        d="M1 1h16"
-                                                      />
-                                                    </svg>
-                                                  </button>
-                                                  <input
-                                                    type="text"
-                                                    id="quantity-input"
-                                                    data-input-counter
-                                                    aria-describedby="helper-text-explanation"
-                                                    className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
-                                                    placeholder="10"
-                                                  />
-                                                  <button
-                                                    type="button"
-                                                    id="increment-button"
-                                                    data-input-counter-increment="quantity-input"
-                                                    className="bg-white border border-gray-300 rounded-e p-1 h-5"
-                                                  >
-                                                    <svg
-                                                      className="w-2 h-2 text-gray-900"
-                                                      aria-hidden="true"
-                                                      xmlns="http://www.w3.org/2000/svg"
-                                                      fill="none"
-                                                      viewBox="0 0 18 18"
-                                                    >
-                                                      <path
-                                                        stroke="currentColor"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth="2"
-                                                        d="M9 1v16M1 9h16"
-                                                      />
-                                                    </svg>
-                                                  </button>
-                                                </div>
-                                              </form>
-                                            </div>
-                                            {/* add button */}
-                                            <div>
-                                              <button
-                                                type="button"
-                                                className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
-                                              >
-                                                Add
-                                              </button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      )}
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {nonColorwayMultiPanel && (
-                <div className="w-[280px] h-fit sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col justify-center gap-y-10">
-                  {/* Big card */}
-                  <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 mx-auto justify-items-center grid-flow-row gap-y-[62px] sm:gap-y-10">
-                    {item.filteredBigCards?.map((item, index) => (
-                      <div
-                        key={index}
-                        className="w-[250px] h-[558.51px] cursor-pointer"
-                      >
-                        {/* modal */}
-                        <div>
-                          <Modal
-                            showModal={openModal === index}
-                            cancelOption={() => setOpenModal(null)}
-                            index={index + 1}
-                          />
-                        </div>
-                        <div
-                          onClick={() => {
-                            setOpenModal(index);
-                          }}
-                        >
-                          <div className="flex flex-col sm:gap-[20px] border">
-                            <div className="w-[250px] h-[400.51px] flex items-center justify-center border">
-                              <img
-                                src={item.name}
-                                alt="Product"
-                                className="w-[230px] h-[381px] object-fill"
-                              />
-                            </div>
-                            <div className="w-[250px] h-[138px] cursor-pointer flex items-start justify-center border border-t-0">
-                              <div className="text-xs flex flex-col w-[230px] h-[118px] gap-[5px]">
-                                <div className="w-[230px] h-[21px] flex justify-between">
-                                  <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-gray-500">
-                                    Design Name
-                                  </p>
-                                  <p className="w-[112.5px] h-[21px] overflow-hidden text-end text-nowrap text-gray-500">
-                                    Color
-                                  </p>
-                                </div>
-                                <p className="mt-1 font-semibold w-[230px] h-[42px]">
-                                  DP27023-44
-                                </p>
-                                {/* for log in user */}
-                                <div className="w-[230px] h-[45px]">
-                                  {login && (
-                                    <div className="flex gap-3 md:gap-9 items-center justify-between">
-                                      <div className="w-[70px] h-[27px] text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
-                                        ${item["price per m"]}
-                                        <span className="text-xs text-gray-600 font-normal">
-                                          / m{" "}
-                                        </span>
-                                      </div>
-                                      <div className="w-[60px] h-[45px] flex flex-col gap-[5px] items-center justify-center">
-                                        {/* quantity button */}
-                                        <div className="w-[60px] h-[20px]">
-                                          <form className="max-w-xs mx-auto">
-                                            <label
-                                              htmlFor="quantity-input"
-                                              className="block text-sm font-medium text-gray-900"
-                                            ></label>
-                                            <div className="relative flex items-center max-w-[8rem]">
-                                              <button
-                                                type="button"
-                                                id="decrement-button"
-                                                data-input-counter-decrement="quantity-input"
-                                                className="bg-white border border-gray-300 rounded-s p-1 h-5"
-                                              >
-                                                <svg
-                                                  className="w-2 h-2 text-gray-900"
-                                                  aria-hidden="true"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  fill="none"
-                                                  viewBox="0 0 18 2"
-                                                >
-                                                  <path
-                                                    stroke="currentColor"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M1 1h16"
-                                                  />
-                                                </svg>
-                                              </button>
-                                              <input
-                                                type="text"
-                                                id="quantity-input"
-                                                data-input-counter
-                                                aria-describedby="helper-text-explanation"
-                                                className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-xs"
-                                                placeholder="10"
-                                              />
-                                              <button
-                                                type="button"
-                                                id="increment-button"
-                                                data-input-counter-increment="quantity-input"
-                                                className="bg-white border border-gray-300 rounded-e p-1 h-5"
-                                              >
-                                                <svg
-                                                  className="w-2 h-2 text-gray-900"
-                                                  aria-hidden="true"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  fill="none"
-                                                  viewBox="0 0 18 18"
-                                                >
-                                                  <path
-                                                    stroke="currentColor"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M9 1v16M1 9h16"
-                                                  />
-                                                </svg>
-                                              </button>
-                                            </div>
-                                          </form>
-                                        </div>
-                                        {/* add button */}
-                                        <div className="w-[60px] h-[20px]">
-                                          <button
-                                            type="button"
-                                            className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
-                                          >
-                                            Add
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  {/* normal card */}
-                  <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-y-10 gap-x-2">
-                    {item.filteredNormalCards?.map((item, index) => (
-                      <div
-                        key={index}
-                        className="w-[130px] h-[266px] sm:h-[326px] sm:w-[180px] cursor-pointer"
-                      >
-                        {/* modal */}
-                        <div>
-                          <Modal
-                            showModal={openModal === index}
-                            cancelOption={() => setOpenModal(null)}
-                            index={index + 1}
-                          />
-                        </div>
-                        <div
-                          onClick={() => {
-                            setOpenModal(index);
-                          }}
-                        >
-                          <div className="flex flex-col gap-[15px] sm:gap-[20px] border">
-                            <img
-                              src={item.name}
-                              alt="Product"
-                              className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
-                            />
-                            <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
-                              <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
-                                <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
-                                  'Twas The Night Before Ch...
-                                </p>
-                                <p className="mt-1 font-semibold w-[120px] h-[26px] sm:h-[20px] sm:w-[120px]">
-                                  27025-10
-                                </p>
-                                {/* for log in user */}
-                                <div className="w-[120px] h-[50px] sm:w-[160px]">
-                                  {login && (
-                                    <div className="flex gap-3 md:gap-9 items-center justify-center">
-                                      <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
-                                        ${item["price per m"]}
-                                        <span className="text-xs text-gray-600 font-normal">
-                                          / m{" "}
-                                        </span>
-                                      </div>
-                                      <div className="flex flex-col gap-2 items-center justify-center">
-                                        {/* quantity button */}
-                                        <div className="w-[60px]">
-                                          <form className="max-w-xs mx-auto">
-                                            <label
-                                              htmlFor="quantity-input"
-                                              className="block mb-2 text-sm font-medium text-gray-900"
-                                            ></label>
-                                            <div className="relative flex items-center max-w-[8rem]">
-                                              <button
-                                                type="button"
-                                                id="decrement-button"
-                                                data-input-counter-decrement="quantity-input"
-                                                className="bg-white border border-gray-300 rounded-s p-1 h-5"
-                                              >
-                                                <svg
-                                                  className="w-2 h-2 text-gray-900"
-                                                  aria-hidden="true"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  fill="none"
-                                                  viewBox="0 0 18 2"
-                                                >
-                                                  <path
-                                                    stroke="currentColor"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M1 1h16"
-                                                  />
-                                                </svg>
-                                              </button>
-                                              <input
-                                                type="text"
-                                                id="quantity-input"
-                                                data-input-counter
-                                                aria-describedby="helper-text-explanation"
-                                                className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
-                                                placeholder="10"
-                                              />
-                                              <button
-                                                type="button"
-                                                id="increment-button"
-                                                data-input-counter-increment="quantity-input"
-                                                className="bg-white border border-gray-300 rounded-e p-1 h-5"
-                                              >
-                                                <svg
-                                                  className="w-2 h-2 text-gray-900"
-                                                  aria-hidden="true"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  fill="none"
-                                                  viewBox="0 0 18 18"
-                                                >
-                                                  <path
-                                                    stroke="currentColor"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M9 1v16M1 9h16"
-                                                  />
-                                                </svg>
-                                              </button>
-                                            </div>
-                                          </form>
-                                        </div>
-                                        {/* add button */}
-                                        <div>
-                                          <button
-                                            type="button"
-                                            className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
-                                          >
-                                            Add
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+              </div>
             </div>
-          );
-        })}
+          </div>
+        )}
+
+        {nonColorwayMultiPanel && (
+          <div className="w-[280px] h-fit sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col justify-center gap-y-10">
+            {/* Big card */}
+            <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 mx-auto justify-items-center grid-flow-row gap-y-[62px] sm:gap-y-10">
+              {filteredBigCardsNonColorway?.map((item, index) => (
+                <div
+                  key={index}
+                  className="w-[250px] h-[558.51px] cursor-pointer"
+                >
+                  {/* modal */}
+                  <div>
+                    <Modal
+                      showModal={openModal === index}
+                      cancelOption={() => setOpenModal(null)}
+                      index={index + 1}
+                    />
+                  </div>
+                  <div
+                    onClick={() => {
+                      setOpenModal(index);
+                    }}
+                  >
+                    <div className="flex flex-col sm:gap-[20px] border">
+                      <div className="w-[250px] h-[400.51px] flex items-center justify-center border">
+                        <img
+                          src={item.name}
+                          alt="Product"
+                          className="w-[230px] h-[381px] object-fill"
+                        />
+                      </div>
+                      <div className="w-[250px] h-[138px] cursor-pointer flex items-start justify-center border border-t-0">
+                        <div className="text-xs flex flex-col w-[230px] h-[118px] gap-[5px]">
+                          <div className="w-[230px] h-[21px] flex justify-between">
+                            <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-gray-500">
+                              Design Name
+                            </p>
+                            <p className="w-[112.5px] h-[21px] overflow-hidden text-end text-nowrap text-gray-500">
+                              Color
+                            </p>
+                          </div>
+                          <p className="mt-1 font-semibold w-[230px] h-[42px]">
+                            DP27023-44
+                          </p>
+                          {/* for log in user */}
+                          <div className="w-[230px] h-[45px]">
+                            {login && (
+                              <div className="flex gap-3 md:gap-9 items-center justify-between">
+                                <div className="w-[70px] h-[27px] text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                  ${item["price per m"]}
+                                  <span className="text-xs text-gray-600 font-normal">
+                                    / m{" "}
+                                  </span>
+                                </div>
+                                <div className="w-[60px] h-[45px] flex flex-col gap-[5px] items-center justify-center">
+                                  {/* quantity button */}
+                                  <div className="w-[60px] h-[20px]">
+                                    <form className="max-w-xs mx-auto">
+                                      <label
+                                        htmlFor="quantity-input"
+                                        className="block text-sm font-medium text-gray-900"
+                                      ></label>
+                                      <div className="relative flex items-center max-w-[8rem]">
+                                        <button
+                                          type="button"
+                                          id="decrement-button"
+                                          data-input-counter-decrement="quantity-input"
+                                          className="bg-white border border-gray-300 rounded-s p-1 h-5"
+                                        >
+                                          <svg
+                                            className="w-2 h-2 text-gray-900"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 18 2"
+                                          >
+                                            <path
+                                              stroke="currentColor"
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              strokeWidth="2"
+                                              d="M1 1h16"
+                                            />
+                                          </svg>
+                                        </button>
+                                        <input
+                                          type="text"
+                                          id="quantity-input"
+                                          data-input-counter
+                                          aria-describedby="helper-text-explanation"
+                                          className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-xs"
+                                          placeholder="10"
+                                        />
+                                        <button
+                                          type="button"
+                                          id="increment-button"
+                                          data-input-counter-increment="quantity-input"
+                                          className="bg-white border border-gray-300 rounded-e p-1 h-5"
+                                        >
+                                          <svg
+                                            className="w-2 h-2 text-gray-900"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 18 18"
+                                          >
+                                            <path
+                                              stroke="currentColor"
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              strokeWidth="2"
+                                              d="M9 1v16M1 9h16"
+                                            />
+                                          </svg>
+                                        </button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                  {/* add button */}
+                                  <div className="w-[60px] h-[20px]">
+                                    <button
+                                      type="button"
+                                      className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
+                                    >
+                                      Add
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* normal card */}
+            <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-y-10 gap-x-2">
+              {filteredNormalCardsNonColorway?.map((item, index) => (
+                <div
+                  key={index}
+                  className="w-[130px] h-[266px] sm:h-[326px] sm:w-[180px] cursor-pointer"
+                >
+                  {/* modal */}
+                  <div>
+                    <Modal
+                      showModal={openModal === index}
+                      cancelOption={() => setOpenModal(null)}
+                      index={index + 1}
+                    />
+                  </div>
+                  <div
+                    onClick={() => {
+                      setOpenModal(index);
+                    }}
+                  >
+                    <div className="flex flex-col gap-[15px] sm:gap-[20px] border">
+                      <img
+                        src={item.name}
+                        alt="Product"
+                        className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                      />
+                      <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
+                        <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                          <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
+                            'Twas The Night Before Ch...
+                          </p>
+                          <p className="mt-1 font-semibold w-[120px] h-[26px] sm:h-[20px] sm:w-[120px]">
+                            27025-10
+                          </p>
+                          {/* for log in user */}
+                          <div className="w-[120px] h-[50px] sm:w-[160px]">
+                            {login && (
+                              <div className="flex gap-3 md:gap-9 items-center justify-center">
+                                <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                  ${item["price per m"]}
+                                  <span className="text-xs text-gray-600 font-normal">
+                                    / m{" "}
+                                  </span>
+                                </div>
+                                <div className="flex flex-col gap-2 items-center justify-center">
+                                  {/* quantity button */}
+                                  <div className="w-[60px]">
+                                    <form className="max-w-xs mx-auto">
+                                      <label
+                                        htmlFor="quantity-input"
+                                        className="block mb-2 text-sm font-medium text-gray-900"
+                                      ></label>
+                                      <div className="relative flex items-center max-w-[8rem]">
+                                        <button
+                                          type="button"
+                                          id="decrement-button"
+                                          data-input-counter-decrement="quantity-input"
+                                          className="bg-white border border-gray-300 rounded-s p-1 h-5"
+                                        >
+                                          <svg
+                                            className="w-2 h-2 text-gray-900"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 18 2"
+                                          >
+                                            <path
+                                              stroke="currentColor"
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              strokeWidth="2"
+                                              d="M1 1h16"
+                                            />
+                                          </svg>
+                                        </button>
+                                        <input
+                                          type="text"
+                                          id="quantity-input"
+                                          data-input-counter
+                                          aria-describedby="helper-text-explanation"
+                                          className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                          placeholder="10"
+                                        />
+                                        <button
+                                          type="button"
+                                          id="increment-button"
+                                          data-input-counter-increment="quantity-input"
+                                          className="bg-white border border-gray-300 rounded-e p-1 h-5"
+                                        >
+                                          <svg
+                                            className="w-2 h-2 text-gray-900"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 18 18"
+                                          >
+                                            <path
+                                              stroke="currentColor"
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              strokeWidth="2"
+                                              d="M9 1v16M1 9h16"
+                                            />
+                                          </svg>
+                                        </button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                  {/* add button */}
+                                  <div>
+                                    <button
+                                      type="button"
+                                      className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
+                                    >
+                                      Add
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* pattern colorway */}
         {/* horizontal line */}
