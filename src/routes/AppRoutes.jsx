@@ -50,6 +50,7 @@ import EmailNotFound from "../pages/auth/EmailNotFound";
 import RetailerRegistration from "../pages/login/RetailerRegistration";
 import RetailerRegistrationComplete from "../pages/login/RetailerRegistrationComplete";
 import BodyCopy from "../components/shared/headers/HomePageContent/BodyCopy";
+import AboutUs from "../pages/about/AboutUs";
 
 export default function AppRoutes() {
   const [userId, setUserId] = useState();
@@ -321,6 +322,7 @@ export default function AppRoutes() {
         <Route path="/regionCustomers" element={<RegionCustomers />} />
 
         <Route path="/about" element={<About />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/help" element={<Help />} />
         <Route
           path="/region-customer"
@@ -352,7 +354,8 @@ export default function AppRoutes() {
         <Route path="/resources-list/:id" element={<ResourcesList />} />
         <Route path="/resource-details/:id" element={<ResourceDetails />} />
         <Route path="/product-category" element={<ProductCategory />} />
-        <Route path="/product-collection/:id" element={<ProductCollection />} />
+        {/* <Route path="/product-collection/:id" element={<ProductCollection />} /> */}
+        <Route path="/:id" element={<ProductCollection />} />
         <Route path="/product-detail/:id" element={<ProductDetail />} />
         {/* <Route path="/product-finder/:id" element={<Productfinder />} /> */}
         <Route path="/product-finder" element={<Productfinder />} />

@@ -660,7 +660,8 @@ export default function TopHeader() {
                                           <div className="col-span-2">
                                             <Link
                                               // to={`/testui/collections/${finallink?._id?.$oid}`}
-                                              to={`/product-collection/${finallink?._id?.$oid}`}
+                                              // to={`/product-collection/${finallink?._id?.$oid}`}
+                                              to={`/${finallink?._id?.$oid}`}
                                               className="block text-xs text-gray-900"
                                             >
                                               {finallink?.name}
@@ -848,7 +849,8 @@ export default function TopHeader() {
                                           >
                                             <Link
                                               // to={`/testui/collections/${finallink?._id?.$oid}`}
-                                              to={`/product-collection/${finallink?._id?.$oid}`}
+                                              // to={`/product-collection/${finallink?._id?.$oid}`}
+                                              to={`/${finallink?._id?.$oid}`}
                                             >
                                               {finallink.name}
                                             </Link>
