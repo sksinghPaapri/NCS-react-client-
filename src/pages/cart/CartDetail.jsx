@@ -2011,7 +2011,7 @@ const CartDetail = () => {
               </div>
               {/* row3 */}
               <div className="w-[240px] h-[49px] sm:w-[300px] lg:mb-5">
-                <Link to={"/my-orders"}>
+                <Link to={"/checkout"}>
                   <button
                     type="button"
                     className="w-[240px] sm:w-[300px] h-[49px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-base focus:outline-none uppercase"

@@ -23,13 +23,13 @@ import CarouselBottom from "./BodyComponents/CarouselTBottom";
 
 const Body = () => {
   return (
-    // <div className="mt-[1px] w-[320px] h-[9440px] sm:w-[744px] sm:h-[9879.77px] xl:w-[1280px] xl:h-[6228px] 2xl:w-[1728px] 2xl:h-[6534.61px] gap-20 sm:gap-[100px]">
-    <div className="mt-[300px] w-[320px] h-[9694px] sm:w-[744px] sm:h-[10160.77px] xl:w-[1280px] xl:h-[6468px] 2xl:w-[1728px] 2xl:h-[6534.61px] gap-20 sm:gap-[100px]">
-      {/* <div className="w-[320px] h-[172px] sm:w-[744px] sm:h-[399px] xl:w-[1280px] xl:h-[687px] 2xl:w-[1725px] 2xl:h-[926px] max-h-[926px]"> */}
-      <div className="">{/* <CarouselTop /> */}</div>
+    <div className="mt-[1px]">
+      <div className="">
+        <CarouselTop />
+      </div>
       {/* 2) */}
       {/* Whats new */}
-      {/* <div className="mt-[100px] lg:mx-[60px] xl:w-[1160px] xl:h-[555px] xl:mx-auto xl:mb-[250vh] 2xl:mb-[200vh]">
+      <div className="mt-[100px] lg:mx-[60px] xl:w-[1160px] xl:h-[555px] xl:mx-auto xl:mb-[250vh] 2xl:mb-[200vh]">
         <div
           className="mb-[40px] text-3xl sm:text-5xl flex justify-center lg:justify-start"
           style={{ fontFamily: "DM Serif Display" }}
@@ -38,6 +38,7 @@ const Body = () => {
         </div>
         <div className="flex gap-10 flex-col mx-[20px] sm:mx-[60px] lg:mx-0 items-center justify-center">
           <div className="lg:h-[555px] flex flex-col gap-8 sm:gap-20 lg:gap-[60px] lg:flex-row lg:justify-around">
+            {/* 1st img */}
             <div className="sm:w-full sm:h-[626px] lg:h-[555px] lg:w-1/2 flex flex-col justify-center">
               <img
                 src={Mask}
@@ -59,7 +60,7 @@ const Body = () => {
                 </button>
               </div>
             </div>
-
+            {/* 2nd Image */}
             <div className="sm:w-[624px] sm:h-[626px] lg:h-[555px] lg:w-1/2 h-auto flex flex-col justify-center">
               <img
                 src={Mask}
@@ -82,7 +83,7 @@ const Body = () => {
               </div>
             </div>
           </div>
-
+          {/* 3rd Image */}
           <div
             className=" text-center text-3xl sm:text-5xl mt-20"
             style={{ fontFamily: "DM Serif Display" }}
@@ -111,99 +112,7 @@ const Body = () => {
             </div>
           </div>
         </div>
-      </div> */}
-      <div className="w-[320px] h-[810.48px] sm:w-[744px] sm:h-[1432px] xl:w-[1280px] xl:h-[661px] 2xl:w-[1320px] flex flex-col    items-center justify-center mx-[60px]">
-        {/* whats new */}
-        <div
-          className="w-[320px] h-[44px] sm:w-[744px] sm:h-[60px] xl:w-[1280px] xl:h-[66px] 2xl:w-[1320px] font-bold text-3xl sm:text-5xl flex justify-center lg:justify-start"
-          style={{ fontFamily: "DM Serif Display" }}
-        >
-          What's New
-        </div>
-        <div className="flex gap-10 flex-col mx-[20px] sm:mx-[60px] lg:mx-0 items-center justify-center">
-          <div className="lg:h-[555px] flex flex-col gap-8 sm:gap-20 lg:gap-[60px] lg:flex-row lg:justify-around">
-            <div className="sm:w-full sm:h-[626px] lg:h-[555px] lg:w-1/2 flex flex-col justify-center">
-              {/* card1 */}
-              <div>
-                <img
-                  src={Mask}
-                  alt="Image"
-                  className="h-[210.24px] sm:w-[624px] sm:h-[468.56px] lg:w-[550px] lg:h-[413px]"
-                />
-                <div
-                  className="flex justify-center mx-6 lg:mx-0 lg:justify-start my-6 text-2xl tracking-wide"
-                  style={{ fontFamily: "DM Serif Display" }}
-                >
-                  Promotion Example
-                </div>
-                <div className="flex justify-center lg:justify-start">
-                  <button
-                    type="button"
-                    className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded px-5 py-2.5 text-center w-[148px] h-[49px] text-base"
-                  >
-                    SHOP NOW
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* card2 */}
-            <div className="sm:w-[624px] sm:h-[626px] lg:h-[555px] lg:w-1/2 h-auto flex flex-col justify-center">
-              <img
-                src={Mask}
-                alt="Image"
-                className="h-[210.24px] sm:w-[624px] sm:h-[468.56px] lg:w-[550px] lg:h-[413px]"
-              />
-              <div
-                className="flex justify-center mx-0 lg:mx-6 lg:justify-start my-6 text-2xl"
-                style={{ fontFamily: "DM Serif Display" }}
-              >
-                New Collection Example
-              </div>
-              <div className="flex justify-center lg:justify-start">
-                <button
-                  type="button"
-                  className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded px-5 py-2.5 text-center w-[148px] h-[49px] text-base"
-                >
-                  SHOP NOW
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* whats new */}
-        <div
-          className=" text-center text-3xl sm:text-5xl mt-20"
-          style={{ fontFamily: "DM Serif Display" }}
-        >
-          What's New
-        </div>
-
-        {/* card3 */}
-        <div className="min-w-[320px] sm:min-w-[768px] sm:h-[460.77px] lg:h-[639px] xl:w-[1160px] flex justify-center lg:justify-end flex-col w-full xl:mt-14">
-          <img
-            src={Mask}
-            alt="Image"
-            className="h-60 min-w-[320px] sm:w-[768px] sm:h-[318.77px] lg:h-[497px] lg:w-[900px] xl:h-[564.61px] w-auto xl:w-[1160px]"
-          />
-          <div
-            className="flex justify-center mx-0 lg:mx-6 my-6 lg:mb-[30px] text-2xl sm:text-3xl text-center"
-            style={{ fontFamily: "DM Serif Display" }}
-          >
-            Promotion Collection Example
-          </div>
-          <div className="flex justify-center">
-            <button
-              type="button"
-              className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded px-5 sm:px-3 lg:px-1 py-2.5 text-center w-[240px] h-[49px] text-base uppercase"
-            >
-              shop the collection
-            </button>
-          </div>
-        </div>
       </div>
-
       {/* 3) */}
       {/* Northcott Fabrics */}
       <div className="xl:w-full sm:w-[768px] md:w-full my-12">

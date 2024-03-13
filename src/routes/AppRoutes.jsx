@@ -51,6 +51,7 @@ import RetailerRegistration from "../pages/login/RetailerRegistration";
 import RetailerRegistrationComplete from "../pages/login/RetailerRegistrationComplete";
 import BodyCopy from "../components/shared/headers/HomePageContent/BodyCopy";
 import AboutUs from "../pages/about/AboutUs";
+import Checkout from "../pages/checkout/Checkout";
 
 export default function AppRoutes() {
   const [userId, setUserId] = useState();
@@ -304,8 +305,8 @@ export default function AppRoutes() {
       <AppHeader />
       <Routes>
         {/* <Route path="/*" element={<Home />} /> */}
-        {/* <Route path="/*" element={<Body />} /> */}
-        <Route path="/*" element={<BodyCopy />} />
+        <Route path="/*" element={<Body />} />
+        {/* <Route path="/*" element={<BodyCopy />} /> */}
         {/* <Route path="/*" element={<ProductCollection />} /> */}
         {/* <Route path="/*" element={<ProductDetail />} /> */}
         {/* <Route path="/*" element={<CartDetail />} /> */}
@@ -322,7 +323,7 @@ export default function AppRoutes() {
         <Route path="/regionCustomers" element={<RegionCustomers />} />
 
         <Route path="/about" element={<About />} />
-        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/product-collection/aboutUs" element={<AboutUs />} />
         <Route path="/help" element={<Help />} />
         <Route
           path="/region-customer"
@@ -354,8 +355,8 @@ export default function AppRoutes() {
         <Route path="/resources-list/:id" element={<ResourcesList />} />
         <Route path="/resource-details/:id" element={<ResourceDetails />} />
         <Route path="/product-category" element={<ProductCategory />} />
-        {/* <Route path="/product-collection/:id" element={<ProductCollection />} /> */}
-        <Route path="/:id" element={<ProductCollection />} />
+        <Route path="/product-collection/:id" element={<ProductCollection />} />
+        {/* <Route path="/:id" element={<ProductCollection />} /> */}
         <Route path="/product-detail/:id" element={<ProductDetail />} />
         {/* <Route path="/product-finder/:id" element={<Productfinder />} /> */}
         <Route path="/product-finder" element={<Productfinder />} />
@@ -380,6 +381,7 @@ export default function AppRoutes() {
         <Route path="/patern-list" element={<PatternList />} />
         <Route path="/patern-detail/:id" element={<PatternDetails />} />
         <Route path="/my-orders" element={<MyOrders />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/update-password" element={<ChangePassword />} />
         <Route path="/update-password/:id" element={<ChangePassword />} />
       </Routes>
