@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import CartProduct from "../../assets/ShoppingCart/CartProduct.svg";
 import calendar_month from "../../assets/ShoppingCart/calendar_month.svg";
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const Checkout = () => {
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
   return (
     <div
       className="flex items-center justify-center my-[80px] sm:my-[100px]"
@@ -23,23 +29,27 @@ const Checkout = () => {
           {/* top section */}
           <div className="w-[280px] h-[65px] sm:w-[640px] sm:h-[34px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col items-center justify-between sm:flex-row">
             {/* back to cart */}
-            <div className="h-[21px] sm:h-[34px] flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                className="w-4 h-4 text-gray-600"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5 8.25 12l7.5-7.5"
-                />
-              </svg>
-              <p className="text-[14px] text-gray-500">Back to Shopping Cart</p>
-            </div>
+            <Link to={"/"}>
+              <div className="h-[21px] sm:h-[34px] flex items-center cursor-pointer justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-4 h-4 text-gray-600"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 19.5 8.25 12l7.5-7.5"
+                  />
+                </svg>
+                <p className="text-[14px] text-gray-500">
+                  Back to Shopping Cart
+                </p>
+              </div>
+            </Link>
             {/* button */}
             <div>
               <button
@@ -702,7 +712,7 @@ const Checkout = () => {
                             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                           />
                           <label
-                            for="default-radio-1"
+                            htmlFor="default-radio-1"
                             className="ms-2 text-xs font-medium text-gray-900"
                           >
                             Same as billing address
@@ -718,7 +728,7 @@ const Checkout = () => {
                             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500focus:ring-2 "
                           />
                           <label
-                            for="default-radio-2"
+                            htmlFor="default-radio-2"
                             className="ms-2 text-xs font-medium text-gray-900"
                           >
                             Use different address
