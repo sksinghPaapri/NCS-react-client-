@@ -51,15 +51,15 @@ const Checkout = () => {
             </div>
           </div>
           {/* Order details , order summary and shipping details */}
-          <div className="w-[280px] sm:w-[640px] sm:h-[34px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col xl:flex-row items-center justify-center xl:justify-between">
+          <div className="w-[280px] sm:w-[640px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col xl:flex-row items-center justify-center xl:items-start xl:justify-between">
             {/* orders details */}
             <div className="w-[280px] sm:w-[640px] xl:w-[685px] flex flex-col items-center justify-center border-2 gap-[30px]">
               {/* shipping date */}
-              <div className="mt-[20px] w-[240px] h-[137px] sm:w-[600px] sm:h-[59px] xl:w-[645px] flex flex-col items-center justify-between sm:flex-row">
+              <div className="w-[240px] h-[137px] sm:w-[600px] sm:h-[59px] xl:w-[645px] flex flex-col items-center justify-between sm:flex-row">
                 {/* col 1 */}
                 <div className="w-[240px] h-[72px] font-bold sm:w-[277px] sm:h-[59px] flex flex-col items-center justify-center sm:items-start border-b border-gray-500 sm:border-b-0">
-                  <div className="sm:h-[44px] flex flex-col sm:flex-row gap-3">
-                    <div className="h-[32px] text-[16px] sm:h-[44px] text-nowrap flex items-center justify-center sm:justify-start">
+                  <div className="sm:h-[44px] flex flex-col sm:flex-row gap-3 sm:gap-5">
+                    <div className="h-[32px] text-[16px] sm:h-[44px] text-nowrap flex items-end sm:items-center justify-center sm:justify-start">
                       Shipping Date:
                     </div>
                     <div className="h-[41px] sm:h-[44px] flex items-center justify-center gap-1 sm:gap-0">
@@ -101,7 +101,7 @@ const Checkout = () => {
               {/* table */}
               <table className="w-[240px] sm:w-[600px] xl:w-[645px] text-sm text-left rtl:text-right text-gray-500 flex flex-col">
                 <thead className="text-xs text-gray-500 sm:w-[600px] xl:w-[645px] sm:h-[28px] sm:items-center sm:justify-center">
-                  <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[645px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
+                  <tr className="hidden sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[645px] sm:h-[28px] sm:flex flex-row sm:gap-[10px]">
                     <th
                       scope="col"
                       className="sm:w-[55px] h-[18px] hidden sm:flex items-center justify-center me-[10px]"
@@ -597,17 +597,17 @@ const Checkout = () => {
               </div>
             </div>
             {/* order summary and shipping details */}
-            <div className="sm:mt-[245px] w-[280px] sm:w-[500px] xl:w-[435px] flex flex-col gap-10 items-center justify-center">
+            <div className="w-[280px] sm:w-[500px] xl:w-[435px] 2xl:w-[555px] flex flex-col gap-10 items-center justify-center">
               {/* order summary */}
-              <div className="w-[280px] h-[291px] sm:w-[500px] sm:h-[283px] xl:w-[435px] xl:h-[283px] mt-10 xl:mt-0">
-                <div className="mx-auto w-[280px] h-[291px] sm:w-[500px] sm:h-[283px] xl:w-[435px] xl:h-[283px] xl:mt-[54px] xl:mb-[89px] border-2 mb-20 flex flex-col">
-                  <div className="flex flex-col items-center justify-center gap-10 my-5 sm:my-0 xl:w-[435px] xl:h-[283px]">
+              <div className="w-[280px] h-[291px] sm:w-[500px] sm:h-[283px] xl:w-[435px] xl:h-[283px] 2xl:w-[555px] mt-10 xl:mt-0">
+                <div className="mx-auto w-[280px] h-[291px] sm:w-[500px] sm:h-[283px] xl:w-[435px] xl:h-[283px] 2xl:w-[555px] xl:mb-[89px] border-2 mb-20 flex flex-col">
+                  <div className="flex flex-col items-center justify-center gap-10 my-5 sm:my-0 xl:w-[435px] 2xl:w-[555px] xl:h-[283px]">
                     {/* row1 */}
-                    <div className="sm:mt-5 xl:mt-0 w-[240px] h-[57px] sm:w-[460px] xl:w-[395px] xl:h-[57px] flex items-center justify-center sm:justify-start uppercase font-bold text-[18px] border-b">
+                    <div className="sm:mt-5 xl:mt-0 w-[240px] h-[57px] sm:w-[460px] xl:w-[395px] xl:h-[57px] 2xl:w-[515px] flex items-center justify-center sm:justify-start uppercase font-bold text-[18px] border-b">
                       Order Summary
                     </div>
                     {/* row2 */}
-                    <div className="w-[240px] h-[154px] sm:w-[460px] sm:h-[136px] xl:w-[395px] xl:h-[154px]">
+                    <div className="w-[240px] h-[154px] sm:w-[460px] sm:h-[136px] xl:w-[395px] xl:h-[156px] 2xl:w-[515px]">
                       <div className="flex justify-between text-base">
                         <p className="">Subtotal:</p>
                         <p>$000.00</p>
@@ -620,7 +620,7 @@ const Checkout = () => {
                         <p className="">Total:</p>
                         <p>$000.00</p>
                       </div>
-                      <div className="w-[240px] sm:w-[460px] sm:h-[36px] xl:w-[395px] h-[36px] mt-5 text-gray-400 text-[12px]">
+                      <div className="w-[240px] sm:w-[460px] sm:h-[36px] xl:w-[395px] h-[36px] 2xl:w-[515px] mt-5 text-gray-400 text-[12px]">
                         <ul className="ms-5">
                           <li className="list-disc">
                             Total does not include applicable taxes or delivery.
@@ -634,30 +634,30 @@ const Checkout = () => {
                 </div>
               </div>
               {/* shipping details */}
-              <div className="w-[320px] sm:w-[740px] xl:w-[435px] mt-10 xl:mt-0 flex items-center justify-center">
-                <div className="mx-auto w-[280px] sm:w-[500px] xl:w-[435px] xl:mt-[54px] xl:mb-[89px] border-2 mb-20 flex flex-col items-center justify-center">
-                  <div className="flex flex-col items-center justify-center gap-5 my-5 sm:my-0 xl:w-[435px]">
+              <div className="w-[320px] sm:w-[740px] xl:w-[435px] 2xl:w-[555px] flex items-center justify-center">
+                <div className="mx-auto w-[280px] sm:w-[500px] xl:w-[435px] 2xl:w-[555px] border-2 mb-20 flex flex-col items-center justify-center">
+                  <div className="flex flex-col items-center justify-center gap-5 my-5 sm:my-0 xl:w-[435px] 2xl:w-[555px]">
                     {/* row1 name only*/}
-                    <div className="sm:mt-5 xl:mt-0 w-[240px] h-[57px] sm:w-[460px] xl:w-[395px] xl:h-[57px] flex items-center justify-center sm:justify-start uppercase font-bold text-[18px] border-b">
+                    <div className="sm:mt-5 xl:mt-0 w-[240px] h-[57px] sm:w-[460px] xl:w-[395px] xl:h-[57px] 2xl:w-[515px] flex items-center justify-center sm:justify-start uppercase font-bold text-[18px] border-b">
                       Shipping Details
                     </div>
                     {/* row2 */}
-                    <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[51px] xl:w-[395px] xl:h-[51px] flex items-center text-base border-b gap-1">
+                    <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[51px] xl:w-[395px] xl:h-[51px] 2xl:w-[515px] flex text-base border-b gap-1">
                       <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
                         Web Order Number:
                       </p>
-                      <p className="w-[90px] h-[18px] sm:w-[105px] sm:h-[21px] text-xs"></p>
+                      <p className="h-[18px] sm:h-[21px] text-xs"></p>
                     </div>
                     {/* row3 */}
-                    <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[72px] xl:w-[395px] xl:h-[72px] flex items-center text-base border-b gap-1">
+                    <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[72px] xl:w-[395px] xl:h-[72px] 2xl:w-[515px] flex items-center text-base border-b gap-1">
                       <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-xs font-bold">
                         Sales Order Number:
                       </p>
                       <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-xs"></p>
                     </div>
                     {/* row4 */}
-                    <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[72px] xl:w-[395px] xl:h-[72px] flex items-center text-base border-b gap-1">
-                      <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-xs font-bold">
+                    <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[72px] xl:w-[395px] xl:h-[72px] 2xl:w-[515px] flex items-center text-base border-b gap-1">
+                      <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-xs font-bold flex items-center">
                         Order By:
                       </p>
                       <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-xs">
@@ -665,30 +665,30 @@ const Checkout = () => {
                       </p>
                     </div>
                     {/* row5 */}
-                    <div className="w-[240px] h-[140px] sm:w-[460px] sm:h-[155px] xl:w-[395px] flex text-base border-b">
+                    <div className="w-[240px] h-[140px] sm:w-[460px] sm:h-[155px] xl:w-[395px] 2xl:w-[515px] flex text-base border-b">
                       <p className="w-[50px] h-[18px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
                         Bill To:
                       </p>
-                      <p className="w-[170px] h-[110px] sm:w-[330px] sm:h-[125px] text-xs">
-                        <p className="w-[170px] h-[18px] sm:w-[330px] sm:h-[21px]">
+                      <p className="w-[170px] h-[110px] sm:w-[330px] xl:w-[265px] 2xl:w-[385px] sm:h-[125px] text-xs">
+                        <p className="w-[170px] h-[18px] sm:h-[21px]">
                           CHRISTINA'S NORTHCOTT
                         </p>
-                        <p className="w-[170px] h-[18px] sm:w-[330px] sm:h-[21px]">
+                        <p className="w-[170px] h-[18px] sm:w-[330px] xl:w-[265px] 2xl:w-[385px] sm:h-[21px]">
                           SHOP123 Fun Street Vaughan
                         </p>
-                        <p className="w-[170px] h-[18px] sm:w-[330px] sm:h-[21px]">
+                        <p className="w-[170px] h-[18px] sm:w-[330px] xl:w-[265px] 2xl:w-[385px] sm:h-[21px]">
                           Tel: ( )
                         </p>
-                        <p className="w-[170px] h-[18px] sm:w-[330px] sm:h-[21px]">
+                        <p className="w-[170px] h-[18px] sm:w-[330px] xl:w-[265px] 2xl:w-[385px] sm:h-[21px]">
                           Cell: ( )
                         </p>
-                        <p className="w-[170px] h-[18px] sm:w-[330px] sm:h-[21px]">
+                        <p className="w-[170px] h-[18px] sm:w-[330px] xl:w-[265px] 2xl:w-[385px] sm:h-[21px]">
                           Email:
                         </p>
                       </p>
                     </div>
                     {/* row6 */}
-                    <div className="w-[240px] h-[75px] sm:w-[460px] sm:h-[77px] xl:w-[395px] flex text-base border-b gap-1">
+                    <div className="w-[240px] h-[75px] sm:w-[460px] sm:h-[77px] xl:w-[395px] 2xl:w-[515px] flex text-base border-b gap-1">
                       <p className="w-[50px] h-[18px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
                         Ship To:
                       </p>
@@ -727,7 +727,7 @@ const Checkout = () => {
                       </p>
                     </div>
                     {/* row7 */}
-                    <div className="w-[240px] h-[102px] sm:w-[460px] sm:h-[72px] xl:w-[395px] flex text-base border-b gap-1">
+                    <div className="w-[240px] h-[102px] sm:w-[460px] sm:h-[72px] xl:w-[395px] 2xl:w-[515px] flex text-base border-b gap-1">
                       <p className="w-[65px] h-[72px] sm:w-[125px] font-bold sm:h-[42px] text-xs gap-1">
                         Optional Order Processing:
                       </p>
@@ -738,7 +738,7 @@ const Checkout = () => {
                   </div>
                   {/* row last */}
                   <div>
-                    <ul className="ms-5 px-1 w-[240px] h-[115px] sm:w-[460px] sm:h-[79px] xl:w-[395px] text-gray-500 text-xs flex flex-col justify-center gap-2">
+                    <ul className="ms-5 px-1 w-[240px] h-[115px] sm:w-[460px] sm:h-[79px] xl:w-[395px] 2xl:w-[515px] text-gray-500 text-xs flex flex-col justify-center gap-2">
                       <li className="list-disc">
                         NOTE: If the address we have on file is incorrect,
                         please contact us at 1-800-268-1466
@@ -749,7 +749,7 @@ const Checkout = () => {
                       </li>
                     </ul>
                   </div>
-
+                  {/* place order button */}
                   <div className="mb-4 mt-2">
                     <Link to={"/my-orders"} className="cursor-pointer">
                       <button
