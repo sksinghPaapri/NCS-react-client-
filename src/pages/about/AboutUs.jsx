@@ -8,12 +8,13 @@ import { FaInstagram } from "react-icons/fa";
 import { AiFillYoutube } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
-import CarouselBottom from "../../components/shared/headers/HomePageContent/BodyComponents/CarouselTBottom";
 import FollowUsF from "../../assets/BodyfooterLogos/FollowUsF.svg";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import AboutUsCarouselBottom from "./AboutUsCarouselBottom";
 
 const AboutUs = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="mb-[100px] flex items-center justify-center">
       <div className="w-[320px] sm:w-[744px] xl:w-[1280px] 2xl:w-[1728px] flex flex-col items-center justify-center gap-[100px]">
         {/* row 1 top banner */}
         <div className=" bg-white w-[320px] h-[235px] sm:w-[744px] sm:h-[257px] xl:w-[1280px] xl:h-[288px] 2xl:w-[1728px]">
@@ -66,103 +67,141 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-
-          {/* <h1
-          className="text-center mx-auto w-[320px] h-[55px] sm:w-[744px] sm:h-[77px] lg:w-[800px] lg:h-[88px]  mt-16 mb-16 text-[40px] sm:text-[56px]"
-          style={{ fontFamily: "DM Serif Display" }}
-        >
-          Discover Our Divisions
-        </h1> */}
-
-          {/* <div className="w-full flex items-center justify-center sm:mr-[-20px], sm:ml-[-20px] sm:pl-[70px] pl-[20px] py-[150px] sm:mt-[-150px] ">
-          <div className="lg:w-[1160px] lg:h-[121px] text-center sm:w-[624px] sm:h-[121px] w-[280px] h-[443px] flex flex-col sm:flex-row items-center justify-between bg-white ">
-            <div className="flex flex-col ">
-              {" "}
-              <img src={banyan} alt="Image" className="w-[152px] h-[52px]  " />
-              <p className="sm:mt-6 text-[#6B6B66] "> Banyan Batiks</p>{" "}
-            </div>
-
-            <div className="flex flex-col ">
-              <img src={patrick} alt="Image" className=" w-[152px] h-[80px] " />
-              <p className=" text-[#6B6B66]  "> Patrick Lose Fabrics</p>
-            </div>
-
-            <div className="flex flex-col ">
-              <img src={figo} alt="Image" className=" w-[152px] h-[80px] " />
-              <p className="sm:mt-2 text-[#6B6B66]  "> Figo Fabrics</p>
-            </div>
-          </div>
-        </div> */}
-
-          {/* <h1
-          className="text-center mx-auto w-[320px] h-[55px] sm:w-[744px] sm:h-[77px] lg:w-[800px] lg:h-[88px]  sm:mt-[-60px] mt-[-40px] mb-16 text-[40px] sm:text-[56px]   pl-4 pr-4   "
-          style={{ fontFamily: "DM Serif Display" }}
-        >
-          Learn More About Us
-        </h1> */}
         </div>
 
         {/* row 4 discover your division */}
         <div className="w-[320px] h-[611px] sm:w-[744px] sm:h-[261px] xl:w-[1280px] xl:h-[267px] 2xl:w-[1320px] flex flex-col items-center justify-between">
+          {/* discover our divisions */}
           <div
             className="w-[280px] h-[88px] sm:w-[624px] sm:h-[80px] xl:w-[1160px] xl:h-[86px] flex items-center justify-center text-[32px] sm:text-[44px] xl:text-[48px] text-center"
             style={{ fontFamily: "DM Serif Display" }}
           >
             Discover Our Divisions
           </div>
-          <div className="w-[280px] h-[443px] sm:w-[624px] sm:h-[121px] xl:w-[1160px] xl:h-[121px] flex flex-row sm:flex-col items-center justify-between">
-            <div className="w-[280px] h-[121px] sm:w-[624px] xl:w-[1160px]">
-              <img src="" alt="" className="w-[152px] h-[80px]" />
-              <div></div>
+
+          <div className="w-[280px] h-[443px] sm:w-[624px] sm:h-[121px] xl:w-[1160px] xl:h-[121px] flex flex-col sm:flex-row items-center justify-between sm:mx-[50px]">
+            <div className="w-[152px] h-[121px] xl:w-[353.33px] flex flex-col items-center justify-between">
+              <img
+                src={banyan}
+                alt="Banyan Batiks"
+                className="w-[152px] h-[80px]"
+              />
+              <p className="w-[152px] h-[21px] text-center text-gray-500 text-sm">
+                Banyan Batiks
+              </p>
             </div>
-            <div></div>
-            <div></div>
+            <div className="w-[240px] h-[121px] xl:w-[353.33px] flex flex-col items-center justify-between">
+              <img
+                src={patrick}
+                alt="Patrick Lose"
+                className="w-[240px] h-[80px]"
+              />
+              <p className="w-[240px] h-[21px] text-center text-gray-500 text-sm">
+                Patrick Lose Fabrics
+              </p>
+            </div>
+            <div className="w-[114px] h-[121px] xl:w-[353.33px] flex flex-col items-center justify-between">
+              <img src={figo} alt="Figo" className="w-[114px] h-[80px]" />
+              <p className="w-[114px] h-[21px] text-center text-gray-500 text-sm">
+                Figo Fabrics
+              </p>
+            </div>
           </div>
         </div>
-        {/* 8) */}
-        {/* <Carousel /> */}
-        <div className="mt-36 xl:mx-[264px]">
-          <CarouselBottom />
+
+        {/* row 5 */}
+        <div className="w-[320px] h-[1042px] sm:w-[744px] sm:h-[1006px] xl:w-[1280px] xl:h-[549px] 2xl:w-[1320px] flex flex-col items-center justify-between">
+          <div className="w-[280px] h-[108px] sm:w-[624px] sm:h-[80px] xl:w-[1160px] xl:h-[86px] flex flex-col items-center justify-center text-center text-[32px] sm:text-[44px] xl:text-[48px]">
+            Learn More About Us
+          </div>
+          <div className="w-[280px] h-[874px] sm:w-[624px] sm:h-[866px] xl:w-[1160px] xl:h-[403px] flex flex-col items-center justify-center xl:flex-row gap-[60px]">
+            {/* card 1*/}
+            <div className="w-[280px] h-[407px] sm:w-[550px] sm:h-[403px] flex flex-col items-center justify-between border">
+              <img
+                src={Image}
+                alt="Image"
+                className="w-[280px] h-[280px] sm:w-[550px] sm:h-[265px] object-cover"
+              />
+              <div className="pb-4 w-[280px] h-[97px] sm:w-[550px] sm:h-[108px] flex flex-col items-center justify-between px-5">
+                <p className="w-[240px] h-[33px] sm:w-[510px] sm:h-[44px] text-[24px] sm:text-[32px] font-bold">
+                  Wholesale Contacts
+                </p>
+                <p className="w-[240px] h-[24px] sm:w-[510px] flex text-[#E2A856] text-start items-center justify-start">
+                  Explore <IoIosArrowRoundForward size={30} color="#E2A856" />
+                </p>
+              </div>
+            </div>
+            {/* card 2*/}
+            <div className="w-[280px] h-[407px] sm:w-[550px] sm:h-[403px] flex flex-col items-center justify-between border">
+              <img
+                src={Image1}
+                alt="Image"
+                className="w-[280px] h-[280px] sm:w-[550px] sm:h-[265px] object-cover"
+              />
+              <div className="pb-4 w-[280px] h-[97px] sm:w-[550px] sm:h-[108px] flex flex-col items-center justify-between px-5">
+                <p className="w-[240px] h-[33px] sm:w-[510px] sm:h-[44px] text-[24px] sm:text-[32px] font-bold">
+                  Calendar
+                </p>
+                <p className="w-[240px] h-[24px] sm:w-[510px] flex text-[#E2A856] text-start items-center justify-start">
+                  Explore <IoIosArrowRoundForward size={30} color="#E2A856" />
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* 9) */}
-        {/* body footer */}
-        <div className="flex flex-row items-center justify-center">
-          <div className="w-[246px] sm:w-[296px] mb-[100px] gap-5 mx-10 flex items-center justify-center">
-            <a href="#">
-              <img src={FollowUsF} alt="Follow Us" />
-            </a>
-            <a href="#" className="cursor-pointer relative">
-              <div className="absolute top-0 left-0 hover:hidden">
-                <FaFacebookF color="#E2A856" size={"1.5rem"} />
+
+        {/* 6) */}
+        <div className="w-[320px] h-[382px] sm:w-[744px] sm:h-[361px] xl:w-[1280px] xl:h-[491px] 2xl:w-[1320px] gap-[60px] flex flex-col items-center justify-center">
+          <div className="w-[280px] h-[108px] sm:w-[624px] sm:h-[66px] xl:w-[1160px] xl:h-[84px] text-[18px] sm:text-[22px] xl:text-[28px] font-bold text-center flex items-center justify-center flex-col">
+            Follow us on social media as we always have something exciting to
+            share{" "}
+            <span className="italic text-[#E2A856]"> #NorthcottFabrics</span>
+          </div>
+          {/* <Carousel /> */}
+          <div className="w-[280px] h-[130px] sm:w-[624px] sm:h-[150px] xl:w-[800px] xl:h-[260px] flex flex-col items-center justify-center">
+            <AboutUsCarouselBottom />
+          </div>
+          {/* body footer */}
+          <div className="w-[246px] h-[24px] sm:w-[296px] sm:h-[25px] xl:w-[309px] xl:h-[27px]">
+            <div className="flex flex-row items-center justify-center">
+              <div className="w-[102px] h-[24px] xl:w-[115px] xl:h-[27px] text-[16px] sm:text-[18px]">
+                Follow us on :
               </div>
-              <div className="block">
-                <FaFacebookF size={"1.5rem"} />
+              <div className="w-[124px] h-[20px] sm:w-[174px] sm:h-[25px] flex items-center justify-evenly">
+                <a href="#" className="cursor-pointer relative">
+                  <div className="absolute top-0 left-0 hover:hidden">
+                    <FaFacebookF color="#E2A856" size={"1.5rem"} />
+                  </div>
+                  <div className="block">
+                    <FaFacebookF size={"1.5rem"} />
+                  </div>
+                </a>
+                <a href="#" className="cursor-pointer relative">
+                  <div className="absolute top-0 left-0 hover:hidden">
+                    <FaTwitter color="#E2A856" size={"1.5rem"} />
+                  </div>
+                  <div className="block">
+                    <FaTwitter size={"1.5rem"} />
+                  </div>
+                </a>
+                <a href="#" className="cursor-pointer relative">
+                  <div className="absolute top-0 left-0 hover:hidden">
+                    <AiFillYoutube color="#E2A856" size={"1.5rem"} />
+                  </div>
+                  <div className="block">
+                    <AiFillYoutube size={"1.5rem"} />
+                  </div>
+                </a>
+                <a href="#" className="cursor-pointer relative">
+                  <div className="absolute top-0 left-0 hover:hidden">
+                    <FaInstagram color="#E2A856" size={"1.5rem"} />
+                  </div>
+                  <div className="block">
+                    <FaInstagram size={"1.5rem"} />
+                  </div>
+                </a>
               </div>
-            </a>
-            <a href="#" className="cursor-pointer relative">
-              <div className="absolute top-0 left-0 hover:hidden">
-                <FaTwitter color="#E2A856" size={"1.5rem"} />
-              </div>
-              <div className="block">
-                <FaTwitter size={"1.5rem"} />
-              </div>
-            </a>
-            <a href="#" className="cursor-pointer relative">
-              <div className="absolute top-0 left-0 hover:hidden">
-                <AiFillYoutube color="#E2A856" size={"1.5rem"} />
-              </div>
-              <div className="block">
-                <AiFillYoutube size={"1.5rem"} />
-              </div>
-            </a>
-            <a href="#" className="cursor-pointer relative">
-              <div className="absolute top-0 left-0 hover:hidden">
-                <FaInstagram color="#E2A856" size={"1.5rem"} />
-              </div>
-              <div className="block">
-                <FaInstagram size={"1.5rem"} />
-              </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
