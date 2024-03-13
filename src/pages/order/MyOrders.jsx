@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CartProduct from "../../assets/ShoppingCart/CartProduct.svg";
 import calendar_month from "../../assets/ShoppingCart/calendar_month.svg";
 
@@ -51,12 +52,14 @@ const MyOrders = () => {
                   your order details
                 </p>
                 {/* button */}
-                <button
-                  type="button"
-                  className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"
-                >
-                  CONTINUE SHOPPING
-                </button>
+                <Link to={"/"}>
+                  <button
+                    type="button"
+                    className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"
+                  >
+                    CONTINUE SHOPPING
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
