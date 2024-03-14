@@ -40,23 +40,80 @@ const AboutContact = () => {
             <div className="w-[280px] h-[875px] sm:w-[624px] sm:h-[799px] xl:w-[1160px] xl:h-[343px] 2xl:w-[1200px] flex flex-col items-center sm:items-end justify-between">
               {/* USA Address */}
               <div className="w-[280px] h-[555px] sm:w-[624px] sm:h-[343px] xl:w-[598px] flex flex-col items-center justify-center gap-5">
-                <p className="w-[280px] h-[44px] sm:w-[624px] xl:w-[598px]">
+                <p
+                  className="w-[280px] h-[44px] sm:w-[624px] xl:w-[598px] text-[32px] text-center"
+                  style={{ fontFamily: "DM Serif Display" }}
+                >
                   USA Office
                 </p>
                 <div className="w-[280px] h-[491px] sm:w-[624px] sm:h-[279px] xl:w-[598px] xl:h-[343px] flex flex-col items-center justify-center gap-5">
+                  {/* address */}
                   <div className="w-[280px] h-[54px] sm:w-[624px] xl:w-[598px] flex items-center justify-between">
-                    <img src={location} alt="Location" />
+                    <img
+                      src={location}
+                      alt="Location"
+                      className="w-[26.67px] h-[33.33px]"
+                    />
                     <p className="w-[218px] h-[54px]">
                       1050 Valley Brook Avenue Lyndhurst, NJ 07071
                     </p>
                   </div>
+                  {/* horizontal line */}
                   <div className="w-[280px] h-[1px] bg-gray-400"></div>
-                  <div className="w-[280px] h-[148px] sm:w-[624px] sm:h-[64px] xl:w-[598px] flex items-center justify-between">
+                  {/* telephone and mail */}
+                  <div className="w-[280px] h-[148px] sm:w-[624px] sm:h-[64px] xl:w-[598px] flex flex-col items-center justify-between">
+                    {/* call */}
                     <div className="w-[280px] h-[64px] sm:w-[302px] xl:w-[289px] flex items-center gap-5">
-                      <img src={call} alt="call" />
-                      <div className="w-[220px] h-[64px] flex flex-col items-center justify-between">
+                      <img
+                        src={call}
+                        alt="call"
+                        className="w-[30px] h-[30px]"
+                      />
+                      <div className="w-[220px] h-[64px] flex flex-col justify-between">
                         <p>T: (201) 672-9600</p>
                         <p>F: (201) 672 -9675</p>
+                      </div>
+                    </div>
+                    {/* mail */}
+                    <div className="w-[280px] h-[64px] sm:w-[302px] xl:w-[289px] flex items-center gap-5">
+                      <img
+                        src={mail}
+                        alt="mail"
+                        className="w-[33.33px] h-[26.67px]"
+                      />
+                      <div className="w-[220px] h-[64px] flex flex-col justify-center">
+                        <p>info2@northcott.com</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-[280px] h-[1px] bg-gray-400"></div>
+                  {/* time and delivery address */}
+                  <div className="w-[280px] h-[209px] sm:w-[624px] sm:h-[81px] xl:w-[598px] flex flex-col items-center justify-between">
+                    {/* time */}
+                    <div className="w-[280px] h-[108px] sm:w-[302px] sm:h-[81px] xl:w-[289px] flex items-center gap-5">
+                      <img
+                        src={schedule}
+                        alt="schedule"
+                        className="w-[33.33px] h-[33.33px]"
+                      />
+                      <div className="w-[220px] h-[81px] sm:w-[242px] xl:w-[229px] flex flex-col justify-between">
+                        <p className="">
+                          Office Hours Eastern Time: 9:00AM- 5:00PM Mon-Fri
+                          Closed on weekends
+                        </p>
+                      </div>
+                    </div>
+                    {/* delivery address */}
+                    <div className="w-[280px] h-[81px] sm:w-[302px] sm:h-[81px] xl:w-[289px] flex items-center gap-5">
+                      <img
+                        src={local_shipping}
+                        alt="Local Shipping"
+                        className="w-[36.67px] h-[26.64px]"
+                      />
+                      <div className="w-[220px] h-[81px] sm:w-[242px] xl:w-[229px] flex flex-col justify-center">
+                        <p>Warehouse Hours:</p>
+                        <p>9:00AM- 4:00PM Mon-Fri</p>
+                        <p>Closed on weekends</p>
                       </div>
                     </div>
                   </div>
@@ -69,7 +126,10 @@ const AboutContact = () => {
 
         {/* row 4 */}
         <div className="w-[320px] h-[1042px] sm:w-[744px] sm:h-[1006px] xl:w-[1280px] xl:h-[549px] 2xl:w-[1320px] flex flex-col items-center justify-between">
-          <div className="w-[280px] h-[108px] sm:w-[624px] sm:h-[80px] xl:w-[1160px] xl:h-[86px] flex flex-col items-center justify-center text-center text-[32px] sm:text-[44px] xl:text-[48px]">
+          <div
+            className="w-[280px] h-[108px] sm:w-[624px] sm:h-[80px] xl:w-[1160px] xl:h-[86px] flex flex-col items-center justify-center text-center text-[32px] sm:text-[44px] xl:text-[48px]"
+            style={{ fontFamily: "DM Serif Display" }}
+          >
             Learn More About Us
           </div>
           <div className="w-[280px] h-[874px] sm:w-[624px] sm:h-[866px] xl:w-[1160px] xl:h-[403px] flex flex-col items-center justify-center xl:flex-row gap-[60px]">
