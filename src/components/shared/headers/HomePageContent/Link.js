@@ -17,20 +17,28 @@ export const links = [
             name: "About Us",
           },
           {
+            _id: {
+              $oid: "aboutWholesaleContacts",
+            },
             name: "Wholesale Contacts",
-            href: "wholesaleContacts",
           },
           {
+            _id: {
+              $oid: "charitiesWeSupport",
+            },
             name: "Charities We Support",
-            href: "charitiesWeSupport",
           },
           {
+            _id: {
+              $oid: "calendar",
+            },
             name: "Calendar",
-            href: "calendar",
           },
           {
+            _id: {
+              $oid: "contactUs",
+            },
             name: "Conatct Us",
-            href: "conatctUs",
           },
         ],
       },

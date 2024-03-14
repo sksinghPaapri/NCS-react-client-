@@ -3,7 +3,7 @@ import patrick from "../../assets/HeaderLogo/2ndHeaderBrandLogo/PATRICK.svg";
 import figo from "../../assets/HeaderLogo/2ndHeaderBrandLogo/FIGO.svg";
 import Image from "../../assets/About/AboutUs/Image.svg";
 import Image1 from "../../assets/About/AboutUs/Image1.svg";
-import topBanner from "../../assets/About/AboutUs/topBanner.svg";
+import PageBanner from "../../assets/About/calender/PageTitle.svg";
 import { FaInstagram } from "react-icons/fa";
 import { AiFillYoutube } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
@@ -12,14 +12,14 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import AboutUsCarouselBottom from "./AboutUsCarouselBottom";
 import CarouselBottom from "../../components/shared/headers/HomePageContent/BodyComponents/CarouselTBottom";
 
-const AboutUs = () => {
+const AboutCalender = () => {
   return (
     <div className="mb-[100px] flex items-center justify-center">
       <div className="w-[320px] sm:w-[744px] xl:w-[1280px] 2xl:w-[1728px] flex flex-col items-center justify-center gap-[100px]">
         {/* row 1 top banner */}
         <div className=" bg-white w-[320px] h-[235px] sm:w-[744px] sm:h-[257px] xl:w-[1280px] xl:h-[288px] 2xl:w-[1728px]">
           <img
-            src={topBanner}
+            src={PageBanner}
             alt="Image"
             className="object-cover w-[320px] h-[235px] sm:w-[744px] sm:h-[257px] xl:w-[1280px] xl:h-[288px] 2xl:w-[1728px]"
           />
@@ -29,7 +29,7 @@ const AboutUs = () => {
           className=" text-center mx-auto w-[320px] h-[55px] sm:w-[744px] sm:h-[77px] xl:w-[800px] xl:h-[88px] 2xl:w-[1320px] text-[40px] sm:text-[56px] xl:text-[64px]"
           style={{ fontFamily: "DM Serif Display" }}
         >
-          About Us
+          Calendar
         </h1>
         {/* row 3 */}
         <div className="w-[320px] h-[1072px] sm:w-[744px] sm:h-[622px] xl:w-[1280px] xl:h-[513px] 2xl:w-[1320px] flex items-center justify-center">
@@ -213,4 +213,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutCalender;

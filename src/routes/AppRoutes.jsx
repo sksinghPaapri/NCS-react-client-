@@ -52,6 +52,10 @@ import RetailerRegistrationComplete from "../pages/login/RetailerRegistrationCom
 import BodyCopy from "../components/shared/headers/HomePageContent/BodyCopy";
 import AboutUs from "../pages/about/AboutUs";
 import Checkout from "../pages/checkout/Checkout";
+import AboutWholesaleContacts from "../pages/about/AboutWholesaleContacts";
+import AboutCalender from "../pages/about/AboutCalender";
+import AboutContact from "../pages/about/AboutContact";
+import AboutCharitiesWeSupport from "../pages/about/AboutCharitiesWeSupport";
 
 export default function AppRoutes() {
   const [userId, setUserId] = useState();
@@ -324,6 +328,22 @@ export default function AppRoutes() {
 
         <Route path="/about" element={<About />} />
         <Route path="/product-collection/aboutUs" element={<AboutUs />} />
+        <Route
+          path="/product-collection/charitiesWeSupport"
+          element={<AboutCharitiesWeSupport />}
+        />
+        <Route
+          path="/product-collection/contactUs"
+          element={<AboutContact />}
+        />
+        <Route
+          path="/product-collection/calendar"
+          element={<AboutCalender />}
+        />
+        <Route
+          path="/product-collection/aboutWholesaleContacts"
+          element={<AboutWholesaleContacts />}
+        />
         <Route path="/help" element={<Help />} />
         <Route
           path="/region-customer"
