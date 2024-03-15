@@ -17,11 +17,11 @@ const AboutCharitiesWeSupport = () => {
     <div className="mb-[100px] flex items-center justify-center">
       <div className="w-[320px] sm:w-[744px] xl:w-[1280px] 2xl:w-[1728px] flex flex-col items-center justify-center gap-[100px]">
         {/* row 1 top banner */}
-        <div className=" bg-white w-[320px] h-[235px] sm:w-[744px] sm:h-[257px] xl:w-[1280px] xl:h-[288px] 2xl:w-[1728px]">
+        <div className="">
           <img
             src={PageBanner}
             alt="Image"
-            className="object-cover w-[320px] h-[235px] sm:w-[744px] sm:h-[257px] xl:w-[1280px] xl:h-[288px] 2xl:w-[1728px]"
+            className="object-cover w-full h-[235px] sm:h-[257px] lg:h-[288px]"
           />
         </div>
         {/* row 2 top heading */}

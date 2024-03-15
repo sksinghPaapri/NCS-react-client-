@@ -38,7 +38,7 @@ export const links = [
             _id: {
               $oid: "contactUs",
             },
-            name: "Conatct Us",
+            name: "Contact Us",
           },
         ],
       },

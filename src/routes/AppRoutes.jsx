@@ -56,6 +56,7 @@ import AboutWholesaleContacts from "../pages/about/AboutWholesaleContacts";
 import AboutCalender from "../pages/about/AboutCalender";
 import AboutContact from "../pages/about/AboutContact";
 import AboutCharitiesWeSupport from "../pages/about/AboutCharitiesWeSupport";
+import ProductDetailcopy from "../pages/product/ProductDetailcopy";
 
 export default function AppRoutes() {
   const [userId, setUserId] = useState();
@@ -378,6 +379,7 @@ export default function AppRoutes() {
         <Route path="/product-collection/:id" element={<ProductCollection />} />
         {/* <Route path="/:id" element={<ProductCollection />} /> */}
         <Route path="/product-detail/:id" element={<ProductDetail />} />
+        {/* <Route path="/product-detail/a" element={<ProductDetailcopy />} /> */}
         {/* <Route path="/product-finder/:id" element={<Productfinder />} /> */}
         <Route path="/product-finder" element={<Productfinder />} />
         <Route path="/print/:id" element={<PrintProductFinder />} />
