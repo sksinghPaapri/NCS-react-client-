@@ -332,11 +332,11 @@ const ProductDetail = () => {
       >
         {/* section 1 */}
         {/* top banner  */}
-        <div className="w-[320px] sm:w-[768px] h-[235px] sm:h-[257px] lg:w-[1024px] xl:w-[1440px] xl:h-[296px] 2xl:w-[1521px]">
+        <div className="w-full h-[235px] sm:h-[257px] xl:h-[296px]">
           <img
             src={PageBanner}
             alt="Image"
-            className="object-cover w-[320px] sm:w-[768px] h-[235px] sm:h-[257px] lg:w-[1024px] xl:w-[1440px] xl:h-[296px] 2xl:w-[1521px]"
+            className="object-cover h-[235px] sm:h-[257px] xl:h-[296px] w-full"
           />
         </div>
         {/* section 2 */}

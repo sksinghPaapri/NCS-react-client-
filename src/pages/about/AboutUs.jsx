@@ -9,13 +9,12 @@ import { AiFillYoutube } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import AboutUsCarouselBottom from "./AboutUsCarouselBottom";
-import CarouselBottom from "../../components/shared/headers/HomePageContent/BodyComponents/CarouselTBottom";
+import ImageSliderBottom from "./ImageSliderBottom";
 
 const AboutUs = () => {
   return (
     <div className="mb-[100px] flex items-center justify-center">
-      <div className="w-[320px] sm:w-[744px] xl:w-[1280px] 2xl:w-[1728px] flex flex-col items-center justify-center gap-[100px]">
+      <div className=" flex flex-col items-center justify-center gap-[100px]">
         {/* row 1 top banner */}
         <div className="">
           <img
@@ -158,12 +157,8 @@ const AboutUs = () => {
             <span className="italic text-[#E2A856]"> #NorthcottFabrics</span>
           </div>
           {/* <Carousel /> */}
-          {/* <div className="w-[280px] h-[130px] sm:w-[624px] sm:h-[150px] xl:w-[800px] xl:h-[260px] flex flex-col items-center justify-center"> */}
-          {/* <div className="mt-36 xl:mx-[264px] h-[130px]">
-            <AboutUsCarouselBottom />
-          </div> */}
-          <div className="mt-36 xl:mx-[264px]">
-            <CarouselBottom />
+          <div className="w-[280px] h-[130px] sm:w-[624px] sm:h-[150px] xl:w-[1160px] xl:h-[260px]">
+            <ImageSliderBottom />
           </div>
           {/* body footer */}
           <div className="w-[246px] h-[24px] sm:w-[296px] sm:h-[25px] xl:w-[309px] xl:h-[27px]">
