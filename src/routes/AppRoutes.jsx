@@ -364,8 +364,9 @@ export default function AppRoutes() {
           element={user || customer ? <CustomerProfile /> : <Body />}
         />
         <Route
-          path="/customer-profile"
-          element={user || customer ? <CustomerProfile /> : <Body />}
+          path="product-collection/customer-profile"
+          // element={user || customer ? <CustomerProfile /> : <Body />}
+          element={<CustomerProfile />}
         />
         <Route path="/designers-list" element={<DesignerList />} />
         <Route path="/designer-profile/:id" element={<DesignerProfile />} />

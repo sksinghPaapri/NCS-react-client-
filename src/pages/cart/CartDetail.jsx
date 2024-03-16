@@ -31,16 +31,18 @@ const CartDetail = () => {
             <div className="mt-[60px] lg:mt-0 min-w-[280px] w-[280px] sm:w-[640px] lg:w-[780px]">
               <div className="h-[78px] min-w-[280px] w-[280px] sm:w-[640px] sm:h-[34px] lg:w-[780px] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-[10px] sm:gap-0">
                 {/* button 1 */}
-                <button
-                  type="button"
-                  className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"
-                >
-                  CONTINUE SHOPPING
-                </button>
+                <Link to={"/"}>
+                  <button
+                    type="button"
+                    className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"
+                  >
+                    CONTINUE SHOPPING
+                  </button>
+                </Link>
                 {/* button 2 */}
                 <button
                   type="button"
-                  className="w-[154px] h-[34px] bg-white text-[#E2A856] border-2 border-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium uppercase rounded text-xs focus:outline-none"
+                  className="w-[154px] h-[34px] bg-white text-[#E2A856] border-2 border-[#E2A856] hover:bg-[#E2A856] hover:text-white focus:ring-4 focus:ring-[#E2A856] font-medium uppercase rounded text-xs focus:outline-none"
                 >
                   empty entire cart
                 </button>

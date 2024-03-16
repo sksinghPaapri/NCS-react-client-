@@ -1346,8 +1346,10 @@ export const links = [
         Head: "",
         sublink: [
           {
+            _id: {
+              $oid: "customer-profile",
+            },
             name: "Personal Info",
-            href: "#",
           },
           {
             name: "Order History",

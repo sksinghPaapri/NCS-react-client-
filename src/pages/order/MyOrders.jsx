@@ -52,7 +52,7 @@ const MyOrders = () => {
                   your order details
                 </p>
                 {/* button */}
-                <Link to={"/"}>
+                <Link to={"/"} className="cursor-pointer z-50">
                   <button
                     type="button"
                     className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"

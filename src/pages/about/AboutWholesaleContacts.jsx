@@ -11,13 +11,14 @@ import { FaFacebookF } from "react-icons/fa";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import CarouselBottom from "../../components/shared/headers/HomePageContent/BodyComponents/CarouselTBottom";
 import ImageSliderBottom from "./ImageSliderBottom";
+import { Link } from "react-router-dom";
 
 const AboutWholesaleContacts = () => {
   return (
     <div className="mb-[100px] flex items-center justify-center">
-      <div className="w-[320px] sm:w-[744px] xl:w-[1280px] 2xl:w-[1728px] flex flex-col items-center justify-center gap-[100px]">
+      <div className="w-full flex flex-col items-center justify-center gap-[100px]">
         {/* row 1 top banner */}
-        <div className="">
+        <div className="w-full">
           <img
             src={PageBanner}
             alt="Image"
@@ -127,9 +128,11 @@ const AboutWholesaleContacts = () => {
                 <p className="w-[240px] h-[33px] sm:w-[510px] sm:h-[44px] text-[24px] sm:text-[32px] font-bold">
                   Wholesale Contacts
                 </p>
-                <p className="w-[240px] h-[24px] sm:w-[510px] flex text-[#E2A856] text-start items-center justify-start">
-                  Explore <IoIosArrowRoundForward size={30} color="#E2A856" />
-                </p>
+                <Link to={"/product-collection/aboutWholesaleContacts"}>
+                  <p className="w-[240px] h-[24px] sm:w-[510px] flex text-[#E2A856] text-start items-center justify-start cursor-pointer">
+                    Explore <IoIosArrowRoundForward size={30} color="#E2A856" />
+                  </p>
+                </Link>
               </div>
             </div>
             {/* card 2*/}
@@ -143,9 +146,11 @@ const AboutWholesaleContacts = () => {
                 <p className="w-[240px] h-[33px] sm:w-[510px] sm:h-[44px] text-[24px] sm:text-[32px] font-bold">
                   Calendar
                 </p>
-                <p className="w-[240px] h-[24px] sm:w-[510px] flex text-[#E2A856] text-start items-center justify-start">
-                  Explore <IoIosArrowRoundForward size={30} color="#E2A856" />
-                </p>
+                <Link to={"/product-collection/calendar"}>
+                  <p className="w-[240px] h-[24px] sm:w-[510px] cursor-pointer flex text-[#E2A856] text-start items-center justify-start">
+                    Explore <IoIosArrowRoundForward size={30} color="#E2A856" />
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
@@ -161,9 +166,6 @@ const AboutWholesaleContacts = () => {
           {/* <Carousel /> */}
           <div className="w-[280px] h-[130px] sm:w-[624px] sm:h-[150px] xl:w-[1160px] xl:h-[260px]">
             <ImageSliderBottom />
-          </div>
-          <div className="mt-36 xl:mx-[264px]">
-            <CarouselBottom />
           </div>
           {/* body footer */}
           <div className="w-[246px] h-[24px] sm:w-[296px] sm:h-[25px] xl:w-[309px] xl:h-[27px]">

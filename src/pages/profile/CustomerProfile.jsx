@@ -1,1271 +1,206 @@
-// import { React, useContext, useEffect, useState } from 'react'
-// import { Container, Button, Col, Row, DropdownButton, Dropdown, ButtonGroup, Modal, Tabs, Tab, Breadcrumb, Card, Table, Form, Carousel } from 'react-bootstrap'
-// import { BsBoxArrowInUpRight, BsTrash } from 'react-icons/bs'
-// import { Link, useNavigate } from 'react-router-dom'
-// import { AgGridReact } from 'ag-grid-react';
-// import { CircleLoader } from 'react-spinners'
-
-// // import '../../../src/indexCssBackup.css'
-// import { CustomerContext } from '../../states/contexts/CustomerContext'
-// import { UserContext } from '../../states/contexts/UserContext'
-// import { useForm, useFieldArray } from 'react-hook-form'
-// import TextField from '../../components/elements/fields/TextField'
-// import ApiService from '../../helpers/ApiServices'
-// import { formatAddress, isLoggedIn, showMessage, formatAddressByDefault, formatAddressNew, logout, formatAddressForCustomer, getModelRoute } from '../../helpers/Utils'
-// import { CustomerService, TokenService } from '../../helpers/StorageServices'
-// import Address from '../../components/blocks/Address'
-// import AppContentForm from "../../components/elements/builders/AppContentForm"
-// import AppContentBody from "../../components/elements/builders/AppContentBody"
-// import AppContentHeader from '../../components/elements/builders/AppContentHeader'
-// import CustomSelectField from '../../components/elements/fields/CustomSelectField'
-// import CheckboxField from '../../components/elements/fields/CheckboxField'
-// import CustomerCustomSelectField from '../../components/elements/fields/CustomerCustomSelectField'
-// import TextArea from '../../components/elements/fields/TextArea'
-// import LineTextAreaField from '../../components/elements/fields/LineTextAreaField'
-// import moment from 'moment';
-// import { BrandIconContext } from '../../states/contexts/BrandIconContext';
-// const _ = require('lodash');
-
-// export default function CustomerProfile() {
-//     const [state, setState] = useState([]);
-//     const [invoices, setInvoices] = useState([]);
-//     const [loadingStatus, setLoadingStatus] = useState(false);
-//     const [country, setCountry] = useState("");
-//     const [secondaryCustomers, setSecondaryCustomers] = useState([]);
-//     const [isEditMode, setIsEditMode] = useState(false);
-//     const [isUpdateForm, setIsUpdateForm] = useState(false);
-//     const [isSaveSubscription, setIsSaveSubscription] = useState(false);
-//     const [tabKey, setTabKey] = useState('mediaLinks');
-//     const [showAddressModal, setShowAddressModal] = useState(false);
-//     const [checkDefault, setCheckDefault] = useState(false)
-//     const [checkDefaultArr, setCheckDefaultArr] = useState([]);
-//     const [isDefaultTick, setIsDefaultTick] = useState([]);
-//     const [backOrders, setBackOrders] = useState([]);
-//     const [openOrders, setOpenOrders] = useState([]);
-//     const [addressValue, setAddressValue] = useState('');
-//     const [addressValueLineLevel, setAddressValueLineLevel] = useState([]);
-//     const [editAddressModalState, setEditAddressModalState] = useState({});
-//     const [selectCustomer, setSelectCustomer] = useState({});
-//     const [editAddressModalIndex, setEditAddressModalIndex] = useState();
-//     const [isDefaultTickAdd, setIsDefaultTickAdd] = useState(false);
-//     const [activeCard, setActiveCard] = useState('');
-//     const [backOrdersTotal, setBackOrdersTotal] = useState('');
-//     const [openOrdersTotal, setOpenOrdersTotal] = useState('');
-//     const [billedOrdersTotal, setBilledOrdersTotal] = useState('');
-//     const [pfOrdersTotal, setPFOrdersTotal] = useState('');
-//     const [gridApi, setGridApi] = useState(null);
-//     const [gridColumnApi, setGridColumnApi] = useState(null);
-
-//     const navigate = useNavigate();
-
-//     const { dispatch: customerDispatch, customer } = useContext(CustomerContext)
-//     const { dispatch, user } = useContext(UserContext)
-//     const { division } = useContext(BrandIconContext)
-
-//     const { register, control, reset, handleSubmit, getValues, setValue, watch, formState: { errors, isDirty, dirtyFields, touchedFields } } = useForm({
-
-//     });
-//     const { register: defaultRegister } = useForm();
-//     const { append: addressAppend, remove: addressRemove, fields: addressFields, update: addressUpdate, insert: addressInsert } = useFieldArray({ control, name: "addresses" });
-
-//     // const watchFields = watch(["firstName", "lastName", "storeEmail", "storeWebsite", "storePhone", "cellPhone"]);
-
-//     let customers = JSON.parse(localStorage.getItem("PCTeRP.CUSTOMER_IDS"))
-//     // let recentCustomers = customers
-
-//     function onGridReady(params) {
-//         setGridApi(params.api);
-//         setGridColumnApi(params.columnApi);
-//     }
-
-//     const handleSearch = (e) => {
-//         gridApi.setQuickFilter(e.target.value);
-//     }
-
-//     const handleExportAsCsv = (e) => {
-//         gridApi.exportDataAsCsv();
-//     }
-
-//     const onSubmit = (formData) => {
-//         let id;
-
-//         // console.log(formData);
-
-//         if (user?.userTypes.includes("CUSTOMER")) id = user?._id
-//         if (user?.userTypes.includes("SALES_MANAGER") || user?.userTypes.includes("SALES_REP") || user?.userTypes.includes("POWER_USER") || user?.userTypes.includes("ADMIN_USER")) id = customer?._id
-//         // console.log(id);
-
-//         if (isSaveSubscription) {
-//             return saveSubscription(id, formData)
-//         }
-//         return updateDocument(id, formData)
-//     }
-
-//     const updateDocument = async (id, data) => {
-//         console.log("touch fields: ", Object.keys(touchedFields).filter(function (item) { return item !== "addresses" }));
-//         console.log(getModelRoute(user).model);
-//         data.changedFields = Object.keys(touchedFields).filter(function (item) { return item !== "addresses" })
-
-//         // await ApiService.patch(`shop/user/${id}?updatedFrom=website`, data).then(response => {
-//         // await ApiService.patch(`shop/customer/${id}?model=${getModelRoute(user).model}&updatedFrom=website`, data).then(response => {
-//         await ApiService.patch(`shop/customer/${id}?protectModel=${getModelRoute(user).model}&updatedFrom=website`, data).then(response => {
-//             if (response.data.isSuccess) {
-//                 let document = response.data.document
-
-//                 reset(document)
-//                 setIsEditMode(false)
-//                 showMessage("Profile has been updated successfully..", "success")
-//                 // navigate(`/`)
-//             }
-//         }).catch(error => {
-//             console.log(error.response.data)
-//             // console.log("Else Catch")
-//             showMessage(error.response.data.message, "error")
-//         })
-//     }
-
-//     const saveSubscription = (id, data) => {
-//         // console.log("data: ", data);
-
-//         // ApiService.patch(`shop/user/subscrption/${id}`, data).then(response => {
-//         ApiService.patch(`shop/customer/subscrption/${id}`, data).then(response => {
-//             if (response.data.isSuccess) {
-//                 let document = response.data.document
-
-//                 reset(document)
-//                 showMessage("Subscription has been updated!", "info")
-//                 setIsSaveSubscription(false)
-//             }
-//         }).catch(error => {
-//             console.log(error?.response?.data)
-//             // console.log("Else Catch")
-//             showMessage(error?.response?.data?.message, "error")
-//         })
-//     }
-
-//     const isLoggedIn = async () => {
-//         ApiService.setHeader()
-//         await ApiService.get(`shop/user/loggedIn`).then(response => {
-//             // console.log(response.data);
-//             dispatch({ type: "LOGIN_SUCCESS", payload: response.data.document });
-
-//             if (response.data.document?.userTypes.includes("CUSTOMER")) reset(response.data.document)
-//         }).catch(async error => {
-
-//             console.log(error.response.data)
-//             // showMessage(error.response.data.message, "error")
-//             try {
-//                 await logout()
-//                 dispatch({ type: "LOGOUT_SUCCESS" });
-//                 customerDispatch({ type: "SELECT_CUSTOMER", payload: null })
-//             } catch (error) {
-//                 dispatch({ type: "LOGIN_FAILURE" });
-//             }
-//             navigate(`/`)
-
-//         })
-
-//     }
-
-//     const configureAddressArray = (customer) => {
-//         let addressArray = []
-
-//         customer?.addresses?.map(address => {
-//             let addressObj = address
-//             const v = formatAddressForCustomer(address)
-//             addressObj.address = v
-//             addressArray.push(addressObj)
-//         })
-//         return addressArray
-//     }
-
-//     const setCustomer = async () => {
-//         let customers = JSON.parse(localStorage.getItem("PCTeRP.CUSTOMER_IDS"))
-
-//         ApiService.setHeader()
-//         // ApiService.get(`shop/user/${customers?.length ? customers[customers?.length - 1]._id : user?._id}`).then(response => {
-//         await ApiService.get(`shop/customer/${customers?.length ? customers[customers?.length - 1]?._id : user?._id}`).then(response => {
-
-//             if (response.data.isSuccess) {
-//                 let customer = response?.data.document
-//                 // console.log(customer);
-//                 customer.addresses = configureAddressArray(customer)
-
-//                 // Load the selected customer into reducer
-//                 customerDispatch({ type: "SELECT_CUSTOMER", payload: customer });
-
-//                 // Set customer data into field's
-//                 reset(customer)
-//             }
-//         }).catch(error => {
-
-//             console.log(error)
-//             // showMessage(error.response.data.message, "error")
-
-//         })
-
-//     }
-
-//     const handleShow = (value) => {
-//         setShowAddressModal(value);
-
-//         if (isDefaultTick.length > 1) {
-//             let flag = true;
-//             isDefaultTick.map(e => {
-//                 if (e) {
-//                     flag = false;
-//                     setCheckDefault(true);
-//                 }
-//             })
-
-//             if (flag) {
-//                 setCheckDefault(false)
-//             }
-//         }
-
-//     }
-
-//     const toggleHandler = () => {
-//         setIsUpdateForm(!isUpdateForm)
-//     }
-
-//     const getSecondaryCustomers = async (customerNetSuiteId) => {
-//         try {
-
-//             const response = await ApiService.get(`shop/user/secondarycustomer?customerNetSuiteId=${customerNetSuiteId}`)
-
-//             if (response?.data.isSuccess) {
-//                 console.log(response?.data.documents);
-//                 setSecondaryCustomers(response?.data.documents)
-//             }
-
-//         } catch (error) {
-//             console.log(error.response.data)
-//             showMessage(error.response.data.message, "error")
-//         }
-//     }
-
-//     const customerChangeHandler = (e, data) => {
-//         const id = data?.targetValue?.split('||')[0]
-
-//         ApiService.setHeader()
-//         ApiService.get(`shop/user/${id}`).then(response => {
-//             let customer = response?.data.document
-//             customer.addresses = configureAddressArray(customer)
-
-//             // Load the selected customer into reducer
-//             customerDispatch({ type: "SELECT_CUSTOMER", payload: response.data.document });
-//             reset(response.data.document)
-
-//             customers.push(response.data.document)
-//             // Save the customer array into localStorage, so that after refresh we can get the customer
-//             localStorage.setItem("PCTeRP.CUSTOMER_IDS", JSON.stringify(customers))
-
-//         }).catch(error => {
-//             console.log(error.response?.data)
-//             showMessage(error.response?.data.message, "error")
-//         })
-//     }
-
-//     const getInvoicesByCustomer = () => {
-//         ApiService.post(`shop/nsInv/getByCust`, { id: customers[customers?.length - 1]?.customerNetsuiteId, getDocuments: "INVOICES" }).then(response => {
-//             // console.log(response.data);
-//             if (response?.data.isSuccess) {
-//                 setInvoices(response?.data?.document)
-//                 setLoadingStatus(false)
-
-//             }
-//             if (!response?.data.isSuccess) {
-//                 showMessage(response?.data?.response?.message, "error")
-//                 // navigate(-1)
-//                 setLoadingStatus(false)
-
-//             }
-//         }).catch(error => {
-//             console.log(error?.response)
-//             showMessage(error?.response?.message, "error")
-//             // navigate(-1)
-//             // console.log("Else Catch")
-//             setLoadingStatus(false)
-//         })
-//     }
-
-//     const getOpenSalesOrders = (type) => {
-//         // console.log(type);
-//         ApiService.get(`shop/nsSalesOrder/${type}?id=${customers[customers?.length - 1]?.customerNetsuiteId}`).then(response => {
-//             // console.log("getOpenSalesOrders", response.data);
-//             if (response?.data.isSuccess) {
-//                 console.log(response?.data);
-//                 setOpenOrders(response?.data?.documents.data)
-//             }
-
-//             if (!response?.data.isSuccess) {
-//                 showMessage(response?.data?.response?.message, "error")
-
-//             }
-//         }).catch(error => {
-//             console.log(error)
-//             showMessage(error?.response?.message, "error")
-//             // navigate(-1)
-//             // console.log("Else Catch")
-//         })
-//     }
-
-//     const getOpenSalesOrdersTotal = (type) => {
-//         // console.log(type);
-//         ApiService.get(`shop/nsSalesOrder/${type}?id=${customers[customers?.length - 1]?.customerNetsuiteId}`).then(response => {
-//             // console.log("getOpenSalesOrders", response.data);
-//             if (response?.data.isSuccess) {
-//                 console.log("getOpenSalesOrdersTotal: ", response?.data);
-//                 setOpenOrdersTotal(response?.data?.documents)
-//                 getBilledSalesOrdersTotal()
-//             }
-
-//             if (!response?.data.isSuccess) {
-//                 showMessage(response?.data?.response?.message, "error")
-
-//             }
-//         }).catch(error => {
-//             console.log(error)
-//             showMessage(error?.response?.message, "error")
-//             // navigate(-1)
-//             // console.log("Else Catch")
-//         })
-//     }
-
-//     const getBackSalesOrders = (type) => {
-//         // console.log(type);
-//         ApiService.get(`shop/nsSalesOrder/${type}?id=${customers[customers?.length - 1]?.customerNetsuiteId}`).then(response => {
-//             // console.log("getOpenSalesOrders", response.data);
-//             if (response?.data.isSuccess) {
-//                 console.log(response?.data);
-//                 setBackOrders(response?.data?.documents.data)
-
-//             }
-
-//             if (!response?.data.isSuccess) {
-//                 showMessage(response?.data?.response?.message, "error")
-
-//             }
-//         }).catch(error => {
-//             console.log(error)
-//             showMessage(error?.response?.message, "error")
-//             // navigate(-1)
-//             // console.log("Else Catch")
-//         })
-//     }
-
-//     const getBackSalesOrdersTotal = (type) => {
-//         // console.log(type);
-//         ApiService.get(`shop/nsSalesOrder/${type}?id=${customers[customers?.length - 1]?.customerNetsuiteId}`).then(response => {
-//             // console.log("getOpenSalesOrders", response.data);
-//             if (response?.data.isSuccess) {
-//                 // console.log(response?.data);
-//                 setBackOrdersTotal(response?.data?.documents)
-//             }
-
-//             if (!response?.data.isSuccess) {
-//                 showMessage(response?.data?.response?.message, "error")
-
-//             }
-//         }).catch(error => {
-//             console.log(error)
-//             showMessage(error?.response?.message, "error")
-//             // navigate(-1)
-//             // console.log("Else Catch")
-//         })
-//     }
-
-//     const getBilledSalesOrdersTotal = () => {
-//         // console.log(type);
-//         ApiService.get(`shop/nsSalesOrder/${"BILLED ORDERS TOTAL"}?id=${customers[customers?.length - 1]?.customerNetsuiteId}`).then(response => {
-//             // console.log("getOpenSalesOrders", response.data);
-//             if (response?.data.isSuccess) {
-//                 console.log("getBilledSalesOrdersTotal: ", response?.data);
-//                 setBilledOrdersTotal(response?.data?.documents.data?.total)
-//                 getPFSalesOrdersTotal()
-//             }
-
-//             if (!response?.data.isSuccess) {
-//                 showMessage(response?.data?.response?.message, "error")
-
-//             }
-//         }).catch(error => {
-//             console.log(error)
-//             showMessage(error?.response?.message, "error")
-//             // navigate(-1)
-//             // console.log("Else Catch")
-//         })
-//     }
-
-//     const getPFSalesOrdersTotal = () => {
-//         // console.log(type);
-//         ApiService.get(`shop/nsSalesOrder/${"PF ORDERS TOTAL"}?id=${customers[customers?.length - 1]?.customerNetsuiteId}`).then(response => {
-//             // console.log("getOpenSalesOrders", response.data);
-//             if (response?.data.isSuccess) {
-//                 console.log("getPFSalesOrdersTotal: ", response?.data);
-//                 setPFOrdersTotal(response?.data?.documents.data?.total)
-
-//             }
-
-//             if (!response?.data.isSuccess) {
-//                 showMessage(response?.data?.response?.message, "error")
-
-//             }
-//         }).catch(error => {
-//             console.log(error)
-//             showMessage(error?.response?.message, "error")
-//             // navigate(-1)
-//             // console.log("Else Catch")
-//         })
-//     }
-
-//     const columns = [
-//         { headerName: 'DOCUMENT NUMBER', field: 'docNumber', width: 300, cellRendererFramework: (params) => <span style={{ cursor: "pointer" }} onClick={() => { navigate(`/invoice/${params.data.id}`) }}>{params.data.docNumber}</span> },
-//         { headerName: 'WEB ORDER NUMBER', field: 'webOrderNumber', width: 400 },
-//         { headerName: 'DATE', field: 'date', width: 160, valueGetter: (params) => params.data?.date ? moment(params.data?.date).format("MM/DD/YYYY ") : "Not Available" },
-//         { headerName: 'SHIPPING DATE', field: 'shipDate', width: 160, valueGetter: (params) => params.data?.shipDate ? moment(params.data?.shipDate).format("MM/DD/YYYY ") : "Not Available" },
-//         { headerName: 'STATUS', field: 'status', width: 240 },
-//         { headerName: 'AMOUNT', field: 'amount', width: 240 },
-//         // { headerName: 'DETAIL', field: 'customerPONumber', width: 80, cellRendererFramework: (params) => <FcSearch style={{ cursor: "pointer" }} onClick={() => { goToOrderDetailPage(params.data._id) }} /> }
-//     ]
-
-//     // console.log(customers[customers?.length - 1]?.isPrimary)
-//     useEffect(() => {
-//         // isLoggedIn()
-//         setCustomer()
-//         // console.log("recentCustomers: ", customers[customers?.length - 1]?.email);
-
-//         // if (user?.userTypes.includes("CUSTOMER") && user?.isPrimary) {
-//         //     getSecondaryCustomers(user?.customerNetSuiteId)
-//         // } else if (!user?.userTypes.includes("CUSTOMER") && customers[customers?.length - 1]?.isPrimary) {
-//         //     getSecondaryCustomers(customers[customers?.length - 1]?.customerNetSuiteId)
-
-//         // }
-
-//         console.log(customers[customers?.length - 1]?.customerNetsuiteId);
-//         if (customers != null && !customer?.isTestAccount) {
-//             getInvoicesByCustomer()
-//             getOpenSalesOrders("OPEN ORDERS")
-//             getBackSalesOrders("BACK ORDERS")
-//             getOpenSalesOrdersTotal("OPEN ORDERS TOTAL")
-//             getBackSalesOrdersTotal("BACK ORDERS TOTAL")
-
-//         }
-
-//     }, []);
-
-//     // console.log(openOrdersTotal);
-//     // console.log(openOrders);
-//     // console.log(backOrdersTotal);
-//     // console.log(backOrders);
-
-//     if (user) {
-//         return (
-
-//             <AppContentForm onSubmit={handleSubmit(onSubmit)} className=''>
-
-//                 {/* <Container className="ml-4 mt-5 mb-0 border" ></Container> */}
-
-//                 <AppContentHeader>
-//                     <Container className='' style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-//                         <Row><h3 style={{ fontWeight: "bold" }}>Subscribe to Northcott's Mailing List</h3></Row>
-
-//                         {user?.userTypes.includes("CUSTOMER") ? <Row><p>{user?.email}</p></Row> : <Row><p>{customers[customers?.length - 1]?.email}</p></Row>}
-
-//                         <Row >
-//                             <Col className='col-lg-1'>
-//                                 <CheckboxField
-//                                     register={register}
-//                                     errors={errors}
-//                                     field={{
-//                                         description: "",
-//                                         label: "",
-//                                         fieldId: "northcottNotification",
-//                                         placeholder: "",
-//                                         // required: true,
-//                                         // validationMessage: "Please enter the Account Number!"
-//                                     }}
-//                                     changeHandler={null}
-//                                     blurHandler={null}
-//                                 />
-//                             </Col>
-//                             <Col className='col-lg-11'><b>You are currently subscribed to Northcott's Retail Mailing list. If you do not wish to receive any notifications regarding Northcott, please uncheck and save to unsubscribe</b></Col>
-//                         </Row>
-//                         <Row>
-//                             <Col className='col-lg-1'>
-//                                 <CheckboxField
-//                                     register={register}
-//                                     errors={errors}
-//                                     field={{
-//                                         description: "",
-//                                         label: "",
-//                                         fieldId: "northcottPromotionNotification",
-//                                         placeholder: "",
-//                                         // required: true,
-//                                         // validationMessage: "Please enter the Account Number!"
-//                                     }}
-//                                     changeHandler={null}
-//                                     blurHandler={null}
-//                                 />
-//                             </Col>
-//                             <Col className='col-lg-11'><b>You are currently subscribed to Northcott's Promotions Mailing List. If you do not wish to receive any notifications regarding Northcott promotions, please uncheck and save to unsubscribe</b></Col>
-//                         </Row>
-//                         <Row>
-//                             <Col className='col-lg-1'>
-//                                 <CheckboxField
-//                                     register={register}
-//                                     errors={errors}
-//                                     field={{
-//                                         description: "",
-//                                         label: "",
-//                                         fieldId: "northcottMonthlyConsumerNewsletterNotification",
-//                                         placeholder: "",
-//                                         // required: true,
-//                                         // validationMessage: "Please enter the Account Number!"
-//                                     }}
-//                                     changeHandler={null}
-//                                     blurHandler={null}
-//                                 />
-//                             </Col>
-//                             <Col className='col-lg-11'><b>You are currently subscribed to Northcott's Monthly Consumer Newsletter. If you do not wish to receive any notifications regarding Northcott's Monthly Consumer Newsletter, please uncheck and save to unsubscribe</b></Col>
-
-//                         </Row>
-
-//                         <Row>
-//                             <Button type='submit' size='sm' onClick={() => setIsSaveSubscription(true)} style={{ background: "linear-gradient(to bottom, #f1e767 0%, #e3a856 100%)" }}>SAVE SUBSCRIPTION</Button>
-//                         </Row>
-//                     </Container>
-
-//                     <Container className="ml-4 mt-5 mb-0" ><h3>CUSTOMER PROFILE</h3></Container>
-
-//                     <Container style={{ marginTop: "-60px" }}>
-//                         <Row className='' >
-//                             {/* className='border p-0 ps-1' style={{ display: "flex", justifyContent: "space-between", padding: 0 }} */}
-//                             <Col className='p-0 ps-1 mt-5' style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-end", marginBottom: 2 }}>
-
-//                                 {((user?.userTypes.includes("CUSTOMER") && customers[customers?.length - 1]?.email == user?.email) || (!user?.userTypes.includes("CUSTOMER"))) ?
-//                                     <>
-//                                         <Button className='m-2' type="submit" size="sm" variant='primary' disabled={isUpdateForm ? false : true} style={{ background: "linear-gradient(to bottom, #f1e767 0%, #e3a856 100%)" }}>SUBMIT</Button>
-
-//                                         <Form.Check className='m-2' size="sm" type="switch" id="custom-switch" label={isUpdateForm ? "Edit" : "View"} checked={isUpdateForm} onChange={toggleHandler} />
-
-//                                         {user?.userTypes.includes("CUSTOMER") &&
-//                                             <Button className='m-2' size="sm" as={Link} to={'/update-password'} variant='primary' style={{ background: "linear-gradient(to bottom, #f1e767 0%, #e3a856 100%)" }}>UPDATE PASSWORD</Button>
-//                                         }
-//                                     </> : ""
-//                                 }
-
-//                                 {user?.userTypes.includes("ADMIN_USER") &&
-//                                     <Button className='m-2' size="sm" as={Link} to={`/update-password/${customer?._id}`} variant='primary' style={{ background: "linear-gradient(to bottom, #f1e767 0%, #e3a856 100%)" }}>UPDATE PASSWORD</Button>
-//                                 }
-
-//                                 {(user?.userTypes.includes("SALES_REP") || user?.userTypes.includes("SALES_MANAGER") || user?.userTypes.includes("PCTERP_ADMIN")) || user?.userTypes.includes("POWER_USER") && ""}
-//                             </Col>
-
-//                             {/* <Col className='p-0 ps-1 mt-5 ' style={{ display: "flex", justifyContent: "flex-end" }}>
-
-//                                 {secondaryCustomers?.length > 1 ? <CustomSelectField
-//                                 {customers[customers?.length - 1]?.isPrimary ? <CustomSelectField
-
-//                                     index={secondaryCustomers?.length}
-//                                     register={defaultRegister}
-//                                     errors={errors}
-//                                     options={secondaryCustomers?.length && secondaryCustomers}
-//                                     defaultOption={{ value: "--SELECT A CUSTOMER--", name: "--SELECT A CUSTOMER--" }}
-//                                     field={{
-//                                         description: "",
-//                                         label: "",
-//                                         fieldId: "selectCustomer",
-//                                         placeholder: "Select customer...",
-//                                         multiple: false
-//                                     }}
-
-//                                     changeHandler={customerChangeHandler}
-//                                     blurHandler={null}
-//                                 /> : ""}
-
-//                             </Col> */}
-//                         </Row>
-//                     </Container>
-
-//                 </AppContentHeader >
-
-//                 {/* BODY FIELDS */}
-//                 <AppContentBody>
-//                     <Container >
-//                         <Row>
-//                             <TextField
-//                                 register={register}
-//                                 errors={errors}
-//                                 field={{
-//                                     description: "Customer account number.",
-//                                     label: "ACCOUNT NUMBER",
-//                                     fieldId: "netsuiteId",
-//                                     placeholder: "",
-//                                     required: false,
-//                                     disabled: true,
-//                                     validationMessage: "Please enter the account number!"
-//                                 }}
-//                                 changeHandler={null}
-//                                 blurHandler={null}
-//                             />
-
-//                             <TextField
-//                                 register={register}
-//                                 errors={errors}
-//                                 field={{
-//                                     description: "Customer name.",
-//                                     label: "FIRST NAME",
-//                                     fieldId: "firstName",
-//                                     placeholder: "",
-//                                     required: false,
-//                                     disabled: isUpdateForm ? false : true,
-//                                     validationMessage: "Please enter the name!"
-//                                 }}
-//                                 changeHandler={null}
-//                                 blurHandler={null}
-//                             />
-
-//                             <TextField
-//                                 register={register}
-//                                 errors={errors}
-//                                 field={{
-//                                     description: "Customer name.",
-//                                     label: "LAST NAME",
-//                                     fieldId: "lastName",
-//                                     placeholder: "",
-//                                     required: false,
-//                                     disabled: isUpdateForm ? false : true,
-//                                     validationMessage: "Please enter the name!"
-//                                 }}
-//                                 changeHandler={null}
-//                                 blurHandler={null}
-//                             />
-
-//                         </Row>
-
-//                         <Row>
-
-//                             <TextField
-//                                 register={register}
-//                                 errors={errors}
-//                                 field={{
-//                                     description: "Customer store email.",
-//                                     label: "STORE EMAIL",
-//                                     fieldId: "storeEmail",
-//                                     placeholder: "",
-//                                     required: false,
-//                                     disabled: isUpdateForm ? false : true,
-//                                     validationMessage: "Please enter the store email!"
-//                                 }}
-//                                 changeHandler={null}
-//                                 blurHandler={null}
-//                             />
-
-//                             <TextField
-//                                 register={register}
-//                                 errors={errors}
-//                                 field={{
-//                                     description: "Customer store website.",
-//                                     label: "STORE WEBSITE",
-//                                     fieldId: "storeWebsite",
-//                                     placeholder: "",
-//                                     required: false,
-//                                     disabled: isUpdateForm ? false : true,
-//                                     validationMessage: "Please enter the store email!"
-//                                 }}
-//                                 changeHandler={null}
-//                                 blurHandler={null}
-//                             />
-
-//                             <TextField
-//                                 register={register}
-//                                 errors={errors}
-//                                 field={{
-//                                     description: "Customer store phone number.",
-//                                     label: "STORE PHONE NUMBER",
-//                                     fieldId: "storePhone",
-//                                     placeholder: "",
-//                                     required: false,
-//                                     disabled: isUpdateForm ? false : true,
-//                                     validationMessage: "Please enter the store phone number!"
-//                                 }}
-//                                 changeHandler={null}
-//                                 blurHandler={null}
-//                             />
-//                         </Row>
-
-//                         <Row>
-//                             <TextField
-//                                 register={register}
-//                                 errors={errors}
-//                                 field={{
-//                                     description: "Customer store cell phone number.",
-//                                     label: "CELL PHONE NUMBER",
-//                                     fieldId: "cellPhone",
-//                                     placeholder: "",
-//                                     required: false,
-//                                     disabled: isUpdateForm ? false : true,
-//                                     validationMessage: "Please enter the store cell phone number!"
-//                                 }}
-//                                 changeHandler={null}
-//                                 blurHandler={null}
-//                             />
-
-//                             <TextField
-//                                 register={register}
-//                                 errors={errors}
-//                                 field={{
-//                                     description: "Customer email.",
-//                                     label: "EMAIL",
-//                                     fieldId: "email",
-//                                     placeholder: "",
-//                                     required: false,
-//                                     disabled: (user?.userTypes.includes("SALES_MANAGER") || user?.userTypes.includes("SALES_REP") || user?.userTypes.includes("CUSTOMER")) ? true : isUpdateForm ? false : true,
-//                                     validationMessage: "Please enter the email!"
-//                                 }}
-//                                 changeHandler={null}
-//                                 blurHandler={null}
-//                             />
-//                         </Row>
-
-//                     </Container>
-
-//                     {/* TABS */}
-//                     <Container className='mt-3'>
-//                         <Tabs defaultActiveKey='auditTrail' activeKey={tabKey} onSelect={(k) => setTabKey(k)}>
-
-//                             <Tab Tab eventKey="mediaLinks" title="Media Links" style={{ marginTop: 8 }}>
-//                                 <Container>
-//                                     <Row>
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "Customer facebook url.",
-//                                                 label: "FACEBOOK URL",
-//                                                 fieldId: "facebook",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isUpdateForm ? false : true,
-//                                                 validationMessage: "Please enter the facebook url!"
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "Customer instagram url.",
-//                                                 label: "INSTAGRAM URL",
-//                                                 fieldId: "instagram",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isUpdateForm ? false : true,
-//                                                 validationMessage: "Please enter the instagram url!"
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "Customer tiktok url.",
-//                                                 label: "TIKTOK URL",
-//                                                 fieldId: "tiktok",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isUpdateForm ? false : true,
-//                                                 validationMessage: "Please enter the tiktok url!"
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "Customer youtube url.",
-//                                                 label: "YOUTUBE URL",
-//                                                 fieldId: "youtube",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isUpdateForm ? false : true,
-//                                                 validationMessage: "Please enter the youtube url!"
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-//                                     </Row>
-//                                 </Container>
-//                             </Tab >
-
-//                             <Tab Tab eventKey="address" title="Address" style={{ marginTop: 8 }}>
-//                                 <Container >
-//                                     {/* <Row>
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "Customer attention.",
-//                                                 label: "ATTENTION",
-//                                                 fieldId: "shippingAddress.attention",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isEditMode ? false : true,
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "Address 1",
-//                                                 label: "ADDRESS 1",
-//                                                 fieldId: "shippingAddress.address1",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isEditMode ? false : true,
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "Address 2.",
-//                                                 label: "ADDRESS 2",
-//                                                 fieldId: "shippingAddress.address2",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isEditMode ? false : true,
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "City.",
-//                                                 label: "CITY",
-//                                                 fieldId: "shippingAddress.city",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isEditMode ? false : true,
-//                                                 validationMessage: "Please enter the youtube url!"
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "Zip.",
-//                                                 label: "ZIP",
-//                                                 fieldId: "shippingAddress.zip",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isEditMode ? false : true,
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "State.",
-//                                                 label: "STATE",
-//                                                 fieldId: "shippingAddress.state",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isEditMode ? false : true,
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-
-//                                         <TextField
-//                                             register={register}
-//                                             errors={errors}
-//                                             field={{
-//                                                 description: "Country.",
-//                                                 label: "COUNTRY",
-//                                                 fieldId: "shippingAddress.country",
-//                                                 placeholder: "",
-//                                                 required: false,
-//                                                 disabled: isEditMode ? false : true,
-//                                             }}
-//                                             changeHandler={null}
-//                                             blurHandler={null}
-//                                         />
-//                                     </Row> */}
-
-//                                     <Card style={{ width: '100%', marginLeft: 0 }}>
-//                                         <Card.Header>Address</Card.Header>
-//                                         <Card.Body className="card-scroll">
-//                                             <Table responsive striped bordered hover>
-//                                                 <thead>
-//                                                     <tr>
-//                                                         <th style={{ minWidth: "1rem" }}>Edit</th>
-//                                                         <th style={{ minWidth: "1rem" }}>Billing</th>
-//                                                         <th style={{ minWidth: "1rem" }}>Shipping</th>
-//                                                         <th style={{ minWidth: "16rem" }}>Address</th>
-//                                                         <th></th>
-//                                                     </tr>
-//                                                 </thead>
-//                                                 <tbody>
-//                                                     {addressFields.map((field, index) => {
-//                                                         return (
-//                                                             <tr key={field.id} >
-//                                                                 <td>
-//                                                                     <Button style={{ minWidth: "4rem" }} size="sm"
-//                                                                         disabled={isUpdateForm ? false : true}
-//                                                                         onClick={e => {
-//                                                                             handleShow(true);
-//                                                                             // console.log(field)
-//                                                                             setIsEditMode(true);
-//                                                                             setEditAddressModalState(field);
-//                                                                             setEditAddressModalIndex(index);
-//                                                                         }}><BsBoxArrowInUpRight /></Button>
-//                                                                 </td>
-
-//                                                                 <td>
-//                                                                     <Form.Group >
-//                                                                         <Form.Check
-//                                                                             label=''
-//                                                                             type="checkbox"
-//                                                                             id="isDefaultBilling"
-//                                                                             name="isDefaultBilling"
-//                                                                             disabled
-//                                                                             {...register(`addresses.${index}.isDefaultBilling`)} />
-//                                                                     </Form.Group>
-//                                                                 </td>
-//                                                                 <td>
-//                                                                     <Form.Group >
-//                                                                         <Form.Check
-//                                                                             label=''
-//                                                                             type="checkbox"
-//                                                                             id="isDefaultShipping"
-//                                                                             name="isDefaultShipping"
-//                                                                             disabled
-//                                                                             {...register(`addresses.${index}.isDefaultShipping`)}
-//                                                                         />
-//                                                                     </Form.Group>
-//                                                                 </td>
-//                                                                 {/* <td>
-//                                                                     <Form.Group >
-//                                                                         <Form.Check
-//                                                                             label=''
-//                                                                             type="checkbox"
-//                                                                             id="default"
-//                                                                             name="default"
-//                                                                             // disabled={!checkDefaultArr[index]}
-//                                                                             // disabled={isDefaultTick[index]}
-//                                                                             disabled
-//                                                                             {...register(`addresses.${index}.default`)}
-//                                                                             onChange={e => {
-//                                                                                 // console.log(e.target.checked);
-//                                                                                 setCheckDefault(e.target.checked)
-//                                                                                 const currentValue = e.target.checked;
-//                                                                                 setValue(`addresses.${index}.default`, currentValue);
-//                                                                                 const values = getValues();
-
-//                                                                                 const v = formatAddressByDefault(values);
-//                                                                                 // console.log(v)
-//                                                                                 setAddressValue(v);
-
-//                                                                                 let shippingArr = [];
-//                                                                                 for (var i = 0; i < values.addresses.length; i++) {
-//                                                                                     if (i === index) {
-//                                                                                         currentValue ? shippingArr[i] = !currentValue : shippingArr[i] = currentValue;
-//                                                                                         setIsDefaultTickAdd(currentValue);
-//                                                                                     } else {
-//                                                                                         shippingArr[i] = currentValue;
-//                                                                                     }
-//                                                                                 }
-//                                                                                 // console.log(shippingArr);
-//                                                                                 setIsDefaultTick(shippingArr);
-//                                                                             }}
-//                                                                         />
-//                                                                     </Form.Group>
-//                                                                 </td> */}
-
-//                                                                 <td>
-//                                                                     <Form.Group>
-//                                                                         <Form.Control className='scroll scroll4' size='sm'
-//                                                                             as="textarea"
-//                                                                             rows={3}
-//                                                                             id="address"
-//                                                                             name="address"
-//                                                                             disabled
-//                                                                             // value={addressValueLineLevel[index]}
-//                                                                             {...register(`addresses.${index}.address`)}
-//                                                                             onChange={null}
-//                                                                         >
-//                                                                         </Form.Control>
-//                                                                     </Form.Group>
-//                                                                 </td>
-
-//                                                                 <td>
-//                                                                     <Button size="sm" variant="danger"
-//                                                                         disabled={isUpdateForm ? false : true}
-//                                                                         onClick={() => {
-//                                                                             let arr = [];
-//                                                                             if (!isDefaultTick[index]) {
-//                                                                                 isDefaultTick.splice(index, 1);
-//                                                                                 setIsDefaultTickAdd(false);
-//                                                                                 setCheckDefault(false)
-//                                                                                 isDefaultTick.map(e => {
-//                                                                                     arr.push(false);
-//                                                                                 })
-//                                                                                 setIsDefaultTick(arr);
-//                                                                             } else {
-//                                                                                 isDefaultTick.splice(index, 1);
-//                                                                             }
-
-//                                                                             addressRemove(index);
-
-//                                                                             const values = getValues();
-//                                                                             const v = formatAddressByDefault(values);
-//                                                                             // console.log(v)
-//                                                                             setAddressValue(v);
-//                                                                         }}
-//                                                                     ><BsTrash /></Button>
-//                                                                 </td>
-//                                                             </tr>
-//                                                         )
-//                                                     })}
-//                                                     <tr>
-//                                                         <td colSpan="14">
-//                                                             {/* <Button size="sm" style={{ minWidth: "8rem" }} onClick={() => addressAppend({ billing: false, shipping: false, label: '', country: '', state: '', zip: "" })} >Add a Address</Button> */}
-//                                                             <Button size="sm" style={{ minWidth: "8rem" }}
-//                                                                 disabled={isUpdateForm ? false : true}
-//                                                                 onClick={() => {
-//                                                                     handleShow(true);
-//                                                                     setIsEditMode(false);
-//                                                                     console.log(checkDefault);
-//                                                                     setEditAddressModalState([])
-//                                                                 }} >Add a Address</Button>
-//                                                         </td>
-//                                                     </tr>
-//                                                 </tbody>
-//                                             </Table>
-//                                         </Card.Body>
-//                                     </Card>
-//                                 </Container>
-//                             </Tab >
-
-//                             <Tab Tab eventKey="dashboard" title="Dashboard" style={{ marginTop: 15 }
-//                             }>
-//                                 {/* <Container>
-//                                     <Row className=''>
-//                                         <div className='p-0 m-0' style={{ display: "flex", justifyContent: "flex-end" }}>
-//                                             <input type="text" className="openning-cash-control__amount--input p-0 m-0 w-25" style={{ border: "none", borderBottom: "1px solid gray" }} placeholder="Search..." onChange={handleSearch}></input>
-//                                         </div>
-//                                         <div className={`ag-theme-alpine scroll scroll4 p-0 mt-3 ${division === "NORTHCOTT" ? 'ag-theme-alpine-n scroll scroll4' : division === "BANYAN BATIKS" ? "ag-theme-alpine-b scroll scroll4" : "ag-theme-alpine-p scroll scroll4"}`} style={{ height: 460, width: "100%" }}>
-//                                             <AgGridReact
-//                                                 onGridReady={onGridReady}
-//                                                 rowData={invoices}
-//                                                 columnDefs={columns}
-//                                                 defaultColDef={{
-//                                                     editable: true,
-//                                                     sortable: true,
-//                                                     // flex: 1,
-//                                                     minWidth: 100,
-//                                                     filter: true,
-//                                                     resizable: true,
-//                                                 }}
-//                                                 pagination={true}
-//                                                 paginationPageSize={50}
-
-//                                                 // overlayNoRowsTemplate="No Purchase Order found. Let's create one!"
-//                                                 overlayNoRowsTemplate='<span style="color: rgb(128, 128, 128); font-size: 2rem; font-weight: 100;">No Records Found!</span>'
-//                                             />
-//                                         </div>
-//                                     </Row>
-//                                 </Container> */}
-
-//                                 <Container className='' style={{ height: "3000px" }}>
-//                                     <Row xs={1} sm={2} md={3} lg={4}>
-//                                         <Col>
-//                                             <Card as={Link} to={``} className='border p-0 m-0 p-1 mb-2' style={{ display: "flex", justifyContent: "center", alignItems: "center", color: "black", cursor: "not-allowed" }} >
-//                                                 <Card.Body className='m-0 p-0' style={{ width: "100%" }}>
-//                                                     <Card.Title style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>Total Open Orders</Card.Title>
-//                                                     <Card.Text style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>${openOrdersTotal?.data?.total ? openOrdersTotal?.data?.total : 0}
-//                                                         {/* {openOrders ? openOrders?.reduce(
-//                                                             function getSum(total, order) {
-//                                                                 return (parseFloat(total) + parseFloat(order?.amount)).toFixed(2);
-//                                                             }, 0) : 'loading'} */}
-//                                                     </Card.Text>
-//                                                     {/* <Card.Footer style={{ fontSize: "13px", textAlign: "center", verticalAlign: "middle", cursor: "pointer" }}
-//                                                         onClick={() => {
-//                                                             // getOpenSalesOrders("OPEN ORDERS")
-//                                                             setActiveCard('OPEN ORDERS')
-//                                                         }}>VIEW OPEN ORDERS DETAILS</Card.Footer> */}
-//                                                 </Card.Body>
-//                                             </Card>
-//                                         </Col>
-
-//                                         <Col>
-//                                             <Card as={Link} to={``} className='border p-0 m-0 p-1 mb-2' style={{ display: "flex", justifyContent: "center", alignItems: "center", color: "black", cursor: "not-allowed" }} >
-//                                                 <Card.Body className='m-0 p-0' style={{ width: "100%" }}>
-//                                                     <Card.Title style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>Total Back Orders</Card.Title>
-//                                                     <Card.Text style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>${backOrdersTotal?.data?.total ? backOrdersTotal?.data?.total : 0}
-//                                                         {/* {backOrders ? backOrders?.reduce(
-//                                                         function getSum(total, order) {
-//                                                             return (parseFloat(total) + parseFloat(order?.amount)).toFixed(2);
-//                                                         }, 0) : 'loading'} */}
-//                                                     </Card.Text>
-//                                                     {/* <Card.Footer style={{ fontSize: "13px", textAlign: "center", verticalAlign: "middle", cursor: "pointer" }}
-//                                                         onClick={() => {
-//                                                             // getOpenSalesOrders('BACK ORDERS')
-//                                                             setActiveCard('BACK ORDERS')
-//                                                         }}>VIEW BACK ORDERS DETAILS</Card.Footer> */}
-//                                                 </Card.Body>
-//                                             </Card>
-//                                         </Col>
-
-//                                         <Col>
-//                                             <Card as={Link} to={``} className='border p-0 m-0 p-1 mb-2' style={{ display: "flex", justifyContent: "center", alignItems: "center", color: "black", cursor: "not-allowed" }} >
-//                                                 <Card.Body className='m-0 p-0' style={{ width: "100%" }}>
-//                                                     <Card.Title style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>Total Billed Orders</Card.Title>
-//                                                     <Card.Text style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>${billedOrdersTotal ? billedOrdersTotal : 0}
-//                                                         {/* {backOrders ? backOrders?.reduce(
-//                                                         function getSum(total, order) {
-//                                                             return (parseFloat(total) + parseFloat(order?.amount)).toFixed(2);
-//                                                         }, 0) : 'loading'} */}
-//                                                     </Card.Text>
-//                                                     {/* <Card.Footer style={{ fontSize: "13px", textAlign: "center", verticalAlign: "middle", cursor: "pointer" }}
-//                                                         onClick={() => {
-//                                                             // getOpenSalesOrders('BACK ORDERS')
-//                                                             setActiveCard('BACK ORDERS')
-//                                                         }}>VIEW BACK ORDERS DETAILS</Card.Footer> */}
-//                                                 </Card.Body>
-//                                             </Card>
-//                                         </Col>
-
-//                                         <Col>
-//                                             <Card as={Link} to={``} className='border p-0 m-0 p-1 mb-2' style={{ display: "flex", justifyContent: "center", alignItems: "center", color: "black", cursor: "not-allowed" }} >
-//                                                 <Card.Body className='m-0 p-0' style={{ width: "100%" }}>
-//                                                     <Card.Title style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>Total Pending Fulfillment Orders</Card.Title>
-//                                                     <Card.Text style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>${pfOrdersTotal ? pfOrdersTotal : 0}
-//                                                         {/* {backOrders ? backOrders?.reduce(
-//                                                         function getSum(total, order) {
-//                                                             return (parseFloat(total) + parseFloat(order?.amount)).toFixed(2);
-//                                                         }, 0) : 'loading'} */}
-//                                                     </Card.Text>
-//                                                     {/* <Card.Footer style={{ fontSize: "13px", textAlign: "center", verticalAlign: "middle", cursor: "pointer" }}
-//                                                         onClick={() => {
-//                                                             // getOpenSalesOrders('BACK ORDERS')
-//                                                             setActiveCard('BACK ORDERS')
-//                                                         }}>VIEW BACK ORDERS DETAILS</Card.Footer> */}
-//                                                 </Card.Body>
-//                                             </Card>
-//                                         </Col>
-
-//                                         <Col>
-//                                             <Card as={Link} to={``} className='border p-0 m-0 p-1 mb-2' style={{ display: "flex", justifyContent: "center", alignItems: "center", color: "black", cursor: "not-allowed" }}>
-//                                                 <Card.Body className='m-0 p-0' style={{ width: "100%" }}>
-//                                                     <Card.Title style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>Total Invoice Amount</Card.Title>
-//                                                     <Card.Text style={{ fontSize: "17px", textAlign: "center", verticalAlign: "middle" }}>$
-//                                                         {invoices ? invoices?.reduce(
-//                                                             function getSum(total, invoice) {
-//                                                                 return (parseFloat(total) + parseFloat(invoice?.amount)).toFixed(2);
-//                                                             }, 0) : 0}
-//                                                     </Card.Text>
-//                                                     {/* <Card.Footer style={{ fontSize: "13px", textAlign: "center", verticalAlign: "middle", cursor: "pointer" }}
-//                                                         onClick={() => {
-//                                                             // getOpenSalesOrders("OPEN ORDERS")
-//                                                             setActiveCard('INVOICES')
-//                                                         }}>VIEW INVOICE DETAILS</Card.Footer> */}
-//                                                 </Card.Body>
-//                                             </Card>
-//                                         </Col>
-//                                     </Row>
-
-//                                     {activeCard != '' ? <Row className='mt-3' style={{ display: 'flex', justifyContent: 'center', alignItems: "center" }}>
-//                                         {/* <h4>{activeCard}</h4> */}
-//                                         {/* <div className='p-0 m-0' style={{ display: "flex", justifyContent: "flex-end" }}>
-//                                             <input type="text" className="openning-cash-control__amount--input p-0 m-0 w-25" style={{ border: "none", borderBottom: "1px solid gray" }} placeholder="Search..." onChange={handleSearch}></input>
-//                                         </div> */}
-//                                         <Col className={`ag-theme-alpine scroll scroll4 p-0 mt-3 ${division === "NORTHCOTT" ? 'ag-theme-alpine-n scroll scroll4' : division === "BANYAN BATIKS" ? "ag-theme-alpine-b scroll scroll4" : "ag-theme-alpine-p scroll scroll4"}`} style={{ height: 460, width: "100%" }}>
-//                                             <AgGridReact
-//                                                 onGridReady={onGridReady}
-//                                                 rowData={activeCard === "INVOICES" ? invoices : activeCard === "BACK ORDERS" ? backOrders : activeCard === "OPEN ORDERS" && openOrders}
-//                                                 columnDefs={columns}
-//                                                 defaultColDef={{
-//                                                     editable: true,
-//                                                     sortable: true,
-//                                                     // flex: 1,
-//                                                     minWidth: 100,
-//                                                     filter: true,
-//                                                     resizable: true,
-//                                                 }}
-//                                                 pagination={true}
-//                                                 paginationPageSize={50}
-
-//                                                 // overlayNoRowsTemplate="No Purchase Order found. Let's create one!"
-//                                                 overlayNoRowsTemplate='<span style="color: rgb(128, 128, 128); font-size: 2rem; font-weight: 100;">No Records Found!</span>'
-//                                             />
-//                                         </Col>
-//                                     </Row> : ""}
-//                                 </Container>
-//                             </Tab >
-
-//                         </Tabs >
-
-//                         <Address
-//                             state={editAddressModalState}
-//                             isEditMode={isEditMode}
-//                             show={showAddressModal}
-//                             handleShow={(e) => handleShow(e)}
-//                             addressAppend={addressAppend}
-//                             checkDefault={checkDefault}
-//                             addressFields={addressFields}
-//                             isDefaultTick={isDefaultTick}
-//                             setIsDefaultTick={setIsDefaultTick}
-//                             setCountry={setCountry}
-//                             country={country}
-//                             isDefaultTickAdd={isDefaultTickAdd}
-//                             setIsDefaultTickAdd={setIsDefaultTickAdd}
-//                             setCheckDefault={setCheckDefault}
-//                             setAddressValue={setAddressValue}
-//                             addressValueLineLevel={addressValueLineLevel}
-//                             setAddressValueLineLevel={setAddressValueLineLevel}
-//                             editAddressModalIndex={editAddressModalIndex}
-//                             addressUpdate={addressUpdate}
-//                             addressInsert={addressInsert}
-//                             addressRemove={addressRemove}
-//                         />
-//                     </Container >
-
-//                 </AppContentBody >
-//                 {/* </Form>*/}
-//             </AppContentForm >
-//         )
-//     }
-// }
-
-import React from "react";
-
 const CustomerProfile = () => {
-  return <div>CustomerProfile</div>;
-};
+  return (
+    <div
+      style={{ fontFamily: "Open Sans" }}
+      className="flex items-center justify-center"
+    >
+      <div className="w-[320px] sm:w-[744px] xl:w-[1280px] 2x:w-[1728px] flex items-center justify-center">
+        <div className="my-[80px] sm:my-[100px] w-[280px] sm:w-[624px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col items-center xl:flex-row xl:items-start gap-[60px] 2xl:gap-[100px]">
+          {/* left side */}
+          <div className="w-[280px] h-[258px] sm:w-[624px] xl:w-[280px] xl:h-[258px] flex flex-col gap-5">
+            {/* heading */}
+            <div className="w-[280px] h-[38px] sm:w-[624px] xl:w-[280px] text-center sm:text-start font-bold text-[28px]">
+              Customer Profile
+            </div>
+            {/* horizontal line */}
+            <hr className=" text-gray-500 bg-gray-500 h-1 w-[280px] sm:w-[624px] xl:w-[280px]" />
+            {/* content */}
+            <div className="w-[280px] h-[180px] flex flex-col sm:w-[624px] xl:w-[280px] bg-white">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] bg-[#F0EFEB] text-sm xl:text-sm text-center flex items-center">
+                <p className="ms-[15px]">Personal Info</p>
+              </div>
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center">
+                <p className="ms-[15px]">Shipping Addresses</p>
+              </div>
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center">
+                <p className="ms-[15px]">hange Password</p>
+              </div>
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center">
+                <p className="ms-[15px]"> Communication Preferences</p>
+              </div>
+            </div>
+          </div>
 
+          {/* right side */}
+          <div className="w-[280px] h-[984px] sm:w-[624px] sm:h-[750px] xl:w-[820px] xl:h-[750px] 2xl:w-[940px] flex flex-col gap-[60px]">
+            {/* personalinfo */}
+            <div className="w-[280px] h-[277px] sm:w-[624px] sm:h-[181px]  xl:w-[820px] xl:h-[181px] flex flex-col gap-5">
+              {/* heading and button */}
+              <div className="w-[280px] h-[92px] sm:w-[624px] sm:h-[38px] xl:w-[820px] 2xl:w-[940px] flex flex-col items-center justify-center sm:flex-row sm:justify-between sm:items-center gap-5 sm:gap-0">
+                {/* heading */}
+                <div className="w-[186px] h-[38px] font-bold text-[28px] text-center sm:text-start">
+                  Personal Info
+                </div>
+                {/* button */}
+                <div className="text-center w-[80px] h-[34px]">
+                  <button
+                    className=" w-[80px] h-[34px] text-center text-xs bg-[#E2A856] text-[#FFFFFF]"
+                    type="button"
+                  >
+                    EDIT
+                  </button>
+                </div>
+              </div>
+              {/* horizontal line */}
+              <hr className=" text-gray-500 bg-gray-500 h-[1px] w-[280px] sm:w-[624px] xl:w-[820px] 2xl:w-[940px]" />
+
+              {/* content */}
+              <div className="w-[280px] h-[145px] flex flex-col sm:w-[624px] sm:h-[103px] xl:w-[820px] 2xl:w-[940px] gap-5">
+                {/* first name */}
+                <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm">
+                    First Name:
+                  </div>
+                  <div className="w-[190px] h-[21px] text-sm">Christina</div>
+                </div>
+                {/* last name */}
+                <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
+                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                    Last Name:
+                  </div>
+                  <div className="text-sm w-[190px] sm:w-[320px] lg:w-[320px]">
+                    Pallotta
+                  </div>
+                </div>
+                {/* email */}
+                <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm">
+                    Email:
+                  </div>
+                  <div className="w-[190px] h-[21px] sm:w-[300px] text-sm text-wrap overflow-hidden">
+                    christina.pallotta@northcott.com
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* store info */}
+            <div className="w-[280px] h-[647px] sm:w-[624px] sm:h-[509px] xl:w-[820px] flex flex-col gap-5">
+              {/* heading and button */}
+              <div className="w-[280px] h-[92px] sm:w-[624px] sm:h-[38px] xl:w-[820px] 2xl:w-[940px] flex flex-col items-center justify-center sm:flex-row sm:justify-between sm:items-center gap-5 sm:gap-0">
+                {/* heading */}
+                <div className="w-[186px] h-[38px] font-bold text-[28px] text-center sm:text-start">
+                  Store Info
+                </div>
+                {/* button */}
+                <div className="text-center w-[80px] h-[34px]">
+                  <button
+                    className=" w-[80px] h-[34px] text-center text-xs bg-[#E2A856] text-[#FFFFFF]"
+                    type="button"
+                  >
+                    EDIT
+                  </button>
+                </div>
+              </div>
+              {/* horizontal line */}
+              <hr className=" text-gray-500 bg-gray-500 h-[1px] w-[280px] sm:w-[624px] xl:w-[820px] 2xl:w-[940px]" />
+
+              {/* content */}
+              <div className="w-[280px] h-[515px] flex flex-col sm:w-[624px] sm:h-[431px] xl:w-[820px] 2xl:w-[940px]  gap-5">
+                {/* comapny name */}
+                <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm sm:text-nowrap">
+                    Company Name:
+                  </div>
+                  <div className="w-[190px] sm:w-[300px] h-[42px] text-sm">
+                    CHRISTINA'S NORTHCOTT SHOP
+                  </div>
+                </div>
+                {/* comapny number */}
+                <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm">
+                    Company Number:
+                  </div>
+                  <div className="w-[190px] sm:w-[300px] h-[21px] text-sm">
+                    CCHRP0
+                  </div>
+                </div>
+                {/* contact name */}
+                <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm">
+                    Contact Name :
+                  </div>
+                  <div className="w-[190px] sm:w-[300px] h-[21px] text-sm"></div>
+                </div>
+                {/* address 1*/}
+                <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
+                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                    Address 1 :
+                  </div>
+                  <div className="text-sm w-[190px] sm:w-[320px]">
+                    123 Fun Street
+                  </div>
+                </div>
+                {/* address 2*/}
+                <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
+                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                    Address 2 :
+                  </div>
+                  <div className="text-sm w-[190px] sm:w-[320px]"></div>
+                </div>
+                {/* city*/}
+                <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
+                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                    City:
+                  </div>
+                  <div className="text-sm w-[190px] sm:w-[320px]">Vaughan</div>
+                </div>
+                {/* state*/}
+                <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
+                  <div className="w-[80px] h-[42px] sm:w-[150px] sm:h-[21px] font-bold text-sm flex flex-col sm:flex-row">
+                    <p>State/</p>
+                    <p>Province:</p>
+                  </div>
+                  <div className="w-[190px] sm:w-[300px] h-[21px] text-sm">
+                    Ontario
+                  </div>
+                </div>
+                {/* phone*/}
+                <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
+                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                    Phone:
+                  </div>
+                  <div className="text-sm w-[190px] sm:w-[320px]"></div>
+                </div>
+                {/* cell*/}
+                <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
+                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                    Cell:
+                  </div>
+                  <div className="text-sm w-[190px] sm:w-[320px]"></div>
+                </div>
+                {/* email*/}
+                <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
+                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                    Email:
+                  </div>
+                  <div className="text-sm w-[190px] sm:w-[320px] "></div>
+                </div>
+                {/* website*/}
+                <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
+                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                    Website:
+                  </div>
+                  <div className="text-sm w-[190px] sm:w-[320px]">
+                    www.northcott.com
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default CustomerProfile;

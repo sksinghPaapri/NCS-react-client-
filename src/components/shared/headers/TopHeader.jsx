@@ -22,6 +22,9 @@ import { Link } from "react-router-dom";
 export default function TopHeader() {
   const [open, setOpen] = useState(false);
 
+  // desktop drop down menu show or not show state variable
+  const [popoverOpen, setPopoverOpen] = useState(false);
+
   // Define a state to hold the open/closed state for each submenu
   const [openSubmenus, setOpenSubmenus] = useState({});
   const [openSubsubmenus, setOpenSubsubmenus] = useState(false);
@@ -286,6 +289,7 @@ export default function TopHeader() {
                     to="/testui"
                     className="block uppercase rounded-lg py-2 font-normal text-xs text-gray-900 hover:text-[#E2A856]"
                   >
+                    {/* for non dropdown links in top header desktop */}
                     {item?.name}
                   </Link>
                 </div>
@@ -293,9 +297,14 @@ export default function TopHeader() {
                 <div>
                   <Popover.Group>
                     <Popover className="relative">
-                      <Popover.Button className="flex uppercase font-normal mt-[0.3rem] text-xs text-gray-90 hover:text-[#E2A856]">
+                      <Popover.Button
+                        className="flex uppercase font-normal mt-[0.3rem] text-xs text-gray-90 hover:text-[#E2A856]"
+                        onClick={() => {
+                          setPopoverOpen(true);
+                        }}
+                      >
+                        {/* for dropdown link in desktop header */}
                         {item?.name}
-
                         <ChevronDownIcon
                           className="h-5 w-5 text-gray-400 hover:text-[#E2A856]"
                           aria-hidden="true"
@@ -304,62 +313,70 @@ export default function TopHeader() {
 
                       <Transition
                         as={Fragment}
-                        enter="transition ease-out duration-200"
+                        enter="transition ease-out duration-100"
                         enterFrom="opacity-0 translate-y-1"
                         enterTo="opacity-100 translate-y-0"
                         leave="transition ease-in duration-150"
                         leaveFrom="opacity-100 translate-y-0"
                         leaveTo="opacity-0 translate-y-1"
                       >
-                        <Popover.Panel className="absolute grid -left-8 w-max z-10 mt-3 bg-white shadow-lg">
-                          <div
-                            className={`${
-                              item.sublinks.length > 1
-                                ? " grid grid-cols-3 gap-10 shadow-md border-t"
-                                : " grid grid-cols-1 w-64 shadow-md border-t"
-                            }`}
-                          >
-                            {item?.sublinks &&
-                              item?.sublinks?.map((mysublink, index) => (
-                                <div key={index}>
-                                  {mysublink?.Head !== "a" ? (
-                                    <div className=" font-bold text-xs">
-                                      {mysublink?.Head !== "" ? (
-                                        <div className="p-3">
-                                          {mysublink?.Head}
-                                        </div>
-                                      ) : (
-                                        <div className="hidden"></div>
-                                      )}
-                                    </div>
-                                  ) : (
-                                    <div className="text-white p-2">a</div>
-                                  )}
+                        <Popover.Panel
+                          className="absolute grid -left-8 w-max z-10 mt-3 bg-white shadow-lg"
+                          onClose={() => setPopoverOpen(false)}
+                        >
+                          {popoverOpen && (
+                            <div
+                              className={`${
+                                item.sublinks.length > 1
+                                  ? " grid grid-cols-3 gap-10 shadow-md border-t"
+                                  : " grid grid-cols-1 w-64 shadow-md border-t"
+                              }`}
+                            >
+                              {item?.sublinks &&
+                                item?.sublinks?.map((mysublink, index) => (
+                                  <div key={index}>
+                                    {mysublink?.Head !== "a" ? (
+                                      <div className=" font-bold text-xs">
+                                        {mysublink?.Head !== "" ? (
+                                          <div className="p-3">
+                                            {mysublink?.Head}
+                                          </div>
+                                        ) : (
+                                          <div className="hidden"></div>
+                                        )}
+                                      </div>
+                                    ) : (
+                                      <div className="text-white p-2">a</div>
+                                    )}
 
-                                  {mysublink?.sublink?.map(
-                                    (finallink, index) => (
-                                      <div
-                                        key={index}
-                                        className="p-3 text-sm leading-6 hover:bg-[#F5F4F1]"
-                                      >
-                                        <div>
-                                          <div className="col-span-2">
-                                            <Link
-                                              // to={`/testui/collections/${finallink?._id?.$oid}`}
-                                              to={`/product-collection/${finallink?._id?.$oid}`}
-                                              // to={`/${finallink?._id?.$oid}`}
-                                              className="block text-xs text-gray-900"
-                                            >
-                                              {finallink?.name}
-                                            </Link>
+                                    {mysublink?.sublink?.map(
+                                      (finallink, index) => (
+                                        <div
+                                          key={index}
+                                          className="p-3 text-sm leading-6 hover:bg-[#F5F4F1]"
+                                        >
+                                          <div>
+                                            <div className="col-span-2">
+                                              <Link
+                                                // to={`/testui/collections/${finallink?._id?.$oid}`}
+                                                to={`/product-collection/${finallink?._id?.$oid}`}
+                                                // to={`/${finallink?._id?.$oid}`}
+                                                className="block text-xs text-gray-900"
+                                                onClick={() =>
+                                                  setPopoverOpen(false)
+                                                }
+                                              >
+                                                {finallink?.name}
+                                              </Link>
+                                            </div>
                                           </div>
                                         </div>
-                                      </div>
-                                    )
-                                  )}
-                                </div>
-                              ))}
-                          </div>
+                                      )
+                                    )}
+                                  </div>
+                                ))}
+                            </div>
+                          )}
                         </Popover.Panel>
                       </Transition>
                     </Popover>

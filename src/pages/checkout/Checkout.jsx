@@ -29,7 +29,7 @@ const Checkout = () => {
           {/* top section */}
           <div className="w-[280px] h-[65px] sm:w-[640px] sm:h-[34px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col items-center justify-between sm:flex-row">
             {/* back to cart */}
-            <Link to={"/"}>
+            <Link to={"/cart-detail"}>
               <div className="h-[21px] sm:h-[34px] flex items-center cursor-pointer justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -52,12 +52,14 @@ const Checkout = () => {
             </Link>
             {/* button */}
             <div>
-              <button
-                type="button"
-                className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"
-              >
-                CONTINUE SHOPPING
-              </button>
+              <Link to={"/"}>
+                <button
+                  type="button"
+                  className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"
+                >
+                  CONTINUE SHOPPING
+                </button>
+              </Link>
             </div>
           </div>
           {/* Order details , order summary and shipping details */}
