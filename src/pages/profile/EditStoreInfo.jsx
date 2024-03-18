@@ -162,7 +162,7 @@ const editStoreInfo = () => {
                         className="relative inline-block text-left w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px]"
                       >
                         <div>
-                          <Menu.Button className="text-sm font-bold text-gray-700 w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px] text-nowrap inline-flex gap-x-1.5 rounded bg-white px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 justify-between">
+                          <Menu.Button className="text-sm text-gray-400 w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px] inline-flex gap-x-1.5 rounded bg-white px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 justify-between">
                             <p>Vaughan</p>
                             <ChevronDownIcon
                               className="-mr-1 h-5 w-5 text-gray-400"
@@ -253,19 +253,103 @@ const editStoreInfo = () => {
                   {/* state / province */}
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
-                      htmlFor="state/Province"
+                      htmlFor="State/Province"
                       className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
-                      State / Province
+                      State/Province
                     </label>
-                    <div className="w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]">
-                      <input
-                        id="state/Province"
-                        name="state/Province"
-                        type="text"
-                        className="appearance-none  relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-sm w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
-                        placeholder=""
-                      />
+                    <div className="w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px] flex flex-col gap-[10px]">
+                      <Menu
+                        as="div"
+                        className="relative inline-block text-left w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px]"
+                      >
+                        <div>
+                          <Menu.Button className="text-sm text-gray-400 w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px] inline-flex gap-x-1.5 rounded bg-white px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 justify-between">
+                            <p>Ontario</p>
+                            <ChevronDownIcon
+                              className="-mr-1 h-5 w-5 text-gray-400"
+                              aria-hidden="true"
+                            />
+                          </Menu.Button>
+                        </div>
+
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items className="w-[280px] sm:w-[624px] xl:w-[320px] absolute right-0 z-10 mt-2  origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <div className="py-1">
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <a
+                                    href="#"
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-100 text-gray-900"
+                                        : "text-gray-700",
+                                      "block px-4 py-2 text-sm"
+                                    )}
+                                  >
+                                    Ontario
+                                  </a>
+                                )}
+                              </Menu.Item>
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <a
+                                    href="#"
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-100 text-gray-900"
+                                        : "text-gray-700",
+                                      "block px-4 py-2 text-sm"
+                                    )}
+                                  >
+                                    Ontario2
+                                  </a>
+                                )}
+                              </Menu.Item>
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <a
+                                    href="#"
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-100 text-gray-900"
+                                        : "text-gray-700",
+                                      "block px-4 py-2 text-sm"
+                                    )}
+                                  >
+                                    Ontario3
+                                  </a>
+                                )}
+                              </Menu.Item>
+                              <form method="POST" action="#">
+                                <Menu.Item>
+                                  {({ active }) => (
+                                    <button
+                                      type="submit"
+                                      className={classNames(
+                                        active
+                                          ? "bg-gray-100 text-gray-900"
+                                          : "text-gray-700",
+                                        "block w-full px-4 py-2 text-left text-sm"
+                                      )}
+                                    >
+                                      Ontario4
+                                    </button>
+                                  )}
+                                </Menu.Item>
+                              </form>
+                            </div>
+                          </Menu.Items>
+                        </Transition>
+                      </Menu>
                     </div>
                   </div>
                   {/* phone */}
