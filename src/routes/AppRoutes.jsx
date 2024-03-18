@@ -57,6 +57,8 @@ import AboutCalender from "../pages/about/AboutCalender";
 import AboutContact from "../pages/about/AboutContact";
 import AboutCharitiesWeSupport from "../pages/about/AboutCharitiesWeSupport";
 import ProductDetailcopy from "../pages/product/ProductDetailcopy";
+import EditPersonalInfo from "../pages/profile/EditPersonalInfo";
+import EditStoreInfo from "../pages/profile/EditStoreInfo";
 
 export default function AppRoutes() {
   const [userId, setUserId] = useState();
@@ -367,6 +369,16 @@ export default function AppRoutes() {
           path="product-collection/customer-profile"
           // element={user || customer ? <CustomerProfile /> : <Body />}
           element={<CustomerProfile />}
+        />
+        <Route
+          path="product-collection/editPersonalInfo"
+          // element={user || customer ? <CustomerProfile /> : <Body />}
+          element={<EditPersonalInfo />}
+        />
+        <Route
+          path="product-collection/editStoreInfo"
+          // element={user || customer ? <CustomerProfile /> : <Body />}
+          element={<EditStoreInfo />}
         />
         <Route path="/designers-list" element={<DesignerList />} />
         <Route path="/designer-profile/:id" element={<DesignerProfile />} />

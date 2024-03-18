@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CustomerProfile = () => {
   return (
     <div
@@ -43,12 +45,14 @@ const CustomerProfile = () => {
                 </div>
                 {/* button */}
                 <div className="text-center w-[80px] h-[34px]">
-                  <button
-                    className=" w-[80px] h-[34px] text-center text-xs bg-[#E2A856] text-[#FFFFFF]"
-                    type="button"
-                  >
-                    EDIT
-                  </button>
+                  <Link to={"/product-collection/editPersonalInfo"}>
+                    <button
+                      className=" w-[80px] h-[34px] text-center text-xs cursor-pointer bg-[#E2A856] text-[#FFFFFF]"
+                      type="button"
+                    >
+                      EDIT
+                    </button>
+                  </Link>
                 </div>
               </div>
               {/* horizontal line */}
@@ -94,12 +98,14 @@ const CustomerProfile = () => {
                 </div>
                 {/* button */}
                 <div className="text-center w-[80px] h-[34px]">
-                  <button
-                    className=" w-[80px] h-[34px] text-center text-xs bg-[#E2A856] text-[#FFFFFF]"
-                    type="button"
-                  >
-                    EDIT
-                  </button>
+                  <Link to={"/product-collection/editStoreInfo"}>
+                    <button
+                      className="cursor-pointer w-[80px] h-[34px] text-center text-xs bg-[#E2A856] text-[#FFFFFF]"
+                      type="button"
+                    >
+                      EDIT
+                    </button>
+                  </Link>
                 </div>
               </div>
               {/* horizontal line */}
