@@ -1,793 +1,373 @@
-// import React, { useContext, useState } from 'react'
-// import { useFieldArray, useForm } from 'react-hook-form';
-// import { Button, Card, Col, Container, Form, Row, Table } from 'react-bootstrap'
-// import { BsTrash } from 'react-icons/bs'
-// import { useNavigate } from 'react-router-dom';
-
-// import AppContentForm from '../../components/elements/builders/AppContentForm';
-// import { BrandIconContext } from '../../states/contexts/BrandIconContext';
-// import ApiService from '../../helpers/ApiServices';
-// import { CustomerContext } from '../../states/contexts/CustomerContext';
-// import DefaultImg from '../../image/default_product_img.jpg'
-// import { getCountry, getModelRoute, showMessage } from '../../helpers/Utils';
-// import { useEffect } from 'react';
-// import { CartContext } from '../../states/contexts/CartContext';
-// import { CiEdit } from 'react-icons/ci'
-// import { FaRegEye } from 'react-icons/fa'
-// import { LazyLoadImage } from 'react-lazy-load-image-component';
-// import DisplayCartDetails from '../../components/elements/components/DisplayCartDetails';
-// import Loader from '../../components/elements/components/loaders/Loader';
-// import { UserContext } from '../../states/contexts/UserContext';
-// const moment = require('moment')
-
-// const RapidOrder = () => {
-//     const [show, setShow] = useState({ isShowSKU1: false, isShowSKU2: false, isShowSKU3: false, isShowSKU4: false, isShowSKU5: false, isShowSKU6: false, isShowSKU7: false, isShowSKU8: false, isShowSKU9: false, isShowSKU10: false });
-//     const [collections, setCollections] = useState({ sku1Collection: [], sku2Collection: [], sku3Collection: [], sku4Collection: [], sku5Collection: [], sku6Collection: [], sku7Collection: [], sku8Collection: [], sku9Collection: [], sku10Collection: [] });
-//     const [otherInfo, setOtherInfo] = useState({ sku1OtherInfo: {}, sku2OtherInfo: {}, sku3OtherInfo: {}, sku4OtherInfo: {}, sku5OtherInfo: {}, sku6OtherInfo: {}, sku7OtherInfo: {}, sku8OtherInfo: {}, sku9OtherInfo: {}, sku10OtherInfo: {} });
-//     const [carts, setCarts] = useState([])
-//     // const [unformatedCartData, setUnformatedCartData] = useState([])
-//     const [state, setState] = useState([]);
-//     const [total, setTotal] = useState(null);
-//     const [isEditCart, setIsEditCart] = useState(false);
-
-//     const navigate = useNavigate()
-
-//     const { dispatch: iconDispatch, textColor, division, ...rest } = useContext(BrandIconContext)
-//     const { dispatch: customerDispatch, customer } = useContext(CustomerContext)
-//     const { dispatch: cartDispatch, quantity } = useContext(CartContext)
-//     const { user } = useContext(UserContext)
-
-//     let customers = JSON.parse(localStorage.getItem("PCTeRP.CUSTOMER_IDS"))
-//     let uniteType;
-
-//     const { register, handleSubmit, control, setValue, reset, getValues, formState: { errors } } = useForm({
-//         defaultValues: {
-//             cartItems: [
-//                 {
-//                     sku: ""
-//                 }
-//             ]
-//         }
-//     });
-//     const { append: cartItemsAppend, remove: cartItemsRemove, fields: cartItemsFields, update: cartItemsUpdate, insert: cartItemsInsert } = useFieldArray({
-//         control, name: "cartItems",
-//     });
-//     const { append: showCartItemsAppend, remove: showCartItemsRemove, fields: showCartItemsFields, update: showCartItemsUpdate, insert: showCartItemsInsert } = useFieldArray({ control, name: "showCartItems" });
-
-//     let updateCartData = { quantity: "", cartId: "", price: "", subTotal: "" }
-
-//     const onSubmit = (data) => {
-//         let array = []
-//         let itemsAddedtoCart = []
-//         // console.log(data);
-
-//         // Find unique items
-//         let uniqueItems = [...new Map(data.cartItems.map(item => [item['combineName'], item])).values()];
-
-//         // Update the quantity before adding into cart
-//         uniqueItems.map(ele => {
-//             let qty = ele.productQuantity * data.cartItems.filter(itm => itm.combineName === ele.combineName)?.length
-//             ele.productQuantity = qty
-//             ele.subTotal = ele.price * qty
-//         })
-
-//         // console.log("uniqueItems: ", uniqueItems.map(ele => ele.combineName));
-//         // console.log("cart: ", state);
-
-//         // Update sku quantity which is already present in cart
-//         for (let ele of uniqueItems) {
-//             let item = state.filter(itm => itm.combineName === ele.combineName)[0]
-//             // console.log(item);
-//             if (item) {
-//                 const qty = ele.productQuantity + parseInt(item.productQuantity[0]?.id)
-
-//                 item.productQuantity = qty
-//                 item.subTotal = ele.price * qty
-
-//                 array.push(item)
-//             }
-//         }
-
-//         // console.log("Modified: ", array.map(ele => ele.combineName));
-
-//         // Filterout the element which is already present in cart
-//         if (array.length) {
-//             for (let ele of uniqueItems) {
-
-//                 if (!array.find((item) => item.combineName === ele.combineName)) {
-//                     itemsAddedtoCart.push(ele)
-//                 }
-//             }
-//         }
-
-//         // console.log("itemsAddedtoCart:", itemsAddedtoCart.map(ele => ele.combineName));
-
-//         // Update qty and subtotal
-//         if (array.length) {
-//             updateQtyAndSubtotal(array)
-//         }
-
-//         if (data.cartItems?.length && data.cartItems.filter(ele => { return ele.sku == '' })?.length == 0) {
-//             // return addCart(data.cartItems)
-//             // return addCart(uniqueItems)
-//             return addCart(array.length ? itemsAddedtoCart : uniqueItems)
-//         } else {
-//             showMessage('Please select a product!!', "info")
-//         }
-//     }
-
-//     const checkPricesOfCart = (prices) => {
-//         let obj = {}
-//         let updatedCartItems = []
-
-//         ApiService.setHeader()
-//         // ApiService.get(`shop/cart/${customers[customers?.length - 1]?._id}?model=${getModelRoute(user).model}`).then(response => {
-//         ApiService.get(`shop/cart/${customers[customers?.length - 1]?._id}?protectModel=${getModelRoute(user).model}`).then(response => {
-//             // console.log(response.data);
-//             if (response?.data.isSuccess) {
-//                 response?.data.documents?.map(cartItem => {
-
-//                     console.log("cart item: ", cartItem);
-
-//                     // Get pricing matrix based on products's priceCode
-//                     const key = `${getCountry().toUpperCase()} ${customers[customers?.length - 1]?.priceLevel}`.toUpperCase()
-//                     // console.log(key);
-
-//                     const pm = prices.filter(price => price.Code === cartItem.productId.priceCode)
-//                     // console.log("pm: ", pm);
-
-//                     // Set price from pricing matrix in each product
-//                     if (pm.length) {
-//                         for (let ele of Object.entries(pm[0])) {
-//                             if (ele[0].toUpperCase() === key) {
-//                                 // Set new price from pricing matrix into product if changed
-//                                 if (ele[1] !== cartItem?.price) {
-//                                     cartItem.price = ele[1]
-//                                     cartItem.subTotal = parseFloat(parseFloat(ele[1]) * cartItem.productQuantity).toFixed(2)
-//                                     updatedCartItems.push(cartItem)
-//                                 }
-//                             }
-//                         }
-
-//                     }
-//                 })
-
-//                 console.log('updatedCartItems: ', updatedCartItems);
-//                 updatePriceInCartItems(updatedCartItems)
-
-//             }
-//         }).catch(error => {
-//             console.log(error.response?.data)
-//             // console.log("Else Catch")
-//             // showMessage(error.response.data.message, "error")
-//         })
-//     }
-
-//     const updatePriceInCartItems = (updatedCartItems) => {
-//         // Not completed
-//         if (updatedCartItems?.length) {
-//             ApiService.setHeader()
-//             // ApiService.patch(`shop/cart/bulkUpdatePrice?model=${getModelRoute(user).model}`, updatedCartItems).then(response => {
-//             ApiService.patch(`shop/cart/bulkUpdatePrice?protectModel=${getModelRoute(user).model}`, updatedCartItems).then(response => {
-//                 if (response?.data.isSuccess) {
-//                     getCartDetail()
-//                 }
-//             }).catch(error => {
-//                 console.log(error.response?.data)
-//                 // console.log("Else Catch")
-//                 // showMessage(error.response.data.message, "error")
-//             })
-//         } else {
-//             getCartDetail()
-//         }
-//     }
-
-//     const addCart = async (data) => {
-//         // ApiService.post(`shop/cart?model=${getModelRoute(user).model}`, data).then(response => {
-//         ApiService.post(`shop/cart?protectModel=${getModelRoute(user).model}`, data).then(response => {
-//             // console.log(response.data);
-//             if (response?.data.isSuccess) {
-//                 // console.log(response?.data.document);
-//                 // cartItemsAppend({ sku: '', collection: [{ _id: "", value: "", text: '' }] })
-//                 reset({ cartItems: [] })
-//                 setCollections({ sku1Collection: [], sku2Collection: [], sku3Collection: [], sku4Collection: [], sku5Collection: [], sku6Collection: [], sku7Collection: [], sku8Collection: [], sku9Collection: [], sku10Collection: [] })
-//                 setShow({ isShowSKU1: false, isShowSKU2: false, isShowSKU3: false, isShowSKU4: false, isShowSKU5: false, isShowSKU6: false, isShowSKU7: false, isShowSKU8: false, isShowSKU9: false, isShowSKU10: false })
-
-//                 showMessage("Item's added successfully!!", "success")
-
-//                 getCartDetail()
-//             }
-//         }).catch(error => {
-//             console.log(error.response.data)
-//             // console.log("Else Catch")
-//             // showMessage(error.response.data.message, "error")
-//         })
-//     }
-
-//     const getProduct = (name, skuNo) => {
-//         // console.log(skuNo);
-//         let country = '', multipliers
-
-//         ApiService.setHeader()
-//         // ApiService.get(`shop/product/get/${name}?model=${getModelRoute(user).model}`).then(response => {
-//         ApiService.get(`shop/product/get/${name}?protectModel=${getModelRoute(user).model}`).then(response => {
-//             // console.log(response.data.document);
-
-//             if (response?.data.isSuccess) {
-//                 let obj = {}
-
-//                 // Get country
-//                 customers != null && customers[customers?.length - 1]?.addresses.map(address => {
-//                     if (address?.isDefaultBilling) {
-//                         // console.log(address?.country?.text);
-//                         country = address?.country?.text
-//                     }
-//                 })
-
-//                 setShow(prev => ({ ...prev, [`isShowSKU${skuNo}`]: true }))
-//                 setCollections(prev => ({ ...prev, [`sku${skuNo}Collection`]: response.data.document?.collections }))
-
-//                 let price = response.data.document.price
-//                 if (country == "CANADA") {
-//                     uniteType = 'm'
-//                     multipliers = formatArray(response.data.document?.cadFullMultiplier ? response.data.document?.cadFullMultiplier : 1)
-//                 } else {
-//                     uniteType = 'y'
-//                     multipliers = formatArray(response.data.document?.usdFullMultiplier ? response.data.document?.usdFullMultiplier : 1)
-//                 }
-
-//                 setValue(`cartItems.${skuNo}.productId`, response.data.document._id)
-//                 setValue(`cartItems.${skuNo}.userId`, customers[customers?.length - 1]?._id)
-//                 setValue(`cartItems.${skuNo}.price`, price)
-//                 setValue(`cartItems.${skuNo}.multipliers`, multipliers)
-//                 setValue(`cartItems.${skuNo}.productQuantity`, parseInt(multipliers[0]))
-//                 setValue(`cartItems.${skuNo}.subTotal`, parseInt(multipliers[0]) * price)
-//                 setValue(`cartItems.${skuNo}.image`, response.data.document?.uploadSmallPoster?.url ? response.data.document?.uploadSmallPoster?.url : DefaultImg)
-//             }
-//         }).catch(error => {
-//             console.log(error.response?.data)
-//             // console.log("Else Catch")
-//             showMessage(error?.response?.data?.message, "error")
-//         })
-//     }
-
-//     // Get selected collection and set ship date to each cart item
-//     const getAndSetShipDate = (collectionName, skuNo) => {
-//         // ApiService.get(`shop/collection/name/${collectionName}?model=${getModelRoute(user).model}`).then(response => {
-//         ApiService.get(`shop/collection/name/${collectionName}?protectModel=${getModelRoute(user).model}`).then(response => {
-//             if (response?.data.isSuccess) {
-//                 // console.log(response.data);
-//                 setValue(`cartItems.${skuNo}.shipDate`, response.data?.document?.date)
-
-//                 // Below line is only for finding unique items from array
-//                 setValue(`cartItems.${skuNo}.combineName`, `${getValues(`cartItems.${skuNo}.sku`)} ${collectionName}`)
-//             }
-//         }).catch(error => {
-//             console.log(error.response.data)
-//             // console.log("Else Catch")
-//             // showMessage(error.response.data.message, "error")
-//         })
-//     }
-
-//     //OLD
-//     // const getCartDetail = () => {
-//     //     let obj = {}
-
-//     //     ApiService.setHeader()
-//     //     ApiService.get(`shop/cart/${customers[customers?.length - 1]?._id}`).then(response => {
-//     //         // console.log(response.data);
-//     //         if (response?.data.isSuccess) {
-
-//     //             // console.log(response?.data.documents);
-//     //             cartDispatch({ type: "ADD_TO_CART_QUANTITY", payload: response?.data.documents?.length });
-
-//     //             // Format cart items
-//     //             response?.data.documents.map(ele => {
-//     //                 // ele.productQuantity = formatData(ele).productQuantity
-//     //                 // ele.multipliers = formatData(ele).multipliers
-//     //                 ele.productQuantity = `${ele.productQuantity}/ ${uniteType == 'm' ? 'Metre(s)' : 'Yard(s)'}`
-//     //                 ele.price = `$${ele.price}/ ${uniteType}`
-//     //                 ele.subTotal = `$${ele.subTotal}`
-//     //             })
-
-//     //             obj.showCartItems = response?.data.documents
-
-//     //             // Group all cart items by collection name
-//     //             const groupBycollectionName = response?.data.documents.reduce((group, cartItem) => {
-//     //                 const { collectionName } = cartItem;
-
-//     //                 group[collectionName] = group[collectionName] ?? [];
-//     //                 group[collectionName].push(cartItem);
-
-//     //                 return group;
-//     //             }, {});
-//     //             // console.log(Object.entries(groupBycollectionName));
-
-//     //             // Set formated cart items to a state
-//     //             // setCarts(obj.showCartItems)
-//     //             setCarts(Object.entries(groupBycollectionName))
-//     //             // console.log(obj);
-
-//     //             // // Reset formated cart items to show on list
-//     //             // reset(obj)
-
-//     //         }
-//     //     }).catch(error => {
-//     //         console.log(error.response?.data)
-//     //         // console.log("Else Catch")
-//     //         // showMessage(error.response.data.message, "error")
-//     //     })
-//     // }
-
-//     // NEW
-//     const getCartDetail = () => {
-//         let obj = {}
-
-//         ApiService.setHeader()
-//         // ApiService.get(`shop/cart/${customers[customers?.length - 1]?._id}?model=${getModelRoute(user).model}`).then(response => {
-//         ApiService.get(`shop/cart/${customers[customers?.length - 1]?._id}?protectModel=${getModelRoute(user).model}`).then(response => {
-//             // console.log(response.data);
-//             if (response?.data.isSuccess) {
-//                 // getMultipliers()
-
-//                 // console.log(response?.data.documents);
-//                 cartDispatch({ type: "ADD_TO_CART_QUANTITY", payload: response?.data.documents?.length });
-//                 setState(response?.data.documents)
-
-//                 setTotal(response?.data.documents?.reduce(function getSum(total, cart) {
-//                     // return total + cart?.price;
-//                     return (parseFloat(total) + parseFloat(cart?.subTotal)).toFixed(2);
-//                 }, 0))
-
-//                 // Format cart items
-//                 response?.data.documents?.map(ele => {
-//                     ele.productQuantity = formatData(ele).productQuantity
-//                     ele.multipliers = formatData(ele).multipliers
-//                     ele.combineName = `${ele.productId.name.split(":")[1].trim()} ${ele.collectionName}`
-//                 })
-
-//                 obj.cartItems = response?.data.documents
-//                 // console.log(obj);
-//                 // reset(obj)
-
-//                 // Group all cart items by collection name
-//                 const groupBycollectionName = response?.data.documents?.reduce((group, cartItem) => {
-//                     const { collectionName } = cartItem;
-
-//                     group[collectionName] = group[collectionName] ?? [];
-//                     group[collectionName].push(cartItem);
-
-//                     return group;
-//                 }, {});
-
-//                 // Set formated cart items
-//                 setCarts(Object.entries(groupBycollectionName))
-//             }
-//         }).catch(error => {
-//             console.log(error.response?.data)
-//             // console.log("Else Catch")
-//             // showMessage(error.response.data.message, "error")
-//         })
-//     }
-
-//     const updateCartItem = (cartId) => {
-//         // console.log(cartId);
-//         // console.log(updateCartData);
-//         if (updateCartData.cartId && cartId == updateCartData.cartId) {
-
-//             ApiService.setHeader()
-//             // ApiService.patch(`shop/cart/increaseCartItemQuantity/${updateCartData.cartId}?model=${getModelRoute(user).model}`, updateCartData).then(response => {
-//             ApiService.patch(`shop/cart/increaseCartItemQuantity/${updateCartData.cartId}?protectModel=${getModelRoute(user).model}`, updateCartData).then(response => {
-//                 if (response?.data.isSuccess) {
-//                     getCartDetail()
-//                 }
-//             }).catch(error => {
-//                 console.log(error.response.data)
-//                 // showMessage(error.response.data.message, "error")
-//             })
-
-//             setIsEditCart(!isEditCart)
-//         } else {
-//             showMessage("Please select correct Item for update!", "warning")
-//         }
-//     }
-
-//     const updateQtyAndSubtotal = (array) => {
-//         ApiService.setHeader()
-//         // ApiService.patch(`shop/cart/updateQty?model=${getModelRoute(user).model}`, array).then(response => {
-//         ApiService.patch(`shop/cart/updateQty?protectModel=${getModelRoute(user).model}`, array).then(response => {
-//             if (response?.data.isSuccess) {
-
-//             }
-//         }).catch(error => {
-//             console.log(error.response.data)
-//             // showMessage(error.response.data.message, "error")
-//         })
-
-//     }
-
-//     const deleteCartItem = (cartId) => {
-//         console.log(cartId);
-
-//         ApiService.setHeader()
-//         // ApiService.delete(`shop/cart/${cartId}?model=${getModelRoute(user).model}`).then(response => {
-//         ApiService.delete(`shop/cart/${cartId}?protectModel=${getModelRoute(user).model}`).then(response => {
-//             if (response.status == 204) {
-//                 getCartDetail()
-//             }
-//         }).catch(error => {
-//             console.log(error)
-//             // showMessage(error.response.data.message, "error")
-//         })
-//     }
-
-//     const deleteAllSelectedCartItem = (cartIds) => {
-//         console.log(cartIds);
-//         ApiService.setHeader()
-//         // ApiService.delete(`shop/cart/many/${JSON.stringify(cartIds)}?model=${getModelRoute(user).model}`).then(response => {
-//         ApiService.patch(`shop/cart/many/${JSON.stringify(cartIds)}?protectModel=${getModelRoute(user).model}`).then(response => {
-//             if (response.status == 204) {
-//             }
-//             getCartDetail()
-//         }).catch(error => {
-//             console.log(error)
-//             // showMessage(error.response.data.message, "error")
-//         })
-
-//     }
-
-//     const toggleEdit = () => {
-//         setIsEditCart(!isEditCart)
-//     }
-
-//     const formatData = (cart) => {
-//         let array = [{ id: "", name: "" }]
-//         cart.multipliers?.map(e => {
-//             let obj = {}
-//             obj = {
-//                 id: e,
-//                 name: String(e)
-//             }
-//             array.push(obj)
-//         })
-
-//         return {
-//             productQuantity: [{
-//                 id: cart.productQuantity,
-//                 name: String(cart.productQuantity)
-//             }],
-//             // productQuantity: cart.productQuantity,
-//             multipliers: array
-//         }
-//     }
-
-//     const formatArray = (multiplier, calledFrom) => {
-//         let array = []
-//         for (let i = 1; i <= 10; i++) {
-//             array.push((i * parseInt(multiplier)))
-//         }
-
-//         if (calledFrom !== "checkBox") {
-//             // setCADMultiplier(array)
-//             // setQtys(array)
-//         }
-//         return array
-//     }
-
-//     const goToCart = () => {
-//         navigate(`/cart-detail`)
-//     }
-
-//     customers != null && customers[customers?.length - 1]?.addresses.forEach(address => {
-//         if (address?.isDefaultBilling && address?.country?.text == "UNITED STATES") {
-//             uniteType = 'y'
-//         } else {
-//             uniteType = 'm'
-//         }
-//     })
-
-//     // console.log(carts);
-
-//     useEffect(() => {
-//         // if (customer != null) getCartDetail()
-//         if (customer != null) {
-//             ApiService.setHeader()
-//             // ApiService.get(`shop/pricingMatrix?model=${getModelRoute(user).model}`).then(response => {
-//             ApiService.get(`shop/pricingMatrix?protectModel=${getModelRoute(user).model}`).then(response => {
-//                 console.log(response.data.documents);
-//                 if (response?.data.isSuccess) {
-//                     // prices = response.data.documents
-
-//                     // Get cart details (passing pricing matrixes)
-//                     // getCartDetail(response.data.documents)
-//                     checkPricesOfCart(response.data.documents)
-//                 }
-//             }).catch(error => {
-//                 console.log(error.response.data)
-//                 // showMessage(error.response.data.message, "error")
-//             })
-//         }
-//     }, []);
-
-//     return (
-//         <AppContentForm onSubmit={handleSubmit(onSubmit)}>
-//             <Container className='p-0'>
-//                 <Row className=' p-0 mb-4' style={{ display: "flex", flexDirection: "column" }}>
-//                     <Col className='p-0 mb-3'><h2 style={{ fontSize: "30px" }}>Rapid Order Placement</h2></Col>
-//                     <Col className='p-0' style={{ fontSize: "14px" }}>Please enter the SKUs of the swatches you wish to add to the order :</Col>
-//                     <Col className='p-0' style={{ color: "red", fontSize: "14px" }}>If SKU belongs to more than one collection, please select the appropriate collection</Col>
-//                 </Row>
-
-//                 {/* SKU SELECTION */}
-//                 {/* <AppContentBody className="p-0 m-0"> */}
-
-//                 <Row >
-//                     <Card className='p-0 mb-4 border' style={{ width: '100%', border: "none" }}>
-//                         <Card.Body className="card-scroll">
-//                             <Table responsive striped hover size='sm'>
-//                                 <thead>
-//                                     <tr>
-//                                         <th style={{ minWidth: "1rem" }}></th>
-//                                         <th style={{ minWidth: "15rem", fontSize: "14px" }}>SKU</th>
-//                                         <th style={{ minWidth: "10rem", fontSize: "14px" }}>COLLECTIONS</th>
-//                                         <th style={{ minWidth: "1rem" }}></th>
-//                                     </tr>
-//                                 </thead>
-//                                 <tbody>
-//                                     {cartItemsFields.map((field, index) => {
-
-//                                         return (
-//                                             <tr key={index} >
-//                                                 <td>
-//                                                     {index + 1}
-//                                                 </td>
-//                                                 <td>
-//                                                     <Form.Group as={Col} md={'4'}>
-//                                                         <Form.Control size='sm' style={{ maxWidth: "15rem" }}
-//                                                             label=''
-//                                                             type="text"
-//                                                             id="sku"
-//                                                             name="sku"
-//                                                             {...register(`cartItems.${index}.sku`)}
-//                                                             onBlur={(e) => {
-//                                                                 // console.log(e.target.value);
-//                                                                 if (e.target.value) {
-//                                                                     getProduct(e.target.value, index)
-//                                                                 }
-//                                                             }}
-//                                                         />
-//                                                     </Form.Group>
-//                                                 </td>
-//                                                 <td>
-//                                                     {show[`isShowSKU${index}`] ? <Form.Group as={Col} md={'4'} className="mb-2">
-//                                                         <Form.Select size='sm' aria-label="Default select example" autoFocus style={{ width: '250px' }}
-//                                                             {...register(`cartItems.${index}.collectionName`)}
-//                                                             onBlur={(e) => {
-//                                                                 // Get selected collection shipdate
-//                                                                 getAndSetShipDate(e.target.value, index)
-//                                                             }}
-//                                                             onFocus={(e) => {
-//                                                                 // Get selected collection shipdate
-//                                                                 getAndSetShipDate(e.target.value, index)
-//                                                             }}
-
-//                                                         >
-//                                                             {
-//                                                                 collections[`sku${index}Collection`]?.length && collections[`sku${index}Collection`].map(ele => {
-//                                                                     // console.log(ele);
-//                                                                     return <option key={ele?._id} value={ele?.text}>{ele?.text}</option>
-//                                                                 })
-//                                                             }
-//                                                         </Form.Select>
-//                                                     </Form.Group> : null}
-//                                                 </td>
-//                                                 <td>
-//                                                     <Button size="sm" variant="danger"
-//                                                         onClick={() => {
-//                                                             cartItemsRemove(index);
-//                                                             // setCollections({ sku1Collection: [], sku2Collection: [], sku3Collection: [], sku4Collection: [], sku5Collection: [], sku6Collection: [], sku7Collection: [], sku8Collection: [], sku9Collection: [], sku10Collection: [] })
-//                                                             // setShow({ isShowSKU1: false, isShowSKU2: false, isShowSKU3: false, isShowSKU4: false, isShowSKU5: false, isShowSKU6: false, isShowSKU7: false, isShowSKU8: false, isShowSKU9: false, isShowSKU10: false })
-//                                                             setShow(prev => ({ ...prev, [`isShowSKU${index}`]: false }))
-//                                                             setCollections(prev => ({ ...prev, [`sku${index}Collection`]: [] }))
-//                                                         }}
-//                                                     ><BsTrash /></Button>
-//                                                 </td>
-//                                             </tr>
-//                                         )
-//                                     })}
-//                                     <tr>
-//                                         <td colSpan="14">
-//                                             <Button size="sm" className='animet_btton' style={{ backgroundColor: rest.backgroundColor, borderColor: rest.backgroundColor }} onClick={() => {
-//                                                 cartItemsAppend({ sku: '', collection: [{ _id: "", value: "", text: '' }] })
-//                                                 // setCollections({ sku1Collection: [], sku2Collection: [], sku3Collection: [], sku4Collection: [], sku5Collection: [], sku6Collection: [], sku7Collection: [], sku8Collection: [], sku9Collection: [], sku10Collection: [] })
-//                                                 // setShow({ isShowSKU1: false, isShowSKU2: false, isShowSKU3: false, isShowSKU4: false, isShowSKU5: false, isShowSKU6: false, isShowSKU7: false, isShowSKU8: false, isShowSKU9: false, isShowSKU10: false })
-//                                             }}>Add Sku</Button>
-
-//                                         </td>
-//                                     </tr>
-//                                 </tbody>
-//                             </Table>
-//                         </Card.Body>
-//                     </Card>
-//                 </Row>
-
-//                 <Row className='p-0 mb-3'>
-//                     <Col className='p-0' style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
-//                         <Button className='animet_btton' type='submit' style={{ backgroundColor: rest.backgroundColor, borderColor: rest.backgroundColor }} variant="primary" size="sm">Add to Order</Button>
-
-//                         <Button className='animet_btton' style={{ backgroundColor: rest.backgroundColor, borderColor: rest.backgroundColor }} variant="primary" size="sm" onClick={goToCart}>View Cart</Button>
-
-//                         {/* {!isEditCart ? <Button className='btn btn-outline-info' size="sm" variant=''
-//                             onClick={toggleEdit}
-//                         > <CiEdit /></Button> :
-//                             <Button className='btn btn-outline-info' size="sm" variant=''
-//                                 onClick={toggleEdit}
-//                             > <FaRegEye /></Button>
-//                         } */}
-//                     </Col>
-//                 </Row>
-
-//                 {/* SHOW CART ITEMS */}
-//                 {/* {carts?.length ? <Row>
-//                     <Table striped hover size="sm" style={{ fontSize: "16px" }}>
-//                         <thead style={{ position: "sticky", top: 0, backgroundColor: rest.backgroundColor, color: "white", zIndex: 999 }}>
-//                             <tr style={{}}>
-//                                 <th style={{ minWidth: "2rem" }}></th>
-//                                 <th style={{ minWidth: "0rem" }}>IMAGE</th>
-//                                 <th style={{ minWidth: "12rem" }}>PRODUCT NAME</th>
-//                                 <th style={{ minWidth: "12rem" }}>COLLECTION NAME</th>
-//                                 <th style={{ minWidth: "12rem" }}>PRICE</th>
-//                                 <th style={{ minWidth: "9rem" }}>QTY</th>
-//                                 <th style={{ minWidth: "9rem" }}>DISCOUNT</th>
-//                                 <th style={{ minWidth: "12rem" }}>NET TOTAL</th>
-//                             </tr>
-//                         </thead>
-//                         <tbody >
-//                             {showCartItemsFields?.map((field, index) => {
-//                                 return (
-//                                     <tr key={field.id}>
-//                                         <td style={{ textAlign: 'center', paddingTop: '8px' }}>{index + 1}</td>
-//                                         <td style={{ textAlign: 'center', paddingTop: '8px' }}>
-//                                             <LazyLoadImage
-//                                                 alt={""}
-//                                                 width={"145"}
-//                                                 height={"145"}
-//                                                 effect="blur"
-//                                                 {...register(`showCartItems.${index}.image`)}
-//                                                 src={getValues(`showCartItems.${index}.image`)}
-//                                             />
-//                                         </td>
-
-//                                         <td>
-//                                             <Form.Group >
-//                                                 <Form.Control
-//                                                     plaintext readOnly disabled
-//                                                     type="text"
-//                                                     id="name"
-//                                                     name="name"
-//                                                     {...register(`showCartItems.${index}.productId.name`)} />
-//                                             </Form.Group>
-//                                         </td>
-
-//                                         <td>
-//                                             <Form.Group >
-//                                                 <Form.Control
-//                                                     plaintext readOnly disabled
-//                                                     type="text"
-//                                                     id="name"
-//                                                     name="name"
-//                                                     {...register(`showCartItems.${index}.collectionName`)} />
-//                                             </Form.Group>
-//                                         </td>
-
-//                                         <td>
-//                                             <Form.Group >
-//                                                 <Form.Control
-//                                                     plaintext readOnly disabled
-//                                                     type="text"
-//                                                     id="price"
-//                                                     name="price"
-//                                                     {...register(`showCartItems.${index}.price`)} />
-//                                             </Form.Group>
-//                                         </td>
-
-//                                         <td>
-//                                             <Form.Group >
-//                                                 <Form.Control
-//                                                     plaintext readOnly disabled
-//                                                     type="text"
-//                                                     id="name"
-//                                                     name="name"
-//                                                     {...register(`showCartItems.${index}.productQuantity`)} />
-//                                             </Form.Group>
-//                                         </td>
-
-//                                         <td>
-//                                             n/a
-//                                         </td>
-
-//                                         <td>
-//                                             <Form.Group >
-//                                                 <Form.Control
-//                                                     plaintext readOnly disabled
-//                                                     type="text"
-//                                                     id="price"
-//                                                     name="price"
-//                                                     {...register(`showCartItems.${index}.subTotal`)} />
-//                                             </Form.Group>
-//                                         </td>
-//                                     </tr>
-//                                 )
-//                             })}
-//                         </tbody>
-//                     </Table>
-//                 </Row> : null} */}
-
-//                 {/* {carts?.length ?
-//                     <Container className=' p-0'>
-//                         <Row className='border p-0' style={{ fontSize: "14px", position: "sticky", top: 0, backgroundColor: rest.backgroundColor, color: "white", zIndex: 999 }}>
-//                             <Col className='border p-0' style={{ minWidth: "6rem", textAlign: "center" }}>IMAGE</Col>
-//                             <Col className='border p-0' style={{ minWidth: "6rem", textAlign: "center" }}>PRODUCT NAME</Col>
-//                             <Col className='border p-0' style={{ minWidth: "6rem", textAlign: "center" }}>COLLECTION NAME</Col>
-//                             <Col className='border p-0' style={{ minWidth: "9rem", textAlign: "center" }}>PRICE</Col>
-//                             <Col className='border p-0' style={{ minWidth: "9rem", textAlign: "center" }}>QTY</Col>
-//                             <Col className='border p-0' style={{ minWidth: "9rem", textAlign: "center" }}>DISCOUNT</Col>
-//                             <Col className='border p-0' style={{ minWidth: "6rem", textAlign: "center" }}>NET TOTAL</Col>
-//                         </Row>
-
-//                         {
-//                             carts.map((cart, idx) => {
-//                                 return (
-//                                     <Row key={idx} className='' style={{ fontSize: "14px" }}>
-//                                         <Container style={{ backgroundColor: "#CFF", height: "60px", fontWeight: 700, display: "flex", alignItems: "center" }}>Ship Date: {moment(cart[1][0]?.shipDate).format('DD-MMM-YYYY').replaceAll("-", " ")}</Container>
-//                                         <Container className='mt-2 border-bottom'>
-//                                             {
-//                                                 cart[1]?.map((ele, index) => {
-//                                                     return (
-//                                                         <Row key={ele?._id} className=''>
-//                                                             <Col className=' p-0' style={{ minWidth: "6rem", textAlign: "center" }}>
-//                                                                 <LazyLoadImage
-//                                                                     alt={""}
-//                                                                     width={"145"}
-//                                                                     height={"145"}
-//                                                                     effect="blur"
-//                                                                     // {...register(`showCartItems.${index}.image`)}
-//                                                                     src={ele?.image}
-//                                                                 />
-//                                                             </Col>
-//                                                             <Col className=' p-0' style={{ minWidth: "6rem", textAlign: "center" }}>{ele.productId?.name}</Col>
-//                                                             <Col className=' p-0' style={{ minWidth: "6rem", textAlign: "center" }}>{ele?.collectionName}</Col>
-//                                                             <Col className=' p-0' style={{ minWidth: "9rem", textAlign: "center" }}>{ele?.price}</Col>
-//                                                             <Col className=' p-0' style={{ minWidth: "9rem", textAlign: "center" }}>{ele?.productQuantity}</Col>
-//                                                             <Col className=' p-0' style={{ minWidth: "9rem", textAlign: "center" }}>{"n/a"}</Col>
-//                                                             <Col className=' p-0' style={{ minWidth: "6rem", textAlign: "center" }}>{ele?.subTotal}</Col>
-//                                                         </Row>
-//                                                     )
-//                                                 })
-//                                             }
-//                                         </Container>
-//                                     </Row>
-//                                 )
-//                             })
-//                         }
-//                     </Container> : null} */}
-
-//                 {
-//                     carts?.length ? carts?.map(cart => {
-//                         return <DisplayCartDetails key={cart?._id} isEditCart={isEditCart} cart={cart} updateCartData={updateCartData} updateCartItem={updateCartItem} deleteCartItem={deleteCartItem} total={total} deleteAllSelectedCartItem={deleteAllSelectedCartItem} />
-//                     }) : <Loader content={`CART IS EMPTY!!`} position={'start'} />
-//                 }
-//             </Container >
-//         </AppContentForm >
-//     )
-// }
-
-// export default RapidOrder
-
-import React from "react";
+import search from "../../assets/HeaderLogo/search.svg";
+import { Link } from "react-router-dom";
+import CartProduct from "../../assets/ShoppingCart/CartProduct.svg";
+import DeleteIcon from "../../assets/ShoppingCart/DeleteIcon.svg";
 
 const RapidOrder = () => {
-  return <div>RapidOrder</div>;
+  const SKUTable = [
+    { name: "SKU1" },
+    { name: "SKU2" },
+    { name: "SKU3" },
+    { name: "SKU4" },
+    { name: "SKU5" },
+    { name: "SKU6" },
+    { name: "SKU7" },
+    { name: "SKU8" },
+    { name: "SKU9" },
+    { name: "SKU10" },
+  ];
+
+  return (
+    <div
+      style={{ fontFamily: "Open Sans" }}
+      className="flex items-center justify-center"
+    >
+      <div className="my-[80px] sm:my-[100px] w-[320px] sm:w-[744px] xl:w-[1280px] 2xl:w-[1728px] flex flex-col items-center justify-center gap-[60px]">
+        {/* top heading */}
+        <div className="w-[320px] h-[38px] sm:w-[744px] sm:h-[44px] xl:w-[1160px] 2xl:w-[1320px] flex items-center justify-center">
+          <h1 className="font-bold text-[28px] sm:text-[32px]">Rapid Order</h1>
+        </div>
+        {/* search table and product table */}
+        <div className=" w-[320px] sm:w-[744px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col items-center justify-center xl:flex-row gap-[60px] xl:gap-[40px]">
+          {/* search table */}
+          <div className="w-[280px] h-[722px] sm:w-[640px] sm:h-[407px] xl:w-[340px] xl:h-[728px] 2xl:w-[500px] flex flex-col items-center justify-center gap-[20px]">
+            {/* heading */}
+            <div className="w-[280px] h-[68px] sm:w-[640px] sm:h-[53px] xl:w-[340px] xl:h-[74px] 2xl:w-[500px] flex flex-col gap-[5px]  text-center sm:text-start">
+              <p className="w-[280px] h-[27px] sm:w-[640px] xl:w-[340px] 2xl:w-[500px] font-bold text-[18px] text-black">
+                Please enter the SKUs:
+              </p>
+              <p className="w-[280px] h-[36px] sm:w-[640px] sm:h-[21px] xl:w-[340px] xl:h-[42px] 2xl:w-[500px] text-[12px] xl:text-[14px] text-[#6B6B66]">
+                If SKU belongs to more than one collection, please select the
+                appropriate collection
+              </p>
+            </div>
+
+            {/* search table */}
+            <div className="w-[280px] h-[634px] sm:w-[640px] sm:h-[334px] xl:w-[340px] xl:h-[634px] 2xl:w-[500px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 items-center justify-center gap-[20px]">
+              {SKUTable?.map((item, index) => (
+                <div
+                  key={index}
+                  className="col-span-1 flex items-center justify-between"
+                >
+                  {/* name */}
+                  <div className="w-[50px] h-[17px] text-[14px] text-[#9D9C99]">
+                    {item?.name}
+                  </div>
+                  {/* input field */}
+                  <div className="w-[225px] h-[40px] sm:w-[255px] xl:w-[280px] 2xl:w-[440px]">
+                    <label
+                      htmlFor="default-search"
+                      className="mb-2 font-medium text-[#9D9C99] sr-only"
+                    >
+                      Search
+                    </label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 end-0 flex items-center px-3 pointer-events-none">
+                        <img src={search} alt="search" />
+                      </div>
+                      <input
+                        type="search"
+                        id="default-search"
+                        className="block w-full p-2 text-gray-900 border border-gray-300 bg-white placeholder:text-[#9D9C99]"
+                        placeholder="Enter SKU"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {/* button */}
+              <div className="w-[280px] h-[34px] sm:w-[640px] xl:w-[340px] 2xl:w-[500px] flex justify-end">
+                <button className="text-white bg-[#E2A856] rounded text-[12px] uppercase w-[101px] h-[34px] text-center">
+                  ADD TO LIST
+                </button>
+              </div>
+            </div>
+          </div>
+          {/* product table */}
+          <div className="w-[280px] sm:w-[640px] xl:w-[780px] flex flex-col items-center justify-center gap-[20px]">
+            <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-sm text-left rtl:text-right text-gray-500 flex flex-col">
+              <thead className="text-xs text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
+                <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[740px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
+                  <th
+                    scope="col"
+                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center me-[10px]"
+                  >
+                    <span className="">Image</span>
+                  </th>
+                  <th
+                    scope="col"
+                    className="w-[180px] xl:w-[200px] h-[18px] hidden sm:flex items-center justify-center px-4"
+                  >
+                    Product Details
+                  </th>
+                  <th
+                    scope="col"
+                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center"
+                  >
+                    Price
+                  </th>
+                  <th
+                    scope="col"
+                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center"
+                  >
+                    Qty
+                  </th>
+                  <th
+                    scope="col"
+                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center"
+                  >
+                    Discount
+                  </th>
+                  <th
+                    scope="col"
+                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center"
+                  >
+                    Subtotal
+                  </th>
+                  <th
+                    scope="col"
+                    className="flex w-[62px] sm:w-[60px] xl:w-[80px] h-[18px] underline sm:text-center text-nowrap items-center justify-center"
+                  >
+                    Remove All
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="mt-5 border-gray-400">
+                {/* tr-1 */}
+                <tr className="border-b bg-white w-[240px] h-[134px] sm:w-[600px] sm:h-[70px] xl:w-[740px] xl:h-[90px] flex gap-4 mb-[11px] sm:items-start sm:gap-[10px]">
+                  {/* mobile col 1 */}
+                  {/* image for all devices*/}
+                  <div className="flex flex-col sm:flex-row w-[94px] h-[124px] sm:w-[60px] xl:w-[80px] sm:h-[60px]">
+                    <span className="">
+                      <img
+                        src={CartProduct}
+                        className="w-[94px] h-[94px] sm:w-[60px] sm:h-[60px] xl:w-[80px] xl:h-[80px] "
+                        alt="Product"
+                      />
+                    </span>
+                    {/* + - buttton for mobile only*/}
+                    <span className="h-[30px] mt-[10px] justify-center flex items-center sm:hidden">
+                      <div className="flex w-[60px] h-[20px]">
+                        <form className="max-w-xs mx-auto">
+                          <label
+                            htmlFor="quantity-input"
+                            className="block text-sm font-medium text-gray-900"
+                          ></label>
+                          <div className="relative flex items-center max-w-[8rem]">
+                            <button
+                              type="button"
+                              id="decrement-button"
+                              data-input-counter-decrement="quantity-input"
+                              className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                            >
+                              <svg
+                                className="w-2 h-2 text-gray-900"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 18 2"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M1 1h16"
+                                />
+                              </svg>
+                            </button>
+                            <input
+                              type="text"
+                              id="quantity-input"
+                              data-input-counter
+                              aria-describedby="helper-text-explanation"
+                              className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                              placeholder="10"
+                            />
+                            <button
+                              type="button"
+                              id="increment-button"
+                              data-input-counter-increment="quantity-input"
+                              className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                            >
+                              <svg
+                                className="w-2 h-2 text-gray-900"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 18 18"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M9 1v16M1 9h16"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </span>
+                  </div>
+                  {/* mobile col 2 */}
+                  <div className="w-[131px] h-[123px] sm:w-[420px] sm:h-[70px] flex">
+                    <div className="flex flex-col sm:flex-row">
+                      {/* col 2-1 */}
+                      <span className="w-[131px] h-[75px] sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] text-[10px] text-gray-500">
+                        {/* product detail for all and delete button for mobile only */}
+                        <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
+                          <div className="flex items-center justify-between">
+                            <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              00000-00
+                            </p>
+                            <div className="flex sm:hidden">
+                              <span>
+                                <img
+                                  src={DeleteIcon}
+                                  className="w-[10px] h-[11.7px]"
+                                ></img>
+                              </span>
+                            </div>
+                          </div>
+                          <div className="flex flex-col leading-[14px] text-gray-500">
+                            <p className="">
+                              Design : <span>Design Name</span>
+                            </p>
+                            <p>
+                              Color : <span>Color</span>
+                            </p>
+                            <p>
+                              Collection : <span>Collection Name</span>
+                            </p>
+                          </div>
+                        </div>
+                      </span>
+                      <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                        {/* price */}
+                        <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
+                          <span className="sm:hidden">Price:</span>
+                          <div className="xl:flex xl:flex-col">
+                            <span className="text-black text-xs">$9.15</span>{" "}
+                            <span>/Meter(s)</span>
+                          </div>
+                        </span>
+                        {/* + - buttton for desktop and tab only*/}
+                        <span className="h-[30px] justify-center sm:flex hidden sm:ms-[20px]">
+                          <div className="flex w-[60px] xl:w-[80px] h-[20px] items-start">
+                            <form className="max-w-xs mx-auto">
+                              <label
+                                htmlFor="quantity-input"
+                                className="block text-sm font-medium text-gray-900"
+                              ></label>
+                              <div className="relative flex items-center sm:items-start max-w-[8rem]">
+                                <button
+                                  type="button"
+                                  id="decrement-button"
+                                  data-input-counter-decrement="quantity-input"
+                                  className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                >
+                                  <svg
+                                    className="w-2 h-2 text-gray-900"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 18 2"
+                                  >
+                                    <path
+                                      stroke="currentColor"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth="2"
+                                      d="M1 1h16"
+                                    />
+                                  </svg>
+                                </button>
+                                <input
+                                  type="text"
+                                  id="quantity-input"
+                                  data-input-counter
+                                  aria-describedby="helper-text-explanation"
+                                  className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                  placeholder="10"
+                                />
+                                <button
+                                  type="button"
+                                  id="increment-button"
+                                  data-input-counter-increment="quantity-input"
+                                  className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                >
+                                  <svg
+                                    className="w-2 h-2 text-gray-900"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 18 18"
+                                  >
+                                    <path
+                                      stroke="currentColor"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth="2"
+                                      d="M9 1v16M1 9h16"
+                                    />
+                                  </svg>
+                                </button>
+                              </div>
+                            </form>
+                          </div>
+                        </span>
+                        {/* discount */}
+                        <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                          <span className="sm:hidden">Discount:</span>
+                          <span className="text-black">N/A</span>
+                        </span>
+
+                        {/* subtotal */}
+                        <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                          <span className="sm:hidden">Subtotal: </span>
+                          <span className="text-black font-bold">$91.50</span>
+                        </span>
+                      </div>
+                    </div>
+                    {/* desktop view delete icon */}
+                    <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
+                      {/* a
+                      <img
+                        src={DeleteIcon}
+                        className="w-[10px] h-[11.7px]"
+                      ></img> */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-[10px] h-[12px]"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </tr>
+              </tbody>
+            </table>
+            {/* button */}
+            <div className="w-[280px] h-[34px] sm:w-[640px] xl:w-[340px] 2xl:w-[500px] flex justify-end">
+              <button className="text-white bg-[#E2A856] rounded text-[12px] uppercase w-[101px] h-[34px] text-center">
+                ADD TO LIST
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default RapidOrder;

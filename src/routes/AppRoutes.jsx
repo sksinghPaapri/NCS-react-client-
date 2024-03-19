@@ -56,9 +56,14 @@ import AboutWholesaleContacts from "../pages/about/AboutWholesaleContacts";
 import AboutCalender from "../pages/about/AboutCalender";
 import AboutContact from "../pages/about/AboutContact";
 import AboutCharitiesWeSupport from "../pages/about/AboutCharitiesWeSupport";
-import ProductDetailcopy from "../pages/product/ProductDetailcopy";
+
 import EditPersonalInfo from "../pages/profile/EditPersonalInfo";
 import EditStoreInfo from "../pages/profile/EditStoreInfo";
+import ShippingAddress from "../pages/profile/ShippingAddress";
+import CommunicationPreferences from "../pages/profile/CommunicationPreferences";
+import ProfileChangePassword from "../pages/profile/ProfileChangePassword";
+import EditShippingAddress from "../pages/profile/EditShippingAddress";
+import AddShippingAddress from "../pages/profile/AddShippingAddress";
 
 export default function AppRoutes() {
   const [userId, setUserId] = useState();
@@ -366,7 +371,7 @@ export default function AppRoutes() {
           element={user || customer ? <CustomerProfile /> : <Body />}
         />
         <Route
-          path="product-collection/customer-profile"
+          path="product-collection/customerProfile"
           // element={user || customer ? <CustomerProfile /> : <Body />}
           element={<CustomerProfile />}
         />
@@ -380,6 +385,31 @@ export default function AppRoutes() {
           // element={user || customer ? <CustomerProfile /> : <Body />}
           element={<EditStoreInfo />}
         />
+        <Route
+          path="product-collection/shippingAddress"
+          // element={user || customer ? <CustomerProfile /> : <Body />}
+          element={<ShippingAddress />}
+        />
+        <Route
+          path="product-collection/addShippingAddress"
+          // element={user || customer ? <CustomerProfile /> : <Body />}
+          element={<AddShippingAddress />}
+        />
+        <Route
+          path="product-collection/editShippingAddress"
+          // element={user || customer ? <CustomerProfile /> : <Body />}
+          element={<EditShippingAddress />}
+        />
+        <Route
+          path="product-collection/profileChangePassword"
+          // element={user || customer ? <CustomerProfile /> : <Body />}
+          element={<ProfileChangePassword />}
+        />
+        <Route
+          path="product-collection/communicationPreferences"
+          // element={user || customer ? <CustomerProfile /> : <Body />}
+          element={<CommunicationPreferences />}
+        />
         <Route path="/designers-list" element={<DesignerList />} />
         <Route path="/designer-profile/:id" element={<DesignerProfile />} />
         <Route
@@ -392,13 +422,13 @@ export default function AppRoutes() {
         <Route path="/product-collection/:id" element={<ProductCollection />} />
         {/* <Route path="/:id" element={<ProductCollection />} /> */}
         <Route path="/product-detail/:id" element={<ProductDetail />} />
-        {/* <Route path="/product-detail/a" element={<ProductDetailcopy />} /> */}
         {/* <Route path="/product-finder/:id" element={<Productfinder />} /> */}
         <Route path="/product-finder" element={<Productfinder />} />
         <Route path="/print/:id" element={<PrintProductFinder />} />
         <Route
           path="/rapid-order"
-          element={user || customer ? <RapidOrder /> : <Body />}
+          // element={user || customer ? <RapidOrder /> : <Body />}
+          element={<RapidOrder />}
         />
         <Route
           path="/cart-detail"

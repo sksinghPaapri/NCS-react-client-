@@ -286,7 +286,7 @@ export default function TopHeader() {
               {!item.submenu ? (
                 <div>
                   <Link
-                    to="/testui"
+                    to={`/${item?._id?.$oid}`}
                     className="block uppercase rounded-lg py-2 font-normal text-xs text-gray-900 hover:text-[#E2A856]"
                   >
                     {/* for non dropdown links in top header desktop */}

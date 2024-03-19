@@ -18,12 +18,12 @@ export default function ImageSliderBottom() {
         autoPlaySpeed={2000}
         centerMode={true}
         className=""
-        containerClass="container-with-dots"
-        dotListClass=""
+        containerclassName="container-with-dots"
+        dotListclassName=""
         draggable
         focusOnSelect={false}
         infinite
-        itemClass=""
+        itemclassName=""
         keyBoardControl
         minimumTouchDrag={80}
         pauseOnHover
@@ -61,7 +61,7 @@ export default function ImageSliderBottom() {
         rtl={false}
         shouldResetAutoplay
         showDots={true}
-        sliderClass=""
+        sliderclassName=""
         slidesToSlide={1}
         swipeable
       >

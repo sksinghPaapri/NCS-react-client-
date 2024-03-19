@@ -643,7 +643,7 @@
 //     //                         <Card.Title className='featuredCategories_items_card_title' style={{}}>{featuredCategory.title}</Card.Title>
 
 //     //                         <Card.Footer className='m-0 p-0 featuredCategories_items_card_footer'>
-//     //                             <Button className='ml-3 ncsButtonWithoutOutline' size='sm' style={{ marginLeft: 12 }}>{featuredCategory?.buttonLabel} -- <i class="arrow right"></i></Button>
+//     //                             <Button className='ml-3 ncsButtonWithoutOutline' size='sm' style={{ marginLeft: 12 }}>{featuredCategory?.buttonLabel} -- <i className="arrow right"></i></Button>
 //     //                         </Card.Footer>
 //     //                     </Card>
 //     //                 )
@@ -701,7 +701,7 @@
 //     //                             </Card.Title>
 
 //     //                             <Card.Footer className='mt-3 m-0 p-0 resources_container_card_footer'>
-//     //                                 <Button className='ml-3 ncsButtonWithoutOutline' size='sm' style={{ marginLeft: 12 }}>{state?.resources[0]?.buttonLabel} -- <i class="arrow right"></i></Button>
+//     //                                 <Button className='ml-3 ncsButtonWithoutOutline' size='sm' style={{ marginLeft: 12 }}>{state?.resources[0]?.buttonLabel} -- <i className="arrow right"></i></Button>
 //     //                             </Card.Footer>
 //     //                         </Card>
 
@@ -721,7 +721,7 @@
 //     //                                     <div className='m-0 p-0' style={{ fontSize: "14px", color: "GrayText" }}>Free Pattern</div>
 //     //                                     <div className='m-0 p-0 mt-1' style={{ fontSize: "17px", fontWeight: "bold", textAlign: "center" }}>{resource?.image?.text}</div>
 //     //                                     <div className='mt-5 p-0'>
-//     //                                         <Button className='m-0 p-0 ncsButtonWithoutOutline' size='sm' style={{}}>{resource?.buttonLabel} -- <i class="arrow right"></i></Button>
+//     //                                         <Button className='m-0 p-0 ncsButtonWithoutOutline' size='sm' style={{}}>{resource?.buttonLabel} -- <i className="arrow right"></i></Button>
 //     //                                     </div>
 //     //                                 </div>
 //     //                             </div>

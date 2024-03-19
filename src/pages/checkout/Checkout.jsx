@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 import CartProduct from "../../assets/ShoppingCart/CartProduct.svg";
 import calendar_month from "../../assets/ShoppingCart/calendar_month.svg";
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const Checkout = () => {
   function classNames(...classes) {

@@ -1347,7 +1347,7 @@ export const links = [
         sublink: [
           {
             _id: {
-              $oid: "customer-profile",
+              $oid: "customerProfile",
             },
             name: "Personal Info",
           },
@@ -1374,5 +1374,8 @@ export const links = [
   {
     name: "Rapid Order",
     submenu: false,
+    _id: {
+      $oid: "rapid-order",
+    },
   },
 ];

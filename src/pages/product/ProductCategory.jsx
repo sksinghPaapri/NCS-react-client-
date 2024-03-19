@@ -263,8 +263,8 @@
 //         //         <Link to='/region-customer'>To change, click here.</Link>
 //         //     </Alert>}
 
-//         //     <div class="row">
-//         //         <div class="col-sm-3 mt-4">
+//         //     <div className="row">
+//         //         <div className="col-sm-3 mt-4">
 //         //             <Card className="text-center">
 //         //                 <Card.Img variant="top" src={ProductImg1} />
 //         //                 <Card.Body className='p-1 m-0'>
@@ -272,7 +272,7 @@
 //         //                 </Card.Body>
 //         //             </Card>
 //         //         </div>
-//         //         <div class="col-sm-3 mt-4">
+//         //         <div className="col-sm-3 mt-4">
 //         //             <Card className="text-center">
 //         //                 <Card.Img variant="top" src={ProductImg2} />
 //         //                 <Card.Body className='p-1 m-0'>
@@ -280,7 +280,7 @@
 //         //                 </Card.Body>
 //         //             </Card>
 //         //         </div>
-//         //         <div class="col-sm-3 mt-4">
+//         //         <div className="col-sm-3 mt-4">
 //         //             <Card className="text-center">
 //         //                 <Card.Img variant="top" src={ProductImg3} />
 //         //                 <Card.Body className='p-1 m-0'>
@@ -288,7 +288,7 @@
 //         //                 </Card.Body>
 //         //             </Card>
 //         //         </div>
-//         //         <div class="col-sm-3 mt-4">
+//         //         <div className="col-sm-3 mt-4">
 //         //             <Card className="text-center">
 //         //                 <Card.Img variant="top" src={ProductImg4} />
 //         //                 <Card.Body className='p-1 m-0'>
@@ -296,7 +296,7 @@
 //         //                 </Card.Body>
 //         //             </Card>
 //         //         </div>
-//         //         <div class="col-sm-3 mt-4">
+//         //         <div className="col-sm-3 mt-4">
 //         //             <Card className="text-center">
 //         //                 <Card.Img variant="top" src={ProductImg5} />
 //         //                 <Card.Body className='p-1 m-0'>
@@ -304,7 +304,7 @@
 //         //                 </Card.Body>
 //         //             </Card>
 //         //         </div>
-//         //         <div class="col-sm-3 mt-4">
+//         //         <div className="col-sm-3 mt-4">
 //         //             <Card className="text-center">
 //         //                 <Card.Img variant="top" src={ProductImg6} />
 //         //                 <Card.Body className='p-1 m-0'>
@@ -312,7 +312,7 @@
 //         //                 </Card.Body>
 //         //             </Card>
 //         //         </div>
-//         //         <div class="col-sm-3 mt-4">
+//         //         <div className="col-sm-3 mt-4">
 //         //             <Card className="text-center">
 //         //                 <Card.Img variant="top" src={ProductImg7} />
 //         //                 <Card.Body className='p-1 m-0'>
@@ -320,7 +320,7 @@
 //         //                 </Card.Body>
 //         //             </Card>
 //         //         </div>
-//         //         <div class="col-sm-3 mt-4">
+//         //         <div className="col-sm-3 mt-4">
 //         //             <Card className="text-center">
 //         //                 <Card.Img variant="top" src={ProductImg8} />
 //         //                 <Card.Body className='p-1 m-0'>
@@ -329,7 +329,7 @@
 //         //             </Card>
 //         //         </div>
 
-//         //         <div class="col-sm-3 mt-4">
+//         //         <div className="col-sm-3 mt-4">
 //         //             <Card className="text-center">
 //         //                 <Card.Img variant="top" src={ProductImg10} />
 //         //                 <Card.Body className='p-1 m-0'>

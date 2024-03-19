@@ -66,7 +66,7 @@
 //                                 </Carousel.Item>
 //                             )
 //                         } else if (e?.video?.url) {
-//                             return (<video autoPlay loop muted loading="lazy" id="doc-player" controls class="cld-video-player cld-fluid"
+//                             return (<video autoPlay loop muted loading="lazy" id="doc-player" controls className="cld-video-player cld-fluid"
 //                                 // style={{ border: "1px solid black", width: "1600", height: "540" }}
 //                                 key={e._id}
 //                                 src={e.video.url && e.video.url}></video>)

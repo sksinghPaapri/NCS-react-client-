@@ -25,17 +25,25 @@ const editStoreInfo = () => {
             <hr className=" text-gray-500 bg-gray-500 h-1 w-[280px] sm:w-[624px] xl:w-[280px]" />
             {/* content */}
             <div className="w-[280px] h-[180px] flex flex-col sm:w-[624px] xl:w-[280px] bg-white">
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] bg-[#F0EFEB] text-sm xl:text-sm text-center flex items-center">
-                <p className="ms-[15px]">Personal Info</p>
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] bg-[#F0EFEB] text-sm xl:text-sm text-center flex items-center cursor-pointer">
+                <Link to={"/product-collection/customerProfile"}>
+                  <p className="ms-[15px]">Personal Info</p>
+                </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center">
-                <p className="ms-[15px]">Shipping Addresses</p>
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+                <Link to={"/product-collection/shippingAddress"}>
+                  <p className="ms-[15px]">Shipping Addresses</p>
+                </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center">
-                <p className="ms-[15px]">hange Password</p>
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+                <Link to={"/product-collection/profileChangePassword"}>
+                  <p className="ms-[15px]">Change Password</p>
+                </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center">
-                <p className="ms-[15px]"> Communication Preferences</p>
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+                <Link to={"/product-collection/communicationPreferences"}>
+                  <p className="ms-[15px]"> Communication Preferences</p>
+                </Link>
               </div>
             </div>
           </div>
@@ -428,7 +436,7 @@ const editStoreInfo = () => {
                 {/* buttons */}
                 <div className="h-[49px] flex items-center justify-center sm:justify-start">
                   <div className="w-[205px] h-[49px] flex items-center justify-between">
-                    <Link to={"/product-collection/customer-profile"}>
+                    <Link to={"/product-collection/customerProfile"}>
                       <button
                         className=" w-[123px] h-[49px] rounded text-center text-[16px] font-semibold bg-[#E2A856] text-[#FFFFFF]"
                         type="button"
@@ -436,9 +444,9 @@ const editStoreInfo = () => {
                         UPDATE
                       </button>
                     </Link>
-                    <Link to={"/product-collection/customer-profile"}>
+                    <Link to={"/product-collection/customerProfile"}>
                       <button
-                        className=" w-[62px] h-[24px] text-center text-[16px] text-[#E2A856] font-semibold bg-white text-nowrap"
+                        className="underline w-[62px] h-[24px] text-center text-[16px] text-[#E2A856] font-semibold bg-white text-nowrap"
                         type="button"
                       >
                         Go Back
