@@ -28,7 +28,7 @@ const RapidOrder = () => {
           <h1 className="font-bold text-[28px] sm:text-[32px]">Rapid Order</h1>
         </div>
         {/* search table and product table */}
-        <div className=" w-[320px] sm:w-[744px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col items-center justify-center xl:flex-row gap-[60px] xl:gap-[40px]">
+        <div className=" w-[320px] sm:w-[744px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col items-center justify-center xl:flex-row gap-[60px] xl:gap-[40px] xl:items-start">
           {/* search table */}
           <div className="w-[280px] h-[722px] sm:w-[640px] sm:h-[407px] xl:w-[340px] xl:h-[728px] 2xl:w-[500px] flex flex-col items-center justify-center gap-[20px]">
             {/* heading */}
@@ -57,7 +57,7 @@ const RapidOrder = () => {
                   <div className="w-[225px] h-[40px] sm:w-[255px] xl:w-[280px] 2xl:w-[440px]">
                     <label
                       htmlFor="default-search"
-                      className="mb-2 font-medium text-[#9D9C99] sr-only"
+                      className="font-medium text-[#9D9C99] sr-only"
                     >
                       Search
                     </label>
@@ -68,7 +68,7 @@ const RapidOrder = () => {
                       <input
                         type="search"
                         id="default-search"
-                        className="block w-full p-2 text-gray-900 border border-gray-300 bg-white placeholder:text-[#9D9C99]"
+                        className="w-[225px] h-[40px] sm:w-[255px] xl:w-[280px] 2xl:w-[440px] block px-2 placeholder:text-[14px] text-gray-900 border border-gray-300 bg-white placeholder:text-[#9D9C99]"
                         placeholder="Enter SKU"
                       />
                     </div>
@@ -84,281 +84,1182 @@ const RapidOrder = () => {
             </div>
           </div>
           {/* product table */}
-          <div className="w-[280px] sm:w-[640px] xl:w-[780px] flex flex-col items-center justify-center gap-[20px]">
-            <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-sm text-left rtl:text-right text-gray-500 flex flex-col">
-              <thead className="text-xs text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
-                <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[740px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
-                  <th
-                    scope="col"
-                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center me-[10px]"
-                  >
-                    <span className="">Image</span>
-                  </th>
-                  <th
-                    scope="col"
-                    className="w-[180px] xl:w-[200px] h-[18px] hidden sm:flex items-center justify-center px-4"
-                  >
-                    Product Details
-                  </th>
-                  <th
-                    scope="col"
-                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center"
-                  >
-                    Price
-                  </th>
-                  <th
-                    scope="col"
-                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center"
-                  >
-                    Qty
-                  </th>
-                  <th
-                    scope="col"
-                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center"
-                  >
-                    Discount
-                  </th>
-                  <th
-                    scope="col"
-                    className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center"
-                  >
-                    Subtotal
-                  </th>
-                  <th
-                    scope="col"
-                    className="flex w-[62px] sm:w-[60px] xl:w-[80px] h-[18px] underline sm:text-center text-nowrap items-center justify-center"
-                  >
-                    Remove All
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="mt-5 border-gray-400">
-                {/* tr-1 */}
-                <tr className="border-b bg-white w-[240px] h-[134px] sm:w-[600px] sm:h-[70px] xl:w-[740px] xl:h-[90px] flex gap-4 mb-[11px] sm:items-start sm:gap-[10px]">
-                  {/* mobile col 1 */}
-                  {/* image for all devices*/}
-                  <div className="flex flex-col sm:flex-row w-[94px] h-[124px] sm:w-[60px] xl:w-[80px] sm:h-[60px]">
-                    <span className="">
-                      <img
-                        src={CartProduct}
-                        className="w-[94px] h-[94px] sm:w-[60px] sm:h-[60px] xl:w-[80px] xl:h-[80px] "
-                        alt="Product"
-                      />
-                    </span>
-                    {/* + - buttton for mobile only*/}
-                    <span className="h-[30px] mt-[10px] justify-center flex items-center sm:hidden">
-                      <div className="flex w-[60px] h-[20px]">
-                        <form className="max-w-xs mx-auto">
-                          <label
-                            htmlFor="quantity-input"
-                            className="block text-sm font-medium text-gray-900"
-                          ></label>
-                          <div className="relative flex items-center max-w-[8rem]">
-                            <button
-                              type="button"
-                              id="decrement-button"
-                              data-input-counter-decrement="quantity-input"
-                              className="bg-white border border-gray-400 rounded-s p-1 h-5"
-                            >
-                              <svg
-                                className="w-2 h-2 text-gray-900"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 18 2"
+          <div className="w-[280px] sm:w-[640px] xl:w-[780px] flex flex-col justify-center items-center gap-[20px]">
+            {/* table */}
+            <div className="w-[280px] sm:w-[640px] xl:w-[780px] flex items-center justify-center gap-[20px] border border-gray-300">
+              <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-sm text-left rtl:text-right text-gray-500 flex flex-col">
+                <thead className="text-xs text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
+                  <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[740px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
+                    <th
+                      scope="col"
+                      className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center me-[10px]"
+                    >
+                      <span className="">Image</span>
+                    </th>
+                    <th
+                      scope="col"
+                      className="w-[180px] xl:w-[200px] h-[18px] hidden sm:flex items-center justify-center px-4"
+                    >
+                      Product Details
+                    </th>
+                    <th
+                      scope="col"
+                      className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center"
+                    >
+                      Price
+                    </th>
+                    <th
+                      scope="col"
+                      className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center"
+                    >
+                      Qty
+                    </th>
+                    <th
+                      scope="col"
+                      className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center"
+                    >
+                      Discount
+                    </th>
+                    <th
+                      scope="col"
+                      className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center"
+                    >
+                      Subtotal
+                    </th>
+                    <th
+                      scope="col"
+                      className="flex w-[62px] sm:w-[60px] xl:w-[80px] h-[18px] underline sm:text-center text-nowrap items-center justify-center"
+                    >
+                      Remove All
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="mt-5 border-gray-400">
+                  {/* tr-1 */}
+                  <tr className="border-b bg-white w-[240px] h-[134px] sm:w-[600px] sm:h-[70px] xl:w-[740px] xl:h-[90px] flex gap-4 mb-[11px] sm:items-start sm:gap-[10px]">
+                    {/* mobile col 1 */}
+                    {/* image for all devices*/}
+                    <div className="flex flex-col sm:flex-row w-[94px] h-[124px] sm:w-[60px] xl:w-[80px] sm:h-[60px]">
+                      <span className="">
+                        <img
+                          src={CartProduct}
+                          className="w-[94px] h-[94px] sm:w-[60px] sm:h-[60px] xl:w-[80px] xl:h-[80px] "
+                          alt="Product"
+                        />
+                      </span>
+                      {/* + - buttton for mobile only*/}
+                      <span className="h-[30px] mt-[10px] justify-center flex items-center sm:hidden">
+                        <div className="flex w-[60px] h-[20px]">
+                          <form className="max-w-xs mx-auto">
+                            <label
+                              htmlFor="quantity-input"
+                              className="block text-sm font-medium text-gray-900"
+                            ></label>
+                            <div className="relative flex items-center max-w-[8rem]">
+                              <button
+                                type="button"
+                                id="decrement-button"
+                                data-input-counter-decrement="quantity-input"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
                               >
-                                <path
-                                  stroke="currentColor"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M1 1h16"
-                                />
-                              </svg>
-                            </button>
-                            <input
-                              type="text"
-                              id="quantity-input"
-                              data-input-counter
-                              aria-describedby="helper-text-explanation"
-                              className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
-                              placeholder="10"
-                            />
-                            <button
-                              type="button"
-                              id="increment-button"
-                              data-input-counter-increment="quantity-input"
-                              className="bg-white border border-gray-400 rounded-e p-1 h-5"
-                            >
-                              <svg
-                                className="w-2 h-2 text-gray-900"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 18 18"
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 2"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 1h16"
+                                  />
+                                </svg>
+                              </button>
+                              <input
+                                type="text"
+                                id="quantity-input"
+                                data-input-counter
+                                aria-describedby="helper-text-explanation"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                placeholder="10"
+                              />
+                              <button
+                                type="button"
+                                id="increment-button"
+                                data-input-counter-increment="quantity-input"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
                               >
-                                <path
-                                  stroke="currentColor"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M9 1v16M1 9h16"
-                                />
-                              </svg>
-                            </button>
-                          </div>
-                        </form>
-                      </div>
-                    </span>
-                  </div>
-                  {/* mobile col 2 */}
-                  <div className="w-[131px] h-[123px] sm:w-[420px] sm:h-[70px] flex">
-                    <div className="flex flex-col sm:flex-row">
-                      {/* col 2-1 */}
-                      <span className="w-[131px] h-[75px] sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] text-[10px] text-gray-500">
-                        {/* product detail for all and delete button for mobile only */}
-                        <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
-                          <div className="flex items-center justify-between">
-                            <p className="w-[131px] h-[18px] text-xs text-gray-950">
-                              00000-00
-                            </p>
-                            <div className="flex sm:hidden">
-                              <span>
-                                <img
-                                  src={DeleteIcon}
-                                  className="w-[10px] h-[11.7px]"
-                                ></img>
-                              </span>
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 18"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M9 1v16M1 9h16"
+                                  />
+                                </svg>
+                              </button>
                             </div>
-                          </div>
-                          <div className="flex flex-col leading-[14px] text-gray-500">
-                            <p className="">
-                              Design : <span>Design Name</span>
-                            </p>
-                            <p>
-                              Color : <span>Color</span>
-                            </p>
-                            <p>
-                              Collection : <span>Collection Name</span>
-                            </p>
-                          </div>
+                          </form>
                         </div>
                       </span>
-                      <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
-                        {/* price */}
-                        <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
-                          <span className="sm:hidden">Price:</span>
-                          <div className="xl:flex xl:flex-col">
-                            <span className="text-black text-xs">$9.15</span>{" "}
-                            <span>/Meter(s)</span>
-                          </div>
-                        </span>
-                        {/* + - buttton for desktop and tab only*/}
-                        <span className="h-[30px] justify-center sm:flex hidden sm:ms-[20px]">
-                          <div className="flex w-[60px] xl:w-[80px] h-[20px] items-start">
-                            <form className="max-w-xs mx-auto">
-                              <label
-                                htmlFor="quantity-input"
-                                className="block text-sm font-medium text-gray-900"
-                              ></label>
-                              <div className="relative flex items-center sm:items-start max-w-[8rem]">
-                                <button
-                                  type="button"
-                                  id="decrement-button"
-                                  data-input-counter-decrement="quantity-input"
-                                  className="bg-white border border-gray-400 rounded-s p-1 h-5"
-                                >
-                                  <svg
-                                    className="w-2 h-2 text-gray-900"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 18 2"
-                                  >
-                                    <path
-                                      stroke="currentColor"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth="2"
-                                      d="M1 1h16"
-                                    />
-                                  </svg>
-                                </button>
-                                <input
-                                  type="text"
-                                  id="quantity-input"
-                                  data-input-counter
-                                  aria-describedby="helper-text-explanation"
-                                  className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
-                                  placeholder="10"
-                                />
-                                <button
-                                  type="button"
-                                  id="increment-button"
-                                  data-input-counter-increment="quantity-input"
-                                  className="bg-white border border-gray-400 rounded-e p-1 h-5"
-                                >
-                                  <svg
-                                    className="w-2 h-2 text-gray-900"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 18 18"
-                                  >
-                                    <path
-                                      stroke="currentColor"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth="2"
-                                      d="M9 1v16M1 9h16"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
-                            </form>
-                          </div>
-                        </span>
-                        {/* discount */}
-                        <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
-                          <span className="sm:hidden">Discount:</span>
-                          <span className="text-black">N/A</span>
-                        </span>
-
-                        {/* subtotal */}
-                        <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
-                          <span className="sm:hidden">Subtotal: </span>
-                          <span className="text-black font-bold">$91.50</span>
-                        </span>
-                      </div>
                     </div>
-                    {/* desktop view delete icon */}
-                    <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
-                      {/* a
+                    {/* mobile col 2 */}
+                    <div className="w-[131px] h-[123px] sm:w-[420px] sm:h-[70px] flex">
+                      <div className="flex flex-col sm:flex-row">
+                        {/* col 2-1 */}
+                        <span className="w-[131px] h-[75px] sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] text-[10px] text-gray-500">
+                          {/* product detail for all and delete button for mobile only */}
+                          <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
+                            <div className="flex items-center justify-between">
+                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                                00000-00
+                              </p>
+                              <div className="flex sm:hidden">
+                                <span>
+                                  <img
+                                    src={DeleteIcon}
+                                    // className="w-[10px] h-[11.7px]"
+                                    className="w-[13px] h-[13px]"
+                                  ></img>
+                                </span>
+                              </div>
+                            </div>
+                            <div className="flex flex-col leading-[14px] text-gray-500">
+                              <p className="">
+                                Design : <span>Design Name</span>
+                              </p>
+                              <p>
+                                Color : <span>Color</span>
+                              </p>
+                              <p>
+                                Collection : <span>Collection Name</span>
+                              </p>
+                            </div>
+                          </div>
+                        </span>
+                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                          {/* price */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
+                            <span className="sm:hidden">Price:</span>
+                            <div className="xl:flex xl:flex-col">
+                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span>/Meter(s)</span>
+                            </div>
+                          </span>
+                          {/* + - buttton for desktop and tab only*/}
+                          <span className="h-[30px] justify-center sm:flex hidden sm:ms-[20px]">
+                            <div className="flex w-[60px] xl:w-[80px] h-[20px] items-start">
+                              <form className="max-w-xs mx-auto">
+                                <label
+                                  htmlFor="quantity-input"
+                                  className="block text-sm font-medium text-gray-900"
+                                ></label>
+                                <div className="relative flex items-center sm:items-start max-w-[8rem]">
+                                  <button
+                                    type="button"
+                                    id="decrement-button"
+                                    data-input-counter-decrement="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 2"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M1 1h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                  <input
+                                    type="text"
+                                    id="quantity-input"
+                                    data-input-counter
+                                    aria-describedby="helper-text-explanation"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    placeholder="10"
+                                  />
+                                  <button
+                                    type="button"
+                                    id="increment-button"
+                                    data-input-counter-increment="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 18"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M9 1v16M1 9h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </span>
+                          {/* discount */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                            <span className="sm:hidden">Discount:</span>
+                            <span className="text-black">N/A</span>
+                          </span>
+
+                          {/* subtotal */}
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                            <span className="sm:hidden">Subtotal: </span>
+                            <span className="text-black font-bold">$91.50</span>
+                          </span>
+                        </div>
+                      </div>
+                      {/* desktop view delete icon */}
+                      <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
+                        {/* a
                       <img
                         src={DeleteIcon}
                         className="w-[10px] h-[11.7px]"
                       ></img> */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="w-[10px] h-[12px]"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
-                        />
-                      </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          // className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
-                </tr>
-              </tbody>
-            </table>
+                  </tr>
+                  {/* tr-1 */}
+                  <tr className="border-b bg-white w-[240px] h-[134px] sm:w-[600px] sm:h-[70px] xl:w-[740px] xl:h-[90px] flex gap-4 mb-[11px] sm:items-start sm:gap-[10px]">
+                    {/* mobile col 1 */}
+                    {/* image for all devices*/}
+                    <div className="flex flex-col sm:flex-row w-[94px] h-[124px] sm:w-[60px] xl:w-[80px] sm:h-[60px]">
+                      <span className="">
+                        <img
+                          src={CartProduct}
+                          className="w-[94px] h-[94px] sm:w-[60px] sm:h-[60px] xl:w-[80px] xl:h-[80px] "
+                          alt="Product"
+                        />
+                      </span>
+                      {/* + - buttton for mobile only*/}
+                      <span className="h-[30px] mt-[10px] justify-center flex items-center sm:hidden">
+                        <div className="flex w-[60px] h-[20px]">
+                          <form className="max-w-xs mx-auto">
+                            <label
+                              htmlFor="quantity-input"
+                              className="block text-sm font-medium text-gray-900"
+                            ></label>
+                            <div className="relative flex items-center max-w-[8rem]">
+                              <button
+                                type="button"
+                                id="decrement-button"
+                                data-input-counter-decrement="quantity-input"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                              >
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 2"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 1h16"
+                                  />
+                                </svg>
+                              </button>
+                              <input
+                                type="text"
+                                id="quantity-input"
+                                data-input-counter
+                                aria-describedby="helper-text-explanation"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                placeholder="10"
+                              />
+                              <button
+                                type="button"
+                                id="increment-button"
+                                data-input-counter-increment="quantity-input"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                              >
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 18"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M9 1v16M1 9h16"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </span>
+                    </div>
+                    {/* mobile col 2 */}
+                    <div className="w-[131px] h-[123px] sm:w-[420px] sm:h-[70px] flex">
+                      <div className="flex flex-col sm:flex-row">
+                        {/* col 2-1 */}
+                        <span className="w-[131px] h-[75px] sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] text-[10px] text-gray-500">
+                          {/* product detail for all and delete button for mobile only */}
+                          <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
+                            <div className="flex items-center justify-between">
+                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                                00000-00
+                              </p>
+                              <div className="flex sm:hidden">
+                                <span>
+                                  <img
+                                    src={DeleteIcon}
+                                    // className="w-[10px] h-[11.7px]"
+                                    className="w-[13px] h-[13px]"
+                                  ></img>
+                                </span>
+                              </div>
+                            </div>
+                            <div className="flex flex-col leading-[14px] text-gray-500">
+                              <p className="">
+                                Design : <span>Design Name</span>
+                              </p>
+                              <p>
+                                Color : <span>Color</span>
+                              </p>
+                              <p>
+                                Collection : <span>Collection Name</span>
+                              </p>
+                            </div>
+                          </div>
+                        </span>
+                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                          {/* price */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
+                            <span className="sm:hidden">Price:</span>
+                            <div className="xl:flex xl:flex-col">
+                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span>/Meter(s)</span>
+                            </div>
+                          </span>
+                          {/* + - buttton for desktop and tab only*/}
+                          <span className="h-[30px] justify-center sm:flex hidden sm:ms-[20px]">
+                            <div className="flex w-[60px] xl:w-[80px] h-[20px] items-start">
+                              <form className="max-w-xs mx-auto">
+                                <label
+                                  htmlFor="quantity-input"
+                                  className="block text-sm font-medium text-gray-900"
+                                ></label>
+                                <div className="relative flex items-center sm:items-start max-w-[8rem]">
+                                  <button
+                                    type="button"
+                                    id="decrement-button"
+                                    data-input-counter-decrement="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 2"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M1 1h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                  <input
+                                    type="text"
+                                    id="quantity-input"
+                                    data-input-counter
+                                    aria-describedby="helper-text-explanation"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    placeholder="10"
+                                  />
+                                  <button
+                                    type="button"
+                                    id="increment-button"
+                                    data-input-counter-increment="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 18"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M9 1v16M1 9h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </span>
+                          {/* discount */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                            <span className="sm:hidden">Discount:</span>
+                            <span className="text-black">N/A</span>
+                          </span>
+
+                          {/* subtotal */}
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                            <span className="sm:hidden">Subtotal: </span>
+                            <span className="text-black font-bold">$91.50</span>
+                          </span>
+                        </div>
+                      </div>
+                      {/* desktop view delete icon */}
+                      <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
+                        {/* a
+                      <img
+                        src={DeleteIcon}
+                        className="w-[10px] h-[11.7px]"
+                      ></img> */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          // className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </tr>
+                  {/* tr-1 */}
+                  <tr className="border-b bg-white w-[240px] h-[134px] sm:w-[600px] sm:h-[70px] xl:w-[740px] xl:h-[90px] flex gap-4 mb-[11px] sm:items-start sm:gap-[10px]">
+                    {/* mobile col 1 */}
+                    {/* image for all devices*/}
+                    <div className="flex flex-col sm:flex-row w-[94px] h-[124px] sm:w-[60px] xl:w-[80px] sm:h-[60px]">
+                      <span className="">
+                        <img
+                          src={CartProduct}
+                          className="w-[94px] h-[94px] sm:w-[60px] sm:h-[60px] xl:w-[80px] xl:h-[80px] "
+                          alt="Product"
+                        />
+                      </span>
+                      {/* + - buttton for mobile only*/}
+                      <span className="h-[30px] mt-[10px] justify-center flex items-center sm:hidden">
+                        <div className="flex w-[60px] h-[20px]">
+                          <form className="max-w-xs mx-auto">
+                            <label
+                              htmlFor="quantity-input"
+                              className="block text-sm font-medium text-gray-900"
+                            ></label>
+                            <div className="relative flex items-center max-w-[8rem]">
+                              <button
+                                type="button"
+                                id="decrement-button"
+                                data-input-counter-decrement="quantity-input"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                              >
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 2"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 1h16"
+                                  />
+                                </svg>
+                              </button>
+                              <input
+                                type="text"
+                                id="quantity-input"
+                                data-input-counter
+                                aria-describedby="helper-text-explanation"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                placeholder="10"
+                              />
+                              <button
+                                type="button"
+                                id="increment-button"
+                                data-input-counter-increment="quantity-input"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                              >
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 18"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M9 1v16M1 9h16"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </span>
+                    </div>
+                    {/* mobile col 2 */}
+                    <div className="w-[131px] h-[123px] sm:w-[420px] sm:h-[70px] flex">
+                      <div className="flex flex-col sm:flex-row">
+                        {/* col 2-1 */}
+                        <span className="w-[131px] h-[75px] sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] text-[10px] text-gray-500">
+                          {/* product detail for all and delete button for mobile only */}
+                          <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
+                            <div className="flex items-center justify-between">
+                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                                00000-00
+                              </p>
+                              <div className="flex sm:hidden">
+                                <span>
+                                  <img
+                                    src={DeleteIcon}
+                                    // className="w-[10px] h-[11.7px]"
+                                    className="w-[13px] h-[13px]"
+                                  ></img>
+                                </span>
+                              </div>
+                            </div>
+                            <div className="flex flex-col leading-[14px] text-gray-500">
+                              <p className="">
+                                Design : <span>Design Name</span>
+                              </p>
+                              <p>
+                                Color : <span>Color</span>
+                              </p>
+                              <p>
+                                Collection : <span>Collection Name</span>
+                              </p>
+                            </div>
+                          </div>
+                        </span>
+                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                          {/* price */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
+                            <span className="sm:hidden">Price:</span>
+                            <div className="xl:flex xl:flex-col">
+                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span>/Meter(s)</span>
+                            </div>
+                          </span>
+                          {/* + - buttton for desktop and tab only*/}
+                          <span className="h-[30px] justify-center sm:flex hidden sm:ms-[20px]">
+                            <div className="flex w-[60px] xl:w-[80px] h-[20px] items-start">
+                              <form className="max-w-xs mx-auto">
+                                <label
+                                  htmlFor="quantity-input"
+                                  className="block text-sm font-medium text-gray-900"
+                                ></label>
+                                <div className="relative flex items-center sm:items-start max-w-[8rem]">
+                                  <button
+                                    type="button"
+                                    id="decrement-button"
+                                    data-input-counter-decrement="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 2"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M1 1h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                  <input
+                                    type="text"
+                                    id="quantity-input"
+                                    data-input-counter
+                                    aria-describedby="helper-text-explanation"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    placeholder="10"
+                                  />
+                                  <button
+                                    type="button"
+                                    id="increment-button"
+                                    data-input-counter-increment="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 18"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M9 1v16M1 9h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </span>
+                          {/* discount */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                            <span className="sm:hidden">Discount:</span>
+                            <span className="text-black">N/A</span>
+                          </span>
+
+                          {/* subtotal */}
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                            <span className="sm:hidden">Subtotal: </span>
+                            <span className="text-black font-bold">$91.50</span>
+                          </span>
+                        </div>
+                      </div>
+                      {/* desktop view delete icon */}
+                      <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
+                        {/* a
+                      <img
+                        src={DeleteIcon}
+                        className="w-[10px] h-[11.7px]"
+                      ></img> */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          // className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </tr>
+                  {/* tr-1 */}
+                  <tr className="border-b bg-white w-[240px] h-[134px] sm:w-[600px] sm:h-[70px] xl:w-[740px] xl:h-[90px] flex gap-4 mb-[11px] sm:items-start sm:gap-[10px]">
+                    {/* mobile col 1 */}
+                    {/* image for all devices*/}
+                    <div className="flex flex-col sm:flex-row w-[94px] h-[124px] sm:w-[60px] xl:w-[80px] sm:h-[60px]">
+                      <span className="">
+                        <img
+                          src={CartProduct}
+                          className="w-[94px] h-[94px] sm:w-[60px] sm:h-[60px] xl:w-[80px] xl:h-[80px] "
+                          alt="Product"
+                        />
+                      </span>
+                      {/* + - buttton for mobile only*/}
+                      <span className="h-[30px] mt-[10px] justify-center flex items-center sm:hidden">
+                        <div className="flex w-[60px] h-[20px]">
+                          <form className="max-w-xs mx-auto">
+                            <label
+                              htmlFor="quantity-input"
+                              className="block text-sm font-medium text-gray-900"
+                            ></label>
+                            <div className="relative flex items-center max-w-[8rem]">
+                              <button
+                                type="button"
+                                id="decrement-button"
+                                data-input-counter-decrement="quantity-input"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                              >
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 2"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 1h16"
+                                  />
+                                </svg>
+                              </button>
+                              <input
+                                type="text"
+                                id="quantity-input"
+                                data-input-counter
+                                aria-describedby="helper-text-explanation"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                placeholder="10"
+                              />
+                              <button
+                                type="button"
+                                id="increment-button"
+                                data-input-counter-increment="quantity-input"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                              >
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 18"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M9 1v16M1 9h16"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </span>
+                    </div>
+                    {/* mobile col 2 */}
+                    <div className="w-[131px] h-[123px] sm:w-[420px] sm:h-[70px] flex">
+                      <div className="flex flex-col sm:flex-row">
+                        {/* col 2-1 */}
+                        <span className="w-[131px] h-[75px] sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] text-[10px] text-gray-500">
+                          {/* product detail for all and delete button for mobile only */}
+                          <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
+                            <div className="flex items-center justify-between">
+                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                                00000-00
+                              </p>
+                              <div className="flex sm:hidden">
+                                <span>
+                                  <img
+                                    src={DeleteIcon}
+                                    // className="w-[10px] h-[11.7px]"
+                                    className="w-[13px] h-[13px]"
+                                  ></img>
+                                </span>
+                              </div>
+                            </div>
+                            <div className="flex flex-col leading-[14px] text-gray-500">
+                              <p className="">
+                                Design : <span>Design Name</span>
+                              </p>
+                              <p>
+                                Color : <span>Color</span>
+                              </p>
+                              <p>
+                                Collection : <span>Collection Name</span>
+                              </p>
+                            </div>
+                          </div>
+                        </span>
+                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                          {/* price */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
+                            <span className="sm:hidden">Price:</span>
+                            <div className="xl:flex xl:flex-col">
+                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span>/Meter(s)</span>
+                            </div>
+                          </span>
+                          {/* + - buttton for desktop and tab only*/}
+                          <span className="h-[30px] justify-center sm:flex hidden sm:ms-[20px]">
+                            <div className="flex w-[60px] xl:w-[80px] h-[20px] items-start">
+                              <form className="max-w-xs mx-auto">
+                                <label
+                                  htmlFor="quantity-input"
+                                  className="block text-sm font-medium text-gray-900"
+                                ></label>
+                                <div className="relative flex items-center sm:items-start max-w-[8rem]">
+                                  <button
+                                    type="button"
+                                    id="decrement-button"
+                                    data-input-counter-decrement="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 2"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M1 1h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                  <input
+                                    type="text"
+                                    id="quantity-input"
+                                    data-input-counter
+                                    aria-describedby="helper-text-explanation"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    placeholder="10"
+                                  />
+                                  <button
+                                    type="button"
+                                    id="increment-button"
+                                    data-input-counter-increment="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 18"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M9 1v16M1 9h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </span>
+                          {/* discount */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                            <span className="sm:hidden">Discount:</span>
+                            <span className="text-black">N/A</span>
+                          </span>
+
+                          {/* subtotal */}
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                            <span className="sm:hidden">Subtotal: </span>
+                            <span className="text-black font-bold">$91.50</span>
+                          </span>
+                        </div>
+                      </div>
+                      {/* desktop view delete icon */}
+                      <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
+                        {/* a
+                      <img
+                        src={DeleteIcon}
+                        className="w-[10px] h-[11.7px]"
+                      ></img> */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          // className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </tr>
+                  {/* tr-1 */}
+                  <tr className="border-b bg-white w-[240px] h-[134px] sm:w-[600px] sm:h-[70px] xl:w-[740px] xl:h-[90px] flex gap-4 mb-[11px] sm:items-start sm:gap-[10px]">
+                    {/* mobile col 1 */}
+                    {/* image for all devices*/}
+                    <div className="flex flex-col sm:flex-row w-[94px] h-[124px] sm:w-[60px] xl:w-[80px] sm:h-[60px]">
+                      <span className="">
+                        <img
+                          src={CartProduct}
+                          className="w-[94px] h-[94px] sm:w-[60px] sm:h-[60px] xl:w-[80px] xl:h-[80px] "
+                          alt="Product"
+                        />
+                      </span>
+                      {/* + - buttton for mobile only*/}
+                      <span className="h-[30px] mt-[10px] justify-center flex items-center sm:hidden">
+                        <div className="flex w-[60px] h-[20px]">
+                          <form className="max-w-xs mx-auto">
+                            <label
+                              htmlFor="quantity-input"
+                              className="block text-sm font-medium text-gray-900"
+                            ></label>
+                            <div className="relative flex items-center max-w-[8rem]">
+                              <button
+                                type="button"
+                                id="decrement-button"
+                                data-input-counter-decrement="quantity-input"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                              >
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 2"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 1h16"
+                                  />
+                                </svg>
+                              </button>
+                              <input
+                                type="text"
+                                id="quantity-input"
+                                data-input-counter
+                                aria-describedby="helper-text-explanation"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                placeholder="10"
+                              />
+                              <button
+                                type="button"
+                                id="increment-button"
+                                data-input-counter-increment="quantity-input"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                              >
+                                <svg
+                                  className="w-2 h-2 text-gray-900"
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 18 18"
+                                >
+                                  <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M9 1v16M1 9h16"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </span>
+                    </div>
+                    {/* mobile col 2 */}
+                    <div className="w-[131px] h-[123px] sm:w-[420px] sm:h-[70px] flex">
+                      <div className="flex flex-col sm:flex-row">
+                        {/* col 2-1 */}
+                        <span className="w-[131px] h-[75px] sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] text-[10px] text-gray-500">
+                          {/* product detail for all and delete button for mobile only */}
+                          <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
+                            <div className="flex items-center justify-between">
+                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                                00000-00
+                              </p>
+                              <div className="flex sm:hidden">
+                                <span>
+                                  <img
+                                    src={DeleteIcon}
+                                    // className="w-[10px] h-[11.7px]"
+                                    className="w-[13px] h-[13px]"
+                                  ></img>
+                                </span>
+                              </div>
+                            </div>
+                            <div className="flex flex-col leading-[14px] text-gray-500">
+                              <p className="">
+                                Design : <span>Design Name</span>
+                              </p>
+                              <p>
+                                Color : <span>Color</span>
+                              </p>
+                              <p>
+                                Collection : <span>Collection Name</span>
+                              </p>
+                            </div>
+                          </div>
+                        </span>
+                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                          {/* price */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
+                            <span className="sm:hidden">Price:</span>
+                            <div className="xl:flex xl:flex-col">
+                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span>/Meter(s)</span>
+                            </div>
+                          </span>
+                          {/* + - buttton for desktop and tab only*/}
+                          <span className="h-[30px] justify-center sm:flex hidden sm:ms-[20px]">
+                            <div className="flex w-[60px] xl:w-[80px] h-[20px] items-start">
+                              <form className="max-w-xs mx-auto">
+                                <label
+                                  htmlFor="quantity-input"
+                                  className="block text-sm font-medium text-gray-900"
+                                ></label>
+                                <div className="relative flex items-center sm:items-start max-w-[8rem]">
+                                  <button
+                                    type="button"
+                                    id="decrement-button"
+                                    data-input-counter-decrement="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 2"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M1 1h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                  <input
+                                    type="text"
+                                    id="quantity-input"
+                                    data-input-counter
+                                    aria-describedby="helper-text-explanation"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    placeholder="10"
+                                  />
+                                  <button
+                                    type="button"
+                                    id="increment-button"
+                                    data-input-counter-increment="quantity-input"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                  >
+                                    <svg
+                                      className="w-2 h-2 text-gray-900"
+                                      aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 18 18"
+                                    >
+                                      <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M9 1v16M1 9h16"
+                                      />
+                                    </svg>
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </span>
+                          {/* discount */}
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                            <span className="sm:hidden">Discount:</span>
+                            <span className="text-black">N/A</span>
+                          </span>
+
+                          {/* subtotal */}
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                            <span className="sm:hidden">Subtotal: </span>
+                            <span className="text-black font-bold">$91.50</span>
+                          </span>
+                        </div>
+                      </div>
+                      {/* desktop view delete icon */}
+                      <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
+                        {/* a
+                      <img
+                        src={DeleteIcon}
+                        className="w-[10px] h-[11.7px]"
+                      ></img> */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          // className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             {/* button */}
-            <div className="w-[280px] h-[34px] sm:w-[640px] xl:w-[340px] 2xl:w-[500px] flex justify-end">
+            <div className="w-[280px] h-[34px] sm:w-[640px] xl:w-[780px] flex justify-end">
               <button className="text-white bg-[#E2A856] rounded text-[12px] uppercase w-[101px] h-[34px] text-center">
                 ADD TO LIST
               </button>
