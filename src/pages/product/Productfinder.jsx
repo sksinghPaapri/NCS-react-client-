@@ -52,7 +52,7 @@ const Productfinder = () => {
               />
             </svg>
           </div>
-          <span className="text-sm text-nowrap text-center">
+          <span className="text-[14px] text-nowrap text-center">
             Back to 'Twas The Night Before Christmas
           </span>
         </div>
@@ -60,24 +60,24 @@ const Productfinder = () => {
         <div className="w-[289.4px] h-[344px] sm:w-[664px] sm:h-[183px] xl:w-[1160px] xl:h-[82px] 2xl:w-[1320px] flex flex-col xl:flex-row items-center justify-center xl:justify-start gap-10">
           {/* row 2 row2.2 col 1 */}
           <div className="w-[289.4px] h-[100px] sm:w-[664px] sm:h-[61px] xl:w-[743px] xl:h-[82px] 2xl:w-[903px] flex flex-col items-center justify-center gap-1">
-            <p className="text-sm sm:text-base text-gray-900 font-bold w-[289.4px] h-[48px] sm:w-[664px] sm:h-[27px] xl:w-[743px] xl:h-[27px] 2xl:w-[903px] flex px-5 sm:px-0 text-center mx-auto">
+            <p className="text-[14px] sm:text-base text-gray-900 font-bold w-[289.4px] h-[48px] sm:w-[664px] sm:h-[27px] xl:w-[743px] xl:h-[27px] 2xl:w-[903px] flex px-5 sm:px-0 text-center mx-auto">
               The following stores have purchased these products:
             </p>
-            <p className="text-sm sm:text-[16px] text-gray-500 w-[289.4px] h-[42px] sm:w-[664px] sm:h-[27px] xl:w-[743px] xl:h-[27px] 2xl:w-[903px] flex text-center">
+            <p className="text-[14px] sm:text-[16px] text-gray-500 w-[289.4px] h-[42px] sm:w-[664px] sm:h-[27px] xl:w-[743px] xl:h-[27px] 2xl:w-[903px] flex text-center">
               Contact retailers directly for inventory information
             </p>
           </div>
           {/* row 2 row2.2 col 2 buttons and dropdown */}
           <div className="w-[204px] h-[204px] sm:w-[377px] sm:h-[82px] xl:w-[377px] xl:h-[82px] flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-5">
             <div className="w-[204px] h-[82px] flex flex-col gap-[15px]">
-              <p className="w-[134px] h-[27px] text-sm font-bold">
+              <p className="w-[134px] h-[27px] text-[14px] font-bold">
                 Product Finder
               </p>
               {/* dropdown menu */}
               <div className="w-[204px] h-[40px]">
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <Menu.Button className="w-[204px] h-[40px] inline-flex justify-center gap-x-20 lg:gap-12 rounded bg-white py-2 text-sm text-gray-500 shadow-sm border">
+                    <Menu.Button className="w-[204px] h-[40px] inline-flex justify-center gap-x-20 lg:gap-12 rounded bg-white py-2 text-[14px] text-gray-500 shadow-sm border">
                       Find Retailers{" "}
                       <ChevronDownIcon
                         className="-mr-1 h-5 w-5 text-gray-400"
@@ -105,7 +105,7 @@ const Productfinder = () => {
                                 active
                                   ? "bg-gray-100 text-gray-900"
                                   : "text-gray-700",
-                                "block px-4 py-2 text-sm"
+                                "block px-4 py-2 text-[14px]"
                               )}
                             >
                               Account settings
@@ -120,7 +120,7 @@ const Productfinder = () => {
                                 active
                                   ? "bg-gray-100 text-gray-900"
                                   : "text-gray-700",
-                                "block px-4 py-2 text-sm"
+                                "block px-4 py-2 text-[14px]"
                               )}
                             >
                               Support
@@ -135,7 +135,7 @@ const Productfinder = () => {
                                 active
                                   ? "bg-gray-100 text-gray-900"
                                   : "text-gray-700",
-                                "block px-4 py-2 text-sm"
+                                "block px-4 py-2 text-[14px]"
                               )}
                             >
                               License
@@ -151,7 +151,7 @@ const Productfinder = () => {
                                   active
                                     ? "bg-gray-100 text-gray-900"
                                     : "text-gray-700",
-                                  "block w-full px-4 py-2 text-left text-sm"
+                                  "block w-full px-4 py-2 text-left text-[14px]"
                                 )}
                               >
                                 Sign out
@@ -166,7 +166,7 @@ const Productfinder = () => {
               </div>
             </div>
             <div className="w-[153px] h-[82px] flex flex-col gap-[15px]">
-              <p className="w-[153px] h-[27px] font-bold text-sm text-center">
+              <p className="w-[153px] h-[27px] font-bold text-[14px] text-center">
                 Print / Download
               </p>
 
@@ -187,14 +187,14 @@ const Productfinder = () => {
         {/* row 3 col 1 dropdown */}
         <div className="w-[204px] h-[27px] flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-5">
           <div className="w-[204px] h-[82px] flex flex-col gap-[15px]">
-            <p className="w-[204px] h-[27px] text-sm font-bold text-center sm:text-start">
+            <p className="w-[204px] h-[27px] text-[14px] font-bold text-center sm:text-start">
               Select State/Province
             </p>
             {/* dropdown menu */}
             <div className="w-[204px] h-[40px]">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <Menu.Button className="w-[204px] h-[40px] inline-flex justify-center gap-x-10 lg:gap-12 rounded bg-white py-2 text-sm text-gray-500 shadow-sm border">
+                  <Menu.Button className="w-[204px] h-[40px] inline-flex justify-center gap-x-10 lg:gap-12 rounded bg-white py-2 text-[14px] text-gray-500 shadow-sm border">
                     State/Province
                     <ChevronDownIcon
                       className="-mr-1 h-5 w-5 text-gray-400"
@@ -222,7 +222,7 @@ const Productfinder = () => {
                               active
                                 ? "bg-gray-100 text-gray-900"
                                 : "text-gray-700",
-                              "block px-4 py-2 text-sm"
+                              "block px-4 py-2 text-[14px]"
                             )}
                           >
                             Account settings
@@ -237,7 +237,7 @@ const Productfinder = () => {
                               active
                                 ? "bg-gray-100 text-gray-900"
                                 : "text-gray-700",
-                              "block px-4 py-2 text-sm"
+                              "block px-4 py-2 text-[14px]"
                             )}
                           >
                             Support
@@ -252,7 +252,7 @@ const Productfinder = () => {
                               active
                                 ? "bg-gray-100 text-gray-900"
                                 : "text-gray-700",
-                              "block px-4 py-2 text-sm"
+                              "block px-4 py-2 text-[14px]"
                             )}
                           >
                             License
@@ -268,7 +268,7 @@ const Productfinder = () => {
                                 active
                                   ? "bg-gray-100 text-gray-900"
                                   : "text-gray-700",
-                                "block w-full px-4 py-2 text-left text-sm"
+                                "block w-full px-4 py-2 text-left text-[14px]"
                               )}
                             >
                               Sign out
@@ -286,14 +286,14 @@ const Productfinder = () => {
         {/* row 3 col 2 dropdown */}
         <div className="w-[280px] h-[21px] sm:w-[222px] flex flex-col sm:flex-row gap-10 sm:gap-5 sm:mt-10">
           <div className="w-[280px] h-[21px] sm:w-[222px] flex gap-[15px] justify-between">
-            <p className="w-[204px] h-[21px] sm:w-[222px] text-sm font-bold mt-0.5">
+            <p className="w-[204px] h-[21px] sm:w-[222px] text-[14px] font-bold mt-0.5">
               Sort:
             </p>
             {/* dropdown menu */}
             <div className="w-[170px] h-[21px]">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <Menu.Button className="w-[170px] h-[21px] inline-flex justify-center gap-x-24 lg:gap-20 rounded bg-white text-sm text-gray-500">
+                  <Menu.Button className="w-[170px] h-[21px] inline-flex justify-center gap-x-24 lg:gap-20 rounded bg-white text-[14px] text-gray-500">
                     Default
                     <ChevronDownIcon
                       className="h-5 w-5 text-gray-400"
@@ -321,7 +321,7 @@ const Productfinder = () => {
                               active
                                 ? "bg-gray-100 text-gray-900"
                                 : "text-gray-700",
-                              "block px-4 py-2 text-sm"
+                              "block px-4 py-2 text-[14px]"
                             )}
                           >
                             Account settings
@@ -336,7 +336,7 @@ const Productfinder = () => {
                               active
                                 ? "bg-gray-100 text-gray-900"
                                 : "text-gray-700",
-                              "block px-4 py-2 text-sm"
+                              "block px-4 py-2 text-[14px]"
                             )}
                           >
                             Support
@@ -351,7 +351,7 @@ const Productfinder = () => {
                               active
                                 ? "bg-gray-100 text-gray-900"
                                 : "text-gray-700",
-                              "block px-4 py-2 text-sm"
+                              "block px-4 py-2 text-[14px]"
                             )}
                           >
                             License
@@ -367,7 +367,7 @@ const Productfinder = () => {
                                 active
                                   ? "bg-gray-100 text-gray-900"
                                   : "text-gray-700",
-                                "block w-full px-4 py-2 text-left text-sm"
+                                "block w-full px-4 py-2 text-left text-[14px]"
                               )}
                             >
                               Sign out
@@ -386,8 +386,8 @@ const Productfinder = () => {
       {/* row 4 table */}
       <div className="mt-10 w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] border">
         <div className="relative overflow-auto">
-          <table className=" w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] text-sm text-left rtl:text-right text-gray-500">
-            <thead className="text-xs text-gray-700 uppercase bg-white">
+          <table className=" w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] text-[14px] text-left rtl:text-right text-gray-500">
+            <thead className="text-[12px] text-gray-700 uppercase bg-white">
               <tr className="flex">
                 <th
                   scope="col"

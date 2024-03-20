@@ -12,7 +12,7 @@ const Login = () => {
           <h2 className="w-[280px] h-[38px] sm:w-[624px] sm:h-[44px] xl:w-[1160px] 2xl:w-[1608px] text-center text-[28px] xl:text-[32px] font-bold text-gray-900">
             Sign In
           </h2>
-          <p className="text-nowrap text-center text-xs text-gray-600 w-[225px] h-[18px]">
+          <p className="text-nowrap text-center text-[12px] text-gray-600 w-[225px] h-[18px]">
             Welcome back! Please enter your details
           </p>
         </div>
@@ -25,7 +25,7 @@ const Login = () => {
               <div className="w-[280px] h-[76px] sm:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-bold text-gray-700 "
+                  className="block text-[14px] font-bold text-gray-700 "
                 >
                   Email*
                 </label>
@@ -36,7 +36,7 @@ const Login = () => {
                     type="email"
                     autoComplete="email"
                     required
-                    className="appearance-none rounded-md bg-white relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 sm:text-sm"
+                    className="appearance-none rounded-md bg-white relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 sm:text-[14px]"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -45,7 +45,7 @@ const Login = () => {
               <div className="w-[280px] h-[76px] sm:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-bold text-gray-700"
+                  className="block text-[14px] font-bold text-gray-700"
                 >
                   Password*
                 </label>
@@ -56,7 +56,7 @@ const Login = () => {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 bg-white focus:z-10 sm:text-sm"
+                    className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 bg-white focus:z-10 sm:text-[14px]"
                     placeholder="Enter your password"
                   />
                 </div>
@@ -68,18 +68,18 @@ const Login = () => {
                     id="remember_me"
                     name="remember_me"
                     type="checkbox"
-                    className="h-4 w-4 rounded text-xs"
+                    className="h-4 w-4 rounded text-[12px]"
                   />
                   <label
                     htmlFor="remember_me"
-                    className="ml-2 block text-xs text-gray-900"
+                    className="ml-2 block text-[12px] text-gray-900"
                   >
                     Remember me
                   </label>
                 </div>
                 {/* forgot password */}
-                <div className="text-xs">
-                  <Link to={"/forgot-password"} className="text-xs ">
+                <div className="text-[12px]">
+                  <Link to={"/forgot-password"} className="text-[12px] ">
                     Forgot password?
                   </Link>
                 </div>
@@ -98,10 +98,10 @@ const Login = () => {
             </div>
             {/* bottom footer */}
             <div className="flex flex-col items-center mt-[15px]">
-              <span className="flex justify-center text-[#6B6B66] text-xs">
+              <span className="flex justify-center text-[#6B6B66] text-[12px]">
                 Not signed up?
               </span>
-              <span className="flex justify-center text-[#6B6B66] text-xs">
+              <span className="flex justify-center text-[#6B6B66] text-[12px]">
                 Contact our support
               </span>
             </div>

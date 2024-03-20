@@ -12,7 +12,7 @@ export default function EmailNotFound() {
           <h2 className="w-[280px] h-[38px] sm:w-[624px] sm:h-[44px] xl:w-[1160px] text-center text-[28px] sm:text-[32px] font-bold text-gray-900">
             Email Address Not Found
           </h2>
-          <p className="w-[280px] h-[36px] sm:w-[624px] sm:h-[18px] xl:w-[1160px] text-gray-600 text-center text-xs">
+          <p className="w-[280px] h-[36px] sm:w-[624px] sm:h-[18px] xl:w-[1160px] text-gray-600 text-center text-[12px]">
             Sorry, the entered email address doesn't exist in our records.
             Double-check or use a different one.
           </p>
@@ -24,7 +24,7 @@ export default function EmailNotFound() {
           <div className="w-[280px] h-[76px] sm:w-[320px]">
             <label
               htmlFor="email"
-              className="block text-sm font-bold text-gray-700 "
+              className="block text-[14px] font-bold text-gray-700 "
             >
               Email*
             </label>
@@ -35,7 +35,7 @@ export default function EmailNotFound() {
                 type="email"
                 autoComplete="email"
                 required
-                className="appearance-none  relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 sm:text-sm"
+                className="appearance-none  relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 sm:text-[14px]"
                 placeholder="Enter your email"
               />
             </div>
@@ -45,8 +45,8 @@ export default function EmailNotFound() {
             {/* button */}
 
             <div className="flex justify-center items-center h-[18px]">
-              <span className="text-xs text-[#6B6B66] cursor-pointer">
-                <p className="font-semibold text-xs">
+              <span className="text-[12px] text-[#6B6B66] cursor-pointer">
+                <p className="font-semibold text-[12px]">
                   Need help? <span> Contact our support </span>
                 </p>
               </span>
@@ -54,7 +54,7 @@ export default function EmailNotFound() {
 
             {/* return to sign in */}
             <div className="flex justify-center items-center h-[18px]">
-              <span className="text-xs text-[#6B6B66] cursor-pointer">
+              <span className="text-[12px] text-[#6B6B66] cursor-pointer">
                 <Link to={"/login"}>Return to sign in</Link>
               </span>
             </div>

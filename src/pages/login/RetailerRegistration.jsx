@@ -16,28 +16,28 @@ const RetailerRegistration = () => {
           </div>
           <div className="h-[282px] sm:h-[124px] flex flex-col items-center justify-between">
             <div className="h-[90px] sm:h-[36px] flex flex-col items-end justify-center">
-              <p className="text-center text-xs text-gray-600">
+              <p className="text-center text-[12px] text-gray-600">
                 Please Note: Registration is available only for existing
                 Northcott customers in the USA and Canada.
               </p>
-              <p className="text-center text-xs text-gray-600">
+              <p className="text-center text-[12px] text-gray-600">
                 You will need your Northcott Customer # located on any Northcott
                 invoice.
               </p>
             </div>
             <div className="h-[172px] sm:h-[68px] flex-col items-center justify-center gap-[10px]">
               <div className="h-[36px] sm:h-[18px]">
-                <p className="text-center text-xs text-gray-600 whitespace-normal sm:whitespace-nowrap">
+                <p className="text-center text-[12px] text-gray-600 whitespace-normal sm:whitespace-nowrap">
                   If you are not a customer yet or need support, please contact
                   one of the following:
                 </p>
               </div>
               <div className="h-[126px] sm:h-[40px] flex flex-col items-center justify-normal mt-2">
-                <div className=" h-[58px] sm:h-[20px] flex flex-col sm:flex-row items-center justify-center text-center text-xs text-gray-600 sm:gap-3">
-                  <div className="h-[18px] text-center md:text-left text-xs sm:me-3">
+                <div className=" h-[58px] sm:h-[20px] flex flex-col sm:flex-row items-center justify-center text-center text-[12px] text-gray-600 sm:gap-3">
+                  <div className="h-[18px] text-center md:text-left text-[12px] sm:me-3">
                     <p className="">USA:</p>
                   </div>
-                  <div className="h-[20px] sm:h-[18px] flex items-center text-xs space-x-1">
+                  <div className="h-[20px] sm:h-[18px] flex items-center text-[12px] space-x-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -55,7 +55,7 @@ const RetailerRegistration = () => {
                     </svg>
                     <a href="tel:11111111111">1-800-223-6337</a>
                   </div>
-                  <div className="h-[20px] sm:h-[18px] flex items-center space-x-1 text-xs">
+                  <div className="h-[20px] sm:h-[18px] flex items-center space-x-1 text-[12px]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -75,11 +75,11 @@ const RetailerRegistration = () => {
                   </div>
                 </div>
 
-                <div className="h-[58px] sm:h-[20px] flex flex-col sm:flex-row items-center justify-center text-center text-xs text-gray-600 sm:gap-3">
-                  <div className="mt-2 md:mt-0 text-center md:text-left text-xs">
+                <div className="h-[58px] sm:h-[20px] flex flex-col sm:flex-row items-center justify-center text-center text-[12px] text-gray-600 sm:gap-3">
+                  <div className="mt-2 md:mt-0 text-center md:text-left text-[12px]">
                     <p className="">Canada:</p>
                   </div>
-                  <div className="flex items-center space-x-1 text-xs">
+                  <div className="flex items-center space-x-1 text-[12px]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -97,7 +97,7 @@ const RetailerRegistration = () => {
                     </svg>
                     <a href="tel:11111111111">1-800-268-1466</a>
                   </div>
-                  <div className="flex items-center space-x-1 text-xs">
+                  <div className="flex items-center space-x-1 text-[12px]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -131,7 +131,7 @@ const RetailerRegistration = () => {
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="customerNumber"
-                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+                  className="w-[211px] h-[21px] block text-[14px] font-bold text-gray-700 text-nowrap"
                 >
                   Northcott Customer Number*
                 </label>
@@ -140,14 +140,14 @@ const RetailerRegistration = () => {
                     id="customerNumber"
                     name="customerNumber"
                     type="number"
-                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-[14px] border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="Enter your customer number"
                   />
                 </div>
               </div>
               {/* country */}
               <div className="w-[280px] h-[76px] flex flex-col justify-between">
-                <label className="w-[65px] h-[21px] block text-sm font-bold text-gray-700">
+                <label className="w-[65px] h-[21px] block text-[14px] font-bold text-gray-700">
                   Country*
                 </label>
                 <div className="w-[149px] h-[45px] flex items-center space-x-4">
@@ -158,7 +158,7 @@ const RetailerRegistration = () => {
                       name="country"
                       value="USA"
                     />
-                    <span className="ml-2 text-sm text-gray-700">USA</span>
+                    <span className="ml-2 text-[14px] text-gray-700">USA</span>
                   </label>
                   <label className="inline-flex items-center">
                     <input
@@ -167,7 +167,9 @@ const RetailerRegistration = () => {
                       name="country"
                       value="Canada"
                     />
-                    <span className="ml-2 text-sm text-gray-700">Canada</span>
+                    <span className="ml-2 text-[14px] text-gray-700">
+                      Canada
+                    </span>
                   </label>
                 </div>
               </div>
@@ -176,7 +178,7 @@ const RetailerRegistration = () => {
             <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
               <label
                 htmlFor="zipCode"
-                className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+                className="w-[211px] h-[21px] block text-[14px] font-bold text-gray-700 text-nowrap"
               >
                 ZIP/Postal Code*
               </label>
@@ -185,7 +187,7 @@ const RetailerRegistration = () => {
                   id="zipCode"
                   name="zipCode"
                   type="number"
-                  className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                  className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-[14px] border border-gray-300 placeholder-gray-500 text-gray-900"
                   placeholder="ZIP/Postal Code (no space or dashes)"
                 />
               </div>
@@ -196,7 +198,7 @@ const RetailerRegistration = () => {
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="firstName"
-                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+                  className="w-[211px] h-[21px] block text-[14px] font-bold text-gray-700 text-nowrap"
                 >
                   First Name*{" "}
                 </label>
@@ -205,7 +207,7 @@ const RetailerRegistration = () => {
                     id="firstName"
                     name="firstName"
                     type="text"
-                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-[14px] border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="Enter your first name"
                   />
                 </div>
@@ -214,7 +216,7 @@ const RetailerRegistration = () => {
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="lastName"
-                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+                  className="w-[211px] h-[21px] block text-[14px] font-bold text-gray-700 text-nowrap"
                 >
                   Last Name*{" "}
                 </label>
@@ -223,7 +225,7 @@ const RetailerRegistration = () => {
                     id="lastName"
                     name="lastName"
                     type="text"
-                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-[14px] border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="Enter your last name"
                   />
                 </div>
@@ -235,7 +237,7 @@ const RetailerRegistration = () => {
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="email"
-                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+                  className="w-[211px] h-[21px] block text-[14px] font-bold text-gray-700 text-nowrap"
                 >
                   Email*
                 </label>
@@ -244,7 +246,7 @@ const RetailerRegistration = () => {
                     id="email"
                     name="email"
                     type="email"
-                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-[14px] border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="This email will be used for you log in"
                   />
                 </div>
@@ -253,7 +255,7 @@ const RetailerRegistration = () => {
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="confirmEmail"
-                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+                  className="w-[211px] h-[21px] block text-[14px] font-bold text-gray-700 text-nowrap"
                 >
                   Re-enter Your Email*
                 </label>
@@ -262,7 +264,7 @@ const RetailerRegistration = () => {
                     id="confirmEmail"
                     name="confirmEmail"
                     type="email"
-                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-[14px] border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="Re-enter your email"
                   />
                 </div>
@@ -274,7 +276,7 @@ const RetailerRegistration = () => {
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="password"
-                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+                  className="w-[211px] h-[21px] block text-[14px] font-bold text-gray-700 text-nowrap"
                 >
                   Password*
                 </label>
@@ -283,7 +285,7 @@ const RetailerRegistration = () => {
                     id="password"
                     name="password"
                     type="password"
-                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-[14px] border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="Enter your password"
                   />
                 </div>
@@ -292,7 +294,7 @@ const RetailerRegistration = () => {
               <div className="w-[280px] h-[76px] sm:w-[302px] xl:w-[320px] flex flex-col justify-between">
                 <label
                   htmlFor="confirPassword"
-                  className="w-[211px] h-[21px] block text-sm font-bold text-gray-700 text-nowrap"
+                  className="w-[211px] h-[21px] block text-[14px] font-bold text-gray-700 text-nowrap"
                 >
                   Re-enter Your Password*
                 </label>
@@ -301,7 +303,7 @@ const RetailerRegistration = () => {
                     id="confirmPassword"
                     name="confirmPassword"
                     type="password"
-                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-sm border border-gray-300 placeholder-gray-500 text-gray-900"
+                    className="w-[280px] h-[45px] sm:w-[302px] xl:w-[320px] px-2 text-[14px] border border-gray-300 placeholder-gray-500 text-gray-900"
                     placeholder="Re-enter your password"
                   />
                 </div>
@@ -319,7 +321,7 @@ const RetailerRegistration = () => {
               />
               <label
                 htmlFor="remember_newsletters1"
-                className="ml-2 block text-xs text-gray-900 sm:text-nowrap"
+                className="ml-2 block text-[12px] text-gray-900 sm:text-nowrap"
               >
                 Sign up to receive Northcott’s Retail Newsletters
               </label>
@@ -333,7 +335,7 @@ const RetailerRegistration = () => {
               />
               <label
                 htmlFor="remember_newsletters2"
-                className="ml-2 block text-xs text-gray-900 sm:text-nowrap"
+                className="ml-2 block text-[12px] text-gray-900 sm:text-nowrap"
               >
                 Sign up to receive notification of Northcott Promotions &
                 Specials
@@ -348,7 +350,7 @@ const RetailerRegistration = () => {
               />
               <label
                 htmlFor="remember_newsletters3"
-                className="ml-2 block text-xs text-gray-900 sm:text-nowrap"
+                className="ml-2 block text-[12px] text-gray-900 sm:text-nowrap"
               >
                 Sign up to receive Northcott’s Monthly Consumer Newsletter
               </label>
@@ -367,10 +369,10 @@ const RetailerRegistration = () => {
           </div>
           {/* footer */}
           <div className="w-[280px] h-[36px] sm:w-[624px] xl:w-[660px] flex flex-col items-center">
-            <span className="flex justify-center text-[#6B6B66] cursor-pointer text-xs h-[18px] items-center">
+            <span className="flex justify-center text-[#6B6B66] cursor-pointer text-[12px] h-[18px] items-center">
               <Link to={"/login"}>Return to sign in</Link>
             </span>
-            <span className="flex justify-center text-[#6B6B66] text-xs h-[18px] items-center">
+            <span className="flex justify-center text-[#6B6B66] text-[12px] h-[18px] items-center">
               Contact our support
             </span>
           </div>

@@ -18,22 +18,22 @@ const CustomerProfile = () => {
             <hr className=" text-gray-500 bg-gray-500 h-1 w-[280px] sm:w-[624px] xl:w-[280px]" />
             {/* content */}
             <div className="w-[280px] h-[180px] flex flex-col sm:w-[624px] xl:w-[280px] bg-white">
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] bg-[#F0EFEB] text-sm xl:text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] bg-[#F0EFEB] text-[14px] xl:text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/customerProfile"}>
                   <p className="ms-[15px]">Personal Info</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/shippingAddress"}>
                   <p className="ms-[15px]">Shipping Addresses</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/profileChangePassword"}>
                   <p className="ms-[15px]">Change Password</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/communicationPreferences"}>
                   <p className="ms-[15px]"> Communication Preferences</p>
                 </Link>
@@ -55,7 +55,7 @@ const CustomerProfile = () => {
                 <div className="text-center w-[80px] h-[34px]">
                   <Link to={"/product-collection/editPersonalInfo"}>
                     <button
-                      className=" w-[80px] h-[34px] text-center text-xs cursor-pointer bg-[#E2A856] text-[#FFFFFF]"
+                      className=" w-[80px] h-[34px] text-center text-[12px] cursor-pointer bg-[#E2A856] text-[#FFFFFF]"
                       type="button"
                     >
                       EDIT
@@ -70,26 +70,28 @@ const CustomerProfile = () => {
               <div className="w-[280px] h-[145px] flex flex-col sm:w-[624px] sm:h-[103px] xl:w-[820px] 2xl:w-[940px] gap-5">
                 {/* first name */}
                 <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
-                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-[14px]">
                     First Name:
                   </div>
-                  <div className="w-[190px] h-[21px] text-sm">Christina</div>
+                  <div className="w-[190px] h-[21px] text-[14px]">
+                    Christina
+                  </div>
                 </div>
                 {/* last name */}
                 <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
-                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                  <div className="text-[14px] font-bold w-[80px] sm:w-[150px]">
                     Last Name:
                   </div>
-                  <div className="text-sm w-[190px] sm:w-[320px] lg:w-[320px]">
+                  <div className="text-[14px] w-[190px] sm:w-[320px] lg:w-[320px]">
                     Pallotta
                   </div>
                 </div>
                 {/* email */}
                 <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
-                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-[14px]">
                     Email:
                   </div>
-                  <div className="w-[190px] h-[21px] sm:w-[300px] text-sm text-wrap overflow-hidden">
+                  <div className="w-[190px] h-[21px] sm:w-[300px] text-[14px] text-wrap overflow-hidden">
                     christina.pallotta@northcott.com
                   </div>
                 </div>
@@ -108,7 +110,7 @@ const CustomerProfile = () => {
                 <div className="text-center w-[80px] h-[34px]">
                   <Link to={"/product-collection/editStoreInfo"}>
                     <button
-                      className="cursor-pointer w-[80px] h-[34px] text-center text-xs bg-[#E2A856] text-[#FFFFFF]"
+                      className="cursor-pointer w-[80px] h-[34px] text-center text-[12px] bg-[#E2A856] text-[#FFFFFF]"
                       type="button"
                     >
                       EDIT
@@ -123,89 +125,91 @@ const CustomerProfile = () => {
               <div className="w-[280px] h-[515px] flex flex-col sm:w-[624px] sm:h-[431px] xl:w-[820px] 2xl:w-[940px]  gap-5">
                 {/* comapny name */}
                 <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
-                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm sm:text-nowrap">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-[14px] sm:text-nowrap">
                     Company Name:
                   </div>
-                  <div className="w-[190px] sm:w-[300px] h-[42px] text-sm">
+                  <div className="w-[190px] sm:w-[300px] h-[42px] text-[14px]">
                     CHRISTINA'S NORTHCOTT SHOP
                   </div>
                 </div>
                 {/* comapny number */}
                 <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
-                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-[14px]">
                     Company Number:
                   </div>
-                  <div className="w-[190px] sm:w-[300px] h-[21px] text-sm">
+                  <div className="w-[190px] sm:w-[300px] h-[21px] text-[14px]">
                     CCHRP0
                   </div>
                 </div>
                 {/* contact name */}
                 <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
-                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-sm">
+                  <div className="w-[80px] h-[42px]  sm:w-[150px] sm:h-[21px] font-bold text-[14px]">
                     Contact Name :
                   </div>
-                  <div className="w-[190px] sm:w-[300px] h-[21px] text-sm"></div>
+                  <div className="w-[190px] sm:w-[300px] h-[21px] text-[14px]"></div>
                 </div>
                 {/* address 1*/}
                 <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
-                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                  <div className="text-[14px] font-bold w-[80px] sm:w-[150px]">
                     Address 1 :
                   </div>
-                  <div className="text-sm w-[190px] sm:w-[320px]">
+                  <div className="text-[14px] w-[190px] sm:w-[320px]">
                     123 Fun Street
                   </div>
                 </div>
                 {/* address 2*/}
                 <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
-                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                  <div className="text-[14px] font-bold w-[80px] sm:w-[150px]">
                     Address 2 :
                   </div>
-                  <div className="text-sm w-[190px] sm:w-[320px]"></div>
+                  <div className="text-[14px] w-[190px] sm:w-[320px]"></div>
                 </div>
                 {/* city*/}
                 <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
-                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                  <div className="text-[14px] font-bold w-[80px] sm:w-[150px]">
                     City:
                   </div>
-                  <div className="text-sm w-[190px] sm:w-[320px]">Vaughan</div>
+                  <div className="text-[14px] w-[190px] sm:w-[320px]">
+                    Vaughan
+                  </div>
                 </div>
                 {/* state*/}
                 <div className="w-[280px] h-[42px] sm:w-[480px] sm:h-[21px] gap-[10px] flex">
-                  <div className="w-[80px] h-[42px] sm:w-[150px] sm:h-[21px] font-bold text-sm flex flex-col sm:flex-row">
+                  <div className="w-[80px] h-[42px] sm:w-[150px] sm:h-[21px] font-bold text-[14px] flex flex-col sm:flex-row">
                     <p>State/</p>
                     <p>Province:</p>
                   </div>
-                  <div className="w-[190px] sm:w-[300px] h-[21px] text-sm">
+                  <div className="w-[190px] sm:w-[300px] h-[21px] text-[14px]">
                     Ontario
                   </div>
                 </div>
                 {/* phone*/}
                 <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
-                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                  <div className="text-[14px] font-bold w-[80px] sm:w-[150px]">
                     Phone:
                   </div>
-                  <div className="text-sm w-[190px] sm:w-[320px]"></div>
+                  <div className="text-[14px] w-[190px] sm:w-[320px]"></div>
                 </div>
                 {/* cell*/}
                 <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
-                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                  <div className="text-[14px] font-bold w-[80px] sm:w-[150px]">
                     Cell:
                   </div>
-                  <div className="text-sm w-[190px] sm:w-[320px]"></div>
+                  <div className="text-[14px] w-[190px] sm:w-[320px]"></div>
                 </div>
                 {/* email*/}
                 <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
-                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                  <div className="text-[14px] font-bold w-[80px] sm:w-[150px]">
                     Email:
                   </div>
-                  <div className="text-sm w-[190px] sm:w-[320px] "></div>
+                  <div className="text-[14px] w-[190px] sm:w-[320px] "></div>
                 </div>
                 {/* website*/}
                 <div className="flex w-[280px] h-[21px] sm:w-[480px] gap-[10px]">
-                  <div className="text-sm font-bold w-[80px] sm:w-[150px]">
+                  <div className="text-[14px] font-bold w-[80px] sm:w-[150px]">
                     Website:
                   </div>
-                  <div className="text-sm w-[190px] sm:w-[320px]">
+                  <div className="text-[14px] w-[190px] sm:w-[320px]">
                     www.northcott.com
                   </div>
                 </div>

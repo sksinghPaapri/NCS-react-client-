@@ -89,12 +89,12 @@ export default function ProductFinderModalDetail({
                         <div className="w-[160px] h-[47px] sm:w-[156px] sm:h-[59px] lg:w-[175px] lg:h-[64px]">
                           <div className="flex justify-between">
                             <div>
-                              <p className="text-xs text-gray-400">
+                              <p className="text-[12px] text-gray-400">
                                 Design Name
                               </p>
                             </div>
                             <div className="">
-                              <p className="text-xs text-gray-400">Color</p>
+                              <p className="text-[12px] text-gray-400">Color</p>
                             </div>
                           </div>
                           <p className="mt-1 text-lg font-semibold">27024-44</p>
@@ -106,7 +106,7 @@ export default function ProductFinderModalDetail({
                           </p>
                         </div>
                         {/* details */}
-                        <div className="text-xs sm:text-sm w-[137px] h-[110px] sm:w-[156px] sm:h-[149px] lg:w-[175px] lg:h-[204px]">
+                        <div className="text-[12px] sm:text-[14px] w-[137px] h-[110px] sm:w-[156px] sm:h-[149px] lg:w-[175px] lg:h-[204px]">
                           <p className="font-bold">Details</p>
                           <div className="flex items-center justify-between">
                             <p>Details :</p>

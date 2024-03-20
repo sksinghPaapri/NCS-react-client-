@@ -34,7 +34,7 @@ const CartDetail = () => {
                 <Link to={"/"}>
                   <button
                     type="button"
-                    className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"
+                    className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none"
                   >
                     CONTINUE SHOPPING
                   </button>
@@ -42,7 +42,7 @@ const CartDetail = () => {
                 {/* button 2 */}
                 <button
                   type="button"
-                  className="w-[154px] h-[34px] bg-white text-[#E2A856] border-2 border-[#E2A856] hover:bg-[#E2A856] hover:text-white focus:ring-4 focus:ring-[#E2A856] font-medium uppercase rounded text-xs focus:outline-none"
+                  className="w-[154px] h-[34px] bg-white text-[#E2A856] border-2 border-[#E2A856] hover:bg-[#E2A856] hover:text-white focus:ring-4 focus:ring-[#E2A856] font-medium uppercase rounded text-[12px] focus:outline-none"
                 >
                   empty entire cart
                 </button>
@@ -54,21 +54,21 @@ const CartDetail = () => {
             <div className="w-[280px] sm:w-[640px] xl:w-[780px] flex flex-col items-center justify-center border-2">
               {/* date picker */}
               <div className="w-[240px] h-[72px] sm:w-[600px] xl:w-[740px] flex flex-col items-center justify-between md:flex-row md:justify-start mt-5">
-                <p className="text-sm w-[102px] h-[21px] font-bold text-nowrap">
+                <p className="text-[14px] w-[102px] h-[21px] font-bold text-nowrap">
                   Shipping Date:
                 </p>
                 {/* datepicker */}
                 <div className="flex flex-col items-center justify-center">
                   <div className="w-[240px] h-[41px] flex items-center justify-center">
                     <img src={calendar_month} alt="Calender" />
-                    <p className="text-sm font-bold">15 January 2024</p>
+                    <p className="text-[14px] font-bold">15 January 2024</p>
                   </div>
                   <div className="h-[1px] bg-gray-400 w-[250px] sm:w-[160px]"></div>
                 </div>
               </div>
               {/* table */}
-              <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-sm text-left rtl:text-right text-gray-500 flex flex-col">
-                <thead className="text-xs text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
+              <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-[14px] text-left rtl:text-right text-gray-500 flex flex-col">
+                <thead className="text-[12px] text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
                   <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[740px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
                     <th
                       scope="col"
@@ -133,7 +133,7 @@ const CartDetail = () => {
                           <form className="max-w-xs mx-auto">
                             <label
                               htmlFor="quantity-input"
-                              className="block text-sm font-medium text-gray-900"
+                              className="block text-[14px] font-medium text-gray-900"
                             ></label>
                             <div className="relative flex items-center max-w-[8rem]">
                               <button
@@ -163,7 +163,7 @@ const CartDetail = () => {
                                 id="quantity-input"
                                 data-input-counter
                                 aria-describedby="helper-text-explanation"
-                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                 placeholder="10"
                               />
                               <button
@@ -201,7 +201,7 @@ const CartDetail = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
@@ -231,7 +231,9 @@ const CartDetail = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -241,7 +243,7 @@ const CartDetail = () => {
                               <form className="max-w-xs mx-auto">
                                 <label
                                   htmlFor="quantity-input"
-                                  className="block text-sm font-medium text-gray-900"
+                                  className="block text-[14px] font-medium text-gray-900"
                                 ></label>
                                 <div className="relative flex items-center sm:items-start max-w-[8rem]">
                                   <button
@@ -271,7 +273,7 @@ const CartDetail = () => {
                                     id="quantity-input"
                                     data-input-counter
                                     aria-describedby="helper-text-explanation"
-                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                     placeholder="10"
                                   />
                                   <button
@@ -355,7 +357,7 @@ const CartDetail = () => {
                           <form className="max-w-xs mx-auto">
                             <label
                               htmlFor="quantity-input"
-                              className="block text-sm font-medium text-gray-900"
+                              className="block text-[14px] font-medium text-gray-900"
                             ></label>
                             <div className="relative flex items-center max-w-[8rem]">
                               <button
@@ -385,7 +387,7 @@ const CartDetail = () => {
                                 id="quantity-input"
                                 data-input-counter
                                 aria-describedby="helper-text-explanation"
-                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                 placeholder="10"
                               />
                               <button
@@ -423,7 +425,7 @@ const CartDetail = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
@@ -453,7 +455,9 @@ const CartDetail = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -463,7 +467,7 @@ const CartDetail = () => {
                               <form className="max-w-xs mx-auto">
                                 <label
                                   htmlFor="quantity-input"
-                                  className="block text-sm font-medium text-gray-900"
+                                  className="block text-[14px] font-medium text-gray-900"
                                 ></label>
                                 <div className="relative flex items-center sm:items-start max-w-[8rem]">
                                   <button
@@ -493,7 +497,7 @@ const CartDetail = () => {
                                     id="quantity-input"
                                     data-input-counter
                                     aria-describedby="helper-text-explanation"
-                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                     placeholder="10"
                                   />
                                   <button
@@ -577,7 +581,7 @@ const CartDetail = () => {
                           <form className="max-w-xs mx-auto">
                             <label
                               htmlFor="quantity-input"
-                              className="block text-sm font-medium text-gray-900"
+                              className="block text-[14px] font-medium text-gray-900"
                             ></label>
                             <div className="relative flex items-center max-w-[8rem]">
                               <button
@@ -607,7 +611,7 @@ const CartDetail = () => {
                                 id="quantity-input"
                                 data-input-counter
                                 aria-describedby="helper-text-explanation"
-                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                 placeholder="10"
                               />
                               <button
@@ -645,7 +649,7 @@ const CartDetail = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
@@ -675,7 +679,9 @@ const CartDetail = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -685,7 +691,7 @@ const CartDetail = () => {
                               <form className="max-w-xs mx-auto">
                                 <label
                                   htmlFor="quantity-input"
-                                  className="block text-sm font-medium text-gray-900"
+                                  className="block text-[14px] font-medium text-gray-900"
                                 ></label>
                                 <div className="relative flex items-center sm:items-start max-w-[8rem]">
                                   <button
@@ -715,7 +721,7 @@ const CartDetail = () => {
                                     id="quantity-input"
                                     data-input-counter
                                     aria-describedby="helper-text-explanation"
-                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                     placeholder="10"
                                   />
                                   <button
@@ -799,7 +805,7 @@ const CartDetail = () => {
                           <form className="max-w-xs mx-auto">
                             <label
                               htmlFor="quantity-input"
-                              className="block text-sm font-medium text-gray-900"
+                              className="block text-[14px] font-medium text-gray-900"
                             ></label>
                             <div className="relative flex items-center max-w-[8rem]">
                               <button
@@ -829,7 +835,7 @@ const CartDetail = () => {
                                 id="quantity-input"
                                 data-input-counter
                                 aria-describedby="helper-text-explanation"
-                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                 placeholder="10"
                               />
                               <button
@@ -867,7 +873,7 @@ const CartDetail = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
@@ -897,7 +903,9 @@ const CartDetail = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -907,7 +915,7 @@ const CartDetail = () => {
                               <form className="max-w-xs mx-auto">
                                 <label
                                   htmlFor="quantity-input"
-                                  className="block text-sm font-medium text-gray-900"
+                                  className="block text-[14px] font-medium text-gray-900"
                                 ></label>
                                 <div className="relative flex items-center sm:items-start max-w-[8rem]">
                                   <button
@@ -937,7 +945,7 @@ const CartDetail = () => {
                                     id="quantity-input"
                                     data-input-counter
                                     aria-describedby="helper-text-explanation"
-                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                     placeholder="10"
                                   />
                                   <button
@@ -1021,7 +1029,7 @@ const CartDetail = () => {
                           <form className="max-w-xs mx-auto">
                             <label
                               htmlFor="quantity-input"
-                              className="block text-sm font-medium text-gray-900"
+                              className="block text-[14px] font-medium text-gray-900"
                             ></label>
                             <div className="relative flex items-center max-w-[8rem]">
                               <button
@@ -1051,7 +1059,7 @@ const CartDetail = () => {
                                 id="quantity-input"
                                 data-input-counter
                                 aria-describedby="helper-text-explanation"
-                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                 placeholder="10"
                               />
                               <button
@@ -1089,7 +1097,7 @@ const CartDetail = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
@@ -1119,7 +1127,9 @@ const CartDetail = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -1129,7 +1139,7 @@ const CartDetail = () => {
                               <form className="max-w-xs mx-auto">
                                 <label
                                   htmlFor="quantity-input"
-                                  className="block text-sm font-medium text-gray-900"
+                                  className="block text-[14px] font-medium text-gray-900"
                                 ></label>
                                 <div className="relative flex items-center sm:items-start max-w-[8rem]">
                                   <button
@@ -1159,7 +1169,7 @@ const CartDetail = () => {
                                     id="quantity-input"
                                     data-input-counter
                                     aria-describedby="helper-text-explanation"
-                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                     placeholder="10"
                                   />
                                   <button
@@ -1235,12 +1245,12 @@ const CartDetail = () => {
                   <div className="w-[240px] h-[34px] sm:w-[290px] sm:h-[34px] xl:w-[740px] xl:h-[109px] flex justify-between">
                     <input
                       type="text"
-                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-xs"
+                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-[12px]"
                       placeholder="Instrucution"
                     />
                     <button
                       type="button"
-                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none uppercase"
+                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none uppercase"
                     >
                       Submit
                     </button>
@@ -1249,12 +1259,12 @@ const CartDetail = () => {
                   <div className="w-[240px] h-[34px] sm:w-[290px] sm:h-[34px] xl:w-[740px] xl:h-[109px] flex justify-between">
                     <input
                       type="text"
-                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-xs"
+                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-[12px]"
                       placeholder="Coupon Code"
                     />
                     <button
                       type="button"
-                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none uppercase"
+                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none uppercase"
                     >
                       Submit
                     </button>
@@ -1275,7 +1285,7 @@ const CartDetail = () => {
                       <p>Discount (Promo name) applied:</p>
                       <p>-$ 00.00</p>
                     </div>
-                    <div className="mt-2 flex justify-between font-bold text-sm sm:w-[314px] sm:h-[24px]">
+                    <div className="mt-2 flex justify-between font-bold text-[14px] sm:w-[314px] sm:h-[24px]">
                       <p>Collection Total:</p>
                       <p>$ 00.00</p>
                     </div>
@@ -1290,21 +1300,21 @@ const CartDetail = () => {
             <div className="w-[280px] sm:w-[640px] xl:w-[780px] flex flex-col items-center justify-center border-2">
               {/* date picker */}
               <div className="w-[240px] h-[72px] sm:w-[600px] xl:w-[740px] flex flex-col items-center justify-between md:flex-row md:justify-start mt-5">
-                <p className="text-sm w-[102px] h-[21px] font-bold text-nowrap">
+                <p className="text-[14px] w-[102px] h-[21px] font-bold text-nowrap">
                   Shipping Date:
                 </p>
                 {/* datepicker */}
                 <div className="flex flex-col items-center justify-center">
                   <div className="w-[240px] h-[41px] flex items-center justify-center">
                     <img src={calendar_month} alt="Calender" />
-                    <p className="text-sm font-bold">15 January 2024</p>
+                    <p className="text-[14px] font-bold">15 January 2024</p>
                   </div>
                   <div className="h-[1px] bg-gray-400 w-[250px] sm:w-[160px]"></div>
                 </div>
               </div>
               {/* table */}
-              <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-sm text-left rtl:text-right text-gray-500 flex flex-col">
-                <thead className="text-xs text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
+              <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-[14px] text-left rtl:text-right text-gray-500 flex flex-col">
+                <thead className="text-[12px] text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
                   <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[740px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
                     <th
                       scope="col"
@@ -1368,7 +1378,7 @@ const CartDetail = () => {
                           <form className="max-w-xs mx-auto">
                             <label
                               htmlFor="quantity-input"
-                              className="block text-sm font-medium text-gray-900"
+                              className="block text-[14px] font-medium text-gray-900"
                             ></label>
                             <div className="relative flex items-center max-w-[8rem]">
                               <button
@@ -1398,7 +1408,7 @@ const CartDetail = () => {
                                 id="quantity-input"
                                 data-input-counter
                                 aria-describedby="helper-text-explanation"
-                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                 placeholder="10"
                               />
                               <button
@@ -1436,7 +1446,7 @@ const CartDetail = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
@@ -1466,7 +1476,9 @@ const CartDetail = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -1476,7 +1488,7 @@ const CartDetail = () => {
                               <form className="max-w-xs mx-auto">
                                 <label
                                   htmlFor="quantity-input"
-                                  className="block text-sm font-medium text-gray-900"
+                                  className="block text-[14px] font-medium text-gray-900"
                                 ></label>
                                 <div className="relative flex items-center sm:items-start max-w-[8rem]">
                                   <button
@@ -1506,7 +1518,7 @@ const CartDetail = () => {
                                     id="quantity-input"
                                     data-input-counter
                                     aria-describedby="helper-text-explanation"
-                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                     placeholder="10"
                                   />
                                   <button
@@ -1582,12 +1594,12 @@ const CartDetail = () => {
                   <div className="w-[240px] h-[34px] sm:w-[290px] sm:h-[34px] xl:w-[740px] xl:h-[109px] flex justify-between">
                     <input
                       type="text"
-                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-xs"
+                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-[12px]"
                       placeholder="Instrucution"
                     />
                     <button
                       type="button"
-                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none uppercase"
+                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none uppercase"
                     >
                       Submit
                     </button>
@@ -1596,12 +1608,12 @@ const CartDetail = () => {
                   <div className="w-[240px] h-[34px] sm:w-[290px] sm:h-[34px] xl:w-[740px] xl:h-[109px] flex justify-between">
                     <input
                       type="text"
-                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-xs"
+                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-[12px]"
                       placeholder="Coupon Code"
                     />
                     <button
                       type="button"
-                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none uppercase"
+                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none uppercase"
                     >
                       Submit
                     </button>
@@ -1622,7 +1634,7 @@ const CartDetail = () => {
                       <p>Discount (Promo name) applied:</p>
                       <p>Free freight</p>
                     </div>
-                    <div className="mt-2 flex justify-between font-bold text-sm sm:w-[314px] sm:h-[18px] xl:h-[24px]">
+                    <div className="mt-2 flex justify-between font-bold text-[14px] sm:w-[314px] sm:h-[18px] xl:h-[24px]">
                       <p>Collection Total:</p>
                       <p>$ 00.00</p>
                     </div>
@@ -1637,21 +1649,21 @@ const CartDetail = () => {
             <div className="w-[280px] sm:w-[640px] xl:w-[780px] flex flex-col items-center justify-center border-2">
               {/* date picker */}
               <div className="w-[240px] h-[72px] sm:w-[600px] xl:w-[740px] flex flex-col items-center justify-between md:flex-row md:justify-start mt-5">
-                <p className="text-sm w-[102px] h-[21px] font-bold text-nowrap">
+                <p className="text-[14px] w-[102px] h-[21px] font-bold text-nowrap">
                   Shipping Date:
                 </p>
                 {/* datepicker */}
                 <div className="flex flex-col items-center justify-center">
                   <div className="w-[240px] h-[41px] flex items-center justify-center">
                     <img src={calendar_month} alt="Calender" />
-                    <p className="text-sm font-bold">15 January 2024</p>
+                    <p className="text-[14px] font-bold">15 January 2024</p>
                   </div>
                   <div className="h-[1px] bg-gray-400 w-[250px] sm:w-[160px]"></div>
                 </div>
               </div>
               {/* table */}
-              <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-sm text-left rtl:text-right text-gray-500 flex flex-col">
-                <thead className="text-xs text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
+              <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-[14px] text-left rtl:text-right text-gray-500 flex flex-col">
+                <thead className="text-[12px] text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
                   <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[740px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
                     <th
                       scope="col"
@@ -1715,7 +1727,7 @@ const CartDetail = () => {
                           <form className="max-w-xs mx-auto">
                             <label
                               htmlFor="quantity-input"
-                              className="block text-sm font-medium text-gray-900"
+                              className="block text-[14px] font-medium text-gray-900"
                             ></label>
                             <div className="relative flex items-center max-w-[8rem]">
                               <button
@@ -1745,7 +1757,7 @@ const CartDetail = () => {
                                 id="quantity-input"
                                 data-input-counter
                                 aria-describedby="helper-text-explanation"
-                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                 placeholder="10"
                               />
                               <button
@@ -1783,7 +1795,7 @@ const CartDetail = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
@@ -1813,7 +1825,9 @@ const CartDetail = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -1823,7 +1837,7 @@ const CartDetail = () => {
                               <form className="max-w-xs mx-auto">
                                 <label
                                   htmlFor="quantity-input"
-                                  className="block text-sm font-medium text-gray-900"
+                                  className="block text-[14px] font-medium text-gray-900"
                                 ></label>
                                 <div className="relative flex items-center sm:items-start max-w-[8rem]">
                                   <button
@@ -1853,7 +1867,7 @@ const CartDetail = () => {
                                     id="quantity-input"
                                     data-input-counter
                                     aria-describedby="helper-text-explanation"
-                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-xs"
+                                    className="border-y placeholder:text-center placeholder:text-black border-gray-400 h-5 w-6 sm:w-6 text-[12px]"
                                     placeholder="10"
                                   />
                                   <button
@@ -1929,12 +1943,12 @@ const CartDetail = () => {
                   <div className="w-[240px] h-[34px] sm:w-[290px] sm:h-[34px] xl:w-[740px] xl:h-[109px] flex justify-between">
                     <input
                       type="text"
-                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-xs"
+                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-[12px]"
                       placeholder="Instrucution"
                     />
                     <button
                       type="button"
-                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none uppercase"
+                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none uppercase"
                     >
                       Submit
                     </button>
@@ -1943,12 +1957,12 @@ const CartDetail = () => {
                   <div className="w-[240px] h-[34px] sm:w-[290px] sm:h-[34px] xl:w-[740px] xl:h-[109px] flex justify-between">
                     <input
                       type="text"
-                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-xs"
+                      className="w-[150px] h-[34px] sm:w-[200px] border-2 px-2 py-2 placeholder:text-[12px]"
                       placeholder="Coupon Code"
                     />
                     <button
                       type="button"
-                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none uppercase"
+                      className="w-[80px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none uppercase"
                     >
                       Submit
                     </button>
@@ -1969,7 +1983,7 @@ const CartDetail = () => {
                       <p>Discount (Promo name) applied:</p>
                       <p>Free freight</p>
                     </div>
-                    <div className="mt-2 flex justify-between font-bold text-sm sm:w-[314px] sm:h-[18px] xl:h-[24px]">
+                    <div className="mt-2 flex justify-between font-bold text-[14px] sm:w-[314px] sm:h-[18px] xl:h-[24px]">
                       <p>Collection Total:</p>
                       <p>$ 00.00</p>
                     </div>

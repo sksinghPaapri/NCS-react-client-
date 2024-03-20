@@ -144,7 +144,7 @@ const Body = () => {
               >
                 Northcott Fabrics
               </div>
-              <div className="text-sm">
+              <div className="text-[14px]">
                 We are the home of “cottons that feel like silk”. Our fine
                 cotton prints with a silky hand can be found in quilt and craft
                 shops around the world. We are known for our superior quality
@@ -229,7 +229,7 @@ const Body = () => {
             <h1 className="text-3xl" style={{ fontFamily: "DM Serif Display" }}>
               Designer Name
             </h1>
-            <p className="text-sm lg:text-xs lg:pe-20 px-10 lg:px-0 xl:pe-52 lg:h-[105px]">
+            <p className="text-[14px] lg:text-[12px] lg:pe-20 px-10 lg:px-0 xl:pe-52 lg:h-[105px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -300,7 +300,7 @@ const Body = () => {
                   />
                   <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
                     <h4 className="text-gray-400">Free Patterns</h4>
-                    <h2 className="font-bold w-60 lg:w-52 lg:text-sm text-lg text-center sm:text-start">
+                    <h2 className="font-bold w-60 lg:w-52 lg:text-[14px] text-lg text-center sm:text-start">
                       Patrick Lose Cake Block - FREE DOWNLOAD
                     </h2>
                     <img className="w-24" src={frame} alt="Image" />
@@ -317,7 +317,7 @@ const Body = () => {
                   />
                   <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
                     <h4 className="text-gray-400">Editorial Features</h4>
-                    <h2 className="font-bold w-60 lg:w-52 lg:text-sm text-lg text-center sm:text-start">
+                    <h2 className="font-bold w-60 lg:w-52 lg:text-[14px] text-lg text-center sm:text-start">
                       Lemon Sorbet by TeriAnn Harms{" "}
                     </h2>
                     <img className="w-24" src={frame} alt="Image" />
@@ -334,7 +334,7 @@ const Body = () => {
                   />
                   <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
                     <h4 className="text-gray-400">Free Patterns</h4>
-                    <h2 className="font-bold w-60 lg:w-52 lg:text-sm text-lg text-center sm:text-start">
+                    <h2 className="font-bold w-60 lg:w-52 lg:text-[14px] text-lg text-center sm:text-start">
                       Beach Blanket - FREE DOWNLOAD{" "}
                     </h2>
                     <img className="w-24" src={frame} alt="Image" />
@@ -351,7 +351,7 @@ const Body = () => {
                   />
                   <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
                     <h4 className="text-gray-400">Editorial Features</h4>
-                    <h2 className="font-bold w-60 lg:w-52 lg:text-sm text-lg text-center sm:text-start">
+                    <h2 className="font-bold w-60 lg:w-52 lg:text-[14px] text-lg text-center sm:text-start">
                       Lemon Sorbet by TeriAnn Harms{" "}
                     </h2>
                     <img className="w-24" src={frame} alt="Image" />

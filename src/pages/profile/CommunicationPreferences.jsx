@@ -18,22 +18,22 @@ const CommunicationPreferences = () => {
             <hr className=" text-gray-500 bg-gray-500 h-1 w-[280px] sm:w-[624px] xl:w-[280px]" />
             {/* content */}
             <div className="w-[280px] h-[180px] flex flex-col sm:w-[624px] xl:w-[280px] bg-white">
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm xl:text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] xl:text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/customerProfile"}>
                   <p className="ms-[15px]">Personal Info</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/shippingAddress"}>
                   <p className="ms-[15px]">Shipping Addresses</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/profileChangePassword"}>
                   <p className="ms-[15px]">Change Password</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px]  bg-[#F0EFEB] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px]  bg-[#F0EFEB] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/communicationPreferences"}>
                   <p className="ms-[15px]"> Communication Preferences</p>
                 </Link>
@@ -55,19 +55,19 @@ const CommunicationPreferences = () => {
               <div className="w-[280px] h-[131px] sm:w-[624px] sm:h-[37px] xl:w-[820px] flex flex-col sm:flex-row items-center justify-center gap-[10px] sm:justify-start">
                 <button
                   type="button"
-                  className="text-gray-500 bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-sm text-center w-[91px] h-[37px]"
+                  className="text-gray-500 bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-[14px] text-center w-[91px] h-[37px]"
                 >
                   Northcott
                 </button>
                 <button
                   type="button"
-                  className="text-gray-500 bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-sm text-center w-[125px] h-[37px]"
+                  className="text-gray-500 bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-[14px] text-center w-[125px] h-[37px]"
                 >
                   Banyan Batiks
                 </button>
                 <button
                   type="button"
-                  className="text-gray-500 bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-sm text-center w-[110px] h-[37px]"
+                  className="text-gray-500 bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-[14px] text-center w-[110px] h-[37px]"
                 >
                   Patrick Lose
                 </button>
@@ -76,7 +76,7 @@ const CommunicationPreferences = () => {
 
             {/* content */}
             <div className="w-[280px] h-[300px] flex flex-col sm:w-[624px] xl:w-[820px]">
-              <p className="w-[280px] h-[36px] text-xs text-center sm:text-nowrap text-gray-500">
+              <p className="w-[280px] h-[36px] text-[12px] text-center sm:text-nowrap text-gray-500">
                 Integrates with Mailchimp (Note: This text won't show on the UI)
               </p>
             </div>

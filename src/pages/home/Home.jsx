@@ -311,7 +311,7 @@
 //           >
 //             Northcott Fabrics
 //           </div>
-//           <div className="text-sm my-10">
+//           <div className="text-[14px] my-10">
 //             We are the home of “cottons that feel like silk”. Our fine cotton
 //             prints with a silky hand can be found in quilt and craft shops
 //             around the world. We are known for our superior quality and
@@ -393,7 +393,7 @@
 //           <h1 className="text-3xl" style={{ fontFamily: "DM Serif Display" }}>
 //             Designer Name
 //           </h1>
-//           <p className="text-sm lg:pe-20 px-10 lg:px-0">
+//           <p className="text-[14px] lg:pe-20 px-10 lg:px-0">
 //             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 //             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
 //             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

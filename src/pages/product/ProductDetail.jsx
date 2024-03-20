@@ -342,13 +342,13 @@ const ProductDetail = () => {
         {/* section 2 */}
         <div className="w-[320px] sm:w-[744px] h-[376px] sm:h-[222px] xl:w-[1160px] xl:h-[96px] 2xl:w-[1320px] grid grid-cols-1 xl:grid-cols-2 items-center justify-items-center xl:items-end xl:justify-items-start gap-10 xl:gap-0 ">
           <div className="w-[280px] h-[132px] sm:w-[539px] sm:h-[100px] xl:h-[96px] col-span-1 flex flex-col gap-[10px] lg:gap-2 text-center lg:text-left">
-            <div className="text-xs">
+            <div className="text-[12px]">
               <p>by Simon Treadwell</p>
             </div>
             <div className="text-[28px] lg:text-[32px] font-bold">
               <p>'Twas The Night Before Christmas</p>
             </div>
-            <div className="text-xs">
+            <div className="text-[12px]">
               <p>Coming to stores in June, 2024</p>
             </div>
           </div>
@@ -366,7 +366,9 @@ const ProductDetail = () => {
                 >
                   <div>
                     <Menu.Button className="inline-flex w-[204px] h-[40px] items-center justify-between gap-x-1.5 bg-white px-3 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 font-sm">
-                      <div className="text-sm font-normal">Find Retailers</div>
+                      <div className="text-[14px] font-normal">
+                        Find Retailers
+                      </div>
                       <ChevronDownIcon
                         className="-mr-1 h-5 w-5 text-gray-400"
                         aria-hidden="true"
@@ -393,7 +395,7 @@ const ProductDetail = () => {
                                 active
                                   ? "bg-gray-100 text-gray-900"
                                   : "text-gray-700",
-                                "block px-4 py-2 text-sm"
+                                "block px-4 py-2 text-[14px]"
                               )}
                             >
                               Online Retailers
@@ -408,7 +410,7 @@ const ProductDetail = () => {
                                 active
                                   ? "bg-gray-100 text-gray-900"
                                   : "text-gray-700",
-                                "block px-4 py-2 text-sm"
+                                "block px-4 py-2 text-[14px]"
                               )}
                             >
                               In-Store Shopping
@@ -423,7 +425,7 @@ const ProductDetail = () => {
                                 active
                                   ? "bg-gray-100 text-gray-900"
                                   : "text-gray-700",
-                                "block px-4 py-2 text-sm"
+                                "block px-4 py-2 text-[14px]"
                               )}
                             >
                               License
@@ -439,7 +441,7 @@ const ProductDetail = () => {
                                   active
                                     ? "bg-gray-100 text-gray-900"
                                     : "text-gray-700",
-                                  "block w-full px-4 py-2 text-left text-sm"
+                                  "block w-full px-4 py-2 text-left text-[14px]"
                                 )}
                               >
                                 International
@@ -458,7 +460,7 @@ const ProductDetail = () => {
                   className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
                 >
                   <ul
-                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    className="py-2 text-[14px] text-gray-700 dark:text-gray-200"
                     aria-labelledby="dropdownDefaultButton"
                   >
                     <li>
@@ -505,7 +507,7 @@ const ProductDetail = () => {
               <div className="flex justify-start w-[204px] h-[40px]">
                 <button
                   type="button"
-                  className=" text-white bg-[#E2A856] rounded-sm uppercase text-xs px-1 py-2.5 text-center mb-10 w-[204px] h-[40px] lg:tracking-tighter"
+                  className=" text-white bg-[#E2A856] rounded-sm uppercase text-[12px] px-1 py-2.5 text-center mb-10 w-[204px] h-[40px] lg:tracking-tighter"
                 >
                   Download fabric files
                 </button>
@@ -533,14 +535,14 @@ const ProductDetail = () => {
           <nav className="" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
               <li className="inline-flex items-center">
-                <p className="inline-flex items-center text-sm font-medium text-[#6B6B66] hover:text-[#090800] hover:underline">
+                <p className="inline-flex items-center text-[14px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline">
                   Home
                 </p>
               </li>
               <li>
                 <div className="flex items-center">
                   {" / "}
-                  <p className="ms-1 text-sm font-medium text-[#6B6B66] hover:text-[#090800] hover:underline md:ms-2">
+                  <p className="ms-1 text-[14px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline md:ms-2">
                     Category
                   </p>
                 </div>
@@ -548,7 +550,7 @@ const ProductDetail = () => {
               <li aria-current="page">
                 <div className="flex items-center">
                   {" / "}
-                  <span className="w-40 h-[20px] ms-1 text-sm font-medium text-[#6B6B66] md:ms-2 overflow-hidden">
+                  <span className="w-40 h-[20px] ms-1 text-[14px] font-medium text-[#6B6B66] md:ms-2 overflow-hidden">
                     Holiday 2023 Release Collections
                   </span>
                 </div>
@@ -558,7 +560,7 @@ const ProductDetail = () => {
         </div>
         {/* products count and buttons */}
         <div className="flex flex-col sm:flex-row justify-center sm:justify-between w-[280px] h-[159px] sm:w-[664px] sm:h-[39px] xl:w-[1160px] 2xl:w-[1320px] gap-10 sm:gap-0 ">
-          <div className="text-sm text-nowrap text-center sm:text-start w-[280px] sm:w-[78px] h-[39px] flex items-center justify-center sm:items-end">
+          <div className="text-[14px] text-nowrap text-center sm:text-start w-[280px] sm:w-[78px] h-[39px] flex items-center justify-center sm:items-end">
             13 Products
           </div>
           {login && (
@@ -639,7 +641,7 @@ const ProductDetail = () => {
                             className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
                           />
                           <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
-                            <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                            <div className="text-[12px] flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
                               <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
                                 'Twas The Night Before Ch...
                               </p>
@@ -650,9 +652,9 @@ const ProductDetail = () => {
                               <div className="w-[120px] h-[50px] sm:w-[160px]">
                                 {login && (
                                   <div className="flex gap-3 md:gap-9 items-center justify-center">
-                                    <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                    <div className="text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                       ${item["price per m"]}
-                                      <span className="text-xs text-gray-600 font-normal">
+                                      <span className="text-[12px] text-gray-600 font-normal">
                                         / m{" "}
                                       </span>
                                     </div>
@@ -662,7 +664,7 @@ const ProductDetail = () => {
                                         <form className="max-w-xs mx-auto">
                                           <label
                                             htmlFor="quantity-input"
-                                            className="block mb-2 text-sm font-medium text-gray-900"
+                                            className="block mb-2 text-[14px] font-medium text-gray-900"
                                           ></label>
                                           <div className="relative flex items-center max-w-[8rem]">
                                             <button
@@ -692,7 +694,7 @@ const ProductDetail = () => {
                                               id="quantity-input"
                                               data-input-counter
                                               aria-describedby="helper-text-explanation"
-                                              className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                              className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-[12px]"
                                               placeholder="10"
                                             />
                                             <button
@@ -775,7 +777,7 @@ const ProductDetail = () => {
                                 />
                               </div>
                               <div className="w-[250px] h-[138px] cursor-pointer flex items-start justify-center border border-t-0">
-                                <div className="text-xs flex flex-col h-[118px] w-[230px] gap-[5px]">
+                                <div className="text-[12px] flex flex-col h-[118px] w-[230px] gap-[5px]">
                                   <div className="w-[230px] h-[21px] flex justify-between">
                                     <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-gray-500">
                                       Design Name
@@ -791,9 +793,9 @@ const ProductDetail = () => {
                                   <div className="w-[230px] h-[45px]">
                                     {login && (
                                       <div className="flex gap-3 md:gap-9 items-center justify-between">
-                                        <div className="w-[70px] h-[27px] text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                        <div className="w-[70px] h-[27px] text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                           ${item["price per m"]}
-                                          <span className="text-xs text-gray-600 font-normal">
+                                          <span className="text-[12px] text-gray-600 font-normal">
                                             / m{" "}
                                           </span>
                                         </div>
@@ -802,7 +804,7 @@ const ProductDetail = () => {
                                             <form className="max-w-xs mx-auto">
                                               <label
                                                 htmlFor="quantity-input"
-                                                className="block text-sm font-medium text-gray-900"
+                                                className="block text-[14px] font-medium text-gray-900"
                                               ></label>
                                               <div className="relative flex items-center max-w-[8rem]">
                                                 <button
@@ -832,7 +834,7 @@ const ProductDetail = () => {
                                                   id="quantity-input"
                                                   data-input-counter
                                                   aria-describedby="helper-text-explanation"
-                                                  className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-xs"
+                                                  className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-[12px]"
                                                   placeholder="10"
                                                 />
                                                 <button
@@ -909,7 +911,7 @@ const ProductDetail = () => {
                                 className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
                               />
                               <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
-                                <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                                <div className="text-[12px] flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
                                   <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
                                     'Twas The Night Before Ch...
                                   </p>
@@ -920,9 +922,9 @@ const ProductDetail = () => {
                                   <div className="w-[120px] h-[50px] sm:w-[160px]">
                                     {login && (
                                       <div className="flex gap-3 md:gap-9 items-center justify-center">
-                                        <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                        <div className="text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                           ${item["price per m"]}
-                                          <span className="text-xs text-gray-600 font-normal">
+                                          <span className="text-[12px] text-gray-600 font-normal">
                                             / m{" "}
                                           </span>
                                         </div>
@@ -931,7 +933,7 @@ const ProductDetail = () => {
                                             <form className="max-w-xs mx-auto">
                                               <label
                                                 htmlFor="quantity-input"
-                                                className="block mb-2 text-sm font-medium text-gray-900"
+                                                className="block mb-2 text-[14px] font-medium text-gray-900"
                                               ></label>
                                               <div className="relative flex items-center max-w-[8rem]">
                                                 <button
@@ -961,7 +963,7 @@ const ProductDetail = () => {
                                                   id="quantity-input"
                                                   data-input-counter
                                                   aria-describedby="helper-text-explanation"
-                                                  className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                                  className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-[12px]"
                                                   placeholder="10"
                                                 />
                                                 <button
@@ -1045,7 +1047,7 @@ const ProductDetail = () => {
                                 />
                               </div>
                               <div className="w-[250px] h-[138px] cursor-pointer flex items-start justify-center border border-t-0">
-                                <div className="text-xs flex flex-col w-[230px] h-[118px] gap-[5px]">
+                                <div className="text-[12px] flex flex-col w-[230px] h-[118px] gap-[5px]">
                                   <div className="w-[230px] h-[21px] flex justify-between">
                                     <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-gray-500">
                                       Design Name
@@ -1061,9 +1063,9 @@ const ProductDetail = () => {
                                   <div className="w-[230px] h-[45px]">
                                     {login && (
                                       <div className="flex gap-3 md:gap-9 items-center justify-between">
-                                        <div className="w-[70px] h-[27px] text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                        <div className="w-[70px] h-[27px] text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                           ${item["price per m"]}
-                                          <span className="text-xs text-gray-600 font-normal">
+                                          <span className="text-[12px] text-gray-600 font-normal">
                                             / m{" "}
                                           </span>
                                         </div>
@@ -1073,7 +1075,7 @@ const ProductDetail = () => {
                                             <form className="max-w-xs mx-auto">
                                               <label
                                                 htmlFor="quantity-input"
-                                                className="block text-sm font-medium text-gray-900"
+                                                className="block text-[14px] font-medium text-gray-900"
                                               ></label>
                                               <div className="relative flex items-center max-w-[8rem]">
                                                 <button
@@ -1103,7 +1105,7 @@ const ProductDetail = () => {
                                                   id="quantity-input"
                                                   data-input-counter
                                                   aria-describedby="helper-text-explanation"
-                                                  className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-xs"
+                                                  className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-[12px]"
                                                   placeholder="10"
                                                 />
                                                 <button
@@ -1180,7 +1182,7 @@ const ProductDetail = () => {
                                 className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
                               />
                               <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
-                                <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                                <div className="text-[12px] flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
                                   <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
                                     'Twas The Night Before Ch...
                                   </p>
@@ -1191,9 +1193,9 @@ const ProductDetail = () => {
                                   <div className="w-[120px] h-[50px] sm:w-[160px]">
                                     {login && (
                                       <div className="flex gap-3 md:gap-9 items-center justify-center">
-                                        <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                        <div className="text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                           ${item["price per m"]}
-                                          <span className="text-xs text-gray-600 font-normal">
+                                          <span className="text-[12px] text-gray-600 font-normal">
                                             / m{" "}
                                           </span>
                                         </div>
@@ -1203,7 +1205,7 @@ const ProductDetail = () => {
                                             <form className="max-w-xs mx-auto">
                                               <label
                                                 htmlFor="quantity-input"
-                                                className="block mb-2 text-sm font-medium text-gray-900"
+                                                className="block mb-2 text-[14px] font-medium text-gray-900"
                                               ></label>
                                               <div className="relative flex items-center max-w-[8rem]">
                                                 <button
@@ -1233,7 +1235,7 @@ const ProductDetail = () => {
                                                   id="quantity-input"
                                                   data-input-counter
                                                   aria-describedby="helper-text-explanation"
-                                                  className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                                  className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-[12px]"
                                                   placeholder="10"
                                                 />
                                                 <button
@@ -1324,7 +1326,7 @@ const ProductDetail = () => {
                       className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
                     />
                     <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
-                      <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                      <div className="text-[12px] flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
                         <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
                           'Twas The Night Before Ch...
                         </p>
@@ -1335,9 +1337,9 @@ const ProductDetail = () => {
                         <div className="w-[120px] h-[50px] sm:w-[160px]">
                           {login && (
                             <div className="flex gap-3 md:gap-9 items-center justify-center">
-                              <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                              <div className="text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                 ${item["price per m"]}
-                                <span className="text-xs text-gray-600 font-normal">
+                                <span className="text-[12px] text-gray-600 font-normal">
                                   / m{" "}
                                 </span>
                               </div>
@@ -1347,7 +1349,7 @@ const ProductDetail = () => {
                                   <form className="max-w-xs mx-auto">
                                     <label
                                       htmlFor="quantity-input"
-                                      className="block mb-2 text-sm font-medium text-gray-900"
+                                      className="block mb-2 text-[14px] font-medium text-gray-900"
                                     ></label>
                                     <div className="relative flex items-center max-w-[8rem]">
                                       <button
@@ -1377,7 +1379,7 @@ const ProductDetail = () => {
                                         id="quantity-input"
                                         data-input-counter
                                         aria-describedby="helper-text-explanation"
-                                        className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                        className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-[12px]"
                                         placeholder="10"
                                       />
                                       <button
@@ -1462,7 +1464,7 @@ const ProductDetail = () => {
                           />
                         </div>
                         <div className="w-[250px] h-[138px] cursor-pointer flex items-start justify-center border border-t-0">
-                          <div className="text-xs flex flex-col h-[118px] w-[230px] gap-[5px]">
+                          <div className="text-[12px] flex flex-col h-[118px] w-[230px] gap-[5px]">
                             <div className="w-[230px] h-[21px] flex justify-between">
                               <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-gray-500">
                                 Design Name
@@ -1478,9 +1480,9 @@ const ProductDetail = () => {
                             <div className="w-[230px] h-[45px]">
                               {login && (
                                 <div className="flex gap-3 md:gap-9 items-center justify-between">
-                                  <div className="w-[70px] h-[27px] text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                  <div className="w-[70px] h-[27px] text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                     ${item["price per m"]}
-                                    <span className="text-xs text-gray-600 font-normal">
+                                    <span className="text-[12px] text-gray-600 font-normal">
                                       / m{" "}
                                     </span>
                                   </div>
@@ -1490,7 +1492,7 @@ const ProductDetail = () => {
                                       <form className="max-w-xs mx-auto">
                                         <label
                                           htmlFor="quantity-input"
-                                          className="block text-sm font-medium text-gray-900"
+                                          className="block text-[14px] font-medium text-gray-900"
                                         ></label>
                                         <div className="relative flex items-center max-w-[8rem]">
                                           <button
@@ -1520,7 +1522,7 @@ const ProductDetail = () => {
                                             id="quantity-input"
                                             data-input-counter
                                             aria-describedby="helper-text-explanation"
-                                            className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-xs"
+                                            className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-[12px]"
                                             placeholder="10"
                                           />
                                           <button
@@ -1599,7 +1601,7 @@ const ProductDetail = () => {
                           className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
                         />
                         <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
-                          <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                          <div className="text-[12px] flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
                             <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
                               'Twas The Night Before Ch...
                             </p>
@@ -1610,9 +1612,9 @@ const ProductDetail = () => {
                             <div className="w-[120px] h-[50px] sm:w-[160px]">
                               {login && (
                                 <div className="flex gap-3 md:gap-9 items-center justify-center">
-                                  <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                  <div className="text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                     ${item["price per m"]}
-                                    <span className="text-xs text-gray-600 font-normal">
+                                    <span className="text-[12px] text-gray-600 font-normal">
                                       / m{" "}
                                     </span>
                                   </div>
@@ -1622,7 +1624,7 @@ const ProductDetail = () => {
                                       <form className="max-w-xs mx-auto">
                                         <label
                                           htmlFor="quantity-input"
-                                          className="block mb-2 text-sm font-medium text-gray-900"
+                                          className="block mb-2 text-[14px] font-medium text-gray-900"
                                         ></label>
                                         <div className="relative flex items-center max-w-[8rem]">
                                           <button
@@ -1652,7 +1654,7 @@ const ProductDetail = () => {
                                             id="quantity-input"
                                             data-input-counter
                                             aria-describedby="helper-text-explanation"
-                                            className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                            className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-[12px]"
                                             placeholder="10"
                                           />
                                           <button
@@ -1735,7 +1737,7 @@ const ProductDetail = () => {
                         />
                       </div>
                       <div className="w-[250px] h-[138px] cursor-pointer flex items-start justify-center border border-t-0">
-                        <div className="text-xs flex flex-col w-[230px] h-[118px] gap-[5px]">
+                        <div className="text-[12px] flex flex-col w-[230px] h-[118px] gap-[5px]">
                           <div className="w-[230px] h-[21px] flex justify-between">
                             <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-gray-500">
                               Design Name
@@ -1751,9 +1753,9 @@ const ProductDetail = () => {
                           <div className="w-[230px] h-[45px]">
                             {login && (
                               <div className="flex gap-3 md:gap-9 items-center justify-between">
-                                <div className="w-[70px] h-[27px] text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                <div className="w-[70px] h-[27px] text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                   ${item["price per m"]}
-                                  <span className="text-xs text-gray-600 font-normal">
+                                  <span className="text-[12px] text-gray-600 font-normal">
                                     / m{" "}
                                   </span>
                                 </div>
@@ -1763,7 +1765,7 @@ const ProductDetail = () => {
                                     <form className="max-w-xs mx-auto">
                                       <label
                                         htmlFor="quantity-input"
-                                        className="block text-sm font-medium text-gray-900"
+                                        className="block text-[14px] font-medium text-gray-900"
                                       ></label>
                                       <div className="relative flex items-center max-w-[8rem]">
                                         <button
@@ -1793,7 +1795,7 @@ const ProductDetail = () => {
                                           id="quantity-input"
                                           data-input-counter
                                           aria-describedby="helper-text-explanation"
-                                          className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-xs"
+                                          className="border-y placeholder:text-center border-gray-300 h-5 w-[20px] text-[12px]"
                                           placeholder="10"
                                         />
                                         <button
@@ -1868,7 +1870,7 @@ const ProductDetail = () => {
                         className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
                       />
                       <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
-                        <div className="text-xs flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
+                        <div className="text-[12px] flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
                           <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
                             'Twas The Night Before Ch...
                           </p>
@@ -1879,9 +1881,9 @@ const ProductDetail = () => {
                           <div className="w-[120px] h-[50px] sm:w-[160px]">
                             {login && (
                               <div className="flex gap-3 md:gap-9 items-center justify-center">
-                                <div className="text-base sm:text-sm font-bold mt-5 sm:text-nowrap">
+                                <div className="text-base sm:text-[14px] font-bold mt-5 sm:text-nowrap">
                                   ${item["price per m"]}
-                                  <span className="text-xs text-gray-600 font-normal">
+                                  <span className="text-[12px] text-gray-600 font-normal">
                                     / m{" "}
                                   </span>
                                 </div>
@@ -1891,7 +1893,7 @@ const ProductDetail = () => {
                                     <form className="max-w-xs mx-auto">
                                       <label
                                         htmlFor="quantity-input"
-                                        className="block mb-2 text-sm font-medium text-gray-900"
+                                        className="block mb-2 text-[14px] font-medium text-gray-900"
                                       ></label>
                                       <div className="relative flex items-center max-w-[8rem]">
                                         <button
@@ -1921,7 +1923,7 @@ const ProductDetail = () => {
                                           id="quantity-input"
                                           data-input-counter
                                           aria-describedby="helper-text-explanation"
-                                          className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-xs"
+                                          className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-[12px]"
                                           placeholder="10"
                                         />
                                         <button
@@ -1982,7 +1984,7 @@ const ProductDetail = () => {
             </p>
           </div>
           <div className="w-[280px] h-[42px] sm:w-[664px] sm:h-[21px] xl:w-[1160px] 2xl:w-[1320px]">
-            <p className="text-gray-500 text-sm ">
+            <p className="text-gray-500 text-[14px] ">
               Patterns can be purchased through your local quilt shop.
             </p>
           </div>
@@ -2003,14 +2005,14 @@ const ProductDetail = () => {
                   <div className="h-[126px] w-[250px] flex items-center justify-center">
                     <div className="cursor-pointer flex flex-col items-start justify-center gap-5">
                       <div className="w-[230px] h-[68px] text-gray-400">
-                        <p className="w-[230px] h-[21px] text-xs">
+                        <p className="w-[230px] h-[21px] text-[12px]">
                           Collection Name
                         </p>
-                        <p className="w-[230px] h-[42px] text-gray-900 font-semibold text-sm">
+                        <p className="w-[230px] h-[42px] text-gray-900 font-semibold text-[14px]">
                           Window Fun - PTN3255
                         </p>
                       </div>
-                      <p className="text-xs text-gray-400 font-semibold w-[206px] h-[18px] text-nowrap">
+                      <p className="text-[12px] text-gray-400 font-semibold w-[206px] h-[18px] text-nowrap">
                         Click here to view fabric requirement
                       </p>
                     </div>

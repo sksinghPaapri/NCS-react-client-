@@ -52,7 +52,7 @@ const Checkout = () => {
               <Link to={"/"}>
                 <button
                   type="button"
-                  className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"
+                  className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none"
                 >
                   CONTINUE SHOPPING
                 </button>
@@ -108,8 +108,8 @@ const Checkout = () => {
                 </div>
               </div>
               {/* table */}
-              <table className="w-[240px] sm:w-[600px] xl:w-[645px] text-sm text-left rtl:text-right text-gray-500 flex flex-col">
-                <thead className="text-xs text-gray-500 sm:w-[600px] xl:w-[645px] sm:h-[28px] sm:items-center sm:justify-center">
+              <table className="w-[240px] sm:w-[600px] xl:w-[645px] text-[14px] text-left rtl:text-right text-gray-500 flex flex-col">
+                <thead className="text-[12px] text-gray-500 sm:w-[600px] xl:w-[645px] sm:h-[28px] sm:items-center sm:justify-center">
                   <tr className="hidden sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[645px] sm:h-[28px] sm:flex flex-row sm:gap-[10px]">
                     <th
                       scope="col"
@@ -181,7 +181,7 @@ const Checkout = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[155px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[155px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -203,7 +203,9 @@ const Checkout = () => {
                           <span className="text-[10px] sm:text-[12px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -267,7 +269,7 @@ const Checkout = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[155px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[155px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -289,7 +291,9 @@ const Checkout = () => {
                           <span className="text-[10px] sm:text-[12px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -353,7 +357,7 @@ const Checkout = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[155px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[155px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -375,7 +379,9 @@ const Checkout = () => {
                           <span className="text-[10px] sm:text-[12px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -439,7 +445,7 @@ const Checkout = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[155px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[155px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -461,7 +467,9 @@ const Checkout = () => {
                           <span className="text-[10px] sm:text-[12px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -525,7 +533,7 @@ const Checkout = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[155px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[155px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -547,7 +555,9 @@ const Checkout = () => {
                           <span className="text-[10px] sm:text-[12px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -598,7 +608,7 @@ const Checkout = () => {
                     <p>Discount (Promo name) applied:</p>
                     <p>-$ 00.00</p>
                   </div>
-                  <div className="mt-2 flex justify-between font-bold text-sm sm:w-[314px] sm:h-[24px]">
+                  <div className="mt-2 flex justify-between font-bold text-[14px] sm:w-[314px] sm:h-[24px]">
                     <p>Collection Total:</p>
                     <p>$ 00.00</p>
                   </div>
@@ -652,33 +662,33 @@ const Checkout = () => {
                     </div>
                     {/* row2 */}
                     <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[51px] xl:w-[395px] xl:h-[51px] 2xl:w-[515px] flex text-base border-b gap-1">
-                      <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
+                      <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-[12px]">
                         Web Order Number:
                       </p>
-                      <p className="h-[18px] sm:h-[21px] text-xs"></p>
+                      <p className="h-[18px] sm:h-[21px] text-[12px]"></p>
                     </div>
                     {/* row3 */}
                     <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[72px] xl:w-[395px] xl:h-[72px] 2xl:w-[515px] flex items-center text-base border-b gap-1">
-                      <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-xs font-bold">
+                      <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-[12px] font-bold">
                         Sales Order Number:
                       </p>
-                      <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-xs"></p>
+                      <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-[12px]"></p>
                     </div>
                     {/* row4 */}
                     <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[72px] xl:w-[395px] xl:h-[72px] 2xl:w-[515px] flex items-center text-base border-b gap-1">
-                      <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-xs font-bold flex items-center">
+                      <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-[12px] font-bold flex items-center">
                         Order By:
                       </p>
-                      <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-xs">
+                      <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-[12px]">
                         STEVE WEISSMAN
                       </p>
                     </div>
                     {/* row5 */}
                     <div className="w-[240px] h-[140px] sm:w-[460px] sm:h-[155px] xl:w-[395px] 2xl:w-[515px] flex text-base border-b">
-                      <p className="w-[50px] h-[18px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
+                      <p className="w-[50px] h-[18px] sm:w-[125px] font-bold sm:h-[21px] text-[12px]">
                         Bill To:
                       </p>
-                      <p className="w-[170px] h-[110px] sm:w-[330px] xl:w-[265px] 2xl:w-[385px] sm:h-[125px] text-xs">
+                      <p className="w-[170px] h-[110px] sm:w-[330px] xl:w-[265px] 2xl:w-[385px] sm:h-[125px] text-[12px]">
                         <p className="w-[170px] h-[18px] sm:h-[21px]">
                           CHRISTINA'S NORTHCOTT
                         </p>
@@ -698,10 +708,10 @@ const Checkout = () => {
                     </div>
                     {/* row6 */}
                     <div className="w-[240px] h-[75px] sm:w-[460px] sm:h-[77px] xl:w-[395px] 2xl:w-[515px] flex text-base border-b gap-1">
-                      <p className="w-[50px] h-[18px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
+                      <p className="w-[50px] h-[18px] sm:w-[125px] font-bold sm:h-[21px] text-[12px]">
                         Ship To:
                       </p>
-                      <p className="w-[170px] h-[110px] sm:w-[330px] sm:h-[125px] text-xs">
+                      <p className="w-[170px] h-[110px] sm:w-[330px] sm:h-[125px] text-[12px]">
                         <div className="flex items-center mb-1">
                           <input
                             id="default-radio-1"
@@ -712,7 +722,7 @@ const Checkout = () => {
                           />
                           <label
                             htmlFor="default-radio-1"
-                            className="ms-2 text-xs font-medium text-gray-900"
+                            className="ms-2 text-[12px] font-medium text-gray-900"
                           >
                             Same as billing address
                           </label>
@@ -728,7 +738,7 @@ const Checkout = () => {
                           />
                           <label
                             htmlFor="default-radio-2"
-                            className="ms-2 text-xs font-medium text-gray-900"
+                            className="ms-2 text-[12px] font-medium text-gray-900"
                           >
                             Use different address
                           </label>
@@ -737,17 +747,17 @@ const Checkout = () => {
                     </div>
                     {/* row7 */}
                     <div className="w-[240px] h-[102px] sm:w-[460px] sm:h-[72px] xl:w-[395px] 2xl:w-[515px] flex text-base border-b gap-1">
-                      <p className="w-[65px] h-[72px] sm:w-[125px] font-bold sm:h-[42px] text-xs gap-1">
+                      <p className="w-[65px] h-[72px] sm:w-[125px] font-bold sm:h-[42px] text-[12px] gap-1">
                         Optional Order Processing:
                       </p>
-                      <p className="w-[170px] h-[36px] sm:w-[260px] sm:h-[21px] text-xs">
+                      <p className="w-[170px] h-[36px] sm:w-[260px] sm:h-[21px] text-[12px]">
                         Combine Delivery, Ship Order Complete
                       </p>
                     </div>
                   </div>
                   {/* row last */}
                   <div>
-                    <ul className="ms-5 px-1 w-[240px] h-[115px] sm:w-[460px] sm:h-[79px] xl:w-[395px] 2xl:w-[515px] text-gray-500 text-xs flex flex-col justify-center gap-2">
+                    <ul className="ms-5 px-1 w-[240px] h-[115px] sm:w-[460px] sm:h-[79px] xl:w-[395px] 2xl:w-[515px] text-gray-500 text-[12px] flex flex-col justify-center gap-2">
                       <li className="list-disc">
                         NOTE: If the address we have on file is incorrect,
                         please contact us at 1-800-268-1466

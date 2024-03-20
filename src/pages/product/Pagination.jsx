@@ -18,40 +18,40 @@ export default function Pagination() {
             </a>
             <a
               href="#"
-              className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-sm text-black hover:font-semibold focus:z-20"
+              className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-[14px] text-black hover:font-semibold focus:z-20"
             >
               1
             </a>
             <a
               href="#"
-              className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-sm text-black hover:font-semibold focus:z-20"
+              className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-[14px] text-black hover:font-semibold focus:z-20"
             >
               2
             </a>
             <a
               href="#"
-              className="w-[50px] h-[44px] relative hidden items-center px-4 py-2 text-sm text-black hover:font-semibold focus:z-20 md:inline-flex"
+              className="w-[50px] h-[44px] relative hidden items-center px-4 py-2 text-[14px] text-black hover:font-semibold focus:z-20 md:inline-flex"
             >
               3
             </a>
-            <span className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700">
+            <span className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-[14px] font-semibold text-gray-700">
               ...
             </span>
             <a
               href="#"
-              className="w-[50px] h-[44px] relative hidden items-center px-4 py-2 text-sm text-black hover:font-semibold focus:z-20 md:inline-flex"
+              className="w-[50px] h-[44px] relative hidden items-center px-4 py-2 text-[14px] text-black hover:font-semibold focus:z-20 md:inline-flex"
             >
               8
             </a>
             <a
               href="#"
-              className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-sm text-black hover:font-semibold focus:z-20"
+              className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-[14px] text-black hover:font-semibold focus:z-20"
             >
               9
             </a>
             <a
               href="#"
-              className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-sm text-black hover:font-semibold focus:z-20"
+              className="w-[50px] h-[44px] relative inline-flex items-center px-4 py-2 text-[14px] text-black hover:font-semibold focus:z-20"
             >
               10
             </a>

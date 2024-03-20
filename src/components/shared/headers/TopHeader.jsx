@@ -127,13 +127,13 @@ export default function TopHeader() {
               <div>
                 <Link
                   to="/login"
-                  className="text-sm text-white font-semibold hover:text-[#A4A3A0]"
+                  className="text-[14px] text-white font-semibold hover:text-[#A4A3A0]"
                 >
                   Log In
                 </Link>{" "}
               </div>
             ) : (
-              <div className="text-sm text-white font-semibold hover:text-[#A4A3A0]">
+              <div className="text-[14px] text-white font-semibold hover:text-[#A4A3A0]">
                 <div className="flex items-center justify-end text-end sm:mx-2">
                   <div className="w-[329px] h-[20px]">
                     <p className="text-white text-[8px] leading-3">
@@ -146,7 +146,7 @@ export default function TopHeader() {
                   <div className=" mx-6 h-[23px] text-white">{` | `}</div>
                   <a
                     href="#"
-                    className="text-sm text-white font-semibold text-center text-nowrap"
+                    className="text-[14px] text-white font-semibold text-center text-nowrap"
                   >
                     Log Out
                   </a>{" "}
@@ -336,7 +336,7 @@ export default function TopHeader() {
                                 item?.sublinks?.map((mysublink, index) => (
                                   <div key={index}>
                                     {mysublink?.Head !== "a" ? (
-                                      <div className=" font-bold text-xs">
+                                      <div className=" font-bold text-[12px]">
                                         {mysublink?.Head !== "" ? (
                                           <div className="p-3">
                                             {mysublink?.Head}
@@ -353,7 +353,7 @@ export default function TopHeader() {
                                       (finallink, index) => (
                                         <div
                                           key={index}
-                                          className="p-3 text-sm leading-6 hover:bg-[#F5F4F1]"
+                                          className="p-3 text-[14px] leading-6 hover:bg-[#F5F4F1]"
                                         >
                                           <div>
                                             <div className="col-span-2">
@@ -361,7 +361,7 @@ export default function TopHeader() {
                                                 // to={`/testui/collections/${finallink?._id?.$oid}`}
                                                 to={`/product-collection/${finallink?._id?.$oid}`}
                                                 // to={`/${finallink?._id?.$oid}`}
-                                                className="block text-xs text-gray-900"
+                                                className="block text-[12px] text-gray-900"
                                                 onClick={() =>
                                                   setPopoverOpen(false)
                                                 }
@@ -405,7 +405,7 @@ export default function TopHeader() {
             <div className="flex align-middle">
               <Link
                 to="/login"
-                className="text-sm text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
+                className="text-[14px] text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
                 onClick={() => setOpen(false)}
               >
                 Log In
@@ -415,13 +415,13 @@ export default function TopHeader() {
             <div className="flex items-center justify-center gap-2 sm:mx-2">
               <a
                 href="#"
-                className="text-sm text-white font-semibold text-center text-nowrap"
+                className="text-[14px] text-white font-semibold text-center text-nowrap"
               >
                 Log Out
               </a>{" "}
               <div className=" h-[35px] text-white">{` | `}</div>
               <div className="">
-                <p className="text-white text-[10px] sm:text-sm leading-4 ms-2 sm:ms-2   text-start">
+                <p className="text-white text-[10px] sm:text-[14px] leading-4 ms-2 sm:ms-2   text-start">
                   You're logged in as CHRISTINA'S NORTHCOTT SHOP, Vaughan{" "}
                   <Link to={"/"} className="underline font-semibold">
                     To change, click here.
@@ -489,7 +489,7 @@ export default function TopHeader() {
                                       <div className="">
                                         <Link
                                           to="/login"
-                                          className="text-sm text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
+                                          className="text-[14px] text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
                                         >
                                           Log In
                                         </Link>{" "}
@@ -498,13 +498,13 @@ export default function TopHeader() {
                                       <div className="flex items-center justify-center gap-2 sm:mx-2">
                                         <a
                                           href="#"
-                                          className="text-sm text-white font-semibold text-center text-nowrap"
+                                          className="text-[14px] text-white font-semibold text-center text-nowrap"
                                         >
                                           Log Out
                                         </a>{" "}
                                         <div className=" h-[35px] text-white">{` | `}</div>
                                         <div className="">
-                                          <p className="text-white text-[10px] sm:text-sm leading-4 ms-2 sm:ms-2 me-6 sm:me-56 text-start">
+                                          <p className="text-white text-[10px] sm:text-[14px] leading-4 ms-2 sm:ms-2 me-6 sm:me-56 text-start">
                                             You're logged in as CHRISTINA'S
                                             NORTHCOTT SHOP, Vaughan{" "}
                                             <Link

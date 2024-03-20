@@ -14,7 +14,7 @@ const RetailerRegistrationComplete = () => {
               Retailer Registration Complete!
             </h2>
             <div className="w-[280px] h-[72px] sm:w-[500px] sm:h-[54px] text-center">
-              <p className="text-xs  text-gray-600">
+              <p className="text-[12px]  text-gray-600">
                 Congratulations! Your retailer registration is now successfully
                 submitted. Thank you for choosing to partner with us. We will
                 review your information, and you will receive a confirmation
@@ -24,13 +24,13 @@ const RetailerRegistrationComplete = () => {
           </div>
 
           <div className="w-[182px] h-[36px] flex flex-col items-center">
-            <p className="flex justify-center text-xs h-[18px] text-gray-950 text-nowrap">
+            <p className="flex justify-center text-[12px] h-[18px] text-gray-950 text-nowrap">
               Need help?{"  "}
-              <span className="text-[#6B6B66] text-xs ms-1">
+              <span className="text-[#6B6B66] text-[12px] ms-1">
                 Contact our support
               </span>
             </p>
-            <span className="flex justify-center h-[18px] text-xs text-[#6B6B66] cursor-pointer">
+            <span className="flex justify-center h-[18px] text-[12px] text-[#6B6B66] cursor-pointer">
               <Link to={"/login"}>Return to sign in</Link>
             </span>
           </div>

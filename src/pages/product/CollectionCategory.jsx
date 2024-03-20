@@ -291,13 +291,13 @@ export default function CollectionCategory() {
                         <button
                           type="button"
                           onClick={() => clearAllFilters()}
-                          className="text-sm text-gray-500 hover:text-gray-700"
+                          className="text-[14px] text-gray-500 hover:text-gray-700"
                         >
                           Clear All
                         </button>
                       </div>
                     )}
-                    <ul className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
+                    <ul className="space-y-4 border-b border-gray-200 pb-6 text-[14px] font-medium text-gray-900">
                       {/* select field occur in input by Mithun */}
                       {selectedFilters.map((filter) => (
                         <li key={filter.sectionId} className="flex flex-wrap">
@@ -382,7 +382,7 @@ export default function CollectionCategory() {
                                     />
                                     <label
                                       htmlFor={`filter-${section.id}-${option.value}`}
-                                      className="ml-3 text-sm text-gray-600"
+                                      className="ml-3 text-[14px] text-gray-600"
                                     >
                                       {option.label}
                                     </label>
@@ -410,7 +410,7 @@ export default function CollectionCategory() {
             </div>
             <div className="col-span-3">
               <div className="grid grid-cols-2 justify-between">
-                <h1 className=" text-black col-span-1 text-sm">
+                <h1 className=" text-black col-span-1 text-[14px]">
                   {productItems.length} Collections
                 </h1>
 
@@ -421,8 +421,8 @@ export default function CollectionCategory() {
                       className=" text-gray-700 hover:text-gray-900 md:hidden"
                       onClick={() => setMobileFiltersOpen(true)}
                     >
-                      <span className="sr-only text-sm">Filters</span>
-                      <p className="text-black underline text-sm">
+                      <span className="sr-only text-[14px]">Filters</span>
+                      <p className="text-black underline text-[14px]">
                         See Filters
                       </p>
                     </button>
@@ -433,13 +433,13 @@ export default function CollectionCategory() {
                       as="div"
                       className="relative grid grid-cols-2 mt-5 sm:mt-0"
                     >
-                      <div className="flex justify-start sm:justify-center text-sm">
+                      <div className="flex justify-start sm:justify-center text-[14px]">
                         <p>Sort: </p>
                       </div>
 
                       <div className="flex justify-end">
-                        <Menu.Button className="group inline-flex text-sm font-medium text-gray-700 hover:text-gray-900">
-                          <p className="me-5 lg:me-36 md:me-20 text-sm">
+                        <Menu.Button className="group inline-flex text-[14px] font-medium text-gray-700 hover:text-gray-900">
+                          <p className="me-5 lg:me-36 md:me-20 text-[14px]">
                             Default
                           </p>
 
@@ -468,10 +468,10 @@ export default function CollectionCategory() {
                                     href={option.href}
                                     className={classNames(
                                       option.current
-                                        ? "font-medium text-gray-900 text-sm"
+                                        ? "font-medium text-gray-900 text-[14px]"
                                         : "text-gray-500",
                                       active ? "bg-gray-100" : "",
-                                      "block px-4 py-2 text-sm"
+                                      "block px-4 py-2 text-[14px]"
                                     )}
                                   >
                                     {option.name}
@@ -490,29 +490,29 @@ export default function CollectionCategory() {
           </div>
 
           <section aria-labelledby="products-heading" className="pt-6">
-            <h2 id="products-heading" className="sr-only text-sm">
+            <h2 id="products-heading" className="sr-only text-[14px]">
               Products
             </h2>
 
             <div className="grid grid-cols-1 gap-x-9 gap-y-10 md:grid-cols-4">
               {/* Filters */}
               <form className="hidden md:block col-span-1">
-                <h3 className="sr-only text-sm">Categories</h3>
+                <h3 className="sr-only text-[14px]">Categories</h3>
                 {/* Clear All button mobile*/}
                 {selectedFilters.length > 0 && (
                   <div className="px-4 py-2 flex ">
-                    <h3 className="text-sm font-bold">Selected Filters</h3>
+                    <h3 className="text-[14px] font-bold">Selected Filters</h3>
 
                     <button
                       type="button"
                       onClick={() => clearAllFilters()}
-                      className="text-sm text-gray-500 hover:text-gray-700"
+                      className="text-[14px] text-gray-500 hover:text-gray-700"
                     >
                       Clear All
                     </button>
                   </div>
                 )}
-                <ul className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
+                <ul className="space-y-4 border-b border-gray-200 pb-6 text-[14px] font-medium text-gray-900">
                   {selectedFilters.map((filter) => (
                     <li key={filter.sectionId} className="flex flex-wrap">
                       {filter.optionValues.map((optionValue) => (
@@ -550,8 +550,8 @@ export default function CollectionCategory() {
                     {({ open }) => (
                       <>
                         <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                            <span className="font-medium text-gray-900 text-sm">
+                          <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-[14px] text-gray-400 hover:text-gray-500">
+                            <span className="font-medium text-gray-900 text-[14px]">
                               {section.name}
                             </span>
                             <span className="ml-6 flex items-center">
@@ -591,7 +591,7 @@ export default function CollectionCategory() {
                                 />
                                 <label
                                   htmlFor={`filter-${section.id}-${option.value}`}
-                                  className="ml-3 text-sm text-gray-600"
+                                  className="ml-3 text-[14px] text-gray-600"
                                 >
                                   {option.label}
                                 </label>
@@ -622,13 +622,13 @@ export default function CollectionCategory() {
                       <div className="w-[130px] h-[121px] lg:w-[180px] lg:h-[149px] border">
                         <div className="mt-2 lg:mt-[25px] px-2 flex flex-col items-start justify-start">
                           {" "}
-                          <h4 className="text-gray-400 text-[10px] lg:text-xs w-[120px] h-[15px] text-start overflow-hidden text-nowrap me-2">
+                          <h4 className="text-gray-400 text-[10px] lg:text-[12px] w-[120px] h-[15px] text-start overflow-hidden text-nowrap me-2">
                             by {item?.by}
                           </h4>
-                          <h2 className="mt-[10px] w-[120px] tracking-tighter h-[50px] lg:h-[60px] font-semibold text-sm lg:text-base text-start text-wrap">
+                          <h2 className="mt-[10px] w-[120px] tracking-tighter h-[50px] lg:h-[60px] font-semibold text-[14px] lg:text-base text-start text-wrap">
                             {item?.detail}
                           </h2>
-                          <h4 className="text-gray-400 text-[10px] lg:text-xs w-[103px] h-[15px] text-nowrap text-start">
+                          <h4 className="text-gray-400 text-[10px] lg:text-[12px] w-[103px] h-[15px] text-nowrap text-start">
                             {item?.date}
                           </h4>
                         </div>

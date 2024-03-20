@@ -86,7 +86,7 @@ const AboutUs = () => {
                 alt="Banyan Batiks"
                 className="w-[152px] h-[80px]"
               />
-              <p className="w-[152px] h-[21px] text-center text-gray-500 text-sm">
+              <p className="w-[152px] h-[21px] text-center text-gray-500 text-[14px]">
                 Banyan Batiks
               </p>
             </div>
@@ -96,13 +96,13 @@ const AboutUs = () => {
                 alt="Patrick Lose"
                 className="w-[240px] h-[80px]"
               />
-              <p className="w-[240px] h-[21px] text-center text-gray-500 text-sm">
+              <p className="w-[240px] h-[21px] text-center text-gray-500 text-[14px]">
                 Patrick Lose Fabrics
               </p>
             </div>
             <div className="w-[114px] h-[121px] xl:w-[353.33px] flex flex-col items-center justify-between">
               <img src={figo} alt="Figo" className="w-[114px] h-[80px]" />
-              <p className="w-[114px] h-[21px] text-center text-gray-500 text-sm">
+              <p className="w-[114px] h-[21px] text-center text-gray-500 text-[14px]">
                 Figo Fabrics
               </p>
             </div>

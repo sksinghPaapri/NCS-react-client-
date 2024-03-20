@@ -29,7 +29,7 @@ export default function RegionCustomers() {
           <h2 className="w-[280px] h-[76px] sm:w-[624px] sm:h-[44px] xl:w-[1160] 2xl:w-[1608] text-center text-[28px] sm:text-[32px] font-bold text-gray-900 tracking-wider sm:tracking-normal">
             Regions & Customers
           </h2>
-          <p className="w-[280px] h-[36px] sm:w-[624px] sm:h-[18px] xl:w-[1160] 2xl:w-[1608] text-center text-xs text-gray-600 ">
+          <p className="w-[280px] h-[36px] sm:w-[624px] sm:h-[18px] xl:w-[1160] 2xl:w-[1608] text-center text-[12px] text-gray-600 ">
             Please select a region and a customer you would like to place orders
             for below.
           </p>
@@ -41,7 +41,7 @@ export default function RegionCustomers() {
             <div className="w-[280px] h-[76px] sm:w-[320px] flex flex-col items-center justify-between">
               <label
                 htmlFor="region"
-                className="block text-sm font-bold text-gray-700 h-[21px] text-start w-[280px] sm:w-[320px]"
+                className="block text-[14px] font-bold text-gray-700 h-[21px] text-start w-[280px] sm:w-[320px]"
               >
                 Region*
               </label>
@@ -51,7 +51,7 @@ export default function RegionCustomers() {
                   name="region"
                   value={selectedRegion}
                   onChange={handleRegionChange}
-                  className="w-[280px] sm:w-[320px] appearance-none rounded relative block px-3 py-2 border text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
+                  className="w-[280px] sm:w-[320px] appearance-none rounded relative block px-3 py-2 border text-gray-900 focus:outline-none focus:z-10 sm:text-[14px]"
                 >
                   <option value="">Select a region</option>
                   {regionsAndCustomersData.regions.map((region, index) => (
@@ -67,7 +67,7 @@ export default function RegionCustomers() {
             <div className="w-[280px] h-[76px] sm:w-[320px] flex flex-col justify-between">
               <label
                 htmlFor="customer"
-                className="block text-sm font-bold text-gray-700 h-[21px] w-[280px] sm:w-[320px]"
+                className="block text-[14px] font-bold text-gray-700 h-[21px] w-[280px] sm:w-[320px]"
               >
                 Customers*
               </label>
@@ -77,7 +77,7 @@ export default function RegionCustomers() {
                   name="customer"
                   value={selectedCustomer}
                   onChange={handleCustomerChange}
-                  className="w-[280px] sm:w-[320px] placeholder:text-gray-100 appearance-none rounded-md relative block px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
+                  className="w-[280px] sm:w-[320px] placeholder:text-gray-100 appearance-none rounded-md relative block px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:z-10 sm:text-[14px]"
                 >
                   <option value="">Select a customer</option>
                   {regionsAndCustomersData.customers.map((customer, index) => (
@@ -103,7 +103,7 @@ export default function RegionCustomers() {
             </div>
 
             {/*return to login */}
-            <div className="flex text-nowrap justify-center text-[#6B6B66] text-center cursor-pointer text-xs h-[18px]">
+            <div className="flex text-nowrap justify-center text-[#6B6B66] text-center cursor-pointer text-[12px] h-[18px]">
               <Link to={"/login"}>Return to sign in</Link>
             </div>
           </div>

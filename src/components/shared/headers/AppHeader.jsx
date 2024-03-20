@@ -126,13 +126,13 @@ export default function AppHeader() {
     //           <div>
     //             <a
     //               href="#"
-    //               className="text-sm text-white font-semibold hover:text-[#A4A3A0]"
+    //               className="text-[14px] text-white font-semibold hover:text-[#A4A3A0]"
     //             >
     //               Log In
     //             </a>{" "}
     //           </div>
     //         ) : (
-    //           <div className="text-sm text-white font-semibold hover:text-[#A4A3A0]">
+    //           <div className="text-[14px] text-white font-semibold hover:text-[#A4A3A0]">
     //             <div className="flex items-center justify-end text-end sm:mx-2">
     //               <div className="w-[329px] h-[20px]">
     //                 <p className="text-white text-[8px] leading-3">
@@ -145,7 +145,7 @@ export default function AppHeader() {
     //               <div className=" mx-6 h-[23px] text-white">{` | `}</div>
     //               <a
     //                 href="#"
-    //                 className="text-sm text-white font-semibold text-center text-nowrap"
+    //                 className="text-[14px] text-white font-semibold text-center text-nowrap"
     //               >
     //                 Log Out
     //               </a>{" "}
@@ -282,7 +282,7 @@ export default function AppHeader() {
     //             <div>
     //               <Link
     //                 to="/testui"
-    //                 className="block uppercase rounded-lg py-2 font-normal text-xs text-gray-900 hover:text-[#E2A856]"
+    //                 className="block uppercase rounded-lg py-2 font-normal text-[12px] text-gray-900 hover:text-[#E2A856]"
     //               >
     //                 {item?.name}
     //               </Link>
@@ -291,7 +291,7 @@ export default function AppHeader() {
     //             <div>
     //               <Popover.Group>
     //                 <Popover className="relative">
-    //                   <Popover.Button className="flex uppercase font-normal mt-[0.3rem] text-xs text-gray-90 hover:text-[#E2A856]">
+    //                   <Popover.Button className="flex uppercase font-normal mt-[0.3rem] text-[12px] text-gray-90 hover:text-[#E2A856]">
     //                     {item?.name}
 
     //                     <ChevronDownIcon
@@ -321,7 +321,7 @@ export default function AppHeader() {
     //                           item?.sublinks?.map((mysublink, index) => (
     //                             <div key={index}>
     //                               {mysublink?.Head !== "a" ? (
-    //                                 <div className=" font-bold text-xs">
+    //                                 <div className=" font-bold text-[12px]">
     //                                   {mysublink?.Head !== "" ? (
     //                                     <div className="p-3">
     //                                       {mysublink?.Head}
@@ -338,13 +338,13 @@ export default function AppHeader() {
     //                                 (finallink, index) => (
     //                                   <div
     //                                     key={index}
-    //                                     className="p-3 text-sm leading-6 hover:bg-[#F5F4F1]"
+    //                                     className="p-3 text-[14px] leading-6 hover:bg-[#F5F4F1]"
     //                                   >
     //                                     <div>
     //                                       <div className="col-span-2">
     //                                         <Link
     //                                           to={`/testui/collections/${finallink?._id?.$oid}`}
-    //                                           className="block text-xs text-gray-900"
+    //                                           className="block text-[12px] text-gray-900"
     //                                         >
     //                                           {finallink?.name}
     //                                         </Link>
@@ -384,7 +384,7 @@ export default function AppHeader() {
     //         <div>
     //           <a
     //             href="#"
-    //             className="text-sm text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
+    //             className="text-[14px] text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
     //           >
     //             Log In
     //           </a>{" "}
@@ -393,13 +393,13 @@ export default function AppHeader() {
     //         <div className="flex items-center justify-center gap-2 sm:mx-2">
     //           <a
     //             href="#"
-    //             className="text-sm text-white font-semibold text-center text-nowrap"
+    //             className="text-[14px] text-white font-semibold text-center text-nowrap"
     //           >
     //             Log Out
     //           </a>{" "}
     //           <div className=" h-[35px] text-white">{` | `}</div>
     //           <div className="">
-    //             <p className="text-white text-[10px] sm:text-sm leading-4 ms-2 sm:ms-2   text-start">
+    //             <p className="text-white text-[10px] sm:text-[14px] leading-4 ms-2 sm:ms-2   text-start">
     //               You're logged in as CHRISTINA'S NORTHCOTT SHOP, Vaughan{" "}
     //               <Link to={"/"} className="underline font-semibold">
     //                 To change, click here.
@@ -423,7 +423,7 @@ export default function AppHeader() {
     //                 className="py-3 flex justify-between items-center pr-5 group"
     //               >
     //                 {" "}
-    //                 <div className="uppercase text-black hover:text-[#E2A856] font-normal text-xs">
+    //                 <div className="uppercase text-black hover:text-[#E2A856] font-normal text-[12px]">
     //                   {link.name}
     //                 </div>
     //               </Link>
@@ -434,7 +434,7 @@ export default function AppHeader() {
     //                   toggleSubmenu(index);
     //                 }}
     //               >
-    //                 <div className="uppercase text-black hover:text-[#E2A856] font-normal text-xs">
+    //                 <div className="uppercase text-black hover:text-[#E2A856] font-normal text-[12px]">
     //                   {link.name}
     //                 </div>
     //                 <span className="lg:hidden inline">
@@ -462,7 +462,7 @@ export default function AppHeader() {
     //                                   <div>
     //                                     <a
     //                                       href="#"
-    //                                       className="text-sm text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
+    //                                       className="text-[14px] text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
     //                                     >
     //                                       Log In
     //                                     </a>{" "}
@@ -471,13 +471,13 @@ export default function AppHeader() {
     //                                   <div className="flex items-center justify-center gap-2 sm:mx-2">
     //                                     <a
     //                                       href="#"
-    //                                       className="text-sm text-white font-semibold text-center text-nowrap"
+    //                                       className="text-[14px] text-white font-semibold text-center text-nowrap"
     //                                     >
     //                                       Log Out
     //                                     </a>{" "}
     //                                     <div className=" h-[35px] text-white">{` | `}</div>
     //                                     <div className="">
-    //                                       <p className="text-white text-[10px] sm:text-sm leading-4 ms-2 sm:ms-2 me-6 sm:me-56 text-start">
+    //                                       <p className="text-white text-[10px] sm:text-[14px] leading-4 ms-2 sm:ms-2 me-6 sm:me-56 text-start">
     //                                         You're logged in as CHRISTINA'S
     //                                         NORTHCOTT SHOP, Vaughan{" "}
     //                                         <Link
@@ -502,7 +502,7 @@ export default function AppHeader() {
     //                                 <div className="text-center ps-3 mb-[11px]">
     //                                   <ion-icon name="chevron-back-outline"></ion-icon>
     //                                 </div>
-    //                                 <h1 className=" bg-white font-bold uppercase text-xs ms-2 mb-3 hover:text-[#E2A856]">
+    //                                 <h1 className=" bg-white font-bold uppercase text-[12px] ms-2 mb-3 hover:text-[#E2A856]">
     //                                   {link.name}
     //                                 </h1>
     //                               </li>
@@ -514,7 +514,7 @@ export default function AppHeader() {
     //                                   {mysublinks?.Head === "a" ? (
     //                                     <div className="text-white hidden"></div>
     //                                   ) : (
-    //                                     <div className="font-bold text-xs">
+    //                                     <div className="font-bold text-[12px]">
     //                                       {mysublinks.Head}
     //                                       {mysublinks.Head === "" ? null : (
     //                                         <div className="mt-3 w-[90vw] sm:w-[95vw]">
@@ -527,7 +527,7 @@ export default function AppHeader() {
     //                                     (finallink, index) => (
     //                                       <div
     //                                         key={index}
-    //                                         className="bg-white py-3 text-xs text-black hover:bg-[#F5F4F1]"
+    //                                         className="bg-white py-3 text-[12px] text-black hover:bg-[#F5F4F1]"
     //                                       >
     //                                         <Link
     //                                           to={`/testui/collections/${finallink?._id?.$oid}`}

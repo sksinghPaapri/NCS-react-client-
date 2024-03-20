@@ -25,22 +25,22 @@ const EditShippingAddress = () => {
             <hr className=" text-gray-500 bg-gray-500 h-1 w-[280px] sm:w-[624px] xl:w-[280px]" />
             {/* content */}
             <div className="w-[280px] h-[180px] flex flex-col sm:w-[624px] xl:w-[280px] bg-white">
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm xl:text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] xl:text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/customerProfile"}>
                   <p className="ms-[15px]">Personal Info</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] bg-[#F0EFEB] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] bg-[#F0EFEB] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/shippingAddress"}>
                   <p className="ms-[15px]">Shipping Addresses</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/profileChangePassword"}>
                   <p className="ms-[15px]">Change Password</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/communicationPreferences"}>
                   <p className="ms-[15px]"> Communication Preferences</p>
                 </Link>
@@ -68,7 +68,7 @@ const EditShippingAddress = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="NameorCompanyName"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Name or Company Name
                     </label>
@@ -77,7 +77,7 @@ const EditShippingAddress = () => {
                         id="NameorCompanyName"
                         name="NameorCompanyName"
                         type="text"
-                        className="appearance-none  relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-sm w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                        className="appearance-none  relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
                         placeholder=""
                       />
                     </div>
@@ -86,7 +86,7 @@ const EditShippingAddress = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="address1"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Address 1
                     </label>
@@ -95,7 +95,7 @@ const EditShippingAddress = () => {
                         id="address1"
                         name="address1"
                         type="text"
-                        className="appearance-none  relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-sm w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                        className="appearance-none  relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
                         placeholder=""
                       />
                     </div>
@@ -104,7 +104,7 @@ const EditShippingAddress = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="address2"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Address 2
                     </label>
@@ -113,7 +113,7 @@ const EditShippingAddress = () => {
                         id="address2"
                         name="address2"
                         type="text"
-                        className="appearance-none  relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-sm w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                        className="appearance-none  relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
                         placeholder=""
                       />
                     </div>
@@ -122,7 +122,7 @@ const EditShippingAddress = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="city"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       City
                     </label>
@@ -132,7 +132,7 @@ const EditShippingAddress = () => {
                         className="relative inline-block text-left w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px]"
                       >
                         <div>
-                          <Menu.Button className="text-sm text-gray-400 w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px] inline-flex gap-x-1.5 rounded bg-white px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 justify-between">
+                          <Menu.Button className="text-[14px] text-gray-400 w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px] inline-flex gap-x-1.5 rounded bg-white px-3 py-2 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 justify-between">
                             <p>Vaughan</p>
                             <ChevronDownIcon
                               className="-mr-1 h-5 w-5 text-gray-400"
@@ -160,7 +160,7 @@ const EditShippingAddress = () => {
                                       active
                                         ? "bg-gray-100 text-gray-900"
                                         : "text-gray-700",
-                                      "block px-4 py-2 text-sm"
+                                      "block px-4 py-2 text-[14px]"
                                     )}
                                   >
                                     Vaughan
@@ -175,7 +175,7 @@ const EditShippingAddress = () => {
                                       active
                                         ? "bg-gray-100 text-gray-900"
                                         : "text-gray-700",
-                                      "block px-4 py-2 text-sm"
+                                      "block px-4 py-2 text-[14px]"
                                     )}
                                   >
                                     Vaughan2
@@ -190,7 +190,7 @@ const EditShippingAddress = () => {
                                       active
                                         ? "bg-gray-100 text-gray-900"
                                         : "text-gray-700",
-                                      "block px-4 py-2 text-sm"
+                                      "block px-4 py-2 text-[14px]"
                                     )}
                                   >
                                     Vaughan3
@@ -206,7 +206,7 @@ const EditShippingAddress = () => {
                                         active
                                           ? "bg-gray-100 text-gray-900"
                                           : "text-gray-700",
-                                        "block w-full px-4 py-2 text-left text-sm"
+                                        "block w-full px-4 py-2 text-left text-[14px]"
                                       )}
                                     >
                                       Vaughan4
@@ -224,7 +224,7 @@ const EditShippingAddress = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="State/Province"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       State/Province
                     </label>
@@ -234,7 +234,7 @@ const EditShippingAddress = () => {
                         className="relative inline-block text-left w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px]"
                       >
                         <div>
-                          <Menu.Button className="text-sm text-gray-400 w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px] inline-flex gap-x-1.5 rounded bg-white px-3 py-3 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 justify-between">
+                          <Menu.Button className="text-[14px] text-gray-400 w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px] inline-flex gap-x-1.5 rounded bg-white px-3 py-3 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 justify-between">
                             <p>Ontario</p>
                             <ChevronDownIcon
                               className="-mr-1 h-5 w-5 text-gray-400"
@@ -262,7 +262,7 @@ const EditShippingAddress = () => {
                                       active
                                         ? "bg-gray-100 text-gray-900"
                                         : "text-gray-700",
-                                      "block px-4 py-2 text-sm"
+                                      "block px-4 py-2 text-[14px]"
                                     )}
                                   >
                                     Ontario
@@ -277,7 +277,7 @@ const EditShippingAddress = () => {
                                       active
                                         ? "bg-gray-100 text-gray-900"
                                         : "text-gray-700",
-                                      "block px-4 py-2 text-sm"
+                                      "block px-4 py-2 text-[14px]"
                                     )}
                                   >
                                     Ontario2
@@ -292,7 +292,7 @@ const EditShippingAddress = () => {
                                       active
                                         ? "bg-gray-100 text-gray-900"
                                         : "text-gray-700",
-                                      "block px-4 py-2 text-sm"
+                                      "block px-4 py-2 text-[14px]"
                                     )}
                                   >
                                     Ontario3
@@ -308,7 +308,7 @@ const EditShippingAddress = () => {
                                         active
                                           ? "bg-gray-100 text-gray-900"
                                           : "text-gray-700",
-                                        "block w-full px-4 py-2 text-left text-sm"
+                                        "block w-full px-4 py-2 text-left text-[14px]"
                                       )}
                                     >
                                       Ontario4
@@ -326,7 +326,7 @@ const EditShippingAddress = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="Zip/PostalCode"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Zip/Postal Code
                     </label>
@@ -335,7 +335,7 @@ const EditShippingAddress = () => {
                         id="Zip/PostalCode"
                         name="Zip/PostalCode"
                         type="Zip/PostalCode"
-                        className="appearance-none  relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-sm w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                        className="appearance-none  relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
                         placeholder=""
                       />
                     </div>

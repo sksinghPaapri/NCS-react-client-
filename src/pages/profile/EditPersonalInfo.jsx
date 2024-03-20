@@ -18,22 +18,22 @@ const editPersonalInfo = () => {
             <hr className=" text-gray-500 bg-gray-500 h-1 w-[280px] sm:w-[624px] xl:w-[280px]" />
             {/* content */}
             <div className="w-[280px] h-[180px] flex flex-col sm:w-[624px] xl:w-[280px] bg-white">
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] bg-[#F0EFEB] text-sm xl:text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] bg-[#F0EFEB] text-[14px] xl:text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/customerProfile"}>
                   <p className="ms-[15px]">Personal Info</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/shippingAddress"}>
                   <p className="ms-[15px]">Shipping Addresses</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/profileChangePassword"}>
                   <p className="ms-[15px]">Change Password</p>
                 </Link>
               </div>
-              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-sm text-center flex items-center cursor-pointer">
+              <div className=" w-[280px] h-[45px] sm:w-[624px] lg:w-[280px] text-[14px] text-center flex items-center cursor-pointer">
                 <Link to={"/product-collection/communicationPreferences"}>
                   <p className="ms-[15px]"> Communication Preferences</p>
                 </Link>
@@ -62,7 +62,7 @@ const editPersonalInfo = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="firstName"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       First Name
                     </label>
@@ -71,7 +71,7 @@ const editPersonalInfo = () => {
                         id="firstName"
                         name="firstName"
                         type="text"
-                        className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-sm w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                        className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
                         placeholder=""
                       />
                     </div>
@@ -80,7 +80,7 @@ const editPersonalInfo = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="lastName"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Last Name
                     </label>
@@ -89,7 +89,7 @@ const editPersonalInfo = () => {
                         id="lastName"
                         name="lastName"
                         type="text"
-                        className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-sm w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                        className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
                         placeholder=""
                       />
                     </div>
@@ -98,7 +98,7 @@ const editPersonalInfo = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="email"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Email
                     </label>
@@ -107,7 +107,7 @@ const editPersonalInfo = () => {
                         id="email"
                         name="email"
                         type="email"
-                        className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-sm w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                        className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
                         placeholder=""
                       />
                     </div>
@@ -116,7 +116,7 @@ const editPersonalInfo = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="reEnterEMail"
-                      className="block text-sm font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Re-enter Your Email
                     </label>
@@ -125,7 +125,7 @@ const editPersonalInfo = () => {
                         id="reEnterEMail"
                         name="reEnterEMail"
                         type="email"
-                        className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-sm w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                        className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
                         placeholder=""
                       />
                     </div>

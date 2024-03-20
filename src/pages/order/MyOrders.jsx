@@ -55,7 +55,7 @@ const MyOrders = () => {
                 <Link to={"/"} className="cursor-pointer z-50">
                   <button
                     type="button"
-                    className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-xs focus:outline-none"
+                    className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none"
                   >
                     CONTINUE SHOPPING
                   </button>
@@ -73,7 +73,7 @@ const MyOrders = () => {
                   <div className="w-[240px] h-[44px] sm:w-[600px] xl:w-[645px] flex flex-col sm:flex-row items-center justify-center sm:justify-between">
                     {/* shipping date */}
                     <div className="mt-2 w-[252px] h-[44px] flex flex-col items-center justify-center gap-3 sm:gap-0 sm:flex-row">
-                      <p className="text-sm w-[102px] h-[21px] font-bold text-nowrap">
+                      <p className="text-[14px] w-[102px] h-[21px] font-bold text-nowrap">
                         Shipping Date:
                       </p>
                       <div className="w-[240px] h-[41px] flex items-center justify-center">
@@ -82,7 +82,7 @@ const MyOrders = () => {
                           alt="Calender"
                           className="flex sm:hidden"
                         />
-                        <p className="text-sm font-bold">15 January 2024</p>
+                        <p className="text-[14px] font-bold">15 January 2024</p>
                       </div>
                     </div>
                     {/* wb order no */}
@@ -107,8 +107,8 @@ const MyOrders = () => {
                 </div>
               </div>
               {/* table */}
-              <table className="w-[240px] sm:w-[600px] xl:w-[645px] text-sm text-left rtl:text-right text-gray-500 flex flex-col">
-                <thead className="text-xs text-gray-500 sm:w-[600px] xl:w-[645px] sm:h-[28px] sm:items-center sm:justify-center">
+              <table className="w-[240px] sm:w-[600px] xl:w-[645px] text-[14px] text-left rtl:text-right text-gray-500 flex flex-col">
+                <thead className="text-[12px] text-gray-500 sm:w-[600px] xl:w-[645px] sm:h-[28px] sm:items-center sm:justify-center">
                   <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[645px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
                     <th
                       scope="col"
@@ -180,7 +180,7 @@ const MyOrders = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -202,7 +202,9 @@ const MyOrders = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -266,7 +268,7 @@ const MyOrders = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -288,7 +290,9 @@ const MyOrders = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -352,7 +356,7 @@ const MyOrders = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -374,7 +378,9 @@ const MyOrders = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -438,7 +444,7 @@ const MyOrders = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -460,7 +466,9 @@ const MyOrders = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -524,7 +532,7 @@ const MyOrders = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className="-mt-1 sm:w-[180px] sm:h-[65px] xl:w-[180px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-xs text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
                                 00000-00
                               </p>
                             </div>
@@ -546,7 +554,9 @@ const MyOrders = () => {
                           <span className="text-[10px] sm:w-[60px] xl:w-[90px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
                             <span className="sm:hidden">Price:</span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-xs">$9.15</span>{" "}
+                              <span className="text-black text-[12px]">
+                                $9.15
+                              </span>{" "}
                               <span>/Meter(s)</span>
                             </div>
                           </span>
@@ -597,7 +607,7 @@ const MyOrders = () => {
                     <p>Discount (Promo name) applied:</p>
                     <p>-$ 00.00</p>
                   </div> */}
-                  <div className="mt-2 flex justify-between font-bold text-sm sm:w-[314px] sm:h-[24px]">
+                  <div className="mt-2 flex justify-between font-bold text-[14px] sm:w-[314px] sm:h-[24px]">
                     <p>Collection Total:</p>
                     <p>$ 00.00</p>
                   </div>
@@ -652,61 +662,61 @@ const MyOrders = () => {
                 </div>
                 {/* row2 */}
                 <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[51px] xl:w-[395px] xl:h-[51px] flex items-center text-base border-b gap-1">
-                  <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
+                  <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-[12px]">
                     Order Date:
                   </p>
-                  <p className="w-[90px] h-[18px] sm:w-[105px] sm:h-[21px] text-xs">
+                  <p className="w-[90px] h-[18px] sm:w-[105px] sm:h-[21px] text-[12px]">
                     15 January 2024
                   </p>
                 </div>
                 {/* row3 */}
                 <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[72px] xl:w-[395px] xl:h-[72px] flex items-center text-base border-b gap-1">
-                  <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-xs font-bold">
+                  <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-[12px] font-bold">
                     Web Order Number:
                   </p>
-                  <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-xs">
+                  <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-[12px]">
                     CCHRP0-18, CCHRP0-19, CCHRP0-20
                   </p>
                 </div>
                 {/* row4 */}
                 <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[72px] xl:w-[395px] xl:h-[72px] flex items-center text-base border-b gap-1">
-                  <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-xs font-bold">
+                  <p className="w-[65px] h-[36px] sm:w-[125px] sm:h-[42px] text-[12px] font-bold">
                     Sales Order Number:
                   </p>
-                  <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-xs"></p>
+                  <p className="w-[170px] h-[36px] sm:w-[236px] sm:h-[21px] text-[12px]"></p>
                 </div>
                 {/* row5 */}
                 <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[51px] xl:w-[395px] xl:h-[51px] flex items-center text-base border-b gap-1">
-                  <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
+                  <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-[12px]">
                     Order Status:{" "}
                   </p>
-                  <p className="w-[90px] h-[18px] sm:w-[105px] sm:h-[21px] text-xs">
+                  <p className="w-[90px] h-[18px] sm:w-[105px] sm:h-[21px] text-[12px]">
                     Processing{" "}
                   </p>
                 </div>
 
                 {/* row6 */}
                 <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[51px] xl:w-[395px] xl:h-[51px] flex items-center text-base border-b gap-1">
-                  <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
+                  <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-[12px]">
                     Bill To:{" "}
                   </p>
-                  <p className="w-[90px] h-[18px] sm:w-[105px] sm:h-[21px] text-xs">
+                  <p className="w-[90px] h-[18px] sm:w-[105px] sm:h-[21px] text-[12px]">
                     Processing{" "}
                   </p>
                 </div>
                 {/* row7 */}
                 <div className="w-[240px] h-[66px] sm:w-[460px] sm:h-[51px] xl:w-[395px] xl:h-[51px] flex items-center text-base border-b gap-1">
-                  <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-xs">
+                  <p className="w-[65px] h-[36px] sm:w-[125px] font-bold sm:h-[21px] text-[12px]">
                     Ship To:{" "}
                   </p>
-                  <p className="w-[90px] h-[18px] sm:w-[105px] sm:h-[21px] text-xs">
+                  <p className="w-[90px] h-[18px] sm:w-[105px] sm:h-[21px] text-[12px]">
                     Processing{" "}
                   </p>
                 </div>
               </div>
               {/* row last */}
               <div>
-                <ul className="ms-5 w-[240px] h-[54px] sm:w-[460px] sm:h-[26px] xl:w-[395px] xl:h-[36px] text-gray-500 text-xs">
+                <ul className="ms-5 w-[240px] h-[54px] sm:w-[460px] sm:h-[26px] xl:w-[395px] xl:h-[36px] text-gray-500 text-[12px]">
                   <li className="list-disc">
                     NOTE: If the address we have on file is incorrect, please
                     contact us at 1-800-268-1466
