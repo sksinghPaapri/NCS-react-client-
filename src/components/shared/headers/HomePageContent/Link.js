@@ -2,6 +2,9 @@ export const links = [
   {
     name: "Home",
     submenu: false,
+    _id: {
+      $oid: "",
+    },
   },
   {
     name: "About",
@@ -1290,6 +1293,9 @@ export const links = [
   {
     name: "LookBook",
     submenu: false,
+    _id: {
+      $oid: "lookBook",
+    },
   },
   {
     name: "Patterns",
@@ -1298,6 +1304,9 @@ export const links = [
   {
     name: "Designers",
     submenu: false,
+    _id: {
+      $oid: "designers",
+    },
   },
   {
     name: "Resources",

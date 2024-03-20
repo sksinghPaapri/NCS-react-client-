@@ -287,7 +287,7 @@ export default function TopHeader() {
                 <div>
                   <Link
                     to={`/${item?._id?.$oid}`}
-                    className="block uppercase rounded-lg py-2 font-normal text-xs text-gray-900 hover:text-[#E2A856]"
+                    className="block uppercase rounded-lg py-2 font-normal text-[12px] text-gray-900 hover:text-[#E2A856]"
                   >
                     {/* for non dropdown links in top header desktop */}
                     {item?.name}
@@ -298,7 +298,7 @@ export default function TopHeader() {
                   <Popover.Group>
                     <Popover className="relative">
                       <Popover.Button
-                        className="flex uppercase font-normal mt-[0.3rem] text-xs text-gray-90 hover:text-[#E2A856]"
+                        className="flex uppercase font-normal mt-[0.3rem] text-[12px] text-gray-90 hover:text-[#E2A856]"
                         onClick={() => {
                           setPopoverOpen(true);
                         }}
@@ -392,17 +392,17 @@ export default function TopHeader() {
       </div>
       {/* Third header ends here */}
 
-      {/* mobile view nav link and nav menu */}
+      {/* tablet ,  mobile view nav link and nav menu */}
       <ul
         className={`
-        lg:hidden bg-[#686661] fixed w-full top-0 overflow-y-auto bottom-0
-        duration-500 ${open ? "left-0" : "left-[-100%]"}
-        `}
+        lg:hidden bg-[#686661] fixed w-full h-full top-0 overflow-y-auto bottom-0 duration-500 ${
+          open ? "left-0" : "left-[-100%]"
+        }`}
         style={{ zIndex: 9999, fontFamily: "Open Sans", fontWeight: "400" }}
       >
-        <li className="flex m-2 items-center justify-between text-2xl h-16">
+        <li className="flex m-2 items-center justify-between text-2xl h-[64px]">
           {!isLoggedIn ? (
-            <div>
+            <div className="flex align-middle">
               <Link
                 to="/login"
                 className="text-sm text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
@@ -437,15 +437,20 @@ export default function TopHeader() {
         <div>
           {links.map((link, index) => (
             <div className="bg-white" key={index}>
-              <div className="px-3 text-left md:cursor-pointer group">
+              <div className="px-3 text-left md:cursor-pointer group hover:bg-[#F5F4F1]">
                 {!link.submenu ? (
                   <Link
                     to={"/"}
                     className="py-3 flex justify-between items-center pr-5 group"
                   >
                     {" "}
-                    <div className="uppercase text-black hover:text-[#E2A856] font-normal text-xs">
-                      {link.name}
+                    <div className="uppercase text-black font-normal text-[12px]">
+                      <Link
+                        to={`/${link?._id?.$oid}`}
+                        onClick={() => setOpen(false)}
+                      >
+                        {link.name}
+                      </Link>
                     </div>
                   </Link>
                 ) : (
@@ -455,7 +460,7 @@ export default function TopHeader() {
                       toggleSubmenu(index);
                     }}
                   >
-                    <div className="uppercase text-black hover:text-[#E2A856] font-normal text-xs">
+                    <div className="uppercase text-black hover:bg-[#F5F4F1] font-normal text-[12px]">
                       {link.name}
                     </div>
                     <span className="lg:hidden inline">
@@ -469,7 +474,7 @@ export default function TopHeader() {
                           {
                             <ul
                               className={`
-                              lg:hidden bg-white fixed w-full top-0 overflow-y-auto bottom-0 
+                              lg:hidden bg-white fixed w-full h-full top-0 overflow-y-auto bottom-0 
                               duration-500 ${
                                 openSubmenus[index] ? "left-0" : "left-[-100%]"
                               }
@@ -480,7 +485,7 @@ export default function TopHeader() {
                                 <ul>
                                   <li className="bg-[#686661] flex justify-between text-2xl p-2">
                                     {!isLoggedIn ? (
-                                      <div>
+                                      <div className="">
                                         <Link
                                           to="/login"
                                           className="text-sm text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
@@ -519,23 +524,20 @@ export default function TopHeader() {
                                       <ion-icon name="close"></ion-icon>
                                     </div>
                                   </li>
-                                  <li className="flex bg-white items-end mt-3 py-3 ">
-                                    <div className="text-center ps-3 mb-[11px]">
+                                  <li className="flex bg-white items-center gap-1 mt-3 py-3">
+                                    <div className="text-center ps-3 flex items-center">
                                       <ion-icon name="chevron-back-outline"></ion-icon>
                                     </div>
-                                    <h1 className=" bg-white font-bold uppercase text-xs ms-2 mb-3 hover:text-[#E2A856]">
+                                    <h1 className=" bg-white font-bold uppercase text-[12px] flex items-center justify-center hover:text-[#E2A856]">
                                       {link.name}
                                     </h1>
                                   </li>
                                   {link.sublinks.map((mysublinks, index) => (
-                                    <div
-                                      key={index + 100}
-                                      className="bg-white ps-4"
-                                    >
+                                    <div key={index + 100} className="bg-white">
                                       {mysublinks?.Head === "a" ? (
                                         <div className="text-white hidden"></div>
                                       ) : (
-                                        <div className="font-bold text-xs">
+                                        <div className="font-bold text-[12px] ps-4 flex flex-col justify-center">
                                           {mysublinks.Head}
                                           {mysublinks.Head === "" ? null : (
                                             <div className="mt-3 w-[90vw] sm:w-[95vw]">
@@ -548,12 +550,13 @@ export default function TopHeader() {
                                         (finallink, index) => (
                                           <div
                                             key={index}
-                                            className="bg-white py-3 text-xs text-black hover:bg-[#F5F4F1]"
+                                            className="bg-white py-3 text-[12px] text-black hover:bg-[#F5F4F1] ps-4"
                                           >
                                             <Link
                                               // to={`/testui/collections/${finallink?._id?.$oid}`}
                                               // to={`/${finallink?._id?.$oid}`}
                                               to={`/product-collection/${finallink?._id?.$oid}`}
+                                              onClick={() => setOpen(false)}
                                             >
                                               {finallink.name}
                                             </Link>
@@ -575,7 +578,6 @@ export default function TopHeader() {
             </div>
           ))}
         </div>
-        <div className="bg-white h-[10vh]"></div>
       </ul>
     </>
   );

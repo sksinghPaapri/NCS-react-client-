@@ -2,6 +2,7 @@ import search from "../../assets/HeaderLogo/search.svg";
 import { Link } from "react-router-dom";
 import CartProduct from "../../assets/ShoppingCart/CartProduct.svg";
 import DeleteIcon from "../../assets/ShoppingCart/DeleteIcon.svg";
+import "./rapidOrder.css";
 
 const RapidOrder = () => {
   const SKUTable = [
@@ -63,12 +64,12 @@ const RapidOrder = () => {
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 end-0 flex items-center px-3 pointer-events-none">
-                        <img src={search} alt="search" />
+                        <img src={search} alt="search" className="z-10" />
                       </div>
                       <input
                         type="search"
                         id="default-search"
-                        className="w-[225px] h-[40px] sm:w-[255px] xl:w-[280px] 2xl:w-[440px] block px-2 placeholder:text-[14px] text-gray-900 border border-gray-300 bg-white placeholder:text-[#9D9C99]"
+                        className="w-[225px] h-[40px] sm:w-[255px] xl:w-[280px] 2xl:w-[440px] block px-2 placeholder:text-[14px] text-gray-900 border border-gray-300 bg-white placeholder:text-[#9D9C99] py-2"
                         placeholder="Enter SKU"
                       />
                     </div>
