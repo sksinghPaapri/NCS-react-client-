@@ -392,7 +392,7 @@ export default function TopHeader() {
       </div>
       {/* Third header ends here */}
 
-      {/* tablet ,  mobile view nav link and nav menu */}
+      {/* tablet,mobile view nav link and nav menu */}
       <ul
         className={`
         lg:hidden bg-[#686661] fixed w-full h-full top-0 overflow-y-auto bottom-0 duration-500 ${
@@ -406,6 +406,7 @@ export default function TopHeader() {
               <Link
                 to="/login"
                 className="text-sm text-white font-semibold mx-2 text-center hover:text-[#A4A3A0]"
+                onClick={() => setOpen(false)}
               >
                 Log In
               </Link>{" "}
