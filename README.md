@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# 🔗 Welcome to the REACT App this is source code of Northcott website UI.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <p align="center">Northcott</p>  
+  <br>
+    
+  
+---
+  
+### Tech Stack 📚
 
-## Available Scripts
+- A complete MERN stack project.
 
-In the project directory, you can run:
+<p align="center">
+     <img atl="MongoDB" src="https://img.shields.io/badge/-Mongodb-green?logo=mongodb&style=for-the-badge&logoColor=white">
+     <img atl="ExpressJS" src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB">
+     <img atl="React" src="https://img.shields.io/badge/-react-black?logo=react&style=for-the-badge">
+     <br />
+     <img atl="NodeJS" src="https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node-dot-js&logoColor=white">
+     <img atl="Mongoose" src="https://img.shields.io/badge/-Mongoose-brown?logo=mongoose&style=for-the-badge&logoColor=white">
+     <img alt="tailwindcss" src="https://img.shields.io/badge/-tailwind-yellow?logo=tailwindcss&style=for-the-badge">
+    
+</p>
+  
+---
 
-### `npm start`
+<h2 align="center">Setup 🛠</h2>  
+  
+### Prerequisites :  
+  
+- Make sure you have the LTS version of [Node](https://nodejs.org/) installed.
+- Install [git](https://git-scm.com/downloads) for version control.
+- Install [MongoDB](https://www.mongodb.com/try/download/community) locally. ([Resource](https://www.mongodb.com/docs/manual/administration/install-community/))
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Step 1: Fork [this repo](https://github.com/sksinghPaapri/CRUD-opeation).
+- Step 2: Clone your forked version of this repo locally. To clone, go to your command line / terminal, cd over to an appropriate directory and type in `git clone https://github.com/<your username>/url-shortener.git`.
+- Step 3: `cd client-app`
+- Step 4: While in the `client-app` directory, install the frontend dependencies using `npm install` or `yarn`.
+- Step 5: `cd server`
+- Step 6: While in the `server` directory, instlal the backend dependencies using `npm install`.
+- Step 7: Add the `.env` file in your `server-app` and add `CONNECTION_STRING`.
+- Step 8: Go to MongoDB atlas and create your DB and use the connection string.
+- Step 9: Go inside the `server-app` directory and run the backend server using `npm start` or using [nodemon](https://www.npmjs.com/package/nodemon) - `npm run dev`. The backend server will start on `localhost:5001`.
+- Step 9: While backend server is still running, open a new tab on the terminal and `cd client-app`.
+- Step 10: Finally start the react app using `npm start`. The app will start on port `3000` which can be accessed through <http://localhost:3000/>.
 
-### `npm test`
+#### Note :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Don't forget to close all the running servers before closing the terminal/ command line.
+- Close all the running servers by visiting to every tab of the terminal the server is running on.
+- To close a running server use `ctrl+c`.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br> <br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align='center'>If you like this project do show some love by giving this repo a 🌟.</p>
+  
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### License
 
-### `npm run eject`
+[PAAPRI CLOUD TECHNOLOGIES](LICENSE) © [Shiv](https://github.com/sksinghPaapri/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Developer 😎
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Made with ❤ by [Shiv](https://github.com/sksinghPaapri/).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Technologies
+MongoDB: Database to store user information, posts, and comments.
+Express.js: Backend framework to handle HTTP requests and manage routes.
+React: Frontend library for building user interfaces.
+Node.js: JavaScript runtime for server-side development.
+JWT (JSON Web Tokens): Securely transmit information between parties as a JSON object.
+Bcrypt.js: Hashing passwords before storing them in the database.
+Redux: State management for React.
+Axios: HTTP client for the browser and Node.js.
+Tailwind CSS: React component library for a consistent and customizable UI.
