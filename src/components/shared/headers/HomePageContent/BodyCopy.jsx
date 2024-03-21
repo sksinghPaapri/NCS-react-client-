@@ -21,6 +21,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import CarouselTop from "./BodyComponents/CarouselTop";
 import CarouselBottom from "./BodyComponents/CarouselTBottom";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const featuredCategory = [
@@ -296,114 +297,161 @@ const Body = () => {
         </div>
         {/* 7) */}
         {/* Resources */}
-        <div className="mx-[20px] lg:mx-[60px] py-5 sm:mb-[60vh] lg:mb-[20vh] 2xl:w-[1160px] 2xl:h-[667px] 2xl:mb-[80vh] 2xl:mx-auto">
-          <div>
-            <div className="mx-auto mt-16">
-              <div className="flex flex-col lg:flex-row justify-between gap-10 lg:ms-10 xl:gap-0">
-                <div
-                  className="text-center lg:text-left text-5xl"
-                  style={{ fontFamily: "DM Serif Display" }}
-                >
-                  Resources
-                </div>
-                <div className="flex justify-center mx-5 lg:mx-0 lg:justify-start xl:me-20 2xl:ms-[25vw]">
-                  <button
-                    type="button"
-                    className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded px-5 py-2.5 text-center me-2 mb-10 w-[132px] h-[49px] text-base"
-                  >
-                    VIEW ALL
-                  </button>{" "}
+        <div className="w-[320px] h-[2593px] sm:w-[744px] sm:h-[1728px] xl:w-[1280px] xl:h-[773px] 2xl:w-[1320px] flex flex-col items-center justify-center">
+          <div className="mx-[20px] sm:mx-[60px] flex flex-col items-center justify-center gap-[40px]">
+            {/* top heading and button */}
+            <div className="w-[217px] h-[155px] sm:w-[199px] sm:h-[149px] xl:w-[1160px] xl:h-[66px] 2xl:w-[1200px] flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-[40px] xl:gap-0">
+              <div
+                className="w-[217px] h-[66px] sm:w-[199px] sm:h-[60px] xl:w-[217px] 2xl:w-[217px] 2xl:h-[66px] text-center lg:text-left text-[32px] sm:text-[44px] xl:text-[48px]"
+                style={{ fontFamily: "DM Serif Display" }}
+              >
+                Resources
+              </div>
+              <button
+                type="button"
+                className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded text-center  w-[132px] h-[49px] text-[16px]"
+              >
+                VIEW ALL
+              </button>
+            </div>
+
+            {/* content */}
+            <div className="w-[280px] h-[2398px] sm:w-[624px] sm:h-[1539px] xl:w-[1160px] xl:h-[667px] 2xl:w-[1200px] flex flex-col items-center justify-center xl:flex-row xl:justify-between gap-[80px] xl:gap-0">
+              {/* left side */}
+              <div className="w-[280px] h-[462px] sm:w-[624px] sm:h-[779px] xl:w-[515px] xl:h-[667px] flex flex-col items-center justify-center bg-white gap-[30px]  border border-gray-400">
+                <img
+                  className="w-[280px] h-[280px] sm:w-[624px] sm:h-[624px] xl:w-[515px] xl:h-[515px] 2xl:w-[512px] 2xl:h-[512px] object-cover"
+                  src={Property1}
+                  alt="Image"
+                />
+                <div className="w-[280px] h-[152px] sm:w-[624px] sm:h-[125px] xl:w-[515px] xl:h-[122px] 2xl:w-[512px] flex flex-col justify-center gap-[20px]">
+                  <div className="mx-[20px] mb-[20px] flex flex-col justify-between gap-[20px]">
+                    <div className="w-[240px] h-[88px] sm:w-[584px] sm:h-[61px] xl:w-[475px] xl:h-[58px] 2xl:w-[472px] flex flex-col items-center justify-center gap-[10px]">
+                      <div className="w-[240px] h-[24px] sm:w-[584px] xl:w-[475px] xl:h-[21px] 2xl:w-[472px] flex  text-[14px] text-[#6B6B66]">
+                        Editorial Features
+                      </div>
+                      <div className="w-[240px] h-[54px] sm:w-[584px] xl:w-[475px] sm:h-[27px] 2xl:w-[472px] flex font-bold text-[18px]">
+                        Follow The Star by TeriAnn Harms
+                      </div>
+                    </div>
+                    <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px] mb-[30px]">
+                      <p>Read More</p>
+                      <p>
+                        <img src={arrow_right_alt} alt="Arrow" />
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="xl:w-[1160px] xl:h-[667px] lg:w-auto lg:h-[667px] lg:mt-14 flex flex-col lg:flex-row items-center xl:items-start justify-center lg:justify-between lg:gap-24 xl:gap-20 lg:mx-10">
-              <div className=" lg:w-1/2 md:w-fit bg-white flex justify-center mx-5 lg:mx-0 border">
-                <a
-                  href="#"
-                  className="sm:w-[624px] sm:h-[779px] lg:w-[515px] lg:h-[667px]"
+              {/* right side */}
+              <div className="w-[280px] h-[1856px] sm:w-[624px] sm:h-[680px] xl:w-[550px] xl:h-[667px] flex flex-col items-center sm:items-start gap-[40px] sm:gap-[20px] xl:gap-[17.83px]">
+                <Link
+                  to="/"
+                  className="w-[280px] h-[416px] sm:w-[550px] sm:h-[140px] flex flex-col items-center justify-center gap-[30px] sm:flex-row sm:justify-start"
                 >
                   <img
-                    src={Property1}
+                    className="w-[260px] h-[260px] sm:w-[140px] sm:h-[140px] object-cover"
+                    src={Mask1}
                     alt="Image"
-                    className="w-[217px] h-[280px] sm:w-[624px] sm:h-[624px] lg:w-auto lg:h-[515px]"
                   />
-                  <div className="w-[217px] h-[182px] sm:w-[320px] sm:h-[129px] flex flex-col gap-3 sm:gap-1 sm:mt-5 items-start justify-center sm:justify-start px-7 sm:px-5">
-                    <h4 className="text-gray-400">Editorial Features</h4>
-                    <h2 className="font-bold w-56 sm:w-full sm:text-nowrap text-lg text-start">
-                      Follow The Star by TeriAnn Harms{" "}
-                    </h2>
-                    <img className="w-24" src={frame} alt="Image" />
-                  </div>
-                </a>
-              </div>
-              <div className="w-[260px] sm:w-[624px] sm:h-[665px] lg:w-1/2 flex flex-col items-center gap-10 lg:gap-4 mt-10 lg:mt-0 me-0 md:me-28 lg:me-0">
-                <a href="#" className="sm:max-w-[550px] sm:h-[140px]">
-                  <div className="flex flex-col md:flex-row gap-5 sm:gap-10">
-                    <img
-                      className="w-[260px] sm:w-[140px] sm:h-[140px] lg:h-32"
-                      src={Mask1}
-                      alt="Image"
-                    />
-                    <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
-                      <h4 className="text-gray-400">Free Patterns</h4>
-                      <h2 className="font-bold w-60 lg:w-52 lg:text-[14px] text-lg text-center sm:text-start">
+                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col justify-between gap-[20px]">
+                    <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center justify-center gap-[10px]">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
+                        Free Patterns
+                      </div>
+                      <div className="w-[260px] h-[48px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
                         Patrick Lose Cake Block - FREE DOWNLOAD
-                      </h2>
-                      <img className="w-24" src={frame} alt="Image" />
+                      </div>
+                    </div>
+                    <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
+                      <p>Read More</p>
+                      <p>
+                        <img src={arrow_right_alt} alt="Arrow" />
+                      </p>
                     </div>
                   </div>
-                </a>
-                <hr className=" text-black w-4/5 lg:w-full sm:me-12" />
-                <a href="#" className="sm:max-w-[550px] sm:h-[140px]">
-                  <div className="flex flex-col md:flex-row gap-5 sm:gap-10">
-                    <img
-                      className="w-[260px] sm:w-[140px] sm:h-[140px] lg:h-32"
-                      src={Mask2}
-                      alt="Image"
-                    />
-                    <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
-                      <h4 className="text-gray-400">Editorial Features</h4>
-                      <h2 className="font-bold w-60 lg:w-52 lg:text-[14px] text-lg text-center sm:text-start">
-                        Lemon Sorbet by TeriAnn Harms{" "}
-                      </h2>
-                      <img className="w-24" src={frame} alt="Image" />
+                </Link>
+                <hr className=" text-black h-[1px] w-[ 280px] sm:w-[624px] xl:w-[550px]" />
+                <Link
+                  to="/"
+                  className="w-[280px] h-[416px] sm:w-[550px] sm:h-[140px] flex flex-col items-center justify-center gap-[30px] sm:flex-row sm:justify-start"
+                >
+                  <img
+                    className="w-[260px] h-[260px] sm:w-[140px] sm:h-[140px] object-cover"
+                    src={Mask2}
+                    alt="Image"
+                  />
+                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col justify-between gap-[20px]">
+                    <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center justify-center gap-[10px]">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
+                        Get Inspired!
+                      </div>
+                      <div className="w-[260px] h-[48px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
+                        Whiskers and Wine
+                      </div>
+                    </div>
+                    <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
+                      <p>Read More</p>
+                      <p>
+                        <img src={arrow_right_alt} alt="Arrow" />
+                      </p>
                     </div>
                   </div>
-                </a>
-                <hr className=" text-black w-4/5 lg:w-full sm:me-12" />
-                <a href="#" className="sm:max-w-[550px] sm:h-[140px]">
-                  <div className="flex flex-col md:flex-row gap-5 sm:gap-10">
-                    <img
-                      className="w-[260px] sm:w-[140px] sm:h-[140px] lg:h-32"
-                      src={Mask3}
-                      alt="Image"
-                    />
-                    <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
-                      <h4 className="text-gray-400">Free Patterns</h4>
-                      <h2 className="font-bold w-60 lg:w-52 lg:text-[14px] text-lg text-center sm:text-start">
-                        Beach Blanket - FREE DOWNLOAD{" "}
-                      </h2>
-                      <img className="w-24" src={frame} alt="Image" />
+                </Link>
+                <hr className=" text-black h-[1px] w-[ 280px] sm:w-[624px] xl:w-[550px]" />
+                <Link
+                  to="/"
+                  className="w-[280px] h-[416px] sm:w-[550px] sm:h-[140px] flex flex-col items-center justify-center gap-[30px] sm:flex-row sm:justify-start"
+                >
+                  <img
+                    className="w-[260px] h-[260px] sm:w-[140px] sm:h-[140px] object-cover"
+                    src={Mask3}
+                    alt="Image"
+                  />
+                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col justify-between gap-[20px]">
+                    <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center justify-center gap-[10px]">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
+                        Editorial Features
+                      </div>
+                      <div className="w-[260px] h-[48px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
+                        Lemon Sorbet by TeriAnn Harms
+                      </div>
+                    </div>
+                    <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
+                      <p>Read More</p>
+                      <p>
+                        <img src={arrow_right_alt} alt="Arrow" />
+                      </p>
                     </div>
                   </div>
-                </a>
-                <hr className=" text-black w-4/5 lg:w-full sm:me-12" />
-                <a href="#" className="sm:max-w-[550px] sm:h-[140px]">
-                  <div className="flex flex-col md:flex-row gap-5 sm:gap-10">
-                    <img
-                      className="w-[260px] sm:w-[140px] sm:h-[140px] lg:h-32"
-                      src={Mask4}
-                      alt="Image"
-                    />
-                    <div className="sm:w-[320px] sm:h-[129px] flex flex-col gap-3 items-center justify-center sm:items-start sm:justify-start">
-                      <h4 className="text-gray-400">Editorial Features</h4>
-                      <h2 className="font-bold w-60 lg:w-52 lg:text-[14px] text-lg text-center sm:text-start">
-                        Lemon Sorbet by TeriAnn Harms{" "}
-                      </h2>
-                      <img className="w-24" src={frame} alt="Image" />
+                </Link>
+                <hr className=" text-black h-[1px] w-[ 280px] sm:w-[624px] xl:w-[550px]" />
+                <Link
+                  to="/"
+                  className="w-[280px] h-[416px] sm:w-[550px] sm:h-[140px] flex flex-col items-center justify-center gap-[30px] sm:flex-row sm:justify-start"
+                >
+                  <img
+                    className="w-[260px] h-[260px] sm:w-[140px] sm:h-[140px] object-cover"
+                    src={Mask4}
+                    alt="Image"
+                  />
+                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col justify-between gap-[20px]">
+                    <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center justify-center gap-[10px]">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
+                        Free Patterns
+                      </div>
+                      <div className="w-[260px] h-[48px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
+                        Beach Blanket - FREE DOWNLOAD
+                      </div>
+                    </div>
+                    <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
+                      <p>Read More</p>
+                      <p>
+                        <img src={arrow_right_alt} alt="Arrow" />
+                      </p>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
