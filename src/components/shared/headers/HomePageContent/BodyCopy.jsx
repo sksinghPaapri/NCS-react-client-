@@ -22,6 +22,7 @@ import { FaFacebookF } from "react-icons/fa";
 import CarouselTop from "./BodyComponents/CarouselTop";
 import CarouselBottom from "./BodyComponents/CarouselTBottom";
 import { Link } from "react-router-dom";
+import ImageSliderBottom from "../../../../pages/about/ImageSliderBottom";
 
 const Body = () => {
   const featuredCategory = [
@@ -249,7 +250,7 @@ const Body = () => {
         </div>
         {/* 6) */}
         {/* featured designer */}
-        <div className=" h-[892px] sm:h-[911px] xl:h-[570px] flex items-center justify-center text-white bg-[#F0EFEB]">
+        <div className="w-[320px] sm:w-auto h-[892px] sm:h-[911px] xl:h-[570px] flex items-center justify-center text-white bg-[#F0EFEB]">
           <div className="min-w-[320px] h-[772px] sm:min-w-[650px] sm:h-[791px] xl:w-[1280px] xl:h-[450px] 2xl:w-[1728px] flex flex-col xl:flex-row gap-[40px] xl:gap-[120px] items-center justify-center my-[60px] mx-[20px] sm:m-[60px] xl:mx-[80px] xl:my-[60px] 2xl:my-[60px] 2xl:mx-[204px]">
             {/* img */}
             <img
@@ -413,7 +414,7 @@ const Body = () => {
                       <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
                         Editorial Features
                       </div>
-                      <div className="w-[260px] h-[48px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
                         Lemon Sorbet by TeriAnn Harms
                       </div>
                     </div>
@@ -440,7 +441,7 @@ const Body = () => {
                       <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
                         Free Patterns
                       </div>
-                      <div className="w-[260px] h-[48px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
                         Beach Blanket - FREE DOWNLOAD
                       </div>
                     </div>
@@ -457,12 +458,59 @@ const Body = () => {
           </div>
         </div>
         {/* 8) */}
-        <div className="mx-[20px] sm:mx-[60px] w-[260px] sm:w-full h-[108px] flex items-center justify-center my-10 ms-7 sm:ms-0 mt-[100px]">
-          <div className="font-bold text-[28px] lg:min-w-96 max-w-2xl text-center">
-            <p className="text-center sm:w-[624px] sm:h-[66px] lg:w-[800px] lg:h-[84px]">
+        <div className="w-[320px] h-[382px] sm:w-[744px] sm:h-[321px] xl:w-[1280px] xl:h-[451px] 2xl:w-[1320px] gap-[60px] sm:gap-[40px] flex flex-col items-center justify-center">
+          <div className="w-[280px] h-[108px] sm:w-[624px] sm:h-[66px] xl:w-[800px] xl:h-[84px] text-[18px] sm:text-[22px] xl:text-[28px] font-bold text-center flex items-center justify-center flex-col">
+            <p className="">
               Follow us on social media as we always have something exciting to
-              share <span className="text-[#E2A856]">#NorthcottFabrics</span>
+              share{" "}
+              <span className="italic text-[#E2A856]"> #NorthcottFabrics</span>
             </p>
+          </div>
+          {/* <Carousel /> */}
+          <div className="w-[280px] h-[130px] sm:w-[624px] sm:h-[150px] xl:w-[1160px] xl:h-[260px] 2xl:w-[1200px]">
+            <ImageSliderBottom />
+          </div>
+          {/* body footer */}
+          <div className="w-[246px] h-[24px] sm:w-[296px] sm:h-[25px] xl:w-[309px] xl:h-[27px]">
+            <div className="flex flex-row items-center justify-center">
+              <div className="w-[102px] h-[24px] xl:w-[115px] xl:h-[27px] text-[16px] sm:text-[18px] text-nowrap">
+                Follow us on :
+              </div>
+              <div className="w-[124px] h-[20px] sm:w-[174px] sm:h-[25px] flex items-center justify-evenly">
+                <a href="#" className="cursor-pointer relative">
+                  <div className="absolute top-0 left-0 hover:hidden">
+                    <FaFacebookF color="#E2A856" size={"1.5rem"} />
+                  </div>
+                  <div className="block">
+                    <FaFacebookF size={"1.5rem"} />
+                  </div>
+                </a>
+                <a href="#" className="cursor-pointer relative">
+                  <div className="absolute top-0 left-0 hover:hidden">
+                    <FaTwitter color="#E2A856" size={"1.5rem"} />
+                  </div>
+                  <div className="block">
+                    <FaTwitter size={"1.5rem"} />
+                  </div>
+                </a>
+                <a href="#" className="cursor-pointer relative">
+                  <div className="absolute top-0 left-0 hover:hidden">
+                    <AiFillYoutube color="#E2A856" size={"1.5rem"} />
+                  </div>
+                  <div className="block">
+                    <AiFillYoutube size={"1.5rem"} />
+                  </div>
+                </a>
+                <a href="#" className="cursor-pointer relative">
+                  <div className="absolute top-0 left-0 hover:hidden">
+                    <FaInstagram color="#E2A856" size={"1.5rem"} />
+                  </div>
+                  <div className="block">
+                    <FaInstagram size={"1.5rem"} />
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
