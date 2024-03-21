@@ -248,40 +248,45 @@ const Body = () => {
         </div>
         {/* 6) */}
         {/* featured designer */}
-        <div className="h-[892px] sm:h-[745px] lg:h-[570px] flex items-center justify-center text-white bg-[#F0EFEB] ">
-          <div className="w-[280px h-[772px] sm:w-[625px] sm:h-[791px] xl:w-[1120px] xl:h-[450px] 2xl:w-[1320px] flex flex-col lg:flex-row lg:gap-14 xl:gap-20 lg:items-center justify-center lg:justify-between">
+        <div className=" h-[892px] sm:h-[911px] xl:h-[570px] flex items-center justify-center text-white bg-[#F0EFEB]">
+          <div className="min-w-[320px] h-[772px] sm:min-w-[650px] sm:h-[791px] xl:w-[1280px] xl:h-[450px] 2xl:w-[1728px] flex flex-col xl:flex-row gap-[40px] xl:gap-[120px] items-center justify-center my-[60px] mx-[20px] sm:m-[60px] xl:mx-[80px] xl:my-[60px] 2xl:my-[60px] 2xl:mx-[204px]">
             {/* img */}
             <img
               src={Designer}
               alt="Image"
-              className="h-[260px] w-[260px] rounded-full lg:h-[450px] lg:w-[450px]"
+              className="h-[260px] w-[260px] rounded-full sm:h-[450px] sm:w-[450px] object-cover"
             />
             {/* content */}
-            <div className="lg:h-[307px] flex flex-col gap-5 justify-center text-center lg:text-left text-black">
-              <h1
-                className="italic text-xl mt-10 lg:mt-0"
-                style={{ fontFamily: "DM Serif Display" }}
-              >
-                Featured Designer
-              </h1>
-              <h1
-                className="text-3xl"
-                style={{ fontFamily: "DM Serif Display" }}
-              >
-                Designer Name
-              </h1>
-              <p className="text-[14px] lg:text-[12px] lg:pe-20 px-10 lg:px-0 xl:pe-52 lg:h-[105px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse et dolore magna aliqua
-                cillum dolore eu fugiat nulla pariatur.
-              </p>
-              <div className="mt-3 sm:mt-10 lg:mt-7 flex items-center justify-center lg:justify-start">
+            <div className="w-[280px] h-[472px] sm:w-[550px] sm:h-[301px] xl:h-[307px] flex flex-col gap-[30px] items-center justify-center text-center xl:text-left text-black xl:items-start">
+              <div className="w-[214px] h-[374px] sm:w-[550px] sm:h-[222px] xl:h-[228px] flex flex-col items-center justify-center gap-[20px] xl:items-start">
+                <div className="w-[214px] h-[81px] sm:w-[293px] sm:h-[97px] xl:w-[320px] xl:h-[103px] flex flex-col items-center justify-between gap-[10px] xl:items-start">
+                  <h1
+                    className="italic text-[20px] w-[156px] h-[27px] sm:w-[156px]"
+                    style={{ fontFamily: "DM Serif Display" }}
+                  >
+                    Featured Designer
+                  </h1>
+                  <h1
+                    className="text-[32px] sm:text-[44px] xl:text-[48px] w-[214px] h-[44px] sm:w-[293px] sm:h-[60px] xl:w-[320px] xl:h-[66px]"
+                    style={{ fontFamily: "DM Serif Display" }}
+                  >
+                    Designer Name
+                  </h1>
+                </div>
+                <p className="w-[214px] h-[273px] sm:w-[550px] sm:h-[105px] text-[14px]">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse et dolore
+                  magna aliqua cillum dolore eu fugiat nulla pariatur.
+                </p>
+              </div>
+              {/* button */}
+              <div className="w-[280px] h-[68px] sm:w-[351px] sm:h-[49px] flex items-center justify-center">
                 <button
                   type="button"
-                  className="uppercase font-semibold text-black bg-[#E2A856] hover:text-[#E2A856] hover:bg-[#CECECC] hover:border-2 hover:border-[#E2A856] rounded-sm text-base py-2.5 px-2 text-center mb-10 w-[280px] h-[68px] sm:h-[49px] md:w-96"
+                  className="w-[280px] h-[68px] sm:w-[351px] sm:h-[49px] uppercase font-semibold text-black bg-[#E2A856] hover:text-[#E2A856] hover:bg-[#CECECC] hover:border-2 hover:border-[#E2A856] rounded-sm text-[16px] text-center"
                 >
                   Shop designer name’s collection
                 </button>
