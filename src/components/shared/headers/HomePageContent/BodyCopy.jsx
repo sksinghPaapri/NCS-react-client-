@@ -1,4 +1,5 @@
 import NorthcottFabricBg from "../../../../assets/bodyFabrics/NorthcottFabricBg.svg";
+import arrow_right_alt from "../../../../assets/BodyFeaturedCategory/arrow_right_alt.svg";
 import No1 from "../../../../assets/BodyFeaturedCategory/No1.svg";
 import No2 from "../../../../assets/BodyFeaturedCategory/No2.svg";
 import No3 from "../../../../assets/BodyFeaturedCategory/No3.svg";
@@ -18,11 +19,18 @@ import { FaInstagram } from "react-icons/fa";
 import { AiFillYoutube } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
-
 import CarouselTop from "./BodyComponents/CarouselTop";
 import CarouselBottom from "./BodyComponents/CarouselTBottom";
 
 const Body = () => {
+  const featuredCategory = [
+    { img: No1, title: "Holiday 2023 Release Collections" },
+    { img: No2, title: "September 2023 Release Collections" },
+    { img: No3, title: "September 2023 Collection Precuts" },
+    { img: No4, title: "April 2023 Release Collections" },
+    { img: No5, title: "April 2023 Collection Precuts" },
+    { img: No6, title: "Coming Soon" },
+  ];
   return (
     <div
       className="flex items-center justify-center w-full"
@@ -204,60 +212,51 @@ const Body = () => {
         </div>
         {/* 5) */}
         {/* Featured Categories */}
-        <div className="w-[320px] h-[2788px] sm:w-[744px] sm:h-[3338px] xl:w-[1280px] xl:h-[1172px] 2xl:w-[1320px] flex flex-col items-center justify-center gap-[40px]">
+        <div className="w-[320px] h-[2788px] sm:w-[744px] sm:h-[3338px] xl:w-[1280px] xl:h-[1172px] 2xl:w-[1320px] flex flex-col items-center justify-center gap-[40px] mx-[20px] sm:mx-[40px] xl:mx-[60px]">
           {/* heading */}
           <div
-            className="w-[280px] h-[64px] sm:w-[664px] sm:h-[80px] xl:w-[1160px] xl:h-[86px] 2xl:w-[1200px] text-center text-[32px] sm:text-[44px] xl:text-[48px] tracking-wide pb-[20px]"
+            className="w-[280px] h-[64px] sm:w-[664px] sm:h-[80px] xl:w-[1160px] xl:h-[86px] 2xl:w-[1200px] text-center text-[32px] sm:text-[44px] xl:text-[48px] pb-[20px] text-nowrap"
             style={{ fontFamily: "DM Serif Display" }}
           >
             Featured Categories
           </div>
-          <div className="flex flex-col xl:flex-row xl:gap-x-[62.5px] 2xl:gap-x-[82.5px]">
-            <div className="w-full flex items-center justify-center bg-white">
-              <a href="#" className="border border-gray-200 shadow">
-                <img className="w-[345px]" src={No1} alt="Image" />
-              </a>
-            </div>
-            <div className="w-full flex items-center justify-center bg-white">
-              <a href="#" className="border border-gray-200 shadow">
-                <img className="w-[345px]" src={No2} alt="Image" />
-              </a>
-            </div>
-            <div className="w-full flex items-center justify-center bg-white">
-              <a href="#" className="border border-gray-200 shadow">
-                <img className="w-[345px]" src={No3} alt="Image" />
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col xl:flex-row xl:gap-x-[62.5px] 2xl:gap-x-[82.5px]">
-            <div className="w-full flex items-center justify-center bg-white">
-              <a href="#" className="border border-gray-200 shadow">
-                <img className="w-[345px]" src={No4} alt="Image" />
-              </a>
-            </div>
-            <div className="w-full flex items-center justify-center bg-white">
-              <a href="#" className="border border-gray-200 shadow">
-                <img className="w-[345px]" src={No5} alt="Image" />
-              </a>
-            </div>
-            <div className="w-full flex items-center justify-center bg-white ">
-              <a href="#" className="border border-gray-200 shadow">
-                <img className="w-[345px]" src={No6} alt="Image" />
-              </a>
-            </div>
+          <div className="grid grid-rows-6 xl:grid-rows-2 grid-flow-col gap-y-[40px] xl:gap-x-[62.5px] 2xl:gap-x-[82.5px]">
+            {featuredCategory?.map((item, index) => (
+              <div
+                key={index}
+                className="col-span-1 w-[260px] h-[412px] sm:w-[345px] sm:h-[503px] flex flex-col items-center justify-center bg-white gap-[30px]  border border-gray-400"
+              >
+                <img
+                  className="w-[260px] h-[260px] sm:w-[345px] sm:h-[345px] object-cover"
+                  src={item?.img}
+                  alt="Image"
+                />
+                <div className="w-[260px] h-[122px] sm:w-[345px] sm:h-[128px] flex flex-col justify-center gap-[20px]">
+                  <div className="w-[220px] h-[48px] sm:w-[305px] sm:h-[54px] flex  font-bold text-[16px] sm:text-[18px] mx-[20px]">
+                    {item?.title}
+                  </div>
+                  <div className="w-[110px] h-[24px] sm:w-[305px] sm:h-[54px] flex items-center font-bold  text-[#E2A856] gap-[9px] text-[16px] mx-[20px] mb-[30px]">
+                    <p>Shop Now</p>
+                    <p>
+                      <img src={arrow_right_alt} alt="Arrow" />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         {/* 6) */}
         {/* featured designer */}
-        <div className="mt-[120px] lg:mt-[100px] h-[892px] lg:h-[570px] flex flex-col lg:flex-row lg:gap-14 xl:gap-20 2xl:gap-20 lg:items-center justify-center lg:justify-between text-white bg-[#CECECC]">
-          <div className=" w-full lg:w-1/2 flex justify-center xl:justify-end">
+        <div className="h-[892px] sm:h-[745px] lg:h-[570px] flex items-center justify-center text-white bg-[#F0EFEB] ">
+          <div className="w-[280px h-[772px] sm:w-[625px] sm:h-[791px] xl:w-[1120px] xl:h-[450px] 2xl:w-[1320px] flex flex-col lg:flex-row lg:gap-14 xl:gap-20 lg:items-center justify-center lg:justify-between">
+            {/* img */}
             <img
               src={Designer}
               alt="Image"
               className="h-[260px] w-[260px] rounded-full lg:h-[450px] lg:w-[450px]"
             />
-          </div>
-          <div className="w-full lg:w-1/2 mt-16">
+            {/* content */}
             <div className="lg:h-[307px] flex flex-col gap-5 justify-center text-center lg:text-left text-black">
               <h1
                 className="italic text-xl mt-10 lg:mt-0"
