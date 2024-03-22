@@ -49,7 +49,6 @@ import PasswordEmailSent from "../pages/auth/PasswordEmailSent";
 import EmailNotFound from "../pages/auth/EmailNotFound";
 import RetailerRegistration from "../pages/login/RetailerRegistration";
 import RetailerRegistrationComplete from "../pages/login/RetailerRegistrationComplete";
-import BodyCopy from "../components/shared/headers/HomePageContent/BodyCopy";
 import AboutUs from "../pages/about/AboutUs";
 import Checkout from "../pages/checkout/Checkout";
 import AboutWholesaleContacts from "../pages/about/AboutWholesaleContacts";
@@ -318,7 +317,7 @@ export default function AppRoutes() {
       <Routes>
         {/* <Route path="/*" element={<Home />} /> */}
         {/* <Route path="/*" element={<Body />} /> */}
-        <Route path="/*" element={<BodyCopy />} />
+        <Route path="/*" element={<Body />} />
         {/* <Route path="/*" element={<ProductCollection />} /> */}
         {/* <Route path="/*" element={<ProductDetail />} /> */}
         {/* <Route path="/*" element={<CartDetail />} /> */}

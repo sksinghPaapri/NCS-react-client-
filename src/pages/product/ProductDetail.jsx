@@ -79,7 +79,7 @@ const ProductDetail = () => {
 
   const colorwayData = [
     {
-      colorwayName: "singleColorway",
+      colorwayName: "Single Colorway",
       items: [
         // normalCard
         { name: ProductCard, "price per m": 8.95, isOverSized: false },
@@ -96,9 +96,9 @@ const ProductDetail = () => {
         { name: ProductCard11, "price per m": 8.95, isOverSized: false },
         { name: ProductCard12, "price per m": 8.95, isOverSized: false },
         // bigAndNormal BigCard
-        { name: BigProduct1, "price per m": 8.95, isOverSized: true },
-        { name: BigProduct2, "price per m": 8.95, isOverSized: true },
-        { name: BigProduct3, "price per m": 8.95, isOverSized: true },
+        // { name: BigProduct1, "price per m": 8.95, isOverSized: true },
+        // { name: BigProduct2, "price per m": 8.95, isOverSized: true },
+        // { name: BigProduct3, "price per m": 8.95, isOverSized: true },
         // multi big card
         // { name: multiBigImg, "price per m": 8.95, isOverSized: true },
         // { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
@@ -127,7 +127,7 @@ const ProductDetail = () => {
       ],
     },
     {
-      colorwayName: "doubleColorway",
+      colorwayName: "Double Colorway",
       items: [
         // normalCard
         { name: ProductCard, "price per m": 8.95, isOverSized: false },
@@ -143,10 +143,10 @@ const ProductDetail = () => {
         { name: ProductCard10, "price per m": 8.95, isOverSized: false },
         { name: ProductCard11, "price per m": 8.95, isOverSized: false },
         { name: ProductCard12, "price per m": 8.95, isOverSized: false },
-        // bigAndNormal BigCard
-        { name: BigProduct1, "price per m": 8.95, isOverSized: true },
-        { name: BigProduct2, "price per m": 8.95, isOverSized: true },
-        { name: BigProduct3, "price per m": 8.95, isOverSized: true },
+        // // bigAndNormal BigCard
+        // { name: BigProduct1, "price per m": 8.95, isOverSized: true },
+        // { name: BigProduct2, "price per m": 8.95, isOverSized: true },
+        // { name: BigProduct3, "price per m": 8.95, isOverSized: true },
         // multi big card
         // { name: multiBigImg, "price per m": 8.95, isOverSized: true },
         // { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
@@ -162,16 +162,16 @@ const ProductDetail = () => {
         // { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
         // { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
         // multi normal card
-        { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg2, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg3, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg4, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg5, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg6, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg7, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg8, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg9, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg2, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg3, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg4, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg5, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg6, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg7, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg8, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg9, "price per m": 8.95, isOverSized: false },
       ],
     },
   ];
@@ -250,12 +250,12 @@ const ProductDetail = () => {
     { name: ProductCard11, "price per m": 8.95, isOverSized: false },
     { name: ProductCard12, "price per m": 8.95, isOverSized: false },
     // bigAndNormal BigCard
-    { name: BigProduct1, "price per m": 8.95, isOverSized: true },
-    { name: BigProduct2, "price per m": 8.95, isOverSized: true },
-    { name: BigProduct3, "price per m": 8.95, isOverSized: true },
+    // { name: BigProduct1, "price per m": 8.95, isOverSized: true },
+    // { name: BigProduct2, "price per m": 8.95, isOverSized: true },
+    // { name: BigProduct3, "price per m": 8.95, isOverSized: true },
     // multi big card
-    { name: multiBigImg, "price per m": 8.95, isOverSized: true },
-    { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
+    // { name: multiBigImg, "price per m": 8.95, isOverSized: true },
+    // { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
     // { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
     // { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
     // { name: multiBigImg4, "price per m": 8.95, isOverSized: true },

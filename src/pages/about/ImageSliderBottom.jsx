@@ -66,7 +66,7 @@ export default function ImageSliderBottom() {
         swipeable
       >
         {images.map((item, index) => (
-          <div key="index">
+          <div key={index}>
             <img
               src={item}
               alt="Product"
