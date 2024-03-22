@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import help from "../../assets/help.svg";
 import CartProduct from "../../assets/ShoppingCart/CartProduct.svg";
 import DeleteIcon from "../../assets/ShoppingCart/DeleteIcon.svg";
 import calendar_month from "../../assets/ShoppingCart/calendar_month.svg";
+import { useState } from "react";
 
 const CartDetail = () => {
+  const [salesRep, setSalesRep] = useState(true);
+  const [tooltip, setToolTip] = useState(false);
+
   return (
     <div
       className="mb-20 max-w-[1320px] min-w-[320px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col gap-10 xl:gap-0 xl:flex-col xl:mx-auto items-center justify-center"
@@ -34,7 +39,7 @@ const CartDetail = () => {
                 <Link to={"/"}>
                   <button
                     type="button"
-                    className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none"
+                    className="w-[154px] h-[34px] text-white bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none hover:bg-white hover:text-[#E2A856] hover:border-2 hover:border-[#E2A856]"
                   >
                     CONTINUE SHOPPING
                   </button>
@@ -42,7 +47,7 @@ const CartDetail = () => {
                 {/* button 2 */}
                 <button
                   type="button"
-                  className="w-[154px] h-[34px] bg-white text-[#E2A856] border-2 border-[#E2A856] hover:bg-[#E2A856] hover:text-white focus:ring-4 focus:ring-[#E2A856] font-medium uppercase rounded text-[12px] focus:outline-none"
+                  className="w-[154px] h-[34px] bg-white text-[#E2A856] border-2 border-[#E2A856] hover:border-black hover:bg-black hover:text-white  font-medium uppercase rounded text-[12px] focus:outline-none"
                 >
                   empty entire cart
                 </button>
@@ -328,7 +333,7 @@ const CartDetail = () => {
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
                         >
                           <path
                             strokeLinecap="round"
@@ -552,7 +557,7 @@ const CartDetail = () => {
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
                         >
                           <path
                             strokeLinecap="round"
@@ -776,7 +781,7 @@ const CartDetail = () => {
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
                         >
                           <path
                             strokeLinecap="round"
@@ -1000,7 +1005,7 @@ const CartDetail = () => {
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
                         >
                           <path
                             strokeLinecap="round"
@@ -1224,7 +1229,7 @@ const CartDetail = () => {
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
                         >
                           <path
                             strokeLinecap="round"
@@ -1573,7 +1578,7 @@ const CartDetail = () => {
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
                         >
                           <path
                             strokeLinecap="round"
@@ -1922,7 +1927,7 @@ const CartDetail = () => {
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          className="w-[10px] h-[12px]"
+                          className="w-[13px] h-[13px]"
                         >
                           <path
                             strokeLinecap="round"
@@ -2025,12 +2030,100 @@ const CartDetail = () => {
                   </ul>
                 </div>
               </div>
+
+              {salesRep && (
+                <div className="w-[240px] h-[102px] flex flex-col items-center justify-center">
+                  {/* heading */}
+                  <div className="w-[219px] h-[24px] text-[16px] font-bold">
+                    Optional Order Processing :
+                  </div>
+                  {/* checkbox and tooltip */}
+                  <div className="w-[213px] h-[58px] flex flex-col items-center justify-between">
+                    <div class="flex items-center justify-self-center gap-3">
+                      <input
+                        id="default-checkbox"
+                        type="radio"
+                        value=""
+                        class="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
+                      />
+                      <label
+                        for="default-checkbox"
+                        class="text-sm font-medium text-gray-900 -ms-1"
+                      >
+                        Combine shipment
+                      </label>
+                      <div
+                        className="cursor-pointer flex flex-col relative"
+                        onMouseEnter={() => setToolTip(true)}
+                        onMouseLeave={() => setToolTip(false)}
+                      >
+                        <img
+                          src={help}
+                          alt="Help"
+                          className="w-[20px] h-[20px]"
+                        />
+                        {tooltip && (
+                          <div className="z-1 opacity-100 right-0 bottom-5 absolute mt-5 w-[171px] h-[140px] flex items-center justify-center text-black bg-white shadow-xl border ">
+                            <p className="w-[155px] h-[120px] text-[10px]">
+                              By selecting “Combine Shipping”, all the items in
+                              the cart will ship together on one sales order.
+                              The shipping date will be set to the earliest
+                              availability date based on all the items ordered.
+                              You can edit the date in the cart after confirming
+                              the changes
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  {/* checkbox and tooltip 2*/}
+                  <div className="w-[213px] h-[58px] flex flex-col items-center justify-between">
+                    <div class="flex items-center justify-self-center gap-3">
+                      <input
+                        id="default-checkbox1"
+                        type="radio"
+                        value=""
+                        class="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
+                      />
+                      <label
+                        for="default-checkbox1"
+                        class="text-sm font-medium text-gray-900 -ms-1"
+                      >
+                        Ship order complete
+                      </label>
+                      <div
+                        className="cursor-pointer flex flex-col relative"
+                        onMouseEnter={() => setToolTip(true)}
+                        onMouseLeave={() => setToolTip(false)}
+                      >
+                        <img
+                          src={help}
+                          alt="Help"
+                          className="w-[20px] h-[20px]"
+                        />
+                        {tooltip && (
+                          <div className="z-1 opacity-100 right-0 bottom-5 absolute mt-5 w-[171px] h-[125px] flex items-center justify-center text-black bg-white shadow-xl border ">
+                            <p className="w-[155px] h-[105px] text-[10px]">
+                              By selecting “Ship Complete”, the order will ship
+                              once all the items on the sales order are
+                              available. There will be no back orders on the
+                              order. If an item is unavailable, the customer
+                              will be notified.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
               {/* row3 */}
               <div className="w-[240px] h-[49px] sm:w-[300px] xl:mb-5">
                 <Link to={"/checkout"}>
                   <button
                     type="button"
-                    className="w-[240px] sm:w-[300px] h-[49px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-base focus:outline-none uppercase"
+                    className="w-[240px] sm:w-[300px] h-[49px] text-white bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-base focus:outline-none uppercase hover:text-[#E2A856] hover:border-2 hover:border-[#E2A856] hover:bg-white"
                   >
                     Checkout
                   </button>
