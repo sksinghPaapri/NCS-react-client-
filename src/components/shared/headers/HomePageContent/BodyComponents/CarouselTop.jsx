@@ -11,7 +11,7 @@ export default function CarouselTop() {
   const images = [C3, C5, C6, C7, C8];
 
   return (
-    <div className="w-[320px] h-[172px] sm:w-[745px] sm:h-[399px] xl:w-[1280px] xl:h-[687px] 2xl:w-[1728px] 2xl:h-[926px] flex items-center justify-center">
+    <div className="w-[320px] h-[172px] sm:w-[745px] sm:h-[399px] xl:w-[1280px] xl:h-[687px] flex items-center justify-center">
       <Carousel
         additionalTransfrom={0}
         arrows={false}
@@ -64,12 +64,7 @@ export default function CarouselTop() {
         swipeable
       >
         {images?.map((item, index) => (
-          <img
-            src={item}
-            alt="Images"
-            key={index}
-            className="object-cover w-full"
-          />
+          <img src={item} alt="Images" key={index} className="" />
         ))}
       </Carousel>
 

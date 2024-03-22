@@ -32,14 +32,12 @@ const Body = () => {
   ];
   return (
     <div
-      className="flex items-center justify-center w-full"
+      className="flex items-center justify-center"
       style={{ fontFamily: "Open Sans" }}
     >
-      {/* <div className="w-full h-[9823.73px] sm:h-[9879.77px] xl:h-[6228px] 2xl:h-[6534.61px] flex flex-col items-center gap-y-[80px] sm:gap-[100px]"> */}
-      <div className="w-full min-w-[320px] h-[9823.73px] sm:w-[745px] sm:h-[9879.77px] xl:w-[1280px] xl:h-[6228px] 2xl:w-[1728px] 2xl:h-[6534.61px] flex flex-col items-center gap-y-[80px] sm:gap-[100px]">
+      <div className="w-full min-w-[320px] h-[9823.73px] sm:w-[745px] sm:h-[9879.77px] xl:w-[1280px] xl:h-[6228px] 2xl:w-[199vw] 2xl:h-[6534.61px] flex flex-col items-center gap-y-[80px] sm:gap-[100px]">
         {/* row1 */}
-        <div className="w-[320px] h-[172px] sm:w-[745px] sm:h-[399px] xl:w-[1280px] xl:h-[687px] 2xl:w-[1728px] 2xl:h-[926px] flex items-center justify-center">
-          {/* <div className="w-full h-[172px] sm:h-[399px] xl:h-[687px] 2xl:h-[926px] flex items-center justify-center"> */}
+        <div className="w-[320px] h-[172px] sm:w-[745px] sm:h-[399px] xl:w-[1280px] xl:h-[687px] 2xl:w-[99vw] flex items-center justify-center">
           <CarouselTop />
         </div>
 
@@ -122,10 +120,10 @@ const Body = () => {
                 <div className="w-[148px] h-[49px] flex justify-center items-center xl:justify-start">
                   <button
                     type="button"
-                    className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded text-center w-[148px] h-[49px] text-[16px]"
+                    className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded text-center w-[148px] h-[49px] text-[16px] uppercase"
                     style={{ fontFamily: "Open Sans" }}
                   >
-                    SHOP NOW
+                    shop the collection
                   </button>
                 </div>
               </div>
@@ -160,10 +158,10 @@ const Body = () => {
               <div className="w-[240px] h-[49px] flex justify-center items-center">
                 <button
                   type="button"
-                  className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded text-center w-[240px] h-[49px] text-[16px]"
+                  className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded text-center w-[240px] h-[49px] text-[16px] uppercase"
                   style={{ fontFamily: "Open Sans" }}
                 >
-                  SHOP NOW
+                  shop the collection
                 </button>
               </div>
             </div>
@@ -172,16 +170,13 @@ const Body = () => {
 
         {/* 4) */}
         {/* Northcott Fabrics */}
-        <div className="w-full h-[664px] sm:h-[390px] xl:h-[369px] flex flex-col items-center justify-center text-white relative">
-          {/* <div className="w-[320px] h-[664px] sm:w-[744px] sm:h-[390px] xl:w-[1280px] xl:h-[369px] 2xl:w-[1728px] flex flex-col items-center justify-center text-white bg-black relative"> */}
-          {/* img */}
+        <div className="w-[320px] h-[664px] sm:w-[744px] sm:h-[390px] xl:w-[1280px] xl:h-[369px] 2xl:w-[99vw] flex flex-col items-center justify-center text-white bg-black relative">
           <img
             src={NorthcottFabricBg}
             alt="Fabrics"
-            // className="w-[320px] h-[664px] sm:w-[744px] sm:h-[390px] xl:w-[1280px] xl:h-[369px] 2xl:w-[1728px] object-cover"
             className="w-[320px] sm:w-[768px] xl:w-[1440px] 2xl:w-[2560px] h-[664px] sm:h-[390px] xl:h-[369px] object-cover"
           />
-          {/* text */}
+
           <div className="w-[200px] h-[544px] sm:w-[624px] sm:h-[270px] xl:w-[800px] xl:h-[249px] flex flex-col items-center justify-center text-center text-white absolute">
             <div
               className="w-[200px] h-[88px] sm:w-[624px] sm:h-[66px] xl:w-[800px] flex justify-center text-3xl text-center items-center"
@@ -202,15 +197,14 @@ const Body = () => {
             <div className="mx-auto h-[49px] w-[162px] flex justify-center">
               <button
                 type="button"
-                className=" text-black bg-[#E2A856] font-medium rounded-sm text-base px-5 lg:px-1 py-2.5 text-center w-44 hover:text-[#E2A856] hover:border-[#E2A856] hover:border-2 hover:bg-transparent"
+                className=" text-black bg-[#E2A856] font-semibold rounded-sm text-base px-5 lg:px-1 py-2.5 text-center w-44 hover:text-[#E2A856] hover:border-[#E2A856] hover:border-2 hover:bg-transparent"
               >
                 LEARN MORE
               </button>
             </div>
           </div>
-          {/* </img> */}
-          {/* </div> */}
         </div>
+
         {/* 5) */}
         {/* Featured Categories */}
         <div className="w-[320px] h-[2788px] sm:w-[744px] sm:h-[3338px] xl:w-[1280px] xl:h-[1172px] 2xl:w-[1320px] flex flex-col items-center justify-center gap-[40px] mx-[20px] sm:mx-[40px] xl:mx-[60px]">
@@ -228,7 +222,7 @@ const Body = () => {
                 className="col-span-1 w-[260px] h-[412px] sm:w-[345px] sm:h-[503px] flex flex-col items-center justify-center bg-white gap-[30px]  border border-gray-400"
               >
                 <img
-                  className="w-[260px] h-[260px] sm:w-[345px] sm:h-[345px] object-cover"
+                  className="w-[260px] h-[260px] sm:w-[345px] sm:h-[345px] object-cover hover:scale-105"
                   src={item?.img}
                   alt="Image"
                 />
@@ -249,15 +243,14 @@ const Body = () => {
         </div>
         {/* 6) */}
         {/* featured designer */}
-        <div className="w-[320px] sm:w-auto h-[892px] sm:h-[911px] xl:h-[570px] flex items-center justify-center text-white bg-[#F0EFEB]">
-          <div className="min-w-[320px] h-[772px] sm:min-w-[650px] sm:h-[791px] xl:w-[1280px] xl:h-[450px] 2xl:w-[1728px] flex flex-col xl:flex-row gap-[40px] xl:gap-[120px] items-center justify-center my-[60px] mx-[20px] sm:m-[60px] xl:mx-[80px] xl:my-[60px] 2xl:my-[60px] 2xl:mx-[204px]">
-            {/* img */}
+        <div className="w-[320px] sm:w-[650px] xl:w-[1280px] 2xl:w-[99vw] h-[892px] sm:h-[911px] xl:h-[570px] flex items-center justify-center text-white bg-[#F0EFEB]">
+          <div className="min-w-[320px] h-[772px] sm:w-[650px] sm:h-[791px] xl:w-[1280px] xl:h-[450px] 2xl:w-[1500px] flex flex-col xl:flex-row gap-[40px] xl:gap-[120px] items-center justify-center my-[60px] mx-[20px] sm:m-[60px] xl:mx-[80px] xl:my-[60px] 2xl:my-[60px] 2xl:mx-[204px]">
             <img
               src={Designer}
               alt="Image"
               className="h-[260px] w-[260px] rounded-full sm:h-[450px] sm:w-[450px] object-cover"
             />
-            {/* content */}
+
             <div className="w-[280px] h-[472px] sm:w-[550px] sm:h-[301px] xl:h-[307px] flex flex-col gap-[30px] items-center justify-center text-center xl:text-left text-black xl:items-start">
               <div className="w-[214px] h-[374px] sm:w-[550px] sm:h-[222px] xl:h-[228px] flex flex-col items-center justify-center gap-[20px] xl:items-start">
                 <div className="w-[214px] h-[81px] sm:w-[293px] sm:h-[97px] xl:w-[320px] xl:h-[103px] flex flex-col items-center justify-between gap-[10px] xl:items-start">
@@ -283,11 +276,11 @@ const Body = () => {
                   magna aliqua cillum dolore eu fugiat nulla pariatur.
                 </p>
               </div>
-              {/* button */}
+
               <div className="w-[280px] h-[68px] sm:w-[351px] sm:h-[49px] flex items-center justify-center">
                 <button
                   type="button"
-                  className="w-[280px] h-[68px] sm:w-[351px] sm:h-[49px] uppercase font-semibold text-black bg-[#E2A856] hover:text-[#E2A856] hover:bg-[#CECECC] hover:border-2 hover:border-[#E2A856] rounded-sm text-[16px] text-center"
+                  className="w-[280px] h-[68px] sm:w-[351px] sm:h-[49px] uppercase font-semibold text-black bg-[#E2A856] hover:text-[#E2A856] hover:bg-[#F0EFEB] hover:border-2 hover:border-[#E2A856] rounded-sm text-[16px] text-center"
                 >
                   Shop designer name’s collection
                 </button>
@@ -334,8 +327,10 @@ const Body = () => {
                         Follow The Star by TeriAnn Harms
                       </div>
                     </div>
-                    <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px] mb-[30px]">
-                      <p>Read More</p>
+                    <div className="hover:underline w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px] mb-[30px]">
+                      <p className="hover:underline hover:decoration-[#E2A856]">
+                        Read More
+                      </p>
                       <p>
                         <img src={arrow_right_alt} alt="Arrow" />
                       </p>
@@ -363,8 +358,8 @@ const Body = () => {
                         Patrick Lose Cake Block - FREE DOWNLOAD
                       </div>
                     </div>
-                    <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
-                      <p>Read More</p>
+                    <div className="hover:underline w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
+                      <p className="hover:underline">Read More</p>
                       <p>
                         <img src={arrow_right_alt} alt="Arrow" />
                       </p>
@@ -391,9 +386,13 @@ const Body = () => {
                       </div>
                     </div>
                     <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
-                      <p>Read More</p>
+                      <p className="hover:underline">Read More</p>
                       <p>
-                        <img src={arrow_right_alt} alt="Arrow" />
+                        <img
+                          src={arrow_right_alt}
+                          alt="Arrow"
+                          className="hover:underline"
+                        />
                       </p>
                     </div>
                   </div>
@@ -418,9 +417,13 @@ const Body = () => {
                       </div>
                     </div>
                     <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
-                      <p>Read More</p>
+                      <p className="hover:underline">Read More</p>
                       <p>
-                        <img src={arrow_right_alt} alt="Arrow" />
+                        <img
+                          src={arrow_right_alt}
+                          alt="Arrow"
+                          className="hover:underline"
+                        />
                       </p>
                     </div>
                   </div>
@@ -445,9 +448,13 @@ const Body = () => {
                       </div>
                     </div>
                     <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
-                      <p>Read More</p>
+                      <p className="hover:underline">Read More</p>
                       <p>
-                        <img src={arrow_right_alt} alt="Arrow" />
+                        <img
+                          src={arrow_right_alt}
+                          alt="Arrow"
+                          className="hover:underline"
+                        />
                       </p>
                     </div>
                   </div>

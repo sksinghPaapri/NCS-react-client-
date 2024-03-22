@@ -30,8 +30,6 @@ import { CartContext } from "../states/contexts/CartContext";
 import Order from "../pages/order/Order";
 import RecentCustomers from "../pages/recentCustomers/RecentCustomers";
 import MyOrders from "../pages/order/MyOrders";
-import TopHeader from "../components/shared/headers/TopHeader";
-import InnerHeader from "../components/shared/headers/InnerHeader";
 import Help from "../pages/help/Help";
 import { WishListContext } from "../states/contexts/wishListContext";
 import WishList from "../pages/wishList/WishList";
