@@ -6,8 +6,22 @@ import calendar_month from "../../assets/ShoppingCart/calendar_month.svg";
 import { useState } from "react";
 
 const CartDetail = () => {
+  // for Sales Rep, Sales Manager, Power User, Admin User
   const [salesRep, setSalesRep] = useState(true);
+  // for tooltip 1
   const [tooltip, setToolTip] = useState(false);
+  // for tooltip 2
+  const [tooltip2, setToolTip2] = useState(false);
+  // for mobile table dropdown list
+  const [isOpen, setIsOpen] = useState(false);
+  // mobile dropdown table open
+  const handleDropdownToggle = () => {
+    setIsOpen(!isOpen);
+  };
+  // mobile dropdown table close
+  const handleDropUp = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div
@@ -55,7 +69,7 @@ const CartDetail = () => {
             </div>
           </div>
           {/* table 1 */}
-          <div className="xl:w-[780px] w-[280px] sm:w-[640px] mx-auto mt-5">
+          <div className="xl:w-[780px] w-[280px] sm:w-[640px] mx-auto mt-5 relative">
             <div className="w-[280px] sm:w-[640px] xl:w-[780px] flex flex-col items-center justify-center border-2">
               {/* date picker */}
               <div className="w-[240px] h-[72px] sm:w-[600px] xl:w-[740px] flex flex-col items-center justify-between md:flex-row md:justify-start mt-5">
@@ -72,7 +86,8 @@ const CartDetail = () => {
                 </div>
               </div>
               {/* table */}
-              <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-[14px] text-left rtl:text-right text-gray-500 flex flex-col">
+              {/* {isOpen && ( */}
+              <table className=" w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-[14px] text-left rtl:text-right text-gray-500 flex flex-col">
                 <thead className="text-[12px] text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
                   <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[740px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
                     <th
@@ -1242,6 +1257,7 @@ const CartDetail = () => {
                   </tr>
                 </tbody>
               </table>
+              {/* )} */}
               {/* coupon code and instructor */}
               <div className=" my-3 w-[240px] h-[167px] sm:w-[600px] sm:h-[109px] sm:flex sm:flex-col sm:gap-6 xl:w-[740px] xl:h-[109px] bg-white">
                 {/*input and buttons */}
@@ -1297,6 +1313,49 @@ const CartDetail = () => {
                   </div>
                 </div>
               </div>
+              {/* dropdown button */}
+              {/* <div className="sm:hidden relative w-[240px]">
+                <div
+                  className="w-[240px] flex justify-end"
+                  onClick={handleDropdownToggle}
+                >
+                  {isOpen ? (
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    </div>
+                  ) : (
+                    <div onClick={handleDropUp}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                        />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              </div> */}
             </div>
           </div>
 
@@ -2000,9 +2059,25 @@ const CartDetail = () => {
         </div>
 
         {/* order summary */}
-        <div className="w-[320px] h-[380px] sm:w-[740px] sm:h-[362px] xl:w-[340px] xl:h-[434px] mt-10 xl:mt-0">
-          <div className="mx-auto w-[280px] h-[380px] sm:w-[500px] sm:h-[362px] xl:w-[340px] xl:h-[380px] xl:mt-[54px] xl:mb-[89px] border-2 mb-20 flex flex-col">
-            <div className="flex flex-col items-center justify-center gap-10 my-5 sm:my-0 xl:my-0 xl:w-[340px] xl:h-[380px]">
+        <div
+          className={`w-[320px] sm:w-[740px] xl:w-[340px] ${
+            salesRep
+              ? "h-[522px] sm:h-[504px] xl:h-[576px]"
+              : "h-[380px] sm:h-[362px] xl:h-[434px]"
+          } mt-10 xl:mt-0`}
+        >
+          <div
+            className={`mx-auto w-[280px] sm:w-[500px] xl:w-[340px] ${
+              salesRep
+                ? "h-[522px] sm:h-[504px] xl:h-[532px]"
+                : "h-[380px] sm:h-[362px] xl:h-[400px]"
+            } xl:mt-[54px] border-2 mb-20 flex flex-col`}
+          >
+            <div
+              className={`flex flex-col items-center justify-center gap-[40px] my-[20px] sm:my-0 xl:my-0 xl:w-[340px] ${
+                salesRep ? "xl:h-[522px]" : "xl:h-[380px]"
+              } `}
+            >
               {/* row1 */}
               <div className="sm:mt-5 w-[240px] h-[57px] sm:w-[460px] xl:w-[300px] xl:h-[57px] flex items-center justify-center sm:justify-start font-bold text-[18px] border-b">
                 Order Summary
@@ -2032,94 +2107,99 @@ const CartDetail = () => {
               </div>
 
               {salesRep && (
-                <div className="w-[240px] h-[102px] flex flex-col items-center justify-center">
+                <div className="w-[240px] sm:w-[460px] xl:w-[240px] h-[102px] flex flex-col justify-center gap-[20px]">
                   {/* heading */}
-                  <div className="w-[219px] h-[24px] text-[16px] font-bold">
+                  <div className="w-[230px] h-[24px] text-[16px] font-bold">
                     Optional Order Processing :
                   </div>
-                  {/* checkbox and tooltip */}
-                  <div className="w-[213px] h-[58px] flex flex-col items-center justify-between">
-                    <div class="flex items-center justify-self-center gap-3">
-                      <input
-                        id="default-checkbox"
-                        type="radio"
-                        value=""
-                        class="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
-                      />
-                      <label
-                        for="default-checkbox"
-                        class="text-sm font-medium text-gray-900 -ms-1"
-                      >
-                        Combine shipment
-                      </label>
-                      <div
-                        className="cursor-pointer flex flex-col relative"
-                        onMouseEnter={() => setToolTip(true)}
-                        onMouseLeave={() => setToolTip(false)}
-                      >
-                        <img
-                          src={help}
-                          alt="Help"
-                          className="w-[20px] h-[20px]"
+                  {/* checkbox and tooltips */}
+                  <div className="w-[213px] h-[58px] flex flex-col justify-center gap-[10px]">
+                    {/* checkbox and tooltip 1*/}
+                    <div className="w-[200px] h-[24px] flex flex-col justify-between">
+                      <div class="flex items-center justify-self-center gap-2">
+                        <input
+                          id="default-checkbox"
+                          type="radio"
+                          value=""
+                          class="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
                         />
-                        {tooltip && (
-                          <div className="z-1 opacity-100 right-0 bottom-5 absolute mt-5 w-[171px] h-[140px] flex items-center justify-center text-black bg-white shadow-xl border ">
-                            <p className="w-[155px] h-[120px] text-[10px]">
-                              By selecting “Combine Shipping”, all the items in
-                              the cart will ship together on one sales order.
-                              The shipping date will be set to the earliest
-                              availability date based on all the items ordered.
-                              You can edit the date in the cart after confirming
-                              the changes
-                            </p>
-                          </div>
-                        )}
+                        <label
+                          for="default-checkbox"
+                          class="text-sm font-medium text-gray-900 -ms-1 text-nowrap"
+                        >
+                          Combine shipment
+                        </label>
+                        {/* tooltip1 */}
+                        <div
+                          className="cursor-pointer flex flex-col relative"
+                          onMouseEnter={() => setToolTip(true)}
+                          onMouseLeave={() => setToolTip(false)}
+                        >
+                          <img
+                            src={help}
+                            alt="Help"
+                            className="w-[20px] h-[20px]"
+                          />
+                          {tooltip && (
+                            <div className="z-1 opacity-100 right-0 sm:left-0 sm:bottom-6 bottom-5 absolute mt-5 w-[171px] h-[140px] flex items-center justify-center text-black bg-white shadow-xl border ">
+                              <p className="w-[155px] h-[120px] text-[10px]">
+                                By selecting “Combine Shipping”, all the items
+                                in the cart will ship together on one sales
+                                order. The shipping date will be set to the
+                                earliest availability date based on all the
+                                items ordered. You can edit the date in the cart
+                                after confirming the changes
+                              </p>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* checkbox and tooltip 2*/}
-                  <div className="w-[213px] h-[58px] flex flex-col items-center justify-between">
-                    <div class="flex items-center justify-self-center gap-3">
-                      <input
-                        id="default-checkbox1"
-                        type="radio"
-                        value=""
-                        class="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
-                      />
-                      <label
-                        for="default-checkbox1"
-                        class="text-sm font-medium text-gray-900 -ms-1"
-                      >
-                        Ship order complete
-                      </label>
-                      <div
-                        className="cursor-pointer flex flex-col relative"
-                        onMouseEnter={() => setToolTip(true)}
-                        onMouseLeave={() => setToolTip(false)}
-                      >
-                        <img
-                          src={help}
-                          alt="Help"
-                          className="w-[20px] h-[20px]"
+                    {/* checkbox and tooltip 2*/}
+                    <div className="w-[200px] h-[24px] flex flex-col justify-between">
+                      <div class="flex items-center justify-self-center gap-2">
+                        <input
+                          id="default-checkbox"
+                          type="radio"
+                          value=""
+                          class="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
                         />
-                        {tooltip && (
-                          <div className="z-1 opacity-100 right-0 bottom-5 absolute mt-5 w-[171px] h-[125px] flex items-center justify-center text-black bg-white shadow-xl border ">
-                            <p className="w-[155px] h-[105px] text-[10px]">
-                              By selecting “Ship Complete”, the order will ship
-                              once all the items on the sales order are
-                              available. There will be no back orders on the
-                              order. If an item is unavailable, the customer
-                              will be notified.
-                            </p>
-                          </div>
-                        )}
+                        <label
+                          for="default-checkbox"
+                          class="text-sm font-medium text-gray-900 -ms-1 text-nowrap"
+                        >
+                          Ship order complete
+                        </label>
+                        {/* tooltip1 */}
+                        <div
+                          className="cursor-pointer flex flex-col relative"
+                          onMouseEnter={() => setToolTip2(true)}
+                          onMouseLeave={() => setToolTip2(false)}
+                        >
+                          <img
+                            src={help}
+                            alt="Help"
+                            className="w-[20px] h-[20px]"
+                          />
+                          {tooltip2 && (
+                            <div className="z-1 opacity-100 right-0 sm:left-0 sm:bottom-6 bottom-5 absolute mt-5 w-[171px] h-[140px] flex items-center justify-center text-black bg-white shadow-xl border">
+                              <p className="w-[155px] h-[105px] text-[10px]">
+                                By selecting “Ship Complete”, the order will
+                                ship once all the items on the sales order are
+                                available. There will be no back orders on the
+                                order. If an item is unavailable, the customer
+                                will be notified.
+                              </p>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               )}
               {/* row3 */}
-              <div className="w-[240px] h-[49px] sm:w-[300px] xl:mb-5">
+              <div className="w-[240px] h-[49px] sm:w-[300px]">
                 <Link to={"/checkout"}>
                   <button
                     type="button"
@@ -2133,6 +2213,60 @@ const CartDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Dropdown and Dropup button logic start */}
+
+      {/* <div className="relative">
+        <button
+          className="bg-blue-500 text-white font-semibold py-2 px-4 rounded inline-flex items-center"
+          onClick={handleDropdownToggle}
+        >
+          Click me
+          {isOpen ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 ml-1"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 3a.75.75 0 01.65.36l3.5 5.25a.75.75 0 11-1.3.78L10 5.88 7.05 9.39a.75.75 0 11-1.3-.78l3.5-5.25A.75.75 0 0110 3z"
+                clipRule="evenodd"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 ml-1"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 17a.75.75 0 01-.65-.36l-3.5-5.25a.75.75 0 111.3-.78L10 14.12l2.95-3.51a.75.75 0 111.3.78l-3.5 5.25A.75.75 0 0110 17z"
+                clipRule="evenodd"
+              />
+            </svg>
+          )}
+        </button>
+        {isOpen && (
+          <div className="absolute bg-white rounded mt-2 py-2 w-40">
+            <ul>
+              <li className="hover:bg-gray-200 cursor-pointer">Option 1</li>
+              <li className="hover:bg-gray-200 cursor-pointer">Option 2</li>
+              <li className="hover:bg-gray-200 cursor-pointer">Option 3</li>
+              <li className="hover:bg-gray-200 cursor-pointer">Option 4</li>
+            </ul>
+            <button
+              className="bg-blue-500 text-white font-semibold py-2 px-4 rounded mt-2"
+              onClick={handleDropUp}
+            >
+              Drop Up
+            </button>
+          </div>
+        )}
+      </div> */}
     </div>
   );
 };
