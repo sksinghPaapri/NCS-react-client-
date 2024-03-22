@@ -35,9 +35,11 @@ const Body = () => {
       className="flex items-center justify-center w-full"
       style={{ fontFamily: "Open Sans" }}
     >
-      <div className="w-full min-w-[320px] h-[9823.73px] sm:w-[745px] sm:h-[9879.77px] xl:w-[1280px] xl:h-[6228px] 2xl:w-[1728px] 2xl:h-[6534.61px] flex flex-col items-center gap-y-[80px] sm:gap-[100px]">
+      <div className="w-full h-[9823.73px] sm:h-[9879.77px] xl:h-[6228px] 2xl:h-[6534.61px] flex flex-col items-center gap-y-[80px] sm:gap-[100px]">
+        {/* <div className="w-full min-w-[320px] h-[9823.73px] sm:w-[745px] sm:h-[9879.77px] xl:w-[1280px] xl:h-[6228px] 2xl:w-[1728px] 2xl:h-[6534.61px] flex flex-col items-center gap-y-[80px] sm:gap-[100px]"> */}
         {/* row1 */}
-        <div className="w-[320px] h-[172px] sm:w-[745px] sm:h-[399px] xl:w-[1280px] xl:h-[687px] 2xl:w-[1728px] 2xl:h-[926px] flex items-center justify-center">
+        {/* <div className="w-[320px] h-[172px] sm:w-[745px] sm:h-[399px] xl:w-[1280px] xl:h-[687px] 2xl:w-[1728px] 2xl:h-[926px] flex items-center justify-center"> */}
+        <div className="w-full h-[172px] sm:h-[399px] xl:h-[687px] 2xl:h-[926px] flex items-center justify-center">
           <CarouselTop />
         </div>
 
