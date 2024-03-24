@@ -44,7 +44,7 @@ export default function ImageSliderBottom() {
               max: 464,
               min: 0,
             },
-            items: 2,
+            items: 1,
             partialVisibilityGutter: 30,
           },
           tablet: {

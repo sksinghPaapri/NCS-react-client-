@@ -35,7 +35,7 @@ const Body = () => {
       className="flex items-center justify-center"
       style={{ fontFamily: "Open Sans" }}
     >
-      <div className="w-full min-w-[320px] h-[9823.73px] sm:w-[745px] sm:h-[9879.77px] xl:w-[1280px] xl:h-[6228px] 2xl:w-[199vw] 2xl:h-[6534.61px] flex flex-col items-center gap-y-[80px] sm:gap-[100px]">
+      <div className="w-full min-w-[320px] h-[9823.73px] sm:w-[745px] sm:h-[9879.77px] xl:w-[1280px] xl:h-[6228px] 2xl:w-[199vw] 2xl:h-[6334.61px] flex flex-col items-center gap-y-[80px] sm:gap-[100px]">
         {/* row1 */}
         <div className="w-[320px] h-[172px] sm:w-[745px] sm:h-[399px] xl:w-[1280px] xl:h-[687px] 2xl:w-[99vw] flex items-center justify-center">
           <CarouselTop />
@@ -158,7 +158,7 @@ const Body = () => {
               <div className="w-[240px] h-[49px] flex justify-center items-center">
                 <button
                   type="button"
-                  className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded text-center w-[240px] h-[49px] text-[16px] uppercase"
+                  className=" text-[#E2A856] hover:text-white border border-[#E2A856] hover:border-none hover:bg-black font-semibold rounded text-center w-[240px] h-[49px] text-[16px] uppercase  text-nowrap"
                   style={{ fontFamily: "Open Sans" }}
                 >
                   shop the collection
@@ -179,7 +179,7 @@ const Body = () => {
 
           <div className="w-[200px] h-[544px] sm:w-[624px] sm:h-[270px] xl:w-[800px] xl:h-[249px] flex flex-col items-center justify-center text-center text-white absolute">
             <div
-              className="w-[200px] h-[88px] sm:w-[624px] sm:h-[66px] xl:w-[800px] flex justify-center text-3xl text-center items-center"
+              className="w-[200px] h-[88px] sm:w-[624px] sm:h-[66px] xl:w-[800px] flex justify-center text-[32px] sm:text-[48px] text-center items-center"
               style={{ fontFamily: "DM Serif Display" }}
             >
               Northcott Fabrics
@@ -327,10 +327,8 @@ const Body = () => {
                         Follow The Star by TeriAnn Harms
                       </div>
                     </div>
-                    <div className="hover:underline w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px] mb-[30px]">
-                      <p className="hover:underline hover:decoration-[#E2A856]">
-                        Read More
-                      </p>
+                    <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px] mb-[30px]">
+                      <p className="xl:hover:underline">Read More</p>
                       <p>
                         <img src={arrow_right_alt} alt="Arrow" />
                       </p>
@@ -349,18 +347,18 @@ const Body = () => {
                     src={Mask1}
                     alt="Image"
                   />
-                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col justify-between gap-[20px]">
+                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col  items-center sm:items-start justify-between gap-[20px]">
                     <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center justify-center gap-[10px]">
-                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] items-center justify-center sm:justify-start text-[#6B6B66]">
                         Free Patterns
                       </div>
-                      <div className="w-[260px] h-[48px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
+                      <div className="w-[260px] h-[48px] sm:w-[320px] sm:h-[54px] flex font-bold text-[16px] sm:text-[18px] text-center sm:text-start">
                         Patrick Lose Cake Block - FREE DOWNLOAD
                       </div>
                     </div>
-                    <div className="hover:underline w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
-                      <p className="hover:underline">Read More</p>
-                      <p>
+                    <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
+                      <p className="sm:hover:underline">Read More</p>
+                      <p className="">
                         <img src={arrow_right_alt} alt="Arrow" />
                       </p>
                     </div>
@@ -376,23 +374,19 @@ const Body = () => {
                     src={Mask2}
                     alt="Image"
                   />
-                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col justify-between gap-[20px]">
-                    <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center justify-center gap-[10px]">
-                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
+                  <div className="w-[260px] h-[106px] sm:w-[320px] sm:h-[129px] flex flex-col items-center sm:items-start justify-between gap-[20px]">
+                    <div className="w-[260px] h-[58px] sm:w-[320px] sm:h-[85px] flex flex-col items-center justify-center gap-[10px]">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66] justify-center sm:justify-start">
                         Get Inspired!
                       </div>
-                      <div className="w-[260px] h-[48px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[54px] flex font-bold text-[16px] sm:text-[18px] justify-center sm:justify-start sm:items-center">
                         Whiskers and Wine
                       </div>
                     </div>
                     <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
-                      <p className="hover:underline">Read More</p>
+                      <p className="sm:hover:underline">Read More</p>
                       <p>
-                        <img
-                          src={arrow_right_alt}
-                          alt="Arrow"
-                          className="hover:underline"
-                        />
+                        <img src={arrow_right_alt} alt="Arrow" className="" />
                       </p>
                     </div>
                   </div>
@@ -407,23 +401,19 @@ const Body = () => {
                     src={Mask3}
                     alt="Image"
                   />
-                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col justify-between gap-[20px]">
-                    <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center justify-center gap-[10px]">
-                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
+                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col items-center sm:items-start justify-between gap-[20px]">
+                    <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center sm:justify-center gap-[10px]">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66] justify-center sm:justify-start">
                         Editorial Features
                       </div>
-                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[54px] flex font-bold text-[16px] sm:text-[18px] text-center sm:text-start sm:items-center">
                         Lemon Sorbet by TeriAnn Harms
                       </div>
                     </div>
                     <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
-                      <p className="hover:underline">Read More</p>
+                      <p className="sm:hover:underline">Read More</p>
                       <p>
-                        <img
-                          src={arrow_right_alt}
-                          alt="Arrow"
-                          className="hover:underline"
-                        />
+                        <img src={arrow_right_alt} alt="Arrow" className="" />
                       </p>
                     </div>
                   </div>
@@ -438,23 +428,19 @@ const Body = () => {
                     src={Mask4}
                     alt="Image"
                   />
-                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col justify-between gap-[20px]">
-                    <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center justify-center gap-[10px]">
-                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66]">
+                  <div className="w-[260px] h-[126px] sm:w-[320px] sm:h-[129px] flex flex-col items-center sm:items-start justify-between gap-[20px]">
+                    <div className="w-[260px] h-[82px] sm:w-[320px] sm:h-[85px] flex flex-col items-center sm:justify-center gap-[10px]">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[21px] flex text-[14px] text-[#6B6B66] justify-center sm:justify-start">
                         Free Patterns
                       </div>
-                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[54px] flex font-bold text-[18px] ">
+                      <div className="w-[260px] h-[24px] sm:w-[320px] sm:h-[54px] flex font-bold text-[16px] sm:text-[18px] text-center sm:text-start sm:items-center">
                         Beach Blanket - FREE DOWNLOAD
                       </div>
                     </div>
                     <div className="w-[115px] h-[24px] flex items-center justify-start font-bold text-[#E2A856] gap-[9px] text-[16px]">
-                      <p className="hover:underline">Read More</p>
+                      <p className="sm:hover:underline">Read More</p>
                       <p>
-                        <img
-                          src={arrow_right_alt}
-                          alt="Arrow"
-                          className="hover:underline"
-                        />
+                        <img src={arrow_right_alt} alt="Arrow" className="" />
                       </p>
                     </div>
                   </div>
