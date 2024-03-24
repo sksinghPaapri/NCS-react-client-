@@ -402,86 +402,88 @@ export default function CollectionCategory() {
         </Transition.Root>
 
         {/* desktop top section */}
-        <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-x-9 gap-y-10 md:grid-cols-4">
-            <div className="hidden md:block col-span-1 text-2xl font-bold">
+        <main className="mx-auto w-[280px] sm:w-[744px] xl:w-[1160px] 2xl:w-[1320px] sm:mx-[40px] xl:mx-0">
+          <div className="grid grid-cols-1 gap-x-9 sm:grid-cols-4">
+            <div className="hidden sm:block col-span-1 text-2xl font-bold">
               Filters
               <div className="border-b-2 mt-4" />
             </div>
-            <div className="col-span-3">
-              <div className="grid grid-cols-2 justify-between">
-                <h1 className=" text-black col-span-1 text-[14px]">
-                  {productItems.length} Collections
-                </h1>
 
-                <div className="col-span-1">
-                  <div className="flex justify-end">
-                    <button
-                      type="button"
-                      className=" text-gray-700 hover:text-gray-900 md:hidden"
-                      onClick={() => setMobileFiltersOpen(true)}
-                    >
-                      <span className="sr-only text-[14px]">Filters</span>
-                      <p className="text-black underline text-[14px]">
-                        See Filters
-                      </p>
-                    </button>
-                  </div>
-
-                  <div className="col-span-1 sm:col-span-2 sm:mt-0 ">
+            {/* top heading */}
+            <div className="sm:col-span-3 w-[280px] h-[21px] sm:w-[444px] xl:w-[820px] 2xl:w-[870px] flex items-center justify-center sm:items-start">
+              <div className="w-[280px] h-[21px] sm:w-[444px] xl:w-[820px] 2xl:w-[870px] flex flex-col sm:flex-row items-center justify-center sm:justify-between">
+                {/* length for all */}
+                <div className="w-[280px] h-[21px] sm:w-[91px] flex items-center justify-between sm:justify-center">
+                  <h1 className="w-[91px] h-[21px] text-black text-[14px] text-nowrap">
+                    {productItems.length} Collections
+                  </h1>
+                  {/* mobile only */}
+                  <button
+                    type="button"
+                    className=" text-gray-700 hover:text-gray-900 sm:hidden"
+                    onClick={() => setMobileFiltersOpen(true)}
+                  >
+                    <span className="sr-only text-[14px]">Filters</span>
+                    <p className="text-black underline text-[14px]">
+                      See Filters
+                    </p>
+                  </button>
+                </div>
+                {/* sort and dropdown for all */}
+                <div className="pt-[20px] sm:pt-0 w-[280px] xl:w-[221px] h-[21px] flex flex-col items-end ">
+                  <div className="sm:mt-0 w-[280px] h-[21px] sm:w-[221px] flex items-center justify-center">
                     <Menu
                       as="div"
-                      className="relative grid grid-cols-2 mt-5 sm:mt-0"
+                      className="w-[280px] h-[21px] sm:w-[221px] flex items-center justify-between"
                     >
-                      <div className="flex justify-start sm:justify-center text-[14px]">
+                      <div className="flex w-[31px] h-[21px] text-[14px]">
                         <p>Sort: </p>
                       </div>
 
-                      <div className="flex justify-end">
-                        <Menu.Button className="group inline-flex text-[14px] font-medium text-gray-700 hover:text-gray-900">
-                          <p className="me-5 lg:me-36 md:me-20 text-[14px]">
-                            Default
-                          </p>
+                      {/* dropdown button */}
+                      <div className="w-[170px] h-[21px] flex items-center justify-between">
+                        <Menu.Button className="w-[170px] h-[21px] group inline-flex text-[14px] font-medium text-gray-700 hover:text-gray-900 justify-between items-center">
+                          <p className="text-[14px]">Default</p>
 
                           <ChevronDownIcon
                             className="h-5 flex-shrink-0 text-black group-hover:text-gray-900 flex justify-end"
                             aria-hidden="true"
                           />
                         </Menu.Button>
-                      </div>
 
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-100"
-                        enterFrom="transform opacity-0 scale-95"
-                        enterTo="transform opacity-100 scale-100"
-                        leave="transition ease-in duration-75"
-                        leaveFrom="transform opacity-100 scale-100"
-                        leaveTo="transform opacity-0 scale-95"
-                      >
-                        <Menu.Items className="absolute right-0 z-10 mt-6 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-                          <div className="py-1">
-                            {sortOptions.map((option) => (
-                              <Menu.Item key={option.name}>
-                                {({ active }) => (
-                                  <a
-                                    href={option.href}
-                                    className={classNames(
-                                      option.current
-                                        ? "font-medium text-gray-900 text-[14px]"
-                                        : "text-gray-500",
-                                      active ? "bg-gray-100" : "",
-                                      "block px-4 py-2 text-[14px]"
-                                    )}
-                                  >
-                                    {option.name}
-                                  </a>
-                                )}
-                              </Menu.Item>
-                            ))}
-                          </div>
-                        </Menu.Items>
-                      </Transition>
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items className="absolute right-0 z-10 mt-6 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <div className="py-1">
+                              {sortOptions.map((option) => (
+                                <Menu.Item key={option.name}>
+                                  {({ active }) => (
+                                    <a
+                                      href={option.href}
+                                      className={classNames(
+                                        option.current
+                                          ? "font-medium text-gray-900 text-[14px]"
+                                          : "text-gray-500",
+                                        active ? "bg-gray-100" : "",
+                                        "block px-4 py-2 text-[14px]"
+                                      )}
+                                    >
+                                      {option.name}
+                                    </a>
+                                  )}
+                                </Menu.Item>
+                              ))}
+                            </div>
+                          </Menu.Items>
+                        </Transition>
+                      </div>
                     </Menu>
                   </div>
                 </div>
@@ -489,12 +491,15 @@ export default function CollectionCategory() {
             </div>
           </div>
 
-          <section aria-labelledby="products-heading" className="pt-6">
+          <section
+            aria-labelledby="products-heading"
+            className="pt-[40px] sm:pt-0 w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px]"
+          >
             <h2 id="products-heading" className="sr-only text-[14px]">
               Products
             </h2>
 
-            <div className="grid grid-cols-1 gap-x-9 gap-y-10 md:grid-cols-4">
+            <div className="pt-[40px] sm:pt-0 grid grid-cols-1 gap-x-9 gap-y-10 md:grid-cols-4">
               {/* Filters */}
               <form className="hidden md:block col-span-1">
                 <h3 className="sr-only text-[14px]">Categories</h3>
@@ -606,7 +611,7 @@ export default function CollectionCategory() {
               </form>
 
               {/* Product grid */}
-              <div className="col-span-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-12">
+              <div className="col-span-3 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5 xl:gap-12">
                 {productItems?.map((item, index) => (
                   <div
                     key={index}

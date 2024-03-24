@@ -7,35 +7,53 @@ import CollectionCategory from "./CollectionCategory";
 const ProductCollection = () => {
   return (
     <>
-      <div style={{ fontFamily: "Open Sans" }}>
-        {/* top banner  */}
-        <div className=" bg-white">
-          <img
-            src={Banner}
-            alt="Image"
-            className="object-cover w-full h-[235px] sm:h-[257px] lg:h-[288px]"
-          />
-        </div>
-        {/* Holiday 2023 Release Collection  */}
-        <div className="mx-5 sm:mx-10 lg:mx-[80px] 3xl:mx-[200px] mt-[60px] sm:mt-[80px] lg:mt-[100px] max-w-7xl">
-          <p className="text-[28px] sm:text-[32px] font-bold wrap text-start">
-            Holiday 2023 Release collections
-          </p>
-        </div>
+      <div className="flex items-center justify-center">
+        <div
+          style={{ fontFamily: "Open Sans" }}
+          className="w-[320px] sm:w-[768px] xl:w-[1280px] 2xl:w-[1728px] flex flex-col items-center justify-center gap-[60px] sm:gap-[80px] xl:gap-[100px]"
+        >
+          {/* top banner  */}
+          <div className=" bg-white w-[320px] h-[235px] sm:w-[768px] sm:h-[257px] xl:w-[1280px] xl:h-[296px] 2xl:w-[1728px] flex items-center justify-center">
+            <img
+              src={Banner}
+              alt="Image"
+              className="object-cover w-full h-[235px] sm:h-[257px] xl:h-[296px]"
+            />
+          </div>
 
-        {/* Breadcrums */}
-        <Breadcrum></Breadcrum>
+          {/* heading and breadcrums */}
+          <div className="w-[320px] h-[114px] sm:w-[744px] sm:h-[82px] xl:w-[1280px] 2xl:w-[1320px] flex items-center justify-center">
+            <div className="flex flex-col items-center sm:items-start justify-center gap-[20px] mx-[20px] sm:mx-[40px] xl:mx-[60px] 2xl:mx-0">
+              {/* Heading  */}
+              <div className="w-[280px] h-[76px] sm:w-[664px] sm:h-[44px] xl:w-[1160px] 2xl:w-[1320px]">
+                <p className="text-[28px] sm:text-[32px] font-bold wrap text-start">
+                  Holiday 2023 Release collections
+                </p>
+              </div>
 
-        {/* collection category */}
-        <div className="mt-[60px] sm:mt-[80px] lg:mt-[100px]">
-          <CollectionCategory />
-        </div>
+              {/* Breadcrums */}
+              <div className="w-full h-[18px]">
+                <Breadcrum></Breadcrum>
+              </div>
+            </div>
+          </div>
 
-        {/* pagination */}
-        <div className="grid grid-cols-1 gap-x-9 gap-y-10 md:grid-cols-4">
-          <div className="col-span-1"></div>
-          <div className="col-span-3">
-            <Pagination />
+          {/*Main body */}
+          <div className="w-[320px] sm:w-[744px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col items-center justify-center mb-[60px] sm:mb-[100px] gap-[60px]">
+            {/* collection category */}
+            <div className="w-[320px] sm:w-[744px] xl:w-[1160px] 2xl:w-[1320px]">
+              <CollectionCategory />
+            </div>
+
+            {/* pagination */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-4 items-center justify-center">
+              <div className="col-span-1"></div>
+              <div className="col-span-3 grid grid-cols-subgrid items-center justify-center">
+                <div className="col-start-1 sm:col-start-2">
+                  <Pagination />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
