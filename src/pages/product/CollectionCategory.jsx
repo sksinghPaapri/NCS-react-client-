@@ -359,7 +359,7 @@ export default function CollectionCategory() {
                                       xmlns="http://www.w3.org/2000/svg"
                                       viewBox="0 0 24 24"
                                       fill="currentColor"
-                                      class="w-6 h-6"
+                                      className="w-6 h-6"
                                     >
                                       <path
                                         fill-rule="evenodd"
@@ -372,7 +372,7 @@ export default function CollectionCategory() {
                                       xmlns="http://www.w3.org/2000/svg"
                                       viewBox="0 0 24 24"
                                       fill="currentColor"
-                                      class="w-6 h-6"
+                                      className="w-6 h-6"
                                     >
                                       <path
                                         fill-rule="evenodd"
@@ -548,7 +548,7 @@ export default function CollectionCategory() {
                   {selectedFilters.map((filter) => (
                     <li
                       key={filter.sectionId}
-                      className={`flex flex-wrap gap-y-[10px] mb-[25px]`}
+                      className={`flex flex-wrap gap-y-[10px] mb-[25px] justify-between`}
                     >
                       {filter.optionValues.map((optionValue) => (
                         <div
@@ -592,7 +592,7 @@ export default function CollectionCategory() {
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 24 24"
                                   fill="currentColor"
-                                  class="w-6 h-6"
+                                  className="w-6 h-6"
                                 >
                                   <path
                                     fill-rule="evenodd"
@@ -605,7 +605,7 @@ export default function CollectionCategory() {
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 24 24"
                                   fill="currentColor"
-                                  class="w-6 h-6"
+                                  className="w-6 h-6"
                                 >
                                   <path
                                     fill-rule="evenodd"

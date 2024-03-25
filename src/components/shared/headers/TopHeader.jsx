@@ -328,8 +328,8 @@ export default function TopHeader() {
                             <div
                               className={`${
                                 item.sublinks.length > 1
-                                  ? " grid grid-cols-3 gap-10 shadow-md border-t"
-                                  : " grid grid-cols-1 w-64 shadow-md border-t"
+                                  ? " grid grid-cols-3 w-[750px] gap-10 shadow-md border-t"
+                                  : " grid grid-cols-1 w-[250px] shadow-md border-t"
                               }`}
                             >
                               {item?.sublinks &&
@@ -353,7 +353,7 @@ export default function TopHeader() {
                                       (finallink, index) => (
                                         <div
                                           key={index}
-                                          className="p-3 text-[14px] leading-6 hover:bg-[#F5F4F1]"
+                                          className="ps-2 py-1 text-[14px] leading-6 hover:bg-[#F5F4F1]"
                                         >
                                           <div>
                                             <div className="col-span-2">

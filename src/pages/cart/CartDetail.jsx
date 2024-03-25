@@ -1327,7 +1327,7 @@ const CartDetail = () => {
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
                         stroke="currentColor"
-                        class="w-5 h-5"
+                        className="w-5 h-5"
                       >
                         <path
                           stroke-linecap="round"
@@ -1344,7 +1344,7 @@ const CartDetail = () => {
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
                         stroke="currentColor"
-                        class="w-5 h-5"
+                        className="w-5 h-5"
                       >
                         <path
                           stroke-linecap="round"
@@ -2116,16 +2116,16 @@ const CartDetail = () => {
                   <div className="w-[213px] h-[58px] flex flex-col justify-center gap-[10px]">
                     {/* checkbox and tooltip 1*/}
                     <div className="w-[200px] h-[24px] flex flex-col justify-between">
-                      <div class="flex items-center justify-self-center gap-2">
+                      <div className="flex items-center justify-self-center gap-2">
                         <input
                           id="default-checkbox"
                           type="radio"
                           value=""
-                          class="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
+                          className="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
                         />
                         <label
                           for="default-checkbox"
-                          class="text-sm font-medium text-gray-900 -ms-1 text-nowrap"
+                          className="text-sm font-medium text-gray-900 -ms-1 text-nowrap"
                         >
                           Combine shipment
                         </label>
@@ -2157,16 +2157,16 @@ const CartDetail = () => {
                     </div>
                     {/* checkbox and tooltip 2*/}
                     <div className="w-[200px] h-[24px] flex flex-col justify-between">
-                      <div class="flex items-center justify-self-center gap-2">
+                      <div className="flex items-center justify-self-center gap-2">
                         <input
                           id="default-checkbox"
                           type="radio"
                           value=""
-                          class="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
+                          className="w-4 h-4 rounded-full text-black bg-gray-100 border-gray-300 border-r-8 focus:ring-black-500 focus:ring-2"
                         />
                         <label
                           for="default-checkbox"
-                          class="text-sm font-medium text-gray-900 -ms-1 text-nowrap"
+                          className="text-sm font-medium text-gray-900 -ms-1 text-nowrap"
                         >
                           Ship order complete
                         </label>
