@@ -10,10 +10,12 @@ const ProductCollection = () => {
       <div className="flex items-center justify-center">
         <div
           style={{ fontFamily: "Open Sans" }}
-          className="w-[320px] sm:w-[768px] xl:w-[1280px] 2xl:w-[1728px] flex flex-col items-center justify-center gap-[60px] sm:gap-[80px] xl:gap-[100px]"
+          className="w-full flex flex-col items-center justify-center gap-[60px] sm:gap-[80px] xl:gap-[100px]"
+          // className="w-[320px] sm:w-[768px] xl:w-[1280px] 2xl:w-[1728px] flex flex-col items-center justify-center gap-[60px] sm:gap-[80px] xl:gap-[100px]"
         >
           {/* top banner  */}
-          <div className=" bg-white w-[320px] h-[235px] sm:w-[768px] sm:h-[257px] xl:w-[1280px] xl:h-[296px] 2xl:w-[1728px] flex items-center justify-center">
+          <div className=" bg-white w-full h-[235px] sm:h-[257px] xl:h-[296px] flex items-center justify-center">
+            {/* <div className=" bg-white w-[320px] h-[235px] sm:w-[768px] sm:h-[257px] xl:w-[1280px] xl:h-[296px] 2xl:w-[1728px] flex items-center justify-center"> */}
             <img
               src={Banner}
               alt="Image"

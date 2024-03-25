@@ -2,7 +2,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
 export default function Pagination() {
   return (
-    <div className="w-full flex items-center justify-center">
+    <div className="sm:ps-[40px] xl:ps-[150px] w-full flex items-center justify-center">
       <nav
         className="w-[280px] h-[44px] sm:w-[358.5px] isolate inline-flex -space-x-px rounded-sm items-center justify-center"
         aria-label="Pagination"

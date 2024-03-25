@@ -283,21 +283,30 @@ export default function CollectionCategory() {
                   </div>
 
                   {/* mobile Filters */}
-                  <form className="mt-4 border-t border-gray-200">
+                  <form
+                    className={`${
+                      selectedFilters.length > 0
+                        ? "mt-4 border-t"
+                        : "border-white mt-0"
+                    }`}
+                  >
                     <h3 className="sr-only">Categories</h3>
                     {/* Clear All button desktop */}
                     {selectedFilters.length > 0 && (
-                      <div className="px-4 py-2">
+                      <div className="flex justify-between sm:block sm:justify-normal px-4 py-2 mt-[20px] sm:mt-0">
+                        <h3 className="text-[18px] font-bold text-nowrap">
+                          Selected Filters
+                        </h3>
                         <button
                           type="button"
                           onClick={() => clearAllFilters()}
-                          className="text-[14px] text-gray-500 hover:text-gray-700"
+                          className="text-[14px] text-gray-500 hover:text-gray-700 underline"
                         >
                           Clear All
                         </button>
                       </div>
                     )}
-                    <ul className="space-y-4 border-b border-gray-200 pb-6 text-[14px] font-medium text-gray-900">
+                    <ul className="space-y-4 pb-6 text-[14px] font-medium text-gray-900">
                       {/* select field occur in input by Mithun */}
                       {selectedFilters.map((filter) => (
                         <li key={filter.sectionId} className="flex flex-wrap">
@@ -344,17 +353,33 @@ export default function CollectionCategory() {
                                 <span className=" text-black font-bold">
                                   {section.name}
                                 </span>
-                                <span className="ml-6 flex items-center">
+                                <span className="ml-6 flex items-center text-[#090800]">
                                   {open ? (
-                                    <MinusIcon
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 24 24"
+                                      fill="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        fill-rule="evenodd"
+                                        d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                        clip-rule="evenodd"
+                                      />
+                                    </svg>
                                   ) : (
-                                    <PlusIcon
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 24 24"
+                                      fill="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        fill-rule="evenodd"
+                                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                        clip-rule="evenodd"
+                                      />
+                                    </svg>
                                   )}
                                 </span>
                               </Disclosure.Button>
@@ -402,15 +427,15 @@ export default function CollectionCategory() {
         </Transition.Root>
 
         {/* desktop top section */}
-        <main className="mx-auto w-[280px] sm:w-[744px] xl:w-[1160px] 2xl:w-[1320px] sm:mx-[40px] xl:mx-0">
-          <div className="grid grid-cols-1 gap-x-9 sm:grid-cols-4">
-            <div className="hidden sm:block col-span-1 text-2xl font-bold">
+        <main className="mx-auto w-[280px] sm:w-[715px] xl:w-[1160px] 2xl:w-[1320px] sm:mx-[40px] xl:mx-0">
+          <div className="grid grid-cols-1 gap-x-9 sm:grid-cols-4 sm:h-[61px]">
+            <div className="hidden sm:block col-span-1 text-[24px] sm:text-[22px] xl:text-[24px] font-bold">
               Filters
-              <div className="border-b-2 mt-4" />
+              {/* <div className="mt-4" /> */}
             </div>
 
             {/* top heading */}
-            <div className="sm:col-span-3 w-[280px] h-[21px] sm:w-[444px] xl:w-[820px] 2xl:w-[870px] flex items-center justify-center sm:items-start">
+            <div className="sm:ms-[40px] 2xl:ms-[100px] sm:col-span-3 w-[280px] h-[21px] sm:w-[444px] xl:w-[820px] 2xl:w-[870px] flex items-center justify-center sm:items-start">
               <div className="w-[280px] h-[21px] sm:w-[444px] xl:w-[820px] 2xl:w-[870px] flex flex-col sm:flex-row items-center justify-center sm:justify-between">
                 {/* length for all */}
                 <div className="w-[280px] h-[21px] sm:w-[91px] flex items-center justify-between sm:justify-center">
@@ -442,7 +467,7 @@ export default function CollectionCategory() {
 
                       {/* dropdown button */}
                       <div className="w-[170px] h-[21px] flex items-center justify-between">
-                        <Menu.Button className="w-[170px] h-[21px] group inline-flex text-[14px] font-medium text-gray-700 hover:text-gray-900 justify-between items-center">
+                        <Menu.Button className="w-[170px] h-[21px] sm:w-[160px] xl:w-[170px] 2xl:w-[160px] group inline-flex text-[14px] font-medium text-gray-700 hover:text-gray-900 justify-between items-center">
                           <p className="text-[14px]">Default</p>
 
                           <ChevronDownIcon
@@ -460,7 +485,7 @@ export default function CollectionCategory() {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                          <Menu.Items className="absolute right-0 z-10 mt-6 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <Menu.Items className="absolute z-10 mt-6 w-40 right-6 sm:right-[55px] top-[191vh] sm:top-[195vh] xl:top-[210vh] xl:right-[145px] 2xl:top-[170vh] 2xl:right-[125px] rounded-md bg-white shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <div className="py-1">
                               {sortOptions.map((option) => (
                                 <Menu.Item key={option.name}>
@@ -469,8 +494,8 @@ export default function CollectionCategory() {
                                       href={option.href}
                                       className={classNames(
                                         option.current
-                                          ? "font-medium text-gray-900 text-[14px]"
-                                          : "text-gray-500",
+                                          ? "font-medium text-[#090800] text-[14px]"
+                                          : "text-[#090800]",
                                         active ? "bg-gray-100" : "",
                                         "block px-4 py-2 text-[14px]"
                                       )}
@@ -493,41 +518,43 @@ export default function CollectionCategory() {
 
           <section
             aria-labelledby="products-heading"
-            className="pt-[40px] sm:pt-0 w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px]"
+            className="pt-[20px] sm:pt-0 w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px]"
           >
             <h2 id="products-heading" className="sr-only text-[14px]">
               Products
             </h2>
 
-            <div className="pt-[40px] sm:pt-0 grid grid-cols-1 gap-x-9 gap-y-10 md:grid-cols-4">
+            <div className="pt-[40px] sm:pt-0 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-4">
               {/* Filters */}
-              <form className="hidden md:block col-span-1">
+              <form className="hidden md:block col-span-1 sm:w-[180px] xl:w-[300px] 2xl:w-[350px] border-t border-[#CECECC]">
                 <h3 className="sr-only text-[14px]">Categories</h3>
                 {/* Clear All button mobile*/}
                 {selectedFilters.length > 0 && (
-                  <div className="px-4 py-2 flex ">
-                    <h3 className="text-[14px] font-bold">Selected Filters</h3>
+                  <div className="px-1 pb-[25px] flex justify-between flex-col xl:flex-row gap-[10px] xl:gap-0 mt-[40px]">
+                    <h3 className="text-[18px] sm:text-[16px] xl:text-[18px] font-bold text-nowrap">
+                      Selected Filters
+                    </h3>
 
                     <button
                       type="button"
                       onClick={() => clearAllFilters()}
-                      className="text-[14px] text-gray-500 hover:text-gray-700"
+                      className="text-[14px] text-gray-500 hover:text-gray-700 underline text-nowrap text-start xl:text-center"
                     >
-                      Clear All
+                      Clear all
                     </button>
                   </div>
                 )}
-                <ul className="space-y-4 border-b border-gray-200 pb-6 text-[14px] font-medium text-gray-900">
+                <ul className="space-y-2 text-[14px] font-medium text-gray-900 border-b border-[#CECECC]">
                   {selectedFilters.map((filter) => (
-                    <li key={filter.sectionId} className="flex flex-wrap">
+                    <li
+                      key={filter.sectionId}
+                      className={`flex flex-wrap gap-y-[10px] mb-[25px]`}
+                    >
                       {filter.optionValues.map((optionValue) => (
                         <div
                           key={optionValue}
-                          className="flex items-center justify-between"
+                          className="flex items-center justify-between bg-[#F0EFEB] p-[8px] m-[2px]"
                           style={{
-                            backgroundColor: "rgba(0, 0, 0, 0.06)",
-                            padding: "8px",
-                            margin: "4px",
                             flexBasis: "calc(50% - 8px)",
                           }}
                         >
@@ -550,26 +577,42 @@ export default function CollectionCategory() {
                   <Disclosure
                     as="div"
                     key={section.id}
-                    className="border-b border-gray-200 py-6"
+                    className="border-b border-[#CECECC] py-6"
                   >
                     {({ open }) => (
                       <>
                         <h3 className="-my-3 flow-root">
                           <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-[14px] text-gray-400 hover:text-gray-500">
-                            <span className="font-medium text-gray-900 text-[14px]">
+                            <span className="font-medium text-[#090800] text-[14px]">
                               {section.name}
                             </span>
                             <span className="ml-6 flex items-center">
                               {open ? (
-                                <MinusIcon
-                                  className="h-5 w-5"
-                                  aria-hidden="true"
-                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  class="w-6 h-6"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
                               ) : (
-                                <PlusIcon
-                                  className="h-5 w-5"
-                                  aria-hidden="true"
-                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  class="w-6 h-6"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
                               )}
                             </span>
                           </Disclosure.Button>
@@ -596,7 +639,7 @@ export default function CollectionCategory() {
                                 />
                                 <label
                                   htmlFor={`filter-${section.id}-${option.value}`}
-                                  className="ml-3 text-[14px] text-gray-600"
+                                  className="ml-3 text-[14px] text-[#3A3933]"
                                 >
                                   {option.label}
                                 </label>
@@ -611,32 +654,34 @@ export default function CollectionCategory() {
               </form>
 
               {/* Product grid */}
-              <div className="col-span-3 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5 xl:gap-12">
+              <div className="w-[280px] sm:w-[444px] xl:w-[820px] 2xl:w-[870px] sm:ms-[40px] 2xl:ms-[100px] col-span-3 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-x-[20px]  gap-y-[60px]">
                 {productItems?.map((item, index) => (
                   <div
                     key={index}
-                    className="cursor-pointer w-[130px] h-[251px] lg:w-[180px] lg:h-[329px]"
+                    className="cursor-pointer w-[130px] h-[251px] xl:w-[180px] xl:h-[329px] border border-[#CECECC] hover:border-[#6B6B66]"
                   >
                     {/* <Link to={`/products/${item?.href}`}> */}
-                    <Link to={`/product-detail/${item?.href}`}>
+                    <Link
+                      to={`/product-detail/${item?.href}`}
+                      className="flex flex-col items-center justify-center gap-[15px] xl:gap-[20px]"
+                    >
                       <img
                         src={item.name}
                         alt="Image"
-                        className="w-60 h-auto"
+                        className="w-[130px] h-[130px] xl:w-[180px] xl:h-[180px]"
                       />
-                      <div className="w-[130px] h-[121px] lg:w-[180px] lg:h-[149px] border">
-                        <div className="mt-2 lg:mt-[25px] px-2 flex flex-col items-start justify-start">
-                          {" "}
-                          <h4 className="text-gray-400 text-[10px] lg:text-[12px] w-[120px] h-[15px] text-start overflow-hidden text-nowrap me-2">
+                      <div className="w-[130px] h-[106px] xl:w-[180px] xl:h-[129px] flex flex-col gap-[20px]">
+                        <div className="w-[120px] h-[56px] xl:w-[160px] xl:h-[68px] flex flex-col items-start justify-between ms-[5px] xl:ms-[10px]">
+                          <h4 className="text-[#9D9C99] text-[10px] xl:text-[12px] w-[120px] h-[15px] text-start overflow-hidden text-nowrap me-2">
                             by {item?.by}
                           </h4>
-                          <h2 className="mt-[10px] w-[120px] tracking-tighter h-[50px] lg:h-[60px] font-semibold text-[14px] lg:text-base text-start text-wrap">
+                          <h2 className="w-[120px] h-[36px] xl:w-[160px] xl:h-[42px] font-semibold text-[12px] xl:text-[14px] text-start text-wrap overflow-hidden">
                             {item?.detail}
                           </h2>
-                          <h4 className="text-gray-400 text-[10px] lg:text-[12px] w-[103px] h-[15px] text-nowrap text-start">
-                            {item?.date}
-                          </h4>
                         </div>
+                        <h4 className="text-[#6B6B66] text-[10px] xl:text-[12px] w-[103px] h-[15px] xl:w-[124px] xl:h-[21px] text-nowrap text-start ms-[5px] xl:ms-[10px]">
+                          {item?.date}
+                        </h4>
                       </div>
                     </Link>
                   </div>
