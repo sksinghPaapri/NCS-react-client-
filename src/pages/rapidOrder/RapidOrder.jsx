@@ -64,7 +64,11 @@ const RapidOrder = () => {
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 end-0 flex items-center px-3 pointer-events-none">
-                        <img src={search} alt="search" className="z-10" />
+                        <img
+                          src={search}
+                          alt="search"
+                          className="z-10 cursor-pointer"
+                        />
                       </div>
                       <input
                         type="search"
@@ -78,7 +82,7 @@ const RapidOrder = () => {
               ))}
               {/* button */}
               <div className="w-[280px] h-[34px] sm:w-[640px] xl:w-[340px] 2xl:w-[500px] flex justify-end">
-                <button className="text-white bg-[#E2A856] rounded text-[12px] uppercase w-[101px] h-[34px] text-center">
+                <button className="text-white bg-[#E2A856] rounded text-[12px] uppercase w-[101px] h-[34px] text-center hover:bg-black">
                   ADD TO LIST
                 </button>
               </div>
@@ -89,8 +93,8 @@ const RapidOrder = () => {
             {/* table */}
             <div className="w-[280px] sm:w-[640px] xl:w-[780px] flex items-center justify-center gap-[20px] border border-gray-300">
               <table className="w-[240px] sm:w-[600px] xl:w-[740px] mt-5 text-[14px] text-left rtl:text-right text-gray-500 flex flex-col">
-                <thead className="text-[12px] text-gray-500 sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
-                  <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[740px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px]">
+                <thead className="text-[12px] text-[#6B6B66] sm:w-[600px] sm:h-[28px] xl:w-[740px] sm:items-center sm:justify-center">
+                  <tr className="sm:border-b-2 w-[240px] h-[18px] sm:w-[600px] xl:w-[740px] sm:h-[28px] flex flex-row items-center justify-end sm:justify-normal sm:gap-[10px] text-[#6B6B66] text-[12px]">
                     <th
                       scope="col"
                       className="w-[60px] xl:w-[80px] h-[18px] hidden sm:flex items-center justify-center me-[10px]"
@@ -129,7 +133,7 @@ const RapidOrder = () => {
                     </th>
                     <th
                       scope="col"
-                      className="flex w-[62px] sm:w-[60px] xl:w-[80px] h-[18px] underline sm:text-center text-nowrap items-center justify-center"
+                      className="flex w-[62px] sm:w-[60px] xl:w-[80px] h-[18px] underline sm:text-center text-nowrap items-center justify-center text-[#6B6B66]"
                     >
                       Remove All
                     </th>
@@ -161,10 +165,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="decrement-button"
                                 data-input-counter-decrement="quantity-input"
-                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -191,10 +195,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="increment-button"
                                 data-input-counter-increment="quantity-input"
-                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -222,20 +226,29 @@ const RapidOrder = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-black">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
                                 <span>
-                                  <img
-                                    src={DeleteIcon}
-                                    // className="w-[10px] h-[11.7px]"
-                                    className="w-[13px] h-[13px]"
-                                  ></img>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    className="w-[13px] h-[13px] text-gray-500 hover:text-black"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                    />
+                                  </svg>
                                 </span>
                               </div>
                             </div>
-                            <div className="flex flex-col leading-[14px] text-gray-500">
+                            <div className="flex flex-col leading-[14px] text-[#6B6B66] text-[10px]">
                               <p className="">
                                 Design : <span>Design Name</span>
                               </p>
@@ -248,15 +261,17 @@ const RapidOrder = () => {
                             </div>
                           </div>
                         </span>
-                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                        <div className="mb-[10px] sm:mb-0 flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
                           {/* price */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
-                            <span className="sm:hidden">Price:</span>
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] flex flex-row sm:flex-col sm:items-center sm:justify-center sm:text-center text-[#6B6B66]">
+                            <span className="sm:hidden">Price: </span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-[12px]">
+                              <span className="text-black text-[12px] ms-1 sm:ms-0">
                                 $9.15
-                              </span>{" "}
-                              <span>/Meter(s)</span>
+                              </span>
+                              <span className="text-[10px] sm:text-[8px] text-[#6B6B66]">
+                                /Meter(s)
+                              </span>
                             </div>
                           </span>
                           {/* + - buttton for desktop and tab only*/}
@@ -272,10 +287,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="decrement-button"
                                     data-input-counter-decrement="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -302,10 +317,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="increment-button"
                                     data-input-counter-increment="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -325,33 +340,29 @@ const RapidOrder = () => {
                             </div>
                           </span>
                           {/* discount */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px] text-[#6B6B66]">
                             <span className="sm:hidden">Discount:</span>
-                            <span className="text-black">N/A</span>
+                            <span className="text-black ms-1 sm:ms-0">N/A</span>
                           </span>
 
                           {/* subtotal */}
-                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3 text-[#6B6B66]">
                             <span className="sm:hidden">Subtotal: </span>
-                            <span className="text-black font-bold">$91.50</span>
+                            <span className="text-black font-bold ms-1 sm:ms-0">
+                              $91.50
+                            </span>
                           </span>
                         </div>
                       </div>
                       {/* desktop view delete icon */}
                       <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
-                        {/* a
-                      <img
-                        src={DeleteIcon}
-                        className="w-[10px] h-[11.7px]"
-                      ></img> */}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          // className="w-[10px] h-[12px]"
-                          className="w-[13px] h-[13px]"
+                          className="w-[13px] h-[13px] text-gray-500 hover:text-black"
                         >
                           <path
                             strokeLinecap="round"
@@ -387,10 +398,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="decrement-button"
                                 data-input-counter-decrement="quantity-input"
-                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -417,10 +428,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="increment-button"
                                 data-input-counter-increment="quantity-input"
-                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -448,20 +459,29 @@ const RapidOrder = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-black">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
                                 <span>
-                                  <img
-                                    src={DeleteIcon}
-                                    // className="w-[10px] h-[11.7px]"
-                                    className="w-[13px] h-[13px]"
-                                  ></img>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    className="w-[13px] h-[13px] text-gray-500 hover:text-black"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                    />
+                                  </svg>
                                 </span>
                               </div>
                             </div>
-                            <div className="flex flex-col leading-[14px] text-gray-500">
+                            <div className="flex flex-col leading-[14px] text-[#6B6B66] text-[10px]">
                               <p className="">
                                 Design : <span>Design Name</span>
                               </p>
@@ -474,15 +494,17 @@ const RapidOrder = () => {
                             </div>
                           </div>
                         </span>
-                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                        <div className="mb-[10px] sm:mb-0 flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
                           {/* price */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
-                            <span className="sm:hidden">Price:</span>
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] flex flex-row sm:flex-col sm:items-center sm:justify-center sm:text-center text-[#6B6B66]">
+                            <span className="sm:hidden">Price: </span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-[12px]">
+                              <span className="text-black text-[12px] ms-1 sm:ms-0">
                                 $9.15
-                              </span>{" "}
-                              <span>/Meter(s)</span>
+                              </span>
+                              <span className="text-[10px] sm:text-[8px] text-[#6B6B66]">
+                                /Meter(s)
+                              </span>
                             </div>
                           </span>
                           {/* + - buttton for desktop and tab only*/}
@@ -498,10 +520,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="decrement-button"
                                     data-input-counter-decrement="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -528,10 +550,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="increment-button"
                                     data-input-counter-increment="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -551,33 +573,29 @@ const RapidOrder = () => {
                             </div>
                           </span>
                           {/* discount */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px] text-[#6B6B66]">
                             <span className="sm:hidden">Discount:</span>
-                            <span className="text-black">N/A</span>
+                            <span className="text-black ms-1 sm:ms-0">N/A</span>
                           </span>
 
                           {/* subtotal */}
-                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3 text-[#6B6B66]">
                             <span className="sm:hidden">Subtotal: </span>
-                            <span className="text-black font-bold">$91.50</span>
+                            <span className="text-black font-bold ms-1 sm:ms-0">
+                              $91.50
+                            </span>
                           </span>
                         </div>
                       </div>
                       {/* desktop view delete icon */}
                       <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
-                        {/* a
-                      <img
-                        src={DeleteIcon}
-                        className="w-[10px] h-[11.7px]"
-                      ></img> */}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          // className="w-[10px] h-[12px]"
-                          className="w-[13px] h-[13px]"
+                          className="w-[13px] h-[13px] text-gray-500 hover:text-black"
                         >
                           <path
                             strokeLinecap="round"
@@ -613,10 +631,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="decrement-button"
                                 data-input-counter-decrement="quantity-input"
-                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -643,10 +661,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="increment-button"
                                 data-input-counter-increment="quantity-input"
-                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -674,20 +692,29 @@ const RapidOrder = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-black">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
                                 <span>
-                                  <img
-                                    src={DeleteIcon}
-                                    // className="w-[10px] h-[11.7px]"
-                                    className="w-[13px] h-[13px]"
-                                  ></img>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    className="w-[13px] h-[13px] text-gray-500 hover:text-black"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                    />
+                                  </svg>
                                 </span>
                               </div>
                             </div>
-                            <div className="flex flex-col leading-[14px] text-gray-500">
+                            <div className="flex flex-col leading-[14px] text-[#6B6B66] text-[10px]">
                               <p className="">
                                 Design : <span>Design Name</span>
                               </p>
@@ -700,15 +727,17 @@ const RapidOrder = () => {
                             </div>
                           </div>
                         </span>
-                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                        <div className="mb-[10px] sm:mb-0 flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
                           {/* price */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
-                            <span className="sm:hidden">Price:</span>
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] flex flex-row sm:flex-col sm:items-center sm:justify-center sm:text-center text-[#6B6B66]">
+                            <span className="sm:hidden">Price: </span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-[12px]">
+                              <span className="text-black text-[12px] ms-1 sm:ms-0">
                                 $9.15
-                              </span>{" "}
-                              <span>/Meter(s)</span>
+                              </span>
+                              <span className="text-[10px] sm:text-[8px] text-[#6B6B66]">
+                                /Meter(s)
+                              </span>
                             </div>
                           </span>
                           {/* + - buttton for desktop and tab only*/}
@@ -724,10 +753,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="decrement-button"
                                     data-input-counter-decrement="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -754,10 +783,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="increment-button"
                                     data-input-counter-increment="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -777,33 +806,29 @@ const RapidOrder = () => {
                             </div>
                           </span>
                           {/* discount */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px] text-[#6B6B66]">
                             <span className="sm:hidden">Discount:</span>
-                            <span className="text-black">N/A</span>
+                            <span className="text-black ms-1 sm:ms-0">N/A</span>
                           </span>
 
                           {/* subtotal */}
-                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3 text-[#6B6B66]">
                             <span className="sm:hidden">Subtotal: </span>
-                            <span className="text-black font-bold">$91.50</span>
+                            <span className="text-black font-bold ms-1 sm:ms-0">
+                              $91.50
+                            </span>
                           </span>
                         </div>
                       </div>
                       {/* desktop view delete icon */}
                       <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
-                        {/* a
-                      <img
-                        src={DeleteIcon}
-                        className="w-[10px] h-[11.7px]"
-                      ></img> */}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          // className="w-[10px] h-[12px]"
-                          className="w-[13px] h-[13px]"
+                          className="w-[13px] h-[13px] text-gray-500 hover:text-black"
                         >
                           <path
                             strokeLinecap="round"
@@ -839,10 +864,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="decrement-button"
                                 data-input-counter-decrement="quantity-input"
-                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -869,10 +894,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="increment-button"
                                 data-input-counter-increment="quantity-input"
-                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -900,20 +925,29 @@ const RapidOrder = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-black">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
                                 <span>
-                                  <img
-                                    src={DeleteIcon}
-                                    // className="w-[10px] h-[11.7px]"
-                                    className="w-[13px] h-[13px]"
-                                  ></img>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    className="w-[13px] h-[13px] text-gray-500 hover:text-black"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                    />
+                                  </svg>
                                 </span>
                               </div>
                             </div>
-                            <div className="flex flex-col leading-[14px] text-gray-500">
+                            <div className="flex flex-col leading-[14px] text-[#6B6B66] text-[10px]">
                               <p className="">
                                 Design : <span>Design Name</span>
                               </p>
@@ -926,15 +960,17 @@ const RapidOrder = () => {
                             </div>
                           </div>
                         </span>
-                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                        <div className="mb-[10px] sm:mb-0 flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
                           {/* price */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
-                            <span className="sm:hidden">Price:</span>
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] flex flex-row sm:flex-col sm:items-center sm:justify-center sm:text-center text-[#6B6B66]">
+                            <span className="sm:hidden">Price: </span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-[12px]">
+                              <span className="text-black text-[12px] ms-1 sm:ms-0">
                                 $9.15
-                              </span>{" "}
-                              <span>/Meter(s)</span>
+                              </span>
+                              <span className="text-[10px] sm:text-[8px] text-[#6B6B66]">
+                                /Meter(s)
+                              </span>
                             </div>
                           </span>
                           {/* + - buttton for desktop and tab only*/}
@@ -950,10 +986,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="decrement-button"
                                     data-input-counter-decrement="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -980,10 +1016,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="increment-button"
                                     data-input-counter-increment="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -1003,33 +1039,29 @@ const RapidOrder = () => {
                             </div>
                           </span>
                           {/* discount */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px] text-[#6B6B66]">
                             <span className="sm:hidden">Discount:</span>
-                            <span className="text-black">N/A</span>
+                            <span className="text-black ms-1 sm:ms-0">N/A</span>
                           </span>
 
                           {/* subtotal */}
-                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3 text-[#6B6B66]">
                             <span className="sm:hidden">Subtotal: </span>
-                            <span className="text-black font-bold">$91.50</span>
+                            <span className="text-black font-bold ms-1 sm:ms-0">
+                              $91.50
+                            </span>
                           </span>
                         </div>
                       </div>
                       {/* desktop view delete icon */}
                       <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
-                        {/* a
-                      <img
-                        src={DeleteIcon}
-                        className="w-[10px] h-[11.7px]"
-                      ></img> */}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          // className="w-[10px] h-[12px]"
-                          className="w-[13px] h-[13px]"
+                          className="w-[13px] h-[13px] text-gray-500 hover:text-black"
                         >
                           <path
                             strokeLinecap="round"
@@ -1041,7 +1073,7 @@ const RapidOrder = () => {
                     </div>
                   </tr>
                   {/* tr-1 */}
-                  <tr className="border-b bg-white w-[240px] h-[134px] sm:w-[600px] sm:h-[70px] xl:w-[740px] xl:h-[90px] flex gap-4 mb-[11px] sm:items-start sm:gap-[10px]">
+                  <tr className="bg-white w-[240px] h-[134px] sm:w-[600px] sm:h-[70px] xl:w-[740px] xl:h-[90px] flex gap-4 mb-[11px] sm:items-start sm:gap-[10px]">
                     {/* mobile col 1 */}
                     {/* image for all devices*/}
                     <div className="flex flex-col sm:flex-row w-[94px] h-[124px] sm:w-[60px] xl:w-[80px] sm:h-[60px]">
@@ -1065,10 +1097,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="decrement-button"
                                 data-input-counter-decrement="quantity-input"
-                                className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -1095,10 +1127,10 @@ const RapidOrder = () => {
                                 type="button"
                                 id="increment-button"
                                 data-input-counter-increment="quantity-input"
-                                className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                               >
                                 <svg
-                                  className="w-2 h-2 text-gray-900"
+                                  className="w-2 h-2 text-gray-900 hover:text-white"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -1126,20 +1158,29 @@ const RapidOrder = () => {
                           {/* product detail for all and delete button for mobile only */}
                           <div className=" sm:w-[180px] sm:h-[60px] xl:w-[200px] xl:h-[65px] sm:flex sm:flex-col sm:items-center sm:justify-center">
                             <div className="flex items-center justify-between">
-                              <p className="w-[131px] h-[18px] text-[12px] text-gray-950">
+                              <p className="w-[131px] h-[18px] text-[12px] text-black">
                                 00000-00
                               </p>
                               <div className="flex sm:hidden">
                                 <span>
-                                  <img
-                                    src={DeleteIcon}
-                                    // className="w-[10px] h-[11.7px]"
-                                    className="w-[13px] h-[13px]"
-                                  ></img>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    className="w-[13px] h-[13px] text-gray-500 hover:text-black"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                                    />
+                                  </svg>
                                 </span>
                               </div>
                             </div>
-                            <div className="flex flex-col leading-[14px] text-gray-500">
+                            <div className="flex flex-col leading-[14px] text-[#6B6B66] text-[10px]">
                               <p className="">
                                 Design : <span>Design Name</span>
                               </p>
@@ -1152,15 +1193,17 @@ const RapidOrder = () => {
                             </div>
                           </div>
                         </span>
-                        <div className="flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
+                        <div className="mb-[10px] sm:mb-0 flex flex-col sm:flex-row leading-[14px] sm:leading-4 text-gray-500">
                           {/* price */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] sm:flex-col sm:items-center sm:justify-center sm:text-center">
-                            <span className="sm:hidden">Price:</span>
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[30px] flex flex-row sm:flex-col sm:items-center sm:justify-center sm:text-center text-[#6B6B66]">
+                            <span className="sm:hidden">Price: </span>
                             <div className="xl:flex xl:flex-col">
-                              <span className="text-black text-[12px]">
+                              <span className="text-black text-[12px] ms-1 sm:ms-0">
                                 $9.15
-                              </span>{" "}
-                              <span>/Meter(s)</span>
+                              </span>
+                              <span className="text-[10px] sm:text-[8px] text-[#6B6B66]">
+                                /Meter(s)
+                              </span>
                             </div>
                           </span>
                           {/* + - buttton for desktop and tab only*/}
@@ -1176,10 +1219,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="decrement-button"
                                     data-input-counter-decrement="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-s p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-s p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -1206,10 +1249,10 @@ const RapidOrder = () => {
                                     type="button"
                                     id="increment-button"
                                     data-input-counter-increment="quantity-input"
-                                    className="bg-white border border-gray-400 rounded-e p-1 h-5"
+                                    className="bg-white border border-gray-400 rounded-e p-1 h-5 hover:bg-black"
                                   >
                                     <svg
-                                      className="w-2 h-2 text-gray-900"
+                                      className="w-2 h-2 text-black hover:text-white"
                                       aria-hidden="true"
                                       xmlns="http://www.w3.org/2000/svg"
                                       fill="none"
@@ -1229,33 +1272,29 @@ const RapidOrder = () => {
                             </div>
                           </span>
                           {/* discount */}
-                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px]">
+                          <span className="text-[10px] sm:w-[60px] xl:w-[80px] sm:h-[20px] sm:flex sm:items-center sm:justify-center sm:mx-[10px] text-[#6B6B66]">
                             <span className="sm:hidden">Discount:</span>
-                            <span className="text-black">N/A</span>
+                            <span className="text-black ms-1 sm:ms-0">N/A</span>
                           </span>
 
                           {/* subtotal */}
-                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3">
+                          <span className="text-[10px] mt-[10px] sm:mt-0 sm:w-[60px] xl:w-[80px] sm:h-[18px] sm:flex sm:justify-center sm:mx-[10px] sm:me-5 sm:pe-3 text-[#6B6B66]">
                             <span className="sm:hidden">Subtotal: </span>
-                            <span className="text-black font-bold">$91.50</span>
+                            <span className="text-black font-bold ms-1 sm:ms-0">
+                              $91.50
+                            </span>
                           </span>
                         </div>
                       </div>
                       {/* desktop view delete icon */}
                       <div className=" w-[60px] xl:w-[80px] h-[18px] sm:w-[60px] sm:h-[18px] hidden sm:flex sm:items-center sm:justify-center">
-                        {/* a
-                      <img
-                        src={DeleteIcon}
-                        className="w-[10px] h-[11.7px]"
-                      ></img> */}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          // className="w-[10px] h-[12px]"
-                          className="w-[13px] h-[13px]"
+                          className="w-[13px] h-[13px] text-gray-500 hover:text-black"
                         >
                           <path
                             strokeLinecap="round"
@@ -1271,8 +1310,8 @@ const RapidOrder = () => {
             </div>
             {/* button */}
             <div className="w-[280px] h-[34px] sm:w-[640px] xl:w-[780px] flex justify-end">
-              <button className="text-white bg-[#E2A856] rounded text-[12px] uppercase w-[101px] h-[34px] text-center">
-                ADD TO LIST
+              <button className="text-white bg-[#E2A856] rounded text-[12px] uppercase w-[101px] h-[34px] text-center hover:bg-black">
+                ADD TO CART
               </button>
             </div>
           </div>
