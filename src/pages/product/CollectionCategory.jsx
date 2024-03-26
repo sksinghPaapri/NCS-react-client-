@@ -195,7 +195,6 @@ export default function CollectionCategory() {
     }
 
     setSelectedFilters(updatedFilters);
-    console.log("Selected Filters:", updatedFilters);
   };
 
   const removeOptionValue = (sectionId, optionValue) => {
@@ -362,9 +361,9 @@ export default function CollectionCategory() {
                                       className="w-6 h-6"
                                     >
                                       <path
-                                        fill-rule="evenodd"
+                                        fillRule="evenodd"
                                         d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
-                                        clip-rule="evenodd"
+                                        clipRule="evenodd"
                                       />
                                     </svg>
                                   ) : (
@@ -375,9 +374,9 @@ export default function CollectionCategory() {
                                       className="w-6 h-6"
                                     >
                                       <path
-                                        fill-rule="evenodd"
+                                        fillRule="evenodd"
                                         d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                                        clip-rule="evenodd"
+                                        clipRule="evenodd"
                                       />
                                     </svg>
                                   )}
@@ -485,7 +484,7 @@ export default function CollectionCategory() {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                          <Menu.Items className="absolute z-10 mt-6 w-40 right-6 sm:right-[55px] top-[191vh] sm:top-[195vh] xl:top-[210vh] xl:right-[145px] 2xl:top-[170vh] 2xl:right-[125px] rounded-md bg-white shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <Menu.Items className="absolute z-10 mt-6 w-40 right-6 sm:right-[55px] top-[191vh] sm:top-[195vh] xl:top-[210vh] xl:right-[145px] 2xl:top-[108vh] 2xl:right-[125px] rounded-md bg-white shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <div className="py-1">
                               {sortOptions.map((option) => (
                                 <Menu.Item key={option.name}>
@@ -595,9 +594,9 @@ export default function CollectionCategory() {
                                   className="w-6 h-6"
                                 >
                                   <path
-                                    fill-rule="evenodd"
+                                    fillRule="evenodd"
                                     d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
-                                    clip-rule="evenodd"
+                                    clipRule="evenodd"
                                   />
                                 </svg>
                               ) : (
@@ -608,9 +607,9 @@ export default function CollectionCategory() {
                                   className="w-6 h-6"
                                 >
                                   <path
-                                    fill-rule="evenodd"
+                                    fillRule="evenodd"
                                     d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                                    clip-rule="evenodd"
+                                    clipRule="evenodd"
                                   />
                                 </svg>
                               )}

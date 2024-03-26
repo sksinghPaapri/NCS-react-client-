@@ -114,16 +114,16 @@ const ProductDetail = () => {
         // { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
         // { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
         // multi normal card
-        { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg2, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg3, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg4, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg5, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg6, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg7, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg8, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg9, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg2, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg3, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg4, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg5, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg6, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg7, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg8, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg9, "price per m": 8.95, isOverSized: false },
       ],
     },
     {
@@ -324,6 +324,23 @@ const ProductDetail = () => {
     }
   }, [filteredNormalCardsNonColorway, filteredBigCardsNonColorway]);
   // NON-COLORWAY DATA ENDS HERE
+
+  // for all image hover
+  const [isHovered, setIsHovered] = useState(
+    Array(filteredProductsByColorway.filteredNormalCards).fill(false)
+  );
+
+  const handleMouseEnter = (index) => {
+    const updatedHoverState = [...isHovered];
+    updatedHoverState[index] = true;
+    setIsHovered(updatedHoverState);
+  };
+
+  const handleMouseLeave = (index) => {
+    const updatedHoverState = [...isHovered];
+    updatedHoverState[index] = false;
+    setIsHovered(updatedHoverState);
+  };
   return (
     <>
       <div
@@ -342,7 +359,7 @@ const ProductDetail = () => {
         {/* section 2 */}
         <div className="w-[320px] sm:w-[744px] h-[376px] sm:h-[222px] xl:w-[1160px] xl:h-[96px] 2xl:w-[1320px] grid grid-cols-1 xl:grid-cols-2 items-center justify-items-center xl:items-end xl:justify-items-start gap-10 xl:gap-0 ">
           <div className="w-[280px] h-[132px] sm:w-[539px] sm:h-[100px] xl:h-[96px] col-span-1 flex flex-col gap-[10px] lg:gap-2 text-center lg:text-left">
-            <div className="text-[12px]">
+            <div className="text-[12px] hover:underline">
               <p>by Simon Treadwell</p>
             </div>
             <div className="text-[28px] lg:text-[32px] font-bold">
@@ -366,7 +383,7 @@ const ProductDetail = () => {
                 >
                   <div>
                     <Menu.Button className="inline-flex w-[204px] h-[40px] items-center justify-between gap-x-1.5 bg-white px-3 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 font-sm">
-                      <div className="text-[14px] font-normal">
+                      <div className="text-[14px] text-[#9D9C99] font-semibold">
                         Find Retailers
                       </div>
                       <ChevronDownIcon
@@ -507,7 +524,7 @@ const ProductDetail = () => {
               <div className="flex justify-start w-[204px] h-[40px]">
                 <button
                   type="button"
-                  className=" text-white bg-[#E2A856] rounded-sm uppercase text-[12px] px-1 py-2.5 text-center mb-10 w-[204px] h-[40px] lg:tracking-tighter"
+                  className=" text-white bg-[#E2A856] rounded-[4px] uppercase text-[14px] text-center mb-10 w-[204px] h-[40px] lg:tracking-tighter hover:bg-[#090800]"
                 >
                   Download fabric files
                 </button>
@@ -534,23 +551,23 @@ const ProductDetail = () => {
         <div className="w-[280px] h-[18px] sm:w-[664px] sm:h-[18px] xl:w-[1160px] 2xl:w-[1320px] flex justify-start">
           <nav className="" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-              <li className="inline-flex items-center">
-                <p className="inline-flex items-center text-[14px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline">
+              <li className="inline-flex items-center text-[#6B6B66]">
+                <p className="inline-flex items-center text-[12px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline">
                   Home
                 </p>
               </li>
               <li>
-                <div className="flex items-center">
+                <div className="flex items-center text-[#6B6B66]">
                   {" / "}
-                  <p className="ms-1 text-[14px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline md:ms-2">
+                  <p className="ms-1 text-[12px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline md:ms-2">
                     Category
                   </p>
                 </div>
               </li>
               <li aria-current="page">
-                <div className="flex items-center">
+                <div className="flex items-center text-[#6B6B66]">
                   {" / "}
-                  <span className="w-40 h-[20px] ms-1 text-[14px] font-medium text-[#6B6B66] md:ms-2 overflow-hidden">
+                  <span className="w-40 h-[20px] ms-1 text-[12px] font-medium text-[#6B6B66] md:ms-2 overflow-hidden">
                     Holiday 2023 Release Collections
                   </span>
                 </div>
@@ -569,7 +586,7 @@ const ProductDetail = () => {
               <div className="w-[184px] h-[39px] flex items-center justify-center">
                 <button
                   type="button"
-                  className=" text-white bg-[#E2A856] text-base font-semibold rounded w-[184px] h-[39px] text-center"
+                  className=" text-white bg-[#E2A856] text-base font-semibold rounded w-[184px] h-[39px] text-center hover:bg-[#090800]"
                 >
                   Add Full Collection
                 </button>
@@ -577,7 +594,7 @@ const ProductDetail = () => {
               <div className="w-[274px] h-[39px] flex justify-center">
                 <button
                   type="button"
-                  className=" text-white bg-[#E2A856] text-base font-semibold rounded w-[274px] h-[39px] text-center"
+                  className="hover:bg-[#090800] text-white bg-[#E2A856] text-base font-semibold rounded w-[274px] h-[39px] text-center"
                 >
                   Add Full Collection - Half Piece
                 </button>
@@ -604,7 +621,7 @@ const ProductDetail = () => {
                     <div className="w-[280px] sm:w-[664px] xl:w-[223px] flex items-center justify-center">
                       <button
                         type="button"
-                        className=" text-black bg-white border-2 border-black h-[39px] rounded font-semibold text-center w-[223px]"
+                        className=" text-black bg-white border-2 border-black h-[39px] rounded font-semibold text-center w-[223px] hover:bg-[#E2A856] hover:text-white hover:border-[#E2A856]"
                       >
                         Add This Colorway Only
                       </button>
@@ -635,12 +652,24 @@ const ProductDetail = () => {
                         }}
                       >
                         <div className="flex flex-col gap-[15px] sm:gap-[20px] border">
-                          <img
-                            src={item.name}
-                            alt="Product"
-                            className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
-                          />
-                          <div className="h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
+                          <div
+                            className="relative"
+                            onMouseEnter={() => handleMouseEnter(index)}
+                            onMouseLeave={() => handleMouseLeave(index)}
+                          >
+                            <img
+                              src={item.name}
+                              alt="Product"
+                              className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                            />
+                            {isHovered[index] && (
+                              <div className="absolute w-[130px] h-[43.33px] sm:w-[180px] sm:h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
+                                <span className="text-white">View Details</span>
+                              </div>
+                            )}
+                          </div>
+
+                          <div className=" h-[121px] w-[130px] sm:h-[126px] sm:w-[180px] cursor-pointer flex items-start justify-center border border-t-0">
                             <div className="text-[12px] flex flex-col h-[106px] w-[120px] sm:h-[126px] sm:w-[180px] sm:mx-[10px]">
                               <p className="w-[120px] h-[15px] sm:h-[20px] sm:w-[160px] overflow-hidden text-nowrap text-gray-500">
                                 'Twas The Night Before Ch...
@@ -671,10 +700,10 @@ const ProductDetail = () => {
                                               type="button"
                                               id="decrement-button"
                                               data-input-counter-decrement="quantity-input"
-                                              className="bg-white border border-gray-300 rounded-s p-1 h-5"
+                                              className="bg-white border border-gray-300 rounded-s p-1 h-5 hover:bg-[#090800]"
                                             >
                                               <svg
-                                                className="w-2 h-2 text-gray-900"
+                                                className="w-2 h-2 text-gray-900 hover:text-white"
                                                 aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 fill="none"
@@ -694,17 +723,17 @@ const ProductDetail = () => {
                                               id="quantity-input"
                                               data-input-counter
                                               aria-describedby="helper-text-explanation"
-                                              className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-[12px]"
+                                              className="border-y placeholder:text-center border-gray-300 h-5 w-6 sm:w-6 text-[12px] "
                                               placeholder="10"
                                             />
                                             <button
                                               type="button"
                                               id="increment-button"
                                               data-input-counter-increment="quantity-input"
-                                              className="bg-white border border-gray-300 rounded-e p-1 h-5"
+                                              className="bg-white border border-gray-300 rounded-e p-1 h-5 hover:bg-[#090800]"
                                             >
                                               <svg
-                                                className="w-2 h-2 text-gray-900"
+                                                className="w-2 h-2 text-gray-900 hover:text-white"
                                                 aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 fill="none"
@@ -727,7 +756,7 @@ const ProductDetail = () => {
                                       <div>
                                         <button
                                           type="button"
-                                          className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-gray-600"
+                                          className="w-[60px] h-[20px] px-3 py-[3px] font-medium text-[10px] rounded-sm text-center text-white bg-black hover:bg-[#6B6B66]"
                                         >
                                           Add
                                         </button>
