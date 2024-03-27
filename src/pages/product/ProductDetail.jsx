@@ -66,7 +66,7 @@ const patternColorWay = [
 
 const ProductDetail = () => {
   // login or not login user
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true);
 
   // modalBox
   const [openModal, setOpenModal] = useState(null);
@@ -96,23 +96,23 @@ const ProductDetail = () => {
         { name: ProductCard11, "price per m": 8.95, isOverSized: false },
         { name: ProductCard12, "price per m": 8.95, isOverSized: false },
         // bigAndNormal BigCard
-        // { name: BigProduct1, "price per m": 8.95, isOverSized: true },
-        // { name: BigProduct2, "price per m": 8.95, isOverSized: true },
-        // { name: BigProduct3, "price per m": 8.95, isOverSized: true },
+        { name: BigProduct1, "price per m": 8.95, isOverSized: true },
+        { name: BigProduct2, "price per m": 8.95, isOverSized: true },
+        { name: BigProduct3, "price per m": 8.95, isOverSized: true },
         // multi big card
-        // { name: multiBigImg, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
         // multi normal card
         { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
         { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
@@ -144,23 +144,23 @@ const ProductDetail = () => {
         { name: ProductCard11, "price per m": 8.95, isOverSized: false },
         { name: ProductCard12, "price per m": 8.95, isOverSized: false },
         // // bigAndNormal BigCard
-        // { name: BigProduct1, "price per m": 8.95, isOverSized: true },
-        // { name: BigProduct2, "price per m": 8.95, isOverSized: true },
-        // { name: BigProduct3, "price per m": 8.95, isOverSized: true },
+        { name: BigProduct1, "price per m": 8.95, isOverSized: true },
+        { name: BigProduct2, "price per m": 8.95, isOverSized: true },
+        { name: BigProduct3, "price per m": 8.95, isOverSized: true },
         // multi big card
-        // { name: multiBigImg, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
-        // { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
+        { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
         // multi normal card
         { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
         { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
@@ -325,7 +325,7 @@ const ProductDetail = () => {
   }, [filteredNormalCardsNonColorway, filteredBigCardsNonColorway]);
   // NON-COLORWAY DATA ENDS HERE
 
-  // for all image hover
+  // for all colorway card image hover
   const [isHovered, setIsHovered] = useState(
     Array(filteredProductsByColorway.filteredNormalCards).fill(false)
   );
@@ -341,10 +341,27 @@ const ProductDetail = () => {
     updatedHoverState[index] = false;
     setIsHovered(updatedHoverState);
   };
+
+  // pattern colorway popup
+  const [patterncolorway, setPatterncolorway] = useState(
+    Array(patternColorWay.length).fill(false)
+  );
+
+  const handlePatternColorwayMouseEnter = (index) => {
+    const updatedHoverStates = [...patterncolorway];
+    updatedHoverStates[index] = true;
+    setPatterncolorway(updatedHoverStates);
+  };
+  const handlePatternColorwayMouseLeave = (index) => {
+    const updatedHoverStates = [...patterncolorway];
+    updatedHoverStates[index] = false;
+    setPatterncolorway(updatedHoverStates);
+  };
+
   return (
     <>
       <div
-        className="bg-white flex flex-col items-center justify-center gap-[60px] sm:gap-20 xl:gap-[60px]"
+        className="bg-white flex flex-col items-center justify-center gap-[60px] sm:gap-20 xl:gap-[60px] mb-[60px] sm:mb-[100px]"
         style={{ fontFamily: "Open Sans" }}
       >
         {/* section 1 */}
@@ -359,13 +376,13 @@ const ProductDetail = () => {
         {/* section 2 */}
         <div className="w-[320px] sm:w-[744px] h-[376px] sm:h-[222px] xl:w-[1160px] xl:h-[96px] 2xl:w-[1320px] grid grid-cols-1 xl:grid-cols-2 items-center justify-items-center xl:items-end xl:justify-items-start gap-10 xl:gap-0 ">
           <div className="w-[280px] h-[132px] sm:w-[539px] sm:h-[100px] xl:h-[96px] col-span-1 flex flex-col gap-[10px] lg:gap-2 text-center lg:text-left">
-            <div className="text-[12px] hover:underline cursor-pointer">
+            <div className="text-[14px] hover:underline cursor-pointer">
               <Link to={"/"}>by Simon Treadwell</Link>
             </div>
             <div className="text-[28px] lg:text-[32px] font-bold">
               <p>'Twas The Night Before Christmas</p>
             </div>
-            <div className="text-[12px]">
+            <div className="text-[14px]">
               <p>Coming to stores in June, 2024</p>
             </div>
           </div>
@@ -524,7 +541,7 @@ const ProductDetail = () => {
               <div className="flex justify-start w-[204px] h-[40px]">
                 <button
                   type="button"
-                  className=" text-white bg-[#E2A856] rounded-[4px] uppercase text-[14px] text-center mb-10 w-[204px] h-[40px] lg:tracking-tighter hover:bg-[#090800]"
+                  className=" text-white bg-[#E2A856] rounded-[4px] uppercase text-[14px] text-center mb-10 w-[204px] h-[40px] lg:tracking-tighter hover:bg-[#090800] font-semibold"
                 >
                   Download fabric files
                 </button>
@@ -549,7 +566,7 @@ const ProductDetail = () => {
         {/* section 4 */}
         {/* breadcrum */}
         <div className="w-[280px] h-[18px] sm:w-[664px] sm:h-[18px] xl:w-[1160px] 2xl:w-[1320px] flex justify-start">
-          <nav className="" aria-label="Breadcrumb">
+          {/* <nav className="" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
               <li className="inline-flex items-center text-[#6B6B66]">
                 <p className="inline-flex items-center text-[12px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline">
@@ -568,6 +585,31 @@ const ProductDetail = () => {
                 <div className="flex items-center text-[#6B6B66]">
                   {" / "}
                   <span className="w-40 h-[20px] ms-1 text-[12px] font-medium text-[#6B6B66] md:ms-2 overflow-hidden">
+                    Holiday 2023 Release Collections
+                  </span>
+                </div>
+              </li>
+            </ol>
+          </nav> */}
+          <nav className="flex" aria-label="Breadcrumb">
+            <ol className="inline-flex space-x-1 md:space-x-2 rtl:space-x-reverse">
+              <li className="inline-flex mt-[2px]">
+                <p className="inline-flex text-[12px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline">
+                  Home
+                </p>
+              </li>
+              <li>
+                <div className="flex">
+                  {" / "}
+                  <p className="mt-[2px] ms-1 text-[12px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline md:ms-2">
+                    Category
+                  </p>
+                </div>
+              </li>
+              <li aria-current="page">
+                <div className="flex">
+                  {" / "}
+                  <span className="mt-[2px] ms-1 text-[12px] font-medium text-[#6B6B66] md:ms-2 flex justify-center">
                     Holiday 2023 Release Collections
                   </span>
                 </div>
@@ -605,7 +647,7 @@ const ProductDetail = () => {
         {/* section 5 */}
         {/* product section */}
         {/* horizontal line  */}
-        <div className="mx-5 sm:mx-7 lg:mx-12 min-w-72 bg-gray-300 h-[0.1rem] sm:w-[93vw] lg:w-[91vw] xl:w-[81vw] 2xl:w-[86vw] xl:mx-auto"></div>
+        <div className="mx-5 sm:mx-7 lg:mx-12 min-w-72 bg-[#CECECC] text-[#CECECC] h-[0.1rem] sm:w-[93vw] lg:w-[91vw] xl:w-[81vw] 2xl:w-[86vw] xl:mx-auto"></div>
 
         {/* COLORWAY PRODUCT FOR NORMAL , BIGANDNORMAL , MULTI CARD */}
         {filteredProductsByColorway.map((item, index) => {
@@ -623,7 +665,7 @@ const ProductDetail = () => {
                     <div className="w-[280px] sm:w-[664px] xl:w-[223px] flex items-center justify-center">
                       <button
                         type="button"
-                        className=" text-black bg-white border-2 border-black h-[39px] rounded font-semibold text-center w-[223px] hover:bg-[#E2A856] hover:text-white hover:border-[#E2A856] text-[16px]"
+                        className=" text-black bg-white border-2 border-black h-[39px] rounded-[4px] font-semibold text-center w-[223px] hover:bg-[#E2A856] hover:text-white hover:border-[#E2A856] text-[14px]"
                       >
                         Add This Colorway Only
                       </button>
@@ -633,7 +675,7 @@ const ProductDetail = () => {
               </div>
 
               {normalCardSizeOnly && (
-                <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-10">
+                <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-x-[20px] sm:gap-x-[62px] xl:gap-x-[65px] 2xl:gap-x-[105px] gap-y-[40px]">
                   {item.filteredNormalCards?.map((item, index) => (
                     <div
                       key={index}
@@ -698,7 +740,7 @@ const ProductDetail = () => {
                                     Color
                                   </p>
                                 </div>
-                                <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px]">
+                                <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px] text-[12px] sm:text-[14px]">
                                   27025-10
                                 </p>
                               </div>
@@ -750,7 +792,7 @@ const ProductDetail = () => {
                                             id="quantity-input"
                                             data-input-counter
                                             aria-describedby="helper-text-explanation"
-                                            className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                            className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                             placeholder="10"
                                           />
                                           <button
@@ -801,10 +843,10 @@ const ProductDetail = () => {
               )}
 
               {bigAndNormalCardSize && (
-                <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid xl:grid-cols-12 gap-10 xl:gap-[40px] 2xl:gap-[80px]">
+                <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid xl:grid-cols-12 gap-[40px] 2xl:gap-[80px]">
                   {/* big card */}
                   <div className="xl:col-span-3">
-                    <div className="h-auto w-[280px] sm:w-[664px] xl:w-[250px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 mx-auto justify-items-center grid-flow-row gap-10">
+                    <div className="h-auto w-[280px] sm:w-[540px] xl:w-[250px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 mx-auto justify-items-center grid-flow-row sm:gap-x-[40px] xl:gap-x-0 gap-y-[40px]">
                       {item.filteredBigCards?.map((item, index) => (
                         <div
                           key={index}
@@ -907,7 +949,7 @@ const ProductDetail = () => {
                                                 id="quantity-input"
                                                 data-input-counter
                                                 aria-describedby="helper-text-explanation"
-                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                                 placeholder="10"
                                               />
                                               <button
@@ -958,7 +1000,7 @@ const ProductDetail = () => {
                   </div>
                   {/* normal card */}
                   <div className="xl:col-span-9">
-                    <div className="h-auto w-[280px] sm:w-[664px] xl:w-[870px] 2xl:w-[990px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-4 justify-items-center gap-y-10">
+                    <div className="h-auto w-[280px] sm:w-[664px] xl:w-[870px] 2xl:w-[990px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-4 justify-items-center gap-x-[20px] sm:gap-x-[62px] xl:gap-x-[50px] 2xl:gap-x-[90px] gap-y-[40px]">
                       {item.filteredNormalCards?.map((item, index) => (
                         <div
                           key={index}
@@ -1025,7 +1067,7 @@ const ProductDetail = () => {
                                         Color
                                       </p>
                                     </div>
-                                    <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px]">
+                                    <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px] text-[12px] sm:text-[14px]">
                                       27025-10
                                     </p>
                                   </div>
@@ -1077,7 +1119,7 @@ const ProductDetail = () => {
                                                 id="quantity-input"
                                                 data-input-counter
                                                 aria-describedby="helper-text-explanation"
-                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                                 placeholder="10"
                                               />
                                               <button
@@ -1133,7 +1175,7 @@ const ProductDetail = () => {
                 <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid xl:grid-cols-12 gap-10 xl:gap-[48px] 2xl:gap-[85px]">
                   {/* Big card */}
                   <div className="xl:col-span-3">
-                    <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 mx-auto justify-items-center grid-flow-row gap-y-[62px] sm:gap-y-10">
+                    <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 mx-auto justify-items-center grid-flow-row gap-y-[62px] sm:gap-y-[40px]">
                       {item.filteredBigCards?.map((item, index) => (
                         <div
                           key={index}
@@ -1236,7 +1278,7 @@ const ProductDetail = () => {
                                                 id="quantity-input"
                                                 data-input-counter
                                                 aria-describedby="helper-text-explanation"
-                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                                 placeholder="10"
                                               />
                                               <button
@@ -1287,7 +1329,7 @@ const ProductDetail = () => {
                   </div>
                   {/* normal card */}
                   <div className="xl:col-span-9">
-                    <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-y-10 gap-x-2">
+                    <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-y-[40px] gap-x-[20px] sm:gap-x-[22px] xl:gap-x-[45.67px] 2xl:gap-x-[81px]">
                       {item.filteredNormalCards?.map((item, index) => (
                         <div
                           key={index}
@@ -1354,7 +1396,7 @@ const ProductDetail = () => {
                                         Color
                                       </p>
                                     </div>
-                                    <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px]">
+                                    <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px] text-[12px] sm:text-[14px]">
                                       27025-10
                                     </p>
                                   </div>
@@ -1406,7 +1448,7 @@ const ProductDetail = () => {
                                                 id="quantity-input"
                                                 data-input-counter
                                                 aria-describedby="helper-text-explanation"
-                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                                 placeholder="10"
                                               />
                                               <button
@@ -1521,7 +1563,7 @@ const ProductDetail = () => {
                               Color
                             </p>
                           </div>
-                          <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px]">
+                          <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px] text-[12px] sm:text-[14px]">
                             27025-10
                           </p>
                         </div>
@@ -1573,7 +1615,7 @@ const ProductDetail = () => {
                                       id="quantity-input"
                                       data-input-counter
                                       aria-describedby="helper-text-explanation"
-                                      className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                      className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                       placeholder="10"
                                     />
                                     <button
@@ -1730,7 +1772,7 @@ const ProductDetail = () => {
                                           id="quantity-input"
                                           data-input-counter
                                           aria-describedby="helper-text-explanation"
-                                          className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                          className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                           placeholder="10"
                                         />
                                         <button
@@ -1834,7 +1876,7 @@ const ProductDetail = () => {
                                   Color
                                 </p>
                               </div>
-                              <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px]">
+                              <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px] text-[12px] sm:text-[14px]">
                                 27025-10
                               </p>
                             </div>
@@ -1886,7 +1928,7 @@ const ProductDetail = () => {
                                           id="quantity-input"
                                           data-input-counter
                                           aria-describedby="helper-text-explanation"
-                                          className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                          className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                           placeholder="10"
                                         />
                                         <button
@@ -2044,7 +2086,7 @@ const ProductDetail = () => {
                                         id="quantity-input"
                                         data-input-counter
                                         aria-describedby="helper-text-explanation"
-                                        className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                        className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                         placeholder="10"
                                       />
                                       <button
@@ -2144,7 +2186,7 @@ const ProductDetail = () => {
                                 Color
                               </p>
                             </div>
-                            <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px]">
+                            <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px] text-[12px] sm:text-[14px]">
                               27025-10
                             </p>
                           </div>
@@ -2196,7 +2238,7 @@ const ProductDetail = () => {
                                         id="quantity-input"
                                         data-input-counter
                                         aria-describedby="helper-text-explanation"
-                                        className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[12px] text-black"
+                                        className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
                                         placeholder="10"
                                       />
                                       <button
@@ -2249,7 +2291,7 @@ const ProductDetail = () => {
 
         {/* pattern colorway */}
         {/* horizontal line */}
-        <div className="mx-5 sm:mx-7 lg:mx-12 min-w-72 bg-gray-300 h-[0.1rem] sm:w-[93vw] lg:w-[91vw] xl:w-[81vw] 2xl:w-[86vw] xl:mx-auto"></div>
+        <div className="mx-5 sm:mx-7 lg:mx-12 min-w-72 bg-[#CECECC] text-[#CECECC] h-[0.1rem] sm:w-[93vw] lg:w-[91vw] xl:w-[81vw] 2xl:w-[86vw] xl:mx-auto"></div>
         <div className="text-center w-[280px] h-[166px] sm:w-[664px] sm:h-[75px] xl:w-[1160px] 2xl:w-[1320px] gap-[10px]">
           <div className="mb-3 w-[280px] h-[114px] sm:w-[664px] sm:h-[44px] xl:w-[1160px] 2xl:w-[1320px]">
             <p className="font-bold text-[28px] sm:text-[32px] text-black">
@@ -2262,35 +2304,64 @@ const ProductDetail = () => {
             </p>
           </div>
         </div>
-        <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 mx-auto  justify-items-center grid-flow-row gap-10">
+        <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4  justify-items-center grid-flow-row sm:gap-x-[62px] xl:gap-x-[40px] gap-y-[40px]">
           {patternColorWay?.map((item, index) => (
             <div
               key={index}
-              className="w-[250px] h-[396px] mx-4 flex justify-center border"
+              className="w-[250px] h-[396px] flex justify-center border-[1px] border-[#CECECC] hover:border-[#6B6B66] flex-col items-center gap-[20px]"
             >
-              <div className="w-[250px] h-[250px]">
-                <div className="flex flex-col items-center gap-5 w-[250px] h-[230px] border-b">
+              <div className="flex justify-center items-center w-[250px] h-[250px] border-b-[1px] border-[#CECECC]">
+                <div className="relative">
+                  <div>
+                    <Modal
+                      showModal={openModal === index}
+                      cancelOption={() => setOpenModal(null)}
+                      index={index + 1}
+                    />
+                  </div>
                   <img
                     src={item.name}
                     alt="Product"
                     className="w-[230px] h-[230px] object-cover"
+                    onMouseEnter={() => handlePatternColorwayMouseEnter(index)}
+                    onMouseLeave={() => handlePatternColorwayMouseLeave(index)}
                   />
-                  <div className="h-[126px] w-[250px] flex items-center justify-center">
-                    <div className="cursor-pointer flex flex-col items-start justify-center gap-5">
-                      <div className="w-[230px] h-[68px] text-gray-400">
-                        <p className="w-[230px] h-[21px] text-[12px]">
-                          Collection Name
-                        </p>
-                        <p className="w-[230px] h-[42px] text-gray-900 font-semibold text-[14px]">
-                          Window Fun - PTN3255
-                        </p>
-                      </div>
-                      <p className="text-[12px] text-gray-400 font-semibold w-[206px] h-[18px] text-nowrap">
-                        Click here to view fabric requirement
-                      </p>
+
+                  {patterncolorway[index] && (
+                    <div
+                      className="absolute w-[250px] h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center -bottom-[10px] -right-[10px]"
+                      onMouseEnter={() =>
+                        handlePatternColorwayMouseEnter(index)
+                      }
+                      onMouseLeave={() =>
+                        handlePatternColorwayMouseLeave(index)
+                      }
+                    >
+                      <span
+                        className="text-white cursor-pointer w-full h-full flex items-center justify-center text-[12px] font-bold"
+                        onClick={() => {
+                          setOpenModal(index);
+                          handlePatternColorwayMouseLeave(index);
+                        }}
+                      >
+                        View Details
+                      </span>
                     </div>
-                  </div>
+                  )}
                 </div>
+              </div>
+              <div className="h-[126px] w-[250px] flex flex-col px-[10px] justify-between">
+                <div className="w-[230px] h-[68px] flex flex-col justify-between">
+                  <p className="w-[230px] h-[21px] text-[12px] text-[#9D9C99]">
+                    Collection Name
+                  </p>
+                  <p className="w-[230px] h-[42px] text-black font-semibold text-[14px]">
+                    Window Fun - PTN3255
+                  </p>
+                </div>
+                <p className="mb-[20px] text-[12px] text-[#9D9C99] font-semibold h-[18px] text-nowrap">
+                  Click here to view fabric requirement
+                </p>
               </div>
             </div>
           ))}
