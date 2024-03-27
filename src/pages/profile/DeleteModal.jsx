@@ -71,11 +71,11 @@ export default function DeleteModal({ showModal, cancelOption, index }) {
                         Are you sure you want to delete this address?
                       </div>
                       <div className="w-[243px] h-[118px] sm:w-[285px] sm:h-[49px] flex items-center justify-between flex-col sm:flex-row">
-                        <button className="w-[243px] sm:w-[130px] h-[49px] flex items-center justify-center bg-[#E2A856] text-white rounded-md cursor-pointer">
+                        <button className="w-[243px] sm:w-[130px] h-[49px] flex items-center justify-center bg-[#E2A856] text-white rounded-md cursor-pointer hover:bg-black hover:border-black">
                           YES
                         </button>
                         <div
-                          className="w-[243px] sm:w-[130px] h-[49px] flex items-center justify-center text-[#E2A856] bg-white rounded-md border-2 cursor-pointer border-[#E2A856]"
+                          className="w-[243px] sm:w-[130px] h-[49px] flex items-center justify-center text-[#E2A856] bg-white rounded-md border-2 cursor-pointer border-[#E2A856] hover:bg-black hover:border-black hover:text-white"
                           onClick={closeModal}
                         >
                           NO

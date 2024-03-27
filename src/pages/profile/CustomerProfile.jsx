@@ -55,7 +55,7 @@ const CustomerProfile = () => {
                 <div className="text-center w-[80px] h-[34px]">
                   <Link to={"/product-collection/editPersonalInfo"}>
                     <button
-                      className=" w-[80px] h-[34px] text-center text-[12px] cursor-pointer bg-[#E2A856] text-[#FFFFFF]"
+                      className=" w-[80px] h-[34px] text-center text-[12px] cursor-pointer bg-[#E2A856] text-[#FFFFFF] hover:bg-black rounded-[4px]"
                       type="button"
                     >
                       EDIT
@@ -110,7 +110,7 @@ const CustomerProfile = () => {
                 <div className="text-center w-[80px] h-[34px]">
                   <Link to={"/product-collection/editStoreInfo"}>
                     <button
-                      className="cursor-pointer w-[80px] h-[34px] text-center text-[12px] bg-[#E2A856] text-[#FFFFFF]"
+                      className="cursor-pointer w-[80px] h-[34px] text-center text-[12px] bg-[#E2A856] text-[#FFFFFF] hover:bg-black rounded-[4px]"
                       type="button"
                     >
                       EDIT

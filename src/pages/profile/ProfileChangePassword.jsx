@@ -46,7 +46,7 @@ const ProfileChangePassword = () => {
             {/* Change Password */}
             <div className="w-[280px] h-[277px] sm:w-[624px] sm:h-[181px]  xl:w-[820px] xl:h-[181px] flex flex-col gap-5">
               {/* heading */}
-              <div className="w-[246px] h-[38px] font-bold text-[28px] text-center sm:text-start">
+              <div className="w-[280px] h-[38px] font-bold text-[28px] text-center sm:text-start">
                 Change Password
               </div>
               {/* horizontal line */}
@@ -67,8 +67,8 @@ const ProfileChangePassword = () => {
                       id="email"
                       name="email"
                       type="email"
-                      className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
-                      placeholder=""
+                      className="appearance-none relative block px-3 py-1 border border-gray-300 bg-[#CECECC] placeholder-[#9D9C99] text-[#090800]  focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                      placeholder="christina.pallotta@northcott.com"
                     />
                   </div>
                 </div>
@@ -85,8 +85,8 @@ const ProfileChangePassword = () => {
                       id="password"
                       name="password"
                       type="password"
-                      className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
-                      placeholder=""
+                      className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-[#9D9C99] text-[#090800]  focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                      placeholder="Enter your new password"
                     />
                   </div>
                 </div>
@@ -103,18 +103,18 @@ const ProfileChangePassword = () => {
                       id="reEnterPassword"
                       name="reEnterPassword"
                       type="password"
-                      className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
-                      placeholder=""
+                      className="appearance-none relative block px-3 py-1 border border-gray-300 placeholder-[#9D9C99] text-[#090800]  focus:outline-non focus:z-10 text-[14px] w-[280px] h-[45px] sm:w-[624px] sm:h-[45px] xl:w-[320px]"
+                      placeholder="Re-enter your new password"
                     />
                   </div>
                 </div>
 
                 {/* buttons */}
                 <div className="h-[49px] flex items-center justify-center sm:justify-start">
-                  <div className="w-[205px] h-[49px] flex items-center justify-between">
+                  <div className="w-[205px] h-[49px] flex items-center justify-center sm:justify-start">
                     <Link to={"/product-collection/profileChangePassword"}>
                       <button
-                        className=" w-[123px] h-[49px] rounded text-center text-[16px] font-semibold bg-[#E2A856] text-[#FFFFFF]"
+                        className=" w-[123px] h-[49px] rounded-[4px] text-center text-[16px] font-semibold bg-[#E2A856] text-[#FFFFFF] hover:bg-black"
                         type="button"
                       >
                         UPDATE

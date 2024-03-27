@@ -1,6 +1,26 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const CommunicationPreferences = () => {
+  const [Northcott, setNorthcott] = useState(true);
+  const [Banyan, setBanyan] = useState(false);
+  const [Patrick, setPatrick] = useState(false);
+
+  // useEffect(() => {
+  //   if (Banyan) {
+  //     setNorthcott(false);
+  //     setPatrick(false);
+  //   }
+  //   if (Patrick) {
+  //     setNorthcott(false);
+  //     setBanyan(false);
+  //   }
+  //   if (Northcott) {
+  //     setBanyan(false);
+  //     setPatrick(false);
+  //   }
+  // }, [Northcott, Banyan, Patrick]);
+
   return (
     <div
       style={{ fontFamily: "Open Sans" }}
@@ -55,19 +75,28 @@ const CommunicationPreferences = () => {
               <div className="w-[280px] h-[131px] sm:w-[624px] sm:h-[37px] xl:w-[820px] flex flex-col sm:flex-row items-center justify-center gap-[10px] sm:justify-start">
                 <button
                   type="button"
-                  className="text-gray-500 bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-[14px] text-center w-[91px] h-[37px]"
+                  className={`text-[#9D9C99] hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-[14px] text-center w-[91px] h-[37px] ${
+                    Northcott ? "bg-black text-white border-black" : "bg-white"
+                  }`}
+                  onClick={() => setNorthcott(true)}
                 >
                   Northcott
                 </button>
                 <button
                   type="button"
-                  className="text-gray-500 bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-[14px] text-center w-[125px] h-[37px]"
+                  className={`text-[#9D9C99] bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-[14px] text-center w-[125px] h-[37px] ${
+                    Banyan ? "bg-black text-white border-black" : "bg-white"
+                  }`}
+                  onClick={() => setBanyan(true)}
                 >
                   Banyan Batiks
                 </button>
                 <button
                   type="button"
-                  className="text-gray-500 bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-[14px] text-center w-[110px] h-[37px]"
+                  className={`text-[#9D9C99] bg-white hover:bg-gray-900 hover:text-white border-2 border-gray-400 font-medium rounded-full text-[14px] text-center w-[110px] h-[37px] ${
+                    Patrick ? "bg-black text-white border-black" : "bg-white"
+                  }`}
+                  onClick={() => setPatrick(true)}
                 >
                   Patrick Lose
                 </button>
@@ -75,11 +104,11 @@ const CommunicationPreferences = () => {
             </div>
 
             {/* content */}
-            <div className="w-[280px] h-[300px] flex flex-col sm:w-[624px] xl:w-[820px]">
+            {/* <div className="w-[280px] h-[300px] flex flex-col sm:w-[624px] xl:w-[820px]">
               <p className="w-[280px] h-[36px] text-[12px] text-center sm:text-nowrap text-gray-500">
                 Integrates with Mailchimp (Note: This text won't show on the UI)
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -90,7 +90,7 @@ const ShippingAddress = () => {
                 {addressess.map((data, index) => (
                   <div
                     key={index}
-                    className="w-[280px] h-[237px] sm:w-[309px] border-2 border-gray-300 rounded-md col-span-12 xl:col-span-5 flex flex-col p-[20px] justify-between"
+                    className="w-[280px] h-[237px] sm:w-[309px] border-[1px] border-gray-300 rounded-md col-span-12 xl:col-span-5 flex flex-col p-[20px] justify-between"
                   >
                     {/* top section */}
                     <div className="w-[240px] text-[14px] h-[102px] sm:w-[269px] flex flex-col items-center justify-evenly">
@@ -128,7 +128,7 @@ const ShippingAddress = () => {
                       {/* right */}
                       <div className="w-[83px] h-[55px] text-[12px] flex items-end justify-between font-bold">
                         <Link to={"/product-collection/editShippingAddress"}>
-                          <p className="w-[24px] h-[18px] text-[#E2A856]">
+                          <p className="w-[24px] h-[18px] text-[#E2A856] hover:text-black hover:underline">
                             Edit
                           </p>
                         </Link>
@@ -146,7 +146,7 @@ const ShippingAddress = () => {
                               setOpenModal(index);
                             }}
                           >
-                            <p className="w-[49px] h-[18px] text-[#E2A856]">
+                            <p className="w-[49px] h-[18px] text-[#E2A856] hover:text-black hover:underline">
                               Remove
                             </p>
                           </div>
@@ -160,7 +160,7 @@ const ShippingAddress = () => {
               <div className="mt-[10px] w-full h-[49px] flex items-center justify-center sm:justify-start">
                 <Link to={"/product-collection/addShippingAddress"}>
                   <button
-                    className="w-[210px] h-[49px] uppercase text-center text-[16px] bg-[#E2A856] font-semibold text-white text-nowrap"
+                    className="w-[210px] h-[49px] rounded-[4px] uppercase text-center text-[16px] bg-[#E2A856] font-semibold text-white text-nowrap hover:bg-black"
                     type="button"
                   >
                     add new address

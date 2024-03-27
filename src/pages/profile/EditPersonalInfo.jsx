@@ -62,7 +62,7 @@ const editPersonalInfo = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="firstName"
-                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-[#090800] sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       First Name
                     </label>
@@ -80,7 +80,7 @@ const editPersonalInfo = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="lastName"
-                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-[#090800] sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Last Name
                     </label>
@@ -98,7 +98,7 @@ const editPersonalInfo = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="email"
-                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-[#090800] sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Email
                     </label>
@@ -116,7 +116,7 @@ const editPersonalInfo = () => {
                   <div className="w-[280px] h-[76px] sm:w-[624px] sm:h-[76px] xl:w-[320px] flex flex-col gap-[10px]">
                     <label
                       htmlFor="reEnterEMail"
-                      className="block text-[14px] font-bold text-gray-700 sm:w-[77px] sm:h-[21px] text-nowrap"
+                      className="block text-[14px] font-bold text-[#090800] sm:w-[77px] sm:h-[21px] text-nowrap"
                     >
                       Re-enter Your Email
                     </label>
@@ -137,7 +137,7 @@ const editPersonalInfo = () => {
                   <div className="w-[205px] h-[49px] flex items-center justify-between">
                     <Link to={"/product-collection/customerProfile"}>
                       <button
-                        className=" w-[123px] h-[49px] rounded text-center text-[16px] font-semibold bg-[#E2A856] text-[#FFFFFF]"
+                        className=" w-[123px] h-[49px] rounded text-center text-[16px] font-semibold bg-[#E2A856] text-[#FFFFFF] hover:bg-black"
                         type="button"
                       >
                         UPDATE
@@ -145,7 +145,7 @@ const editPersonalInfo = () => {
                     </Link>
                     <Link to={"/product-collection/customerProfile"}>
                       <button
-                        className="underline w-[62px] h-[24px] text-center text-[16px] text-[#E2A856] font-semibold bg-white text-nowrap"
+                        className="underline w-[62px] h-[24px] text-center text-[16px] text-[#E2A856] font-semibold bg-white text-nowrap hover:text-black"
                         type="button"
                       >
                         Go Back
