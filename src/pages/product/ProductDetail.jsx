@@ -100,30 +100,30 @@ const ProductDetail = () => {
         { name: BigProduct2, "price per m": 8.95, isOverSized: true },
         { name: BigProduct3, "price per m": 8.95, isOverSized: true },
         // multi big card
-        { name: multiBigImg, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
         // multi normal card
-        { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg2, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg3, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg4, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg5, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg6, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg7, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg8, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg9, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg2, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg3, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg4, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg5, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg6, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg7, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg8, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg9, "price per m": 8.95, isOverSized: false },
       ],
     },
     {
@@ -148,30 +148,30 @@ const ProductDetail = () => {
         { name: BigProduct2, "price per m": 8.95, isOverSized: true },
         { name: BigProduct3, "price per m": 8.95, isOverSized: true },
         // multi big card
-        { name: multiBigImg, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
-        { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
+        // { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
         // multi normal card
-        { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg2, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg3, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg4, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg5, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg6, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg7, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg8, "price per m": 8.95, isOverSized: false },
-        { name: multiNormalImg9, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg2, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg3, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg4, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg5, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg6, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg7, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg8, "price per m": 8.95, isOverSized: false },
+        // { name: multiNormalImg9, "price per m": 8.95, isOverSized: false },
       ],
     },
   ];
@@ -229,6 +229,23 @@ const ProductDetail = () => {
       }
     });
   }, [filteredProductsByColorway]);
+
+  // for all colorway card image hover
+  const [isHovered, setIsHovered] = useState(
+    Array(filteredProductsByColorway.filteredNormalCards).fill(false)
+  );
+
+  const handleMouseEnter = (index) => {
+    const updatedHoverState = [...isHovered];
+    updatedHoverState[index] = true;
+    setIsHovered(updatedHoverState);
+  };
+
+  const handleMouseLeave = (index) => {
+    const updatedHoverState = [...isHovered];
+    updatedHoverState[index] = false;
+    setIsHovered(updatedHoverState);
+  };
   // COLORWAY DATA ENDS HERE
 
   // NON-COLORWAY DATA STARTS HERE
@@ -250,23 +267,23 @@ const ProductDetail = () => {
     { name: ProductCard11, "price per m": 8.95, isOverSized: false },
     { name: ProductCard12, "price per m": 8.95, isOverSized: false },
     // bigAndNormal BigCard
-    // { name: BigProduct1, "price per m": 8.95, isOverSized: true },
-    // { name: BigProduct2, "price per m": 8.95, isOverSized: true },
-    // { name: BigProduct3, "price per m": 8.95, isOverSized: true },
+    { name: BigProduct1, "price per m": 8.95, isOverSized: true },
+    { name: BigProduct2, "price per m": 8.95, isOverSized: true },
+    { name: BigProduct3, "price per m": 8.95, isOverSized: true },
     // multi big card
-    // { name: multiBigImg, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
-    // { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg1, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg2, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg3, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg4, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg5, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg6, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg7, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg8, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg9, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg10, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg11, "price per m": 8.95, isOverSized: true },
+    { name: multiBigImg12, "price per m": 8.95, isOverSized: true },
     // multi normal card
     // { name: multiNormalImg, "price per m": 8.95, isOverSized: false },
     // { name: multiNormalImg1, "price per m": 8.95, isOverSized: false },
@@ -323,26 +340,38 @@ const ProductDetail = () => {
       setnonColorwayMultiPanel(true);
     }
   }, [filteredNormalCardsNonColorway, filteredBigCardsNonColorway]);
+
+  // for all noncolorway card image hover
+  const [isHoveredNonColorWayNormalCard, setIsHoveredNonColorWayNormalCard] =
+    useState(Array(filteredNormalCardsNonColorway.length).fill(false));
+  const [isHoveredNonColorWayBigCard, setIsHoveredNonColorWayBigCard] =
+    useState(Array(filteredBigCardsNonColorway.length).fill(false));
+
+  const handleMouseEnterNonColorWayNormalCard = (index) => {
+    const updatedHoverState = [...isHoveredNonColorWayNormalCard];
+    updatedHoverState[index] = true;
+    setIsHoveredNonColorWayNormalCard(updatedHoverState);
+  };
+
+  const handleMouseLeaveNonColorWayNormalCard = (index) => {
+    const updatedHoverState = [...isHoveredNonColorWayNormalCard];
+    updatedHoverState[index] = false;
+    setIsHoveredNonColorWayNormalCard(updatedHoverState);
+  };
+  const handleMouseEnterNonColorWayBigCard = (index) => {
+    const updatedHoverState = [...isHoveredNonColorWayBigCard];
+    updatedHoverState[index] = true;
+    setIsHoveredNonColorWayBigCard(updatedHoverState);
+  };
+
+  const handleMouseLeaveNonColorWayBigCard = (index) => {
+    const updatedHoverState = [...isHoveredNonColorWayBigCard];
+    updatedHoverState[index] = false;
+    setIsHoveredNonColorWayBigCard(updatedHoverState);
+  };
   // NON-COLORWAY DATA ENDS HERE
 
-  // for all colorway card image hover
-  const [isHovered, setIsHovered] = useState(
-    Array(filteredProductsByColorway.filteredNormalCards).fill(false)
-  );
-
-  const handleMouseEnter = (index) => {
-    const updatedHoverState = [...isHovered];
-    updatedHoverState[index] = true;
-    setIsHovered(updatedHoverState);
-  };
-
-  const handleMouseLeave = (index) => {
-    const updatedHoverState = [...isHovered];
-    updatedHoverState[index] = false;
-    setIsHovered(updatedHoverState);
-  };
-
-  // pattern colorway popup
+  // pattern colorway popup view details
   const [patterncolorway, setPatterncolorway] = useState(
     Array(patternColorWay.length).fill(false)
   );
@@ -566,31 +595,6 @@ const ProductDetail = () => {
         {/* section 4 */}
         {/* breadcrum */}
         <div className="w-[280px] h-[18px] sm:w-[664px] sm:h-[18px] xl:w-[1160px] 2xl:w-[1320px] flex justify-start">
-          {/* <nav className="" aria-label="Breadcrumb">
-            <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-              <li className="inline-flex items-center text-[#6B6B66]">
-                <p className="inline-flex items-center text-[12px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline">
-                  Home
-                </p>
-              </li>
-              <li>
-                <div className="flex items-center text-[#6B6B66]">
-                  {" / "}
-                  <p className="ms-1 text-[12px] font-medium text-[#6B6B66] hover:text-[#090800] hover:underline md:ms-2">
-                    Category
-                  </p>
-                </div>
-              </li>
-              <li aria-current="page">
-                <div className="flex items-center text-[#6B6B66]">
-                  {" / "}
-                  <span className="w-40 h-[20px] ms-1 text-[12px] font-medium text-[#6B6B66] md:ms-2 overflow-hidden">
-                    Holiday 2023 Release Collections
-                  </span>
-                </div>
-              </li>
-            </ol>
-          </nav> */}
           <nav className="flex" aria-label="Breadcrumb">
             <ol className="inline-flex space-x-1 md:space-x-2 rtl:space-x-reverse">
               <li className="inline-flex mt-[2px]">
@@ -628,7 +632,7 @@ const ProductDetail = () => {
               <div className="w-[184px] h-[39px] flex items-center justify-center">
                 <button
                   type="button"
-                  className=" text-white bg-[#E2A856] font-semibold rounded w-[184px] h-[39px] text-center hover:bg-[#090800] text-[16px]"
+                  className=" text-white bg-[#E2A856] font-semibold rounded w-[184px] h-[39px] text-center hover:bg-[#090800] text-[14px]"
                 >
                   Add Full Collection
                 </button>
@@ -636,7 +640,7 @@ const ProductDetail = () => {
               <div className="w-[274px] h-[39px] flex justify-center">
                 <button
                   type="button"
-                  className="hover:bg-[#090800] text-white bg-[#E2A856] font-semibold rounded w-[274px] h-[39px] text-center text-[16px]"
+                  className="hover:bg-[#090800] text-white bg-[#E2A856] font-semibold rounded w-[274px] h-[39px] text-center text-[14px]"
                 >
                   Add Full Collection - Half Piece
                 </button>
@@ -653,7 +657,7 @@ const ProductDetail = () => {
         {filteredProductsByColorway.map((item, index) => {
           return (
             <div key={index}>
-              <div className="mb-[40px] w-[280px] h-[96px] sm:w-[664px] sm:h-[96px] xl:w-[1160px] 2xl:w-[1320px] xl:h-[39px] grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-3 gap-[30px] xl:gap-0 items-center justify-center xl:justify-between">
+              <div className="mb-[60px] xl:mb-[40px] w-[280px] h-[96px] sm:w-[664px] sm:h-[96px] xl:w-[1160px] 2xl:w-[1320px] xl:h-[39px] grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-3 gap-[30px] xl:gap-0 items-center justify-center xl:justify-between">
                 <div className="col-span-1 hidden xl:flex h-[39px]"></div>
                 <div className="col-span-1 h-[39px] flex items-center justify-center">
                   <p className="font-bold text-center text-[18px]">
@@ -873,12 +877,27 @@ const ProductDetail = () => {
                                 login ? "h-[408px]" : "h-[358px]"
                               } flex flex-col gap-[20px] border`}
                             >
-                              <div className="w-[250px] h-[250px] flex items-center justify-center border-b-[1px] border-[#CECECC]">
+                              <div
+                                className="w-[250px] h-[250px] flex items-center justify-center border-b-[1px] border-[#CECECC] relative"
+                                onMouseEnter={() =>
+                                  handleMouseEnter(index + 1000)
+                                }
+                                onMouseLeave={() =>
+                                  handleMouseLeave(index + 1000)
+                                }
+                              >
                                 <img
                                   src={item.name}
                                   alt="Product"
                                   className="h-[230px] w-[230px] object-cover"
                                 />
+                                {isHovered[index + 1000] && (
+                                  <div className="absolute w-[250px] h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
+                                    <span className="text-white">
+                                      View Details
+                                    </span>
+                                  </div>
+                                )}
                               </div>
                               <div
                                 className={`w-[250px] ${
@@ -1172,332 +1191,344 @@ const ProductDetail = () => {
               )}
 
               {multiPanel && (
-                <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid xl:grid-cols-12 gap-10 xl:gap-[48px] 2xl:gap-[85px]">
+                // <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid xl:grid-cols-12 gap-10 xl:gap-[48px] 2xl:gap-[85px]">
+                <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col items-center justify-center gap-[40px]">
                   {/* Big card */}
-                  <div className="xl:col-span-3">
-                    <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 mx-auto justify-items-center grid-flow-row gap-y-[62px] sm:gap-y-[40px]">
-                      {item.filteredBigCards?.map((item, index) => (
-                        <div
-                          key={index}
-                          className={`${
-                            login ? "h-[408px]" : "h-[358px]"
-                          } w-[250px] cursor-pointer border-[1px] border-[#CECECC] hover:border-[#6B6B66]`}
-                        >
-                          <div>
-                            <Modal
-                              showModal={openModal === index}
-                              cancelOption={() => setOpenModal(null)}
-                              index={index + 1}
-                              item={item}
-                            />
-                          </div>
+                  {/* <div className="xl:col-span-3"> */}
+                  <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-y-[62px] sm:gap-y-[40px] sm:gap-x-[62px] xl:gap-x-[53.5px] 2xl:gap-x-[106.5px] items-center justify-items-center sm:px-[51px] xl:px-0">
+                    {item.filteredBigCards?.map((item, index) => (
+                      <div
+                        key={index}
+                        className={`${
+                          login ? "h-[558.51px]" : "h-[513.51px]"
+                        } w-[250px] cursor-pointer border-[1px] border-[#CECECC] hover:border-[#6B6B66]`}
+                      >
+                        <div>
+                          <Modal
+                            showModal={openModal === index}
+                            cancelOption={() => setOpenModal(null)}
+                            index={index + 1}
+                            item={item}
+                          />
+                        </div>
 
+                        <div
+                          onClick={() => {
+                            setOpenModal(index);
+                          }}
+                        >
                           <div
-                            onClick={() => {
-                              setOpenModal(index);
-                            }}
+                            className={`w-[250px] ${
+                              login ? "h-[558.51px]" : "h-[513.51px]"
+                            } flex flex-col gap-[20px] border`}
                           >
                             <div
-                              className={`w-[250px] ${
-                                login ? "h-[408px]" : "h-[358px]"
-                              } flex flex-col gap-[20px] border`}
+                              className="relative w-[250px] h-[400.51px] flex items-center justify-center border-b-[1px] border-[#CECECC]  "
+                              onMouseEnter={() => handleMouseEnter(index)}
+                              onMouseLeave={() => handleMouseLeave(index)}
                             >
-                              <div className="w-[250px] h-[250px] flex items-center justify-center borderb--[1px] border-[#CECECC] ">
-                                <img
-                                  src={item.name}
-                                  alt="Product"
-                                  className="h-[230px] w-[230px] object-cover"
-                                />
-                              </div>
+                              <img
+                                src={item.name}
+                                alt="Product"
+                                className="w-[230px] h-[380.51px] object-cover"
+                              />
+                              {isHovered[index] && (
+                                <div className="absolute w-[250px] h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
+                                  <span className="text-white">
+                                    View Details
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                            <div
+                              className={`w-[250px] ${
+                                login ? "h-[138px]" : "h-[88px]"
+                              } flex items-start justify-center`}
+                            >
                               <div
-                                className={`w-[250px] ${
-                                  login ? "h-[138px]" : "h-[88px]"
-                                } flex items-start justify-center`}
+                                className={`flex flex-col ${
+                                  login ? "h-[118px]" : "h-[68px]"
+                                } w-[230px] gap-[5px]`}
                               >
-                                <div
-                                  className={`flex flex-col ${
-                                    login ? "h-[118px]" : "h-[68px]"
-                                  } w-[230px] gap-[5px]`}
-                                >
-                                  <div className="w-[230px] h-[21px] flex justify-between">
-                                    <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-[#9D9C99] text-[12px]">
-                                      Design Name
-                                    </p>
-                                    <p className="w-[112.5px] h-[21px] text-[12px] overflow-hidden text-end text-nowrap text-[#9D9C99]">
-                                      Color
-                                    </p>
-                                  </div>
-                                  <p className="text-black text-[14px] font-semibold w-[230px] h-[42px]">
-                                    DP27023-44
+                                <div className="w-[230px] h-[21px] flex justify-between">
+                                  <p className="w-[112.5px] h-[21px] overflow-hidden text-nowrap text-[#9D9C99] text-[12px]">
+                                    Design Name
                                   </p>
+                                  <p className="w-[112.5px] h-[21px] text-[12px] overflow-hidden text-end text-nowrap text-[#9D9C99]">
+                                    Color
+                                  </p>
+                                </div>
+                                <p className="text-black text-[14px] font-semibold w-[230px] h-[42px]">
+                                  DP27023-44
+                                </p>
 
-                                  {login && (
-                                    <div className="w-[230px] h-[45px]">
-                                      <div className="flex items-end justify-between">
-                                        <div className="w-[71px] h-[27px] flex items-center justify-between flex-row">
-                                          <p className="text-[18px] font-semibold w-[47px] h-[27px] flex items-center justify-center">
-                                            ${item["price per m"]}
-                                          </p>
-                                          <span className="w-[19px] h-[18px] text-[10px] sm:text-[12px] text-[#9D9C99] font-normal">
-                                            / m{" "}
-                                          </span>
-                                        </div>
-                                        <div className="w-[60px] h-[45px] flex flex-col justify-between">
-                                          {/* quantity button */}
+                                {login && (
+                                  <div className="w-[230px] h-[45px]">
+                                    <div className="flex items-end justify-between">
+                                      <div className="w-[71px] h-[27px] flex items-center justify-between flex-row">
+                                        <p className="text-[18px] font-semibold w-[47px] h-[27px] flex items-center justify-center">
+                                          ${item["price per m"]}
+                                        </p>
+                                        <span className="w-[19px] h-[18px] text-[10px] sm:text-[12px] text-[#9D9C99] font-normal">
+                                          / m{" "}
+                                        </span>
+                                      </div>
+                                      <div className="w-[60px] h-[45px] flex flex-col justify-between">
+                                        {/* quantity button */}
 
-                                          <form className="w-[60px] h-[20px]">
-                                            <label
-                                              htmlFor="quantity-input"
-                                              className="block text-[14px] font-medium text-gray-900"
-                                            ></label>
-                                            <div className="relative flex items-center w-[60px]">
-                                              <button
-                                                type="button"
-                                                id="decrement-button"
-                                                data-input-counter-decrement="quantity-input"
-                                                className="bg-white border border-[#CECECC] rounded-s w-[20px] h-[20px] hover:bg-[#090800] flex items-center justify-center"
-                                              >
-                                                <svg
-                                                  className="w-[8px] h-[8px] text-black hover:text-white"
-                                                  aria-hidden="true"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  fill="none"
-                                                  viewBox="0 0 18 2"
-                                                >
-                                                  <path
-                                                    stroke="currentColor"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M1 1h16"
-                                                  />
-                                                </svg>
-                                              </button>
-                                              <input
-                                                type="text"
-                                                id="quantity-input"
-                                                data-input-counter
-                                                aria-describedby="helper-text-explanation"
-                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
-                                                placeholder="10"
-                                              />
-                                              <button
-                                                type="button"
-                                                id="increment-button"
-                                                data-input-counter-increment="quantity-input"
-                                                className="bg-white border border-[#CECECC] rounded-e p-1 h-[20px] w-[20px] hover:bg-[#090800] flex items-center justify-center"
-                                              >
-                                                <svg
-                                                  className="w-[8px] h-[8px] text-black hover:text-white"
-                                                  aria-hidden="true"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  fill="none"
-                                                  viewBox="0 0 18 18"
-                                                >
-                                                  <path
-                                                    stroke="currentColor"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M9 1v16M1 9h16"
-                                                  />
-                                                </svg>
-                                              </button>
-                                            </div>
-                                          </form>
-
-                                          {/* add button */}
-                                          <div className="w-[60px] h-[20px]">
+                                        <form className="w-[60px] h-[20px]">
+                                          <label
+                                            htmlFor="quantity-input"
+                                            className="block text-[14px] font-medium text-gray-900"
+                                          ></label>
+                                          <div className="relative flex items-center w-[60px]">
                                             <button
                                               type="button"
-                                              className="w-[60px] h-[20px] text-[8px] font-bold rounded-sm text-center text-white bg-black hover:bg-[#6B6B66] flex items-center justify-center"
+                                              id="decrement-button"
+                                              data-input-counter-decrement="quantity-input"
+                                              className="bg-white border border-[#CECECC] rounded-s w-[20px] h-[20px] hover:bg-[#090800] flex items-center justify-center"
                                             >
-                                              Add
+                                              <svg
+                                                className="w-[8px] h-[8px] text-black hover:text-white"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 2"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M1 1h16"
+                                                />
+                                              </svg>
+                                            </button>
+                                            <input
+                                              type="text"
+                                              id="quantity-input"
+                                              data-input-counter
+                                              aria-describedby="helper-text-explanation"
+                                              className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
+                                              placeholder="10"
+                                            />
+                                            <button
+                                              type="button"
+                                              id="increment-button"
+                                              data-input-counter-increment="quantity-input"
+                                              className="bg-white border border-[#CECECC] rounded-e p-1 h-[20px] w-[20px] hover:bg-[#090800] flex items-center justify-center"
+                                            >
+                                              <svg
+                                                className="w-[8px] h-[8px] text-black hover:text-white"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 18"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M9 1v16M1 9h16"
+                                                />
+                                              </svg>
                                             </button>
                                           </div>
+                                        </form>
+
+                                        {/* add button */}
+                                        <div className="w-[60px] h-[20px]">
+                                          <button
+                                            type="button"
+                                            className="w-[60px] h-[20px] text-[8px] font-bold rounded-sm text-center text-white bg-black hover:bg-[#6B6B66] flex items-center justify-center"
+                                          >
+                                            Add
+                                          </button>
                                         </div>
                                       </div>
                                     </div>
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  {/* normal card */}
-                  <div className="xl:col-span-9">
-                    <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-y-[40px] gap-x-[20px] sm:gap-x-[22px] xl:gap-x-[45.67px] 2xl:gap-x-[81px]">
-                      {item.filteredNormalCards?.map((item, index) => (
-                        <div
-                          key={index}
-                          className={`w-[130px] ${
-                            login
-                              ? "h-[266px] sm:h-[326px]"
-                              : "h-[216px] sm:h-[288px]"
-                          }   sm:w-[180px] cursor-pointer border-[1px] border-[#CECECC] hover:border-[#6B6B66]`}
-                        >
-                          {/* modal */}
-                          <div>
-                            <Modal
-                              showModal={openModal === index}
-                              cancelOption={() => setOpenModal(null)}
-                              index={index + 1}
-                            />
-                          </div>
-
-                          <div
-                            onClick={() => {
-                              setOpenModal(index);
-                            }}
-                          >
-                            <div className="flex flex-col gap-[15px] sm:gap-[20px]">
-                              <div
-                                className="relative"
-                                onMouseEnter={() => handleMouseEnter(index)}
-                                onMouseLeave={() => handleMouseLeave(index)}
-                              >
-                                <img
-                                  src={item.name}
-                                  alt="Product"
-                                  className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
-                                />
-                                {isHovered[index] && (
-                                  <div className="absolute w-[130px] h-[43.33px] sm:w-[180px] sm:h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
-                                    <span className="text-white">
-                                      View Details
-                                    </span>
                                   </div>
                                 )}
                               </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {/* </div> */}
+                  {/* normal card */}
+                  {/* <div className="xl:col-span-9"> */}
+                  <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-y-[40px] gap-x-[20px] sm:gap-x-[22px] xl:gap-x-[55px] 2xl:gap-x-[90px] sm:px-[40px] xl:px-0">
+                    {item.filteredNormalCards?.map((item, index) => (
+                      <div
+                        key={index}
+                        className={`w-[130px] ${
+                          login
+                            ? "h-[266px] sm:h-[326px]"
+                            : "h-[216px] sm:h-[288px]"
+                        }   sm:w-[180px] cursor-pointer border-[1px] border-[#CECECC] hover:border-[#6B6B66]`}
+                      >
+                        {/* modal */}
+                        <div>
+                          <Modal
+                            showModal={openModal === index}
+                            cancelOption={() => setOpenModal(null)}
+                            index={index + 1}
+                          />
+                        </div>
 
+                        <div
+                          onClick={() => {
+                            setOpenModal(index);
+                          }}
+                        >
+                          <div className="flex flex-col gap-[15px] sm:gap-[20px]">
+                            <div
+                              className="relative"
+                              onMouseEnter={() => handleMouseEnter(index)}
+                              onMouseLeave={() => handleMouseLeave(index)}
+                            >
+                              <img
+                                src={item.name}
+                                alt="Product"
+                                className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                              />
+                              {isHovered[index] && (
+                                <div className="absolute w-[130px] h-[43.33px] sm:w-[180px] sm:h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
+                                  <span className="text-white">
+                                    View Details
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+
+                            <div
+                              className={`${
+                                login
+                                  ? "h-[121px] sm:h-[126px]"
+                                  : "h-[71px] sm:h-[88px]"
+                              } w-[130px]  sm:w-[180px] flex items-start justify-center`}
+                            >
                               <div
-                                className={`${
+                                className={`flex flex-col ${
                                   login
-                                    ? "h-[121px] sm:h-[126px]"
-                                    : "h-[71px] sm:h-[88px]"
-                                } w-[130px]  sm:w-[180px] flex items-start justify-center`}
+                                    ? "h-[106px] sm:h-[126px]"
+                                    : "h-[56px] sm:h-[68px]"
+                                } w-[120px] sm:w-[180px] gap-[5px] sm:gap-[14px] items-center`}
                               >
-                                <div
-                                  className={`flex flex-col ${
-                                    login
-                                      ? "h-[106px] sm:h-[126px]"
-                                      : "h-[56px] sm:h-[68px]"
-                                  } w-[120px] sm:w-[180px] gap-[5px] sm:gap-[14px] items-center`}
-                                >
-                                  <div className="w-[120px] h-[56px] sm:w-[160px] sm:h-[47px] flex flex-col items-center justify-between">
-                                    <div className="w-[120px] h-[15px] sm:h-[21px] sm:w-[160px] overflow-hidden text-nowrap flex items-center justify-between">
-                                      <p className="w-[63px] h-[15px] sm:w-[77.5px] sm:h-[21px] text-[10px] sm:text-[12px] text-[#9D9C99]">
-                                        Design Name
-                                      </p>
-                                      <p className="w-[25px] h-[15px] sm:w-[77.5px] sm:h-[21px] text-[10px] sm:text-[12px] text-[#9D9C99] text-end">
-                                        Color
-                                      </p>
-                                    </div>
-                                    <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px] text-[12px] sm:text-[14px]">
-                                      27025-10
+                                <div className="w-[120px] h-[56px] sm:w-[160px] sm:h-[47px] flex flex-col items-center justify-between">
+                                  <div className="w-[120px] h-[15px] sm:h-[21px] sm:w-[160px] overflow-hidden text-nowrap flex items-center justify-between">
+                                    <p className="w-[63px] h-[15px] sm:w-[77.5px] sm:h-[21px] text-[10px] sm:text-[12px] text-[#9D9C99]">
+                                      Design Name
+                                    </p>
+                                    <p className="w-[25px] h-[15px] sm:w-[77.5px] sm:h-[21px] text-[10px] sm:text-[12px] text-[#9D9C99] text-end">
+                                      Color
                                     </p>
                                   </div>
-                                  {/* for log in user */}
-                                  {login && (
-                                    <div className="w-[120px] h-[45px] sm:w-[160px]">
-                                      <div className="flex items-end justify-between">
-                                        <div className="w-[42px] h-[39px] sm:w-[71px] sm:h-[27px] flex flex-col items-center justify-between sm:flex-row">
-                                          <p className="text-[16px] sm:text-[18px] font-semibold w-[42px] h-[24px] sm:w-[47px] sm:h-[27px] flex items-center justify-center">
-                                            ${item["price per m"]}
-                                          </p>
-                                          <span className="w-[16px] h-[15px] sm:w-[19px] sm:h-[18px] text-[10px] sm:text-[12px] text-[#9D9C99] font-normal">
-                                            / m{" "}
-                                          </span>
-                                        </div>
-                                        <div className="w-[60px] h-[45px] flex flex-col justify-between">
-                                          {/* quantity button */}
+                                  <p className="font-semibold w-[120px] h-[36px] sm:h-[21px] sm:w-[160px] text-[12px] sm:text-[14px]">
+                                    27025-10
+                                  </p>
+                                </div>
+                                {/* for log in user */}
+                                {login && (
+                                  <div className="w-[120px] h-[45px] sm:w-[160px]">
+                                    <div className="flex items-end justify-between">
+                                      <div className="w-[42px] h-[39px] sm:w-[71px] sm:h-[27px] flex flex-col items-center justify-between sm:flex-row">
+                                        <p className="text-[16px] sm:text-[18px] font-semibold w-[42px] h-[24px] sm:w-[47px] sm:h-[27px] flex items-center justify-center">
+                                          ${item["price per m"]}
+                                        </p>
+                                        <span className="w-[16px] h-[15px] sm:w-[19px] sm:h-[18px] text-[10px] sm:text-[12px] text-[#9D9C99] font-normal">
+                                          / m{" "}
+                                        </span>
+                                      </div>
+                                      <div className="w-[60px] h-[45px] flex flex-col justify-between">
+                                        {/* quantity button */}
 
-                                          <form className="w-[60px] h-[20px]">
-                                            <label
-                                              htmlFor="quantity-input"
-                                              className="block text-[14px] font-medium text-gray-900"
-                                            ></label>
-                                            <div className="relative flex items-center w-[60px]">
-                                              <button
-                                                type="button"
-                                                id="decrement-button"
-                                                data-input-counter-decrement="quantity-input"
-                                                className="bg-white border border-[#CECECC] rounded-s w-[20px] h-[20px] hover:bg-[#090800] flex items-center justify-center"
-                                              >
-                                                <svg
-                                                  className="w-[8px] h-[8px] text-black hover:text-white"
-                                                  aria-hidden="true"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  fill="none"
-                                                  viewBox="0 0 18 2"
-                                                >
-                                                  <path
-                                                    stroke="currentColor"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M1 1h16"
-                                                  />
-                                                </svg>
-                                              </button>
-                                              <input
-                                                type="text"
-                                                id="quantity-input"
-                                                data-input-counter
-                                                aria-describedby="helper-text-explanation"
-                                                className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
-                                                placeholder="10"
-                                              />
-                                              <button
-                                                type="button"
-                                                id="increment-button"
-                                                data-input-counter-increment="quantity-input"
-                                                className="bg-white border border-[#CECECC] rounded-e p-1 h-[20px] w-[20px] hover:bg-[#090800] flex items-center justify-center"
-                                              >
-                                                <svg
-                                                  className="w-[8px] h-[8px] text-black hover:text-white"
-                                                  aria-hidden="true"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  fill="none"
-                                                  viewBox="0 0 18 18"
-                                                >
-                                                  <path
-                                                    stroke="currentColor"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M9 1v16M1 9h16"
-                                                  />
-                                                </svg>
-                                              </button>
-                                            </div>
-                                          </form>
-
-                                          {/* add button */}
-                                          <div className="w-[60px] h-[20px]">
+                                        <form className="w-[60px] h-[20px]">
+                                          <label
+                                            htmlFor="quantity-input"
+                                            className="block text-[14px] font-medium text-gray-900"
+                                          ></label>
+                                          <div className="relative flex items-center w-[60px]">
                                             <button
                                               type="button"
-                                              className="w-[60px] h-[20px] text-[8px] font-bold rounded-sm text-center text-white bg-black hover:bg-[#6B6B66] flex items-center justify-center"
+                                              id="decrement-button"
+                                              data-input-counter-decrement="quantity-input"
+                                              className="bg-white border border-[#CECECC] rounded-s w-[20px] h-[20px] hover:bg-[#090800] flex items-center justify-center"
                                             >
-                                              Add
+                                              <svg
+                                                className="w-[8px] h-[8px] text-black hover:text-white"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 2"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M1 1h16"
+                                                />
+                                              </svg>
+                                            </button>
+                                            <input
+                                              type="text"
+                                              id="quantity-input"
+                                              data-input-counter
+                                              aria-describedby="helper-text-explanation"
+                                              className="border-y placeholder:text-center border-[#CECECC] h-[20px] w-[20px] text-[10px] text-black"
+                                              placeholder="10"
+                                            />
+                                            <button
+                                              type="button"
+                                              id="increment-button"
+                                              data-input-counter-increment="quantity-input"
+                                              className="bg-white border border-[#CECECC] rounded-e p-1 h-[20px] w-[20px] hover:bg-[#090800] flex items-center justify-center"
+                                            >
+                                              <svg
+                                                className="w-[8px] h-[8px] text-black hover:text-white"
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 18 18"
+                                              >
+                                                <path
+                                                  stroke="currentColor"
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  strokeWidth="2"
+                                                  d="M9 1v16M1 9h16"
+                                                />
+                                              </svg>
                                             </button>
                                           </div>
+                                        </form>
+
+                                        {/* add button */}
+                                        <div className="w-[60px] h-[20px]">
+                                          <button
+                                            type="button"
+                                            className="w-[60px] h-[20px] text-[8px] font-bold rounded-sm text-center text-white bg-black hover:bg-[#6B6B66] flex items-center justify-center"
+                                          >
+                                            Add
+                                          </button>
                                         </div>
                                       </div>
                                     </div>
-                                  )}
-                                </div>
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
+                // </div>
               )}
             </div>
           );
@@ -1512,7 +1543,7 @@ const ProductDetail = () => {
         </div>
 
         {nonColorwayNormalCardSizeOnly && (
-          <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-10">
+          <div className="-mt-[200px] xl:-mt-[100px] w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-2 sm:grid-cols-3 mx-auto xl:grid-cols-5 justify-items-center grid-flow-row gap-10">
             {filteredNormalCardsNonColorway?.map((item, index) => (
               <div
                 key={index}
@@ -1535,11 +1566,26 @@ const ProductDetail = () => {
                   }}
                 >
                   <div className="flex flex-col gap-[15px] sm:gap-[20px]">
-                    <img
-                      src={item.name}
-                      alt="Product"
-                      className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
-                    />
+                    <div
+                      className="relative"
+                      onMouseEnter={() =>
+                        handleMouseEnterNonColorWayNormalCard(index)
+                      }
+                      onMouseLeave={() =>
+                        handleMouseLeaveNonColorWayNormalCard(index)
+                      }
+                    >
+                      <img
+                        src={item.name}
+                        alt="Product"
+                        className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                      />
+                      {isHoveredNonColorWayNormalCard[index] && (
+                        <div className="absolute w-[130px] h-[43.33px] sm:w-[180px] sm:h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
+                          <span className="text-white">View Details</span>
+                        </div>
+                      )}
+                    </div>
                     <div
                       className={`${
                         login
@@ -1666,7 +1712,7 @@ const ProductDetail = () => {
         )}
 
         {nonColorwayBigAndNormalCardSize && (
-          <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid xl:grid-cols-12 gap-10 xl:gap-[48px] 2xl:gap-[85px]">
+          <div className="-mt-[200px] xl:-mt-[100px] w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid xl:grid-cols-12 gap-10 xl:gap-[48px] 2xl:gap-[85px]">
             {/* Big card */}
             <div className="xl:col-span-3">
               <div className="h-auto w-[280px] sm:w-[664px] xl:w-[250px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 mx-auto justify-items-center grid-flow-row gap-10">
@@ -1696,12 +1742,25 @@ const ProductDetail = () => {
                           login ? "h-[408px]" : "h-[358px]"
                         } flex flex-col gap-[20px] border`}
                       >
-                        <div className="w-[250px] h-[250px] flex items-center justify-center border-b-[1px] border-[#CECECC] ">
+                        <div
+                          className="w-[250px] h-[250px] flex items-center justify-center border-b-[1px] border-[#CECECC] relative"
+                          onMouseEnter={() =>
+                            handleMouseEnterNonColorWayBigCard(index)
+                          }
+                          onMouseLeave={() =>
+                            handleMouseLeaveNonColorWayBigCard(index)
+                          }
+                        >
                           <img
                             src={item.name}
                             alt="Product"
                             className="h-[230px] w-[230px] object-cover"
                           />
+                          {isHoveredNonColorWayBigCard[index] && (
+                            <div className="absolute w-[250px] h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
+                              <span className="text-white">View Details</span>
+                            </div>
+                          )}
                         </div>
                         <div
                           className={`w-[250px] ${
@@ -1848,11 +1907,26 @@ const ProductDetail = () => {
                       }}
                     >
                       <div className="flex flex-col gap-[15px] sm:gap-[20px]">
-                        <img
-                          src={item.name}
-                          alt="Product"
-                          className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
-                        />
+                        <div
+                          className="relative"
+                          onMouseEnter={() =>
+                            handleMouseEnterNonColorWayNormalCard(index)
+                          }
+                          onMouseLeave={() =>
+                            handleMouseLeaveNonColorWayNormalCard(index)
+                          }
+                        >
+                          <img
+                            src={item.name}
+                            alt="Product"
+                            className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                          />
+                          {isHoveredNonColorWayNormalCard[index] && (
+                            <div className="absolute w-[130px] h-[43.33px] sm:w-[180px] sm:h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
+                              <span className="text-white">View Details</span>
+                            </div>
+                          )}
+                        </div>
                         <div
                           className={`${
                             login
@@ -1981,7 +2055,7 @@ const ProductDetail = () => {
         )}
 
         {nonColorwayMultiPanel && (
-          <div className="w-[280px] h-fit sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col justify-center gap-y-10">
+          <div className="-mt-[200px] xl:-mt-[100px] w-[280px] h-fit sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] flex flex-col justify-center gap-y-10">
             {/* Big card */}
             <div className="h-auto w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 mx-auto justify-items-center grid-flow-row gap-y-[62px] sm:gap-y-10">
               {filteredBigCardsNonColorway?.map((item, index) => (
@@ -2010,12 +2084,25 @@ const ProductDetail = () => {
                         login ? "h-[408px]" : "h-[358px]"
                       } flex flex-col gap-[20px] border`}
                     >
-                      <div className="w-[250px] h-[250px] flex items-center justify-center border-b-[1px] border-[#CECECC] ">
+                      <div
+                        className="w-[250px] h-[250px] flex items-center justify-center border-b-[1px] border-[#CECECC] relative"
+                        onMouseEnter={() =>
+                          handleMouseEnterNonColorWayBigCard(index)
+                        }
+                        onMouseLeave={() =>
+                          handleMouseLeaveNonColorWayBigCard(index)
+                        }
+                      >
                         <img
                           src={item.name}
                           alt="Product"
                           className="h-[230px] w-[230px] object-cover"
                         />
+                        {isHoveredNonColorWayBigCard[index] && (
+                          <div className="absolute w-[250px] h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
+                            <span className="text-white">View Details</span>
+                          </div>
+                        )}
                       </div>
                       <div
                         className={`w-[250px] ${
@@ -2158,11 +2245,26 @@ const ProductDetail = () => {
                     }}
                   >
                     <div className="flex flex-col gap-[15px] sm:gap-[20px]">
-                      <img
-                        src={item.name}
-                        alt="Product"
-                        className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
-                      />
+                      <div
+                        className="relative"
+                        onMouseEnter={() =>
+                          handleMouseEnterNonColorWayNormalCard(index)
+                        }
+                        onMouseLeave={() =>
+                          handleMouseLeaveNonColorWayNormalCard(index)
+                        }
+                      >
+                        <img
+                          src={item.name}
+                          alt="Product"
+                          className="h-[130px] w-[130px] sm:h-[180px] sm:w-[180px] object-cover"
+                        />
+                        {isHoveredNonColorWayNormalCard[index] && (
+                          <div className="absolute w-[130px] h-[43.33px] sm:w-[180px] sm:h-[60px] text-white text-[12px] font-bold bg-black/85 flex items-center justify-center bottom-0">
+                            <span className="text-white">View Details</span>
+                          </div>
+                        )}
+                      </div>
                       <div
                         className={`${
                           login
@@ -2304,7 +2406,7 @@ const ProductDetail = () => {
             </p>
           </div>
         </div>
-        <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4  justify-items-center grid-flow-row sm:gap-x-[62px] xl:gap-x-[40px] gap-y-[40px]">
+        <div className="w-[280px] sm:w-[664px] xl:w-[1160px] 2xl:w-[1320px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4  justify-items-center grid-flow-row sm:gap-x-[62px] xl:gap-x-[40px] gap-y-[40px] sm:px-[51px] xl:px-0">
           {patternColorWay?.map((item, index) => (
             <div
               key={index}
