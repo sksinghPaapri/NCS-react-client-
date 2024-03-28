@@ -361,7 +361,7 @@ const RetailerRegistration = () => {
             <Link to={"/regionCustomers"}>
               <button
                 type="submit"
-                className="w-[280px] h-[49px] sm:w-[320px] flex justify-center items-center font-semibold px-2 border border-transparent text-base rounded-md text-white bg-[#E2A856] focus:outline-none focus:ring-2 focus:ring-offset-2 text-center"
+                className="w-[280px] h-[49px] sm:w-[320px] flex justify-center items-center font-semibold px-2 border border-transparent text-base rounded-md text-white bg-[#E2A856] focus:outline-none focus:ring-2 focus:ring-offset-2 text-center hover:bg-black"
               >
                 SUBMIT
               </button>
@@ -369,10 +369,10 @@ const RetailerRegistration = () => {
           </div>
           {/* footer */}
           <div className="w-[280px] h-[36px] sm:w-[624px] xl:w-[660px] flex flex-col items-center">
-            <span className="flex justify-center text-[#6B6B66] cursor-pointer text-[12px] h-[18px] items-center">
+            <span className="flex justify-center text-[#6B6B66] cursor-pointer text-[12px] h-[18px] items-center hover:text-[#E2A856]">
               <Link to={"/login"}>Return to sign in</Link>
             </span>
-            <span className="flex justify-center text-[#6B6B66] text-[12px] h-[18px] items-center">
+            <span className="flex justify-center text-[#6B6B66] text-[12px] h-[18px] items-center hover:text-[#E2A856] cursor-pointer">
               Contact our support
             </span>
           </div>

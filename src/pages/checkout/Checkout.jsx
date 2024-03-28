@@ -34,7 +34,7 @@ const Checkout = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-4 h-4 text-gray-600"
+                  className="w-4 h-4 text-[#6B6B66]"
                 >
                   <path
                     strokeLinecap="round"
@@ -42,7 +42,7 @@ const Checkout = () => {
                     d="M15.75 19.5 8.25 12l7.5-7.5"
                   />
                 </svg>
-                <p className="text-[14px] text-gray-500">
+                <p className="text-[14px] text-[#6B6B66] hover:text-[#E2A856]">
                   Back to Shopping Cart
                 </p>
               </div>
@@ -52,7 +52,7 @@ const Checkout = () => {
               <Link to={"/"}>
                 <button
                   type="button"
-                  className="w-[154px] h-[34px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] focus:outline-none"
+                  className="w-[154px] h-[34px] text-white bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded text-[12px] hover:bg-black"
                 >
                   CONTINUE SHOPPING
                 </button>
@@ -773,7 +773,7 @@ const Checkout = () => {
                     <Link to={"/my-orders"} className="cursor-pointer">
                       <button
                         type="button"
-                        className="w-[240px] h-[49px] sm:w-[460px] xl:w-[395px] 2xl:w-[515px] text-white bg-[#E2A856] hover:bg-[#E2A856] focus:ring-4 focus:ring-[#E2A856] font-medium rounded focus:outline-none uppercase"
+                        className="w-[240px] h-[49px] sm:w-[460px] xl:w-[395px] 2xl:w-[515px] text-white bg-[#E2A856] focus:ring-[#E2A856] font-medium rounded-[4px] focus:outline-none uppercase hover:bg-black"
                       >
                         Place order
                       </button>

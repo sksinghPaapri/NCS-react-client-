@@ -26,11 +26,11 @@ const RetailerRegistrationComplete = () => {
           <div className="w-[182px] h-[36px] flex flex-col items-center">
             <p className="flex justify-center text-[12px] h-[18px] text-gray-950 text-nowrap">
               Need help?{"  "}
-              <span className="text-[#6B6B66] text-[12px] ms-1">
+              <span className="text-[#6B6B66] text-[12px] ms-1 hover:text-[#E2A856] cursor-pointer">
                 Contact our support
               </span>
             </p>
-            <span className="flex justify-center h-[18px] text-[12px] text-[#6B6B66] cursor-pointer">
+            <span className="flex justify-center h-[18px] text-[12px] text-[#6B6B66] cursor-pointer hover:text-[#E2A856]">
               <Link to={"/login"}>Return to sign in</Link>
             </span>
           </div>
